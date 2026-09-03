@@ -18,7 +18,11 @@
  *   node scripts/fetch-videos.mjs
  *   node scripts/fetch-videos.mjs --limit 8
  *   node scripts/fetch-videos.mjs --channel UCxxxxxxxxxxxxxxxxxxxxxx
+ *   node scripts/fetch-videos.mjs --out ./videos.json
  *   node scripts/fetch-videos.mjs --from-xml cached.xml    # offline / testing
+ *
+ * scripts/__fixtures__/videos.xml is a trimmed real feed for exercising the
+ * parser without network.
  *
  * On any failure it exits non-zero and LEAVES THE EXISTING videos.json IN
  * PLACE, so the section never empties out.

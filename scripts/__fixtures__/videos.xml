@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Trimmed snapshot of the YouTube Atom feed fetch-videos.mjs reads.
+     Two entries: one standard upload, one Short, so --from-xml exercises
+     both the parser and the Shorts detection offline. -->
+<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015" xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom">
+ <title>Jeffrey Bowen</title>
+ <entry>
+  <yt:videoId>W5SVf5dJqm4</yt:videoId>
+  <title>2 large renovated, 3 bed, apartments for rent near Cary Square in Chelsea. Available now!</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=W5SVf5dJqm4"/>
+  <published>2026-08-13T04:56:04+00:00</published>
+  <media:group>
+   <media:title>2 large renovated, 3 bed, apartments for rent near Cary Square in Chelsea. Available now!</media:title>
+  </media:group>
+ </entry>
+ <entry>
+  <yt:videoId>enm2p5hCV6I</yt:videoId>
+  <title>1 Boatswains Way Chelsea, MA 02150. Corner Admiral&#39;s Hill Townhouse for sale by Jeffrey Bowen.</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/enm2p5hCV6I"/>
+  <published>2026-06-10T16:21:45+00:00</published>
+  <media:group>
+   <media:title>1 Boatswains Way Chelsea, MA 02150. Corner Admiral&#39;s Hill Townhouse for sale by Jeffrey Bowen.</media:title>
+  </media:group>
+ </entry>
+</feed>

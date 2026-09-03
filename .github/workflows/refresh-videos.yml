@@ -1,0 +1,68 @@
+# Refreshes the Video tours section once a day.
+#
+# Reads the channel's public Atom feed (youtube.com/feeds/videos.xml) and
+# rewrites videos.json. No API key, no bot check, no browser -- unlike the
+# Zillow refresh, this works fine from a GitHub runner, which is why it keeps
+# its schedule while the listings workflow is manual-only.
+#
+# If nothing new has been posted, nothing is committed and the run is a no-op.
+
+name: Refresh video tours
+
+on:
+  schedule:
+    # 11:00 UTC daily = 7am Eastern (6am during EST). Cron is always UTC.
+    # An hour after the listings slot so the two never race for a push.
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: refresh-videos
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # No npm ci: fetch-videos.mjs has no dependencies. Playwright is only
+      # needed by the Zillow refresh, so this job skips the install entirely
+      # and finishes in seconds.
+      - name: Fetch videos from YouTube
+        run: node scripts/fetch-videos.mjs
+
+      - name: Show what changed
+        run: git --no-pager diff --stat -- videos.json
+
+      - name: Commit and push if anything changed
+        run: |
+          set -euo pipefail
+
+          # generatedAt changes on every run; a diff limited to it is not news.
+          if git diff --quiet -- videos.json \
+             || [ -z "$(git diff -U0 -- videos.json \
+                        | grep -E '^[+-]' \
+                        | grep -vE '^(\+\+\+|---)' \
+                        | grep -v '"generatedAt"')" ]; then
+            echo "No new uploads — leaving the repo alone."
+            git checkout -- videos.json 2>/dev/null || true
+            exit 0
+          fi
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add videos.json
+          git commit -m "Refresh video tours ($(date -u +%Y-%m-%d))"
+          git push
