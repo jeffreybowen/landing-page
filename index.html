@@ -252,7 +252,47 @@ p:last-child{margin-bottom:0}
   background:var(--gold);color:var(--ink-dk);padding:9px 15px;
 }
 .bar-call:hover{background:var(--gold-lt)}
-@media(max-width:860px){.bar nav{display:none}}
+
+/* mobile menu toggle -- hidden on desktop, where the inline nav is used */
+.bar-toggle{
+  display:none;flex:0 0 auto;width:38px;height:38px;margin-left:2px;
+  align-items:center;justify-content:center;background:transparent;
+  border:1px solid var(--line-lt);color:var(--on-ink);padding:0;cursor:pointer;
+}
+.bar-toggle:hover{border-color:var(--gold)}
+.bar-toggle-box{position:relative;width:18px;height:12px}
+.bar-toggle-box span{
+  position:absolute;left:0;right:0;height:2px;background:currentColor;
+  transition:transform .2s ease,opacity .2s ease;
+}
+.bar-toggle-box span:nth-child(1){top:0}
+.bar-toggle-box span:nth-child(2){top:5px}
+.bar-toggle-box span:nth-child(3){top:10px}
+.bar-toggle[aria-expanded="true"] .bar-toggle-box span:nth-child(1){top:5px;transform:rotate(45deg)}
+.bar-toggle[aria-expanded="true"] .bar-toggle-box span:nth-child(2){opacity:0}
+.bar-toggle[aria-expanded="true"] .bar-toggle-box span:nth-child(3){top:5px;transform:rotate(-45deg)}
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+@media(max-width:860px){
+  .bar-in{position:relative}
+  .bar-toggle{display:inline-flex}
+  .bar nav{
+    display:flex;flex-direction:column;gap:0;
+    position:absolute;top:100%;left:0;right:0;z-index:1;
+    background:var(--ink);border-bottom:1px solid var(--line-lt);
+    max-height:0;overflow:hidden;visibility:hidden;
+    transition:max-height .28s ease;
+  }
+  .bar nav.is-open{max-height:70vh;overflow-y:auto;visibility:visible}
+  .bar nav a{
+    padding:15px var(--gut);border-bottom:1px solid var(--line-lt);
+    font-size:15px;
+  }
+}
+@media(prefers-reduced-motion:reduce){.bar-toggle-box span{transition:none}.bar nav{transition:none}}
 
 /* ---------- hero ---------- */
 .hero{background:var(--ink);color:var(--on-ink);overflow:hidden}
@@ -673,7 +713,7 @@ main [id],#top{scroll-margin-top:86px}
 <header class="bar">
   <div class="bar-in">
     <a class="brand" href="#top">The Bowen Realty Group<span>Jeffrey Bowen &middot; ERealty Advisors Inc.</span></a>
-    <nav>
+    <nav id="site-nav">
       <a href="#listings">Listings</a>
       <a href="#sold">Recently sold</a>
       <a href="#about">About Jeffrey</a>
@@ -682,6 +722,10 @@ main [id],#top{scroll-margin-top:86px}
       <a href="#contact">Contact</a>
     </nav>
     <a class="bar-call" href="tel:+17812019488">781&#8209;201&#8209;9488</a>
+    <button class="bar-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="bar-toggle-box"><span></span><span></span><span></span></span>
+      <span class="sr-only">Menu</span>
+    </button>
   </div>
 </header>
 
@@ -1024,6 +1068,49 @@ document.getElementById('lead').addEventListener('submit', function (e) {
   // after our popstate handler has scrolled, and Back lands in the wrong place.
   if (window.history && 'scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
+  }
+
+  /* ---------- 0. mobile menu toggle ---------- */
+
+  var navToggle = document.getElementById('nav-toggle');
+  var siteNav = document.getElementById('site-nav');
+
+  if (navToggle && siteNav) {
+    var closeMenu = function () {
+      navToggle.setAttribute('aria-expanded', 'false');
+      siteNav.classList.remove('is-open');
+    };
+    var openMenu = function () {
+      navToggle.setAttribute('aria-expanded', 'true');
+      siteNav.classList.add('is-open');
+    };
+
+    navToggle.addEventListener('click', function () {
+      if (navToggle.getAttribute('aria-expanded') === 'true') closeMenu();
+      else openMenu();
+    });
+
+    siteNav.addEventListener('click', function (e) {
+      if (e.target.closest('a')) closeMenu();
+    });
+
+    document.addEventListener('click', function (e) {
+      if (navToggle.getAttribute('aria-expanded') === 'true' &&
+          !siteNav.contains(e.target) && !navToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+        closeMenu();
+        navToggle.focus();
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 860) closeMenu();
+    });
   }
 
   /* ---------- 1. smooth travel to a section ---------- */
