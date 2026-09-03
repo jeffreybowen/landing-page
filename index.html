@@ -182,6 +182,64 @@ p:last-child{margin-bottom:0}
   .row-side{grid-row:auto;grid-column:1;text-align:left}
 }
 
+/* ---------- listing cards (rendered from listings.json) ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px)}
+@media(max-width:980px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.cards{grid-template-columns:1fr}}
+.card{
+  display:flex;flex-direction:column;text-decoration:none;background:var(--white);
+  border:1px solid var(--line);transition:border-color .18s ease,transform .18s ease;
+}
+.card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.card-ph{position:relative;aspect-ratio:4/3;background:var(--navy-lt);overflow:hidden}
+.card-ph img{width:100%;height:100%;object-fit:cover}
+.tag{
+  position:absolute;top:0;left:0;z-index:2;font-family:var(--display);font-weight:600;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  background:var(--gold);color:var(--navy-dk);padding:6px 11px;
+}
+.tag.sold{background:var(--navy);color:var(--on-navy)}
+.card-b{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.card-price{
+  font-family:var(--display);font-weight:700;font-size:clamp(22px,2.4vw,28px);
+  letter-spacing:-.024em;line-height:1;
+}
+.card-addr{
+  font-family:var(--display);font-weight:600;font-size:16px;line-height:1.28;
+  margin-top:10px;letter-spacing:-.012em;
+}
+.card-city{font-size:14px;color:var(--grey);margin-top:3px}
+.card-specs{
+  display:flex;flex-wrap:wrap;gap:0 15px;margin-top:14px;padding-top:13px;
+  border-top:1px solid var(--line);font-family:var(--display);font-size:13px;
+  font-weight:500;color:var(--grey);
+}
+.card-specs b{font-weight:700;color:var(--navy)}
+.card-note{margin:11px 0 0;font-family:var(--display);font-weight:600;font-size:12.5px;color:var(--gold)}
+.card-note.muted{color:var(--grey);font-weight:500}
+.card-cta{
+  margin-top:auto;padding-top:16px;font-family:var(--display);font-weight:600;font-size:13.5px;
+}
+.card-cta i{font-style:normal;border-bottom:1px solid var(--gold);padding-bottom:2px}
+.card:hover .card-cta i{color:var(--gold)}
+.cards-note{margin-top:24px;font-size:13px;color:var(--grey);max-width:76ch}
+.cards-fallback{
+  border:1px solid var(--line);background:var(--white);padding:26px;
+  font-size:16px;color:var(--grey);
+}
+.skel{border:1px solid var(--line);background:var(--white)}
+.skel-ph{aspect-ratio:4/3;background:linear-gradient(100deg,#E8E9E6 30%,#F2F3F0 50%,#E8E9E6 70%);
+  background-size:220% 100%;animation:sh 1.3s linear infinite}
+.skel-b{padding:20px}
+.skel-l{height:12px;background:#E8E9E6;margin-bottom:11px}
+.skel-l.w1{width:45%;height:20px}
+.skel-l.w2{width:75%}
+.skel-l.w3{width:55%}
+@keyframes sh{to{background-position:-220% 0}}
+@media(prefers-reduced-motion:reduce){.skel-ph{animation:none}.card{transition:none}}
+.sold-wrap{background:var(--white)}
+.sold-wrap .card,.sold-wrap .cards-fallback,.sold-wrap .skel{background:var(--ivory)}
+
 /* ---------- about ---------- */
 .about{background:var(--white)}
 .about-grid{
@@ -329,7 +387,8 @@ form button:hover{background:var(--gold-lt)}
   <div class="bar-in">
     <a class="brand" href="#top">The Bowen Realty Group<span>Jeffrey Bowen &middot; ERealty Advisors Inc.</span></a>
     <nav>
-      <a href="#closings">Closings</a>
+      <a href="#listings">Listings</a>
+      <a href="#sold">Recently sold</a>
       <a href="#about">About Jeffrey</a>
       <a href="#areas">Areas</a>
       <a href="#tours">Video tours</a>
@@ -377,48 +436,41 @@ form button:hover{background:var(--gold-lt)}
     </div>
   </section>
 
-  <!-- CLOSINGS LEDGER -->
-  <section class="sec" id="closings">
+  <!-- CURRENT LISTINGS (rendered from listings.json by the script at the foot of this file) -->
+  <section class="sec" id="listings">
     <div class="wrap">
       <div class="sec-head">
-        <h2>Recent closings</h2>
-        <p>Not a highlight reel &mdash; the last five homes to close, in order, with the side of the table Jeffrey sat on.</p>
+        <h2>Current listings</h2>
+        <p>Everything Jeffrey has on the market right now, pulled from his Zillow profile. Tap any home to open the full listing &mdash; photos, floor plans, tax history and all.</p>
       </div>
 
-      <div class="ledger">
-        <div class="row">
-          <div class="row-addr">57 Belmont St, Unit 57</div>
-          <div class="row-meta">Everett, MA 02149 &middot; 3 bed, 3 bath, 1,499 sq&nbsp;ft &middot; Closed October 28, 2025</div>
-          <div class="row-price">$599,000</div>
-          <div class="row-side">Represented seller</div>
-        </div>
-        <div class="row">
-          <div class="row-addr">948 Broadway, Apt 19</div>
-          <div class="row-meta">Chelsea, MA 02150 &middot; 2 bed, 2 bath, 1,008 sq&nbsp;ft &middot; Closed October 27, 2025</div>
-          <div class="row-price">$505,000</div>
-          <div class="row-side">Represented seller</div>
-        </div>
-        <div class="row">
-          <div class="row-addr">100 Boatswains Way, Apt 403</div>
-          <div class="row-meta">Chelsea, MA 02150 &middot; 2 bed, 2 bath, 1,023 sq&nbsp;ft &middot; Closed October 22, 2025</div>
-          <div class="row-price">$599,000</div>
-          <div class="row-side">Represented buyer</div>
-        </div>
-        <div class="row">
-          <div class="row-addr">76 Kimball St</div>
-          <div class="row-meta">Malden, MA 02148 &middot; 4 bed, 2 bath, 1,488 sq&nbsp;ft &middot; Closed October 16, 2025</div>
-          <div class="row-price">$750,000</div>
-          <div class="row-side">Represented seller</div>
-        </div>
-        <div class="row">
-          <div class="row-addr">132 Chelsea St</div>
-          <div class="row-meta">East Boston, MA 02128 &middot; 8 bed, 3 bath, 2,800 sq&nbsp;ft &middot; Closed September 11, 2025</div>
-          <div class="row-price">$1,025,000</div>
-          <div class="row-side">Represented seller</div>
-        </div>
+      <div class="cards" id="listings-grid" data-role="forSale" aria-busy="true" aria-live="polite">
+        <div class="skel" aria-hidden="true"><div class="skel-ph"></div><div class="skel-b"><div class="skel-l w1"></div><div class="skel-l w2"></div><div class="skel-l w3"></div></div></div>
+        <div class="skel" aria-hidden="true"><div class="skel-ph"></div><div class="skel-b"><div class="skel-l w1"></div><div class="skel-l w2"></div><div class="skel-l w3"></div></div></div>
+        <div class="skel" aria-hidden="true"><div class="skel-ph"></div><div class="skel-b"><div class="skel-l w1"></div><div class="skel-l w2"></div><div class="skel-l w3"></div></div></div>
       </div>
 
-      <a class="ledger-more" href="https://www.zillow.com/profile/JeffreyBowen" target="_blank" rel="noopener">See all 716 closings on Zillow</a>
+      <a class="ledger-more" href="https://www.zillow.com/profile/JeffreyBowen" target="_blank" rel="noopener">See every active listing on Zillow</a>
+      <p class="cards-note">Listed by eRealty Advisors, Inc. Prices and availability change &mdash; Zillow is the live source. Call 781&#8209;201&#8209;9488 to walk through any of these in person. <span data-role="stamp"></span></p>
+    </div>
+  </section>
+
+  <!-- RECENTLY SOLD -->
+  <section class="sec sold-wrap" id="sold">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Recently sold</h2>
+        <p id="sold-lede">Closings from the last six months &mdash; not a highlight reel, just what came off the market, with the side of the table Jeffrey sat on.</p>
+      </div>
+
+      <div class="cards" id="sold-grid" data-role="sold" aria-busy="true" aria-live="polite">
+        <div class="skel" aria-hidden="true"><div class="skel-ph"></div><div class="skel-b"><div class="skel-l w1"></div><div class="skel-l w2"></div><div class="skel-l w3"></div></div></div>
+        <div class="skel" aria-hidden="true"><div class="skel-ph"></div><div class="skel-b"><div class="skel-l w1"></div><div class="skel-l w2"></div><div class="skel-l w3"></div></div></div>
+        <div class="skel" aria-hidden="true"><div class="skel-ph"></div><div class="skel-b"><div class="skel-l w1"></div><div class="skel-l w2"></div><div class="skel-l w3"></div></div></div>
+      </div>
+
+      <a class="ledger-more" id="sold-more" href="https://www.zillow.com/profile/JeffreyBowen" target="_blank" rel="noopener">See every sale on Zillow</a>
+      <p class="cards-note">Sold data as published on Jeffrey&rsquo;s Zillow profile. Most of these homes closed within a few miles of Chelsea Square.</p>
     </div>
   </section>
 
@@ -613,7 +665,8 @@ form button:hover{background:var(--gold-lt)}
       <div>
         <b>Pages</b>
         <div class="foot-links">
-          <a href="#closings">Closings</a>
+          <a href="#listings">Listings</a>
+          <a href="#sold">Recently sold</a>
           <a href="#about">About</a>
           <a href="#areas">Areas</a>
           <a href="#tours">Video tours</a>
@@ -656,6 +709,145 @@ document.getElementById('lead').addEventListener('submit', function (e) {
 });
 </script>
 
+<script>
+/* --------------------------------------------------------------------------
+   Listings renderer.
+
+   Reads ./listings.json and paints the "Current listings" and "Recently sold"
+   grids. Nothing about a property lives in this HTML file -- refresh the data
+   with:  node scripts/fetch-listings.mjs
+   (see scripts/fetch-listings.mjs for the cron / CI notes)
+   -------------------------------------------------------------------------- */
+(function () {
+  var GRIDS = {
+    forSale: document.getElementById('listings-grid'),
+    sold: document.getElementById('sold-grid')
+  };
+  if (!GRIDS.forSale || !GRIDS.sold) return;
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;   // textContent, never innerHTML
+    return n;
+  }
+
+  function specs(p) {
+    var row = el('div', 'card-specs');
+    [[p.beds, 'bd'], [p.baths, 'ba'], [p.sqft, 'sq ft']].forEach(function (pair) {
+      if (pair[0] == null || pair[0] === '') return;
+      var s = el('span');
+      s.appendChild(el('b', null, pair[0]));
+      s.appendChild(document.createTextNode(' ' + pair[1]));
+      row.appendChild(s);
+    });
+    return row;
+  }
+
+  function card(p, kind) {
+    var a = el('a', 'card');
+    a.href = p.url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+
+    var ph = el('div', 'card-ph');
+    ph.appendChild(el('span', kind === 'sold' ? 'tag sold' : 'tag',
+                      kind === 'sold' ? 'Sold' : 'For sale'));
+    if (p.photo) {
+      var img = new Image();
+      img.src = p.photo;
+      img.alt = p.fullAddress || '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.width = 640; img.height = 480;
+      img.onerror = function () { img.remove(); };
+      ph.appendChild(img);
+    }
+    a.appendChild(ph);
+
+    var b = el('div', 'card-b');
+    b.appendChild(el('div', 'card-price', p.price || ''));
+    b.appendChild(el('div', 'card-addr', p.street || p.fullAddress || ''));
+    if (p.locality) b.appendChild(el('div', 'card-city', p.locality));
+    b.appendChild(specs(p));
+
+    if (kind === 'sold') {
+      if (p.soldDateText) b.appendChild(el('p', 'card-note muted', 'Closed ' + p.soldDateText));
+      if (p.represented) b.appendChild(el('p', 'card-note', p.represented));
+    } else {
+      (p.badges || []).slice(0, 2).forEach(function (t, i) {
+        b.appendChild(el('p', /price cut/i.test(t) ? 'card-note' : 'card-note muted',
+                         t.replace('Price cut:', 'Price cut —')));
+      });
+    }
+
+    var cta = el('div', 'card-cta');
+    cta.appendChild(el('i', null, kind === 'sold' ? 'View the sale on Zillow' : 'View on Zillow'));
+    b.appendChild(cta);
+
+    a.appendChild(b);
+    return a;
+  }
+
+  function fallback(grid, message) {
+    grid.replaceChildren();
+    grid.removeAttribute('aria-busy');
+    grid.style.gridTemplateColumns = '1fr';
+    var box = el('div', 'cards-fallback');
+    box.appendChild(document.createTextNode(message + ' '));
+    var link = el('a', null, 'View them on Zillow →');
+    link.href = 'https://www.zillow.com/profile/JeffreyBowen';
+    link.target = '_blank'; link.rel = 'noopener';
+    box.appendChild(link);
+    grid.appendChild(box);
+  }
+
+  function paint(grid, items, kind, emptyMsg) {
+    if (!items || !items.length) return fallback(grid, emptyMsg);
+    grid.replaceChildren();
+    grid.removeAttribute('aria-busy');
+    items.forEach(function (p) { if (p && p.url) grid.appendChild(card(p, kind)); });
+  }
+
+  fetch('listings.json', { cache: 'no-cache' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      paint(GRIDS.forSale, data.forSale, 'forSale',
+            'Jeffrey has nothing on the market this minute.');
+      paint(GRIDS.sold, data.sold, 'sold',
+            'No closings recorded in the last six months.');
+
+      var months = data.soldWindowMonths || 6;
+      var lede = document.getElementById('sold-lede');
+      if (lede && months !== 6) {
+        lede.textContent = lede.textContent.replace('last six months',
+          'last ' + months + ' months');
+      }
+
+      var more = document.getElementById('sold-more');
+      if (more && data.counts && data.counts.totalSold) {
+        more.textContent = 'See all ' +
+          data.counts.totalSold.toLocaleString('en-US') + ' sales on Zillow';
+      }
+
+      var stamp = document.querySelector('[data-role="stamp"]');
+      if (stamp && data.generatedAt) {
+        stamp.textContent = 'Listing data last refreshed ' +
+          new Date(data.generatedAt).toLocaleDateString('en-US',
+            { month: 'long', day: 'numeric', year: 'numeric' }) + '.';
+      }
+    })
+    .catch(function (err) {
+      console.warn('listings.json could not be loaded:', err.message);
+      fallback(GRIDS.forSale, 'Jeffrey’s current listings are on Zillow.');
+      fallback(GRIDS.sold, 'Jeffrey’s recent sales are on Zillow.');
+    });
+})();
+</script>
+
 <!--
   BEFORE LAUNCH
   1. Portrait is hotlinked from Zillow's CDN (photos.zillowstatic.com). Zillow can
@@ -665,6 +857,27 @@ document.getElementById('lead').addEventListener('submit', function (e) {
   3. Point the contact form at a real endpoint and remove the JS fallback above.
   4. Swap the three testimonial summaries for verbatim client text you have
      permission to publish.
+  5. LISTINGS DATA. The Current listings / Recently sold sections render from
+     listings.json. Nothing about a property is written into this HTML file.
+     Refresh the data with:
+
+         node scripts/fetch-listings.mjs
+
+     Node 18+, no dependencies. It reads the Zillow profile page's own
+     __NEXT_DATA__ JSON (Zillow has no public agent API) and rewrites
+     listings.json. Card photos are hotlinked to photos.zillowstatic.com, the
+     same as the hero portrait -- if Zillow ever moves those paths a card will
+     lose its image but keep its price, address and link.
+
+     .github/workflows/refresh-listings.yml runs the script daily at 10:00 UTC
+     (6am Eastern) and commits any change. Run it by hand from the Actions tab
+     any time. If a run fails -- Zillow bot check, schema change -- the script
+     exits non-zero and leaves the committed listings.json untouched, so the
+     live site keeps showing the last good data.
+
+     Preview through a web server (`npx serve .`), not by opening index.html off
+     the filesystem -- file:// blocks the fetch and you will see the "view on
+     Zillow" fallback instead of the cards.
 -->
 </body>
 </html>

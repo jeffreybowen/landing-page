@@ -1,0 +1,156 @@
+{
+  "generatedAt": "2026-09-03T00:57:09.519Z",
+  "source": "https://www.zillow.com/profile/JeffreyBowen",
+  "soldWindowMonths": 6,
+  "counts": {
+    "forSale": 5,
+    "soldInWindow": 3,
+    "totalForSale": 5,
+    "totalSold": 690
+  },
+  "forSale": [
+    {
+      "zpid": "2073790320",
+      "price": "$1,790,000",
+      "priceValue": 1790000,
+      "street": "806 Saratoga St",
+      "locality": "Boston, MA 02128",
+      "fullAddress": "806 Saratoga St, Boston, MA 02128",
+      "beds": "7",
+      "baths": "6",
+      "sqft": "3,517",
+      "status": "House for Sale",
+      "badges": [
+        "Price cut: $10,000 (8/10)"
+      ],
+      "brokerage": "eRealty Advisors, Inc.",
+      "photo": "https://photos.zillowstatic.com/fp/6ec431ddeaca69c70240864fe561eb93-p_e.jpg",
+      "url": "https://www.zillow.com/homedetails/806-Saratoga-St-Boston-MA-02128/2073790320_zpid/"
+    },
+    {
+      "zpid": "463633325",
+      "price": "$649,000",
+      "priceValue": 649000,
+      "street": "804 Saratoga St #1",
+      "locality": "Boston, MA 02128",
+      "fullAddress": "804 Saratoga St #1, Boston, MA 02128",
+      "beds": "3",
+      "baths": "2",
+      "sqft": "1,422",
+      "status": "House for Sale",
+      "badges": [
+        "Price cut: $1,000 (8/10)"
+      ],
+      "brokerage": "eRealty Advisors, Inc.",
+      "photo": "https://photos.zillowstatic.com/fp/5c0b057e07fbb63ffc029f468afc81d2-p_e.jpg",
+      "url": "https://www.zillow.com/homedetails/804-Saratoga-St-1-Boston-MA-02128/463633325_zpid/"
+    },
+    {
+      "zpid": "463633930",
+      "price": "$625,000",
+      "priceValue": 625000,
+      "street": "804 Saratoga St #2",
+      "locality": "Boston, MA 02128",
+      "fullAddress": "804 Saratoga St #2, Boston, MA 02128",
+      "beds": "2",
+      "baths": "2",
+      "sqft": "1,029",
+      "status": "House for Sale",
+      "badges": [
+        "30 days on Zillow"
+      ],
+      "brokerage": "eRealty Advisors, Inc.",
+      "photo": "https://photos.zillowstatic.com/fp/6ec431ddeaca69c70240864fe561eb93-p_e.jpg",
+      "url": "https://www.zillow.com/homedetails/804-Saratoga-St-2-Boston-MA-02128/463633930_zpid/"
+    },
+    {
+      "zpid": "463633819",
+      "price": "$600,000",
+      "priceValue": 600000,
+      "street": "804 Saratoga St #3",
+      "locality": "Boston, MA 02128",
+      "fullAddress": "804 Saratoga St #3, Boston, MA 02128",
+      "beds": "2",
+      "baths": "2",
+      "sqft": "1,066",
+      "status": "House for Sale",
+      "badges": [
+        "30 days on Zillow"
+      ],
+      "brokerage": "eRealty Advisors, Inc.",
+      "photo": "https://photos.zillowstatic.com/fp/6ec431ddeaca69c70240864fe561eb93-p_e.jpg",
+      "url": "https://www.zillow.com/homedetails/804-Saratoga-St-3-Boston-MA-02128/463633819_zpid/"
+    },
+    {
+      "zpid": "333286206",
+      "price": "$500,000",
+      "priceValue": 500000,
+      "street": "87 Parker St Unit 403",
+      "locality": "Chelsea, MA 02150",
+      "fullAddress": "87 Parker St Unit 403, Chelsea, MA 02150",
+      "beds": "2",
+      "baths": "2",
+      "sqft": "807",
+      "status": "House for Sale",
+      "badges": [
+        "Frameless glass shower"
+      ],
+      "brokerage": "eRealty Advisors, Inc.",
+      "photo": "https://photos.zillowstatic.com/fp/aba31a21bd54b150174b8df169a5a9cd-p_e.jpg",
+      "url": "https://www.zillow.com/homedetails/87-Parker-St-UNIT-403-Chelsea-MA-02150/333286206_zpid/"
+    }
+  ],
+  "sold": [
+    {
+      "zpid": "56463797",
+      "price": "$810,000",
+      "priceValue": 810000,
+      "street": "20 Raymond St",
+      "locality": "Everett, MA 02149",
+      "fullAddress": "20 Raymond St, Everett, MA 02149",
+      "beds": "5",
+      "baths": "1",
+      "sqft": "2,388",
+      "soldDate": "2026-07-15",
+      "soldDateText": "July 15, 2026",
+      "soldAgo": "Sold 2 months ago",
+      "represented": "Represented seller",
+      "photo": "https://photos.zillowstatic.com/fp/6df526afd22a6a8c95b9ca1f9b251e53-p_e.jpg",
+      "url": "https://www.zillow.com/homedetails/20-Raymond-St-Everett-MA-02149/56463797_zpid/"
+    },
+    {
+      "zpid": "66819088",
+      "price": "$549,000",
+      "priceValue": 549000,
+      "street": "12 Jones Ave #1",
+      "locality": "Chelsea, MA 02150",
+      "fullAddress": "12 Jones Ave #1, Chelsea, MA 02150",
+      "beds": "3",
+      "baths": "1",
+      "sqft": "1,386",
+      "soldDate": "2026-06-30",
+      "soldDateText": "June 30, 2026",
+      "soldAgo": "Sold 2 months ago",
+      "represented": "Represented seller",
+      "photo": "https://photos.zillowstatic.com/fp/8b56584f95c9efbac1d0f2bba34ef3dd-p_e.jpg",
+      "url": "https://www.zillow.com/homedetails/12-Jones-Ave-1-Chelsea-MA-02150/66819088_zpid/"
+    },
+    {
+      "zpid": "125791492",
+      "price": "$610,000",
+      "priceValue": 610000,
+      "street": "81 Broadway APT 1",
+      "locality": "Chelsea, MA 02150",
+      "fullAddress": "81 Broadway APT 1, Chelsea, MA 02150",
+      "beds": "3",
+      "baths": "3",
+      "sqft": "1,686",
+      "soldDate": "2026-05-22",
+      "soldDateText": "May 22, 2026",
+      "soldAgo": "Sold 3 months ago",
+      "represented": "Represented seller",
+      "photo": "https://photos.zillowstatic.com/fp/96cfbdf460b28ce605356f77a4ec2f1f-p_e.jpg",
+      "url": "https://www.zillow.com/homedetails/81-Broadway-APT-1-Chelsea-MA-02150/125791492_zpid/"
+    }
+  ]
+}

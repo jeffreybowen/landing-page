@@ -1,0 +1,70 @@
+# Refreshes the Current listings / Recently sold sections once a day.
+#
+# Pulls Jeffrey's Zillow profile, regenerates listings.json, and commits the
+# result. If nothing on the profile changed, nothing is committed and the run
+# is a no-op. Photos stay hotlinked to Zillow's CDN -- only the listing data is
+# stored in this repo.
+#
+# Heads up: Zillow sometimes serves a bot check to datacenter IPs, and GitHub
+# runners are datacenter IPs. fetch-listings.mjs retries, but if a run still
+# fails it exits non-zero and leaves the committed listings.json untouched, so
+# the live site keeps showing the last good data. If failures become routine,
+# move this to a self-hosted runner on a residential connection, or run the
+# two scripts from a cron on Jeffrey's own machine instead.
+
+name: Refresh Zillow listings
+
+on:
+  schedule:
+    # 10:00 UTC daily = 6am Eastern (5am during EST). Cron is always UTC.
+    - cron: '0 10 * * *'
+  workflow_dispatch:        # lets you run it by hand from the Actions tab
+
+concurrency:
+  group: refresh-listings
+  cancel-in-progress: false
+
+permissions:
+  contents: write           # needed to push the refreshed data back
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out the site
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch listings from Zillow
+        run: node scripts/fetch-listings.mjs
+
+      - name: Show what changed
+        run: git --no-pager diff --stat -- listings.json
+
+      - name: Commit and push if anything changed
+        run: |
+          set -euo pipefail
+
+          # generatedAt changes on every run, so a timestamp-only diff is not a
+          # real change. Ignore that line when deciding whether to commit.
+          if git diff --quiet -- listings.json \
+             || [ -z "$(git diff -U0 -- listings.json \
+                        | grep -E '^[+-]' \
+                        | grep -vE '^(\+\+\+|---)' \
+                        | grep -v '"generatedAt"')" ]; then
+            echo "No listing changes today — leaving the repo alone."
+            git checkout -- listings.json 2>/dev/null || true
+            exit 0
+          fi
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add listings.json
+          git commit -m "Refresh Zillow listings ($(date -u +%Y-%m-%d))"
+          git push
