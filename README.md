@@ -142,6 +142,59 @@ market. If you want it automated again, the options are:
 
 ---
 
+## Booking appointments
+
+The Contact section leads with a **Book a time** block offering two choices —
+*Phone call* and *In person* — backed by Calendly.
+
+It is **hidden until configured.** Set `BOOKING_URL` in the booking script near
+the foot of `index.html`; while it is still the placeholder the block never
+renders, so a half-set-up site shows no dead buttons.
+
+### Setting it up (free plan)
+
+1. Create a Calendly account and connect Jeffrey's Google Calendar, so real
+   availability is respected.
+2. Edit the single event type — suggested: *Talk with Jeffrey*, 20 minutes,
+   a few hours' minimum notice, a buffer after.
+3. Add **one required question, first in the list**, of type *Radio buttons*:
+
+   > How would you like to meet?
+   > · Phone call
+   > · In person
+
+   It has to be first — the page pre-answers it through Calendly's `a1`
+   parameter, which is positional.
+4. Paste the event link into `BOOKING_URL`.
+
+### Why one event type
+
+Calendly's free plan allows exactly one. Two proper types — a short call and a
+longer showing, each with its own duration and location — needs the **$10/month
+Standard plan**. Pre-answering the question keeps the visitor's choice for free;
+the trade is that both bookings share a single duration, so pick one that suits
+a showing as well as a call, or upgrade. If Jeffrey does upgrade, give each
+button its own event URL in the script and drop the `a1` parameter.
+
+[Cal.com](https://cal.com/pricing) is the free alternative with unlimited event
+types; its embed API is close enough that the swap is small.
+
+### How it behaves
+
+- **Nothing loads until clicked.** Calendly's widget is over 100KB and sets
+  third-party cookies on load. It is fetched on the first click and reused
+  after — so a visitor who never books is never tracked by Calendly, which
+  matters given the site runs without a consent banner.
+- **Prefill.** Anything already typed into the contact form (name, email) is
+  carried into the booking, along with which button was clicked.
+- **Analytics.** `booking_open` fires on click; `booking_complete` fires when
+  Calendly reports the booking actually happened. Mark the second as a key
+  event in GA4 — it is the real conversion.
+- **Fallback.** If the widget cannot load, the block shows the phone number and
+  email instead of a dead button.
+
+---
+
 ## Before launch
 
 `index.html` ends with a numbered checklist covering the domain swap, Search
@@ -178,5 +231,8 @@ Console, Google Business Profile and the analytics ID. The short version:
 5. **Contact form** — currently opens the visitor's mail client. Point it at a
    real endpoint.
 
-6. **Social preview image** — `og:image` uses the portrait, which is 535×535.
+6. **Booking** — set `BOOKING_URL`; see *Booking appointments* above. The block
+   stays hidden until you do.
+
+7. **Social preview image** — `og:image` uses the portrait, which is 535×535.
    Social cards want 1200×630, so it will be cropped oddly when shared.
