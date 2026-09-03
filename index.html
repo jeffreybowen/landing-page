@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>document.documentElement.className+=" js"</script>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,21 +17,22 @@
 
 <style>
 :root{
-  /* Palette matched to the Sotheby's International Realty brand system
-     used on kumarawilcoxon.com: Sotheby's Blue, gold accent, ivory ground. */
-  --navy:#002349;
-  --navy-dk:#001A36;
-  --navy-lt:#0B3563;
+  /* Black, gold and ivory. The ink scale is deliberately not pure #000 at the
+     text weight -- a hair off black reads softer on an ivory ground -- while
+     the darkest step stays true black for the full-bleed bands. */
+  --ink:#0C0C0C;
+  --ink-dk:#000000;
+  --ink-lt:#1E1E1E;
   --gold:#C29B40;
   --gold-lt:#DCC188;
   --ivory:#F7F5F1;
   --white:#FFFFFF;
-  --grey:#66737A;
-  --grey-lt:#98A3AB;
-  --on-navy:#E9EDF2;
-  --on-navy-dim:#A8B7C6;
-  --line:rgba(0,35,73,.16);
-  --line-lt:rgba(233,237,242,.22);
+  --grey:#6A6A6A;
+  --grey-lt:#9B9B9B;
+  --on-ink:#EDEDED;
+  --on-ink-dim:#A9A9A9;
+  --line:rgba(0,0,0,.16);
+  --line-lt:rgba(237,237,237,.22);
   --display:"Archivo",system-ui,sans-serif;
   --body:"Source Serif 4",Georgia,serif;
   --gut:clamp(20px,5vw,72px);
@@ -38,7 +40,7 @@
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
-  margin:0;background:var(--ivory);color:var(--navy);
+  margin:0;background:var(--ivory);color:var(--ink);
   font-family:var(--body);font-size:17px;line-height:1.62;
   font-optical-sizing:auto;
 }
@@ -61,7 +63,7 @@ p:last-child{margin-bottom:0}
 
 /* ---------- masthead ---------- */
 .bar{
-  position:sticky;top:0;z-index:60;background:var(--navy);color:var(--on-navy);
+  position:sticky;top:0;z-index:60;background:var(--ink);color:var(--on-ink);
   border-bottom:1px solid var(--line-lt);
 }
 .bar-in{
@@ -72,19 +74,19 @@ p:last-child{margin-bottom:0}
   font-family:var(--display);font-weight:600;font-size:15px;
   letter-spacing:.005em;line-height:1.15;text-decoration:none;margin-right:auto;
 }
-.brand span{display:block;font-weight:500;font-size:11.5px;color:var(--on-navy-dim)}
+.brand span{display:block;font-weight:500;font-size:11.5px;color:var(--on-ink-dim)}
 .bar nav{display:flex;gap:22px;font-family:var(--display);font-size:13.5px;font-weight:500}
 .bar nav a{text-decoration:none;padding:4px 0;border-bottom:1px solid transparent}
 .bar nav a:hover{border-bottom-color:var(--gold)}
 .bar-call{
   font-family:var(--display);font-weight:600;font-size:14px;text-decoration:none;
-  background:var(--gold);color:var(--navy-dk);padding:9px 15px;
+  background:var(--gold);color:var(--ink-dk);padding:9px 15px;
 }
 .bar-call:hover{background:var(--gold-lt)}
 @media(max-width:860px){.bar nav{display:none}}
 
 /* ---------- hero ---------- */
-.hero{background:var(--navy);color:var(--on-navy);overflow:hidden}
+.hero{background:var(--ink);color:var(--on-ink);overflow:hidden}
 .hero-grid{
   display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,4vw,60px);
   align-items:end;padding:clamp(48px,7vw,96px) 0 0;
@@ -92,27 +94,27 @@ p:last-child{margin-bottom:0}
 .hero h1{font-size:clamp(38px,6.9vw,80px);line-height:.99;letter-spacing:-.028em}
 .hero h1 em{font-style:normal;color:var(--gold-lt);font-weight:500}
 .hero-sub{
-  font-size:clamp(17px,1.5vw,20.5px);color:var(--on-navy-dim);max-width:44ch;
+  font-size:clamp(17px,1.5vw,20.5px);color:var(--on-ink-dim);max-width:44ch;
   margin-top:26px;line-height:1.55;
 }
 .hero-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
 .btn{
   font-family:var(--display);font-weight:600;font-size:15px;text-decoration:none;
   padding:14px 22px;border:1px solid var(--gold);
-  background:var(--gold);color:var(--navy-dk);
+  background:var(--gold);color:var(--ink-dk);
 }
 .btn:hover{background:var(--gold-lt);border-color:var(--gold-lt)}
-.btn.ghost{background:transparent;color:var(--on-navy);border-color:var(--line-lt)}
+.btn.ghost{background:transparent;color:var(--on-ink);border-color:var(--line-lt)}
 .btn.ghost:hover{background:transparent;border-color:var(--gold);color:var(--gold-lt)}
 .hero-lang{
   margin-top:22px;padding-top:16px;border-top:1px solid var(--line-lt);
-  font-size:15px;color:var(--on-navy-dim);max-width:42ch;
+  font-size:15px;color:var(--on-ink-dim);max-width:42ch;
 }
 /* Portrait. Self-host this image before launch — see note in the README comment
    at the foot of this file. Currently served from Zillow's CDN. */
 .hero-portrait{
   position:relative;align-self:end;min-height:clamp(300px,42vw,480px);
-  background:var(--navy-lt);border:1px solid var(--line-lt);border-bottom:0;
+  background:var(--ink-lt);border:1px solid var(--line-lt);border-bottom:0;
   overflow:hidden;
 }
 .hero-portrait img{
@@ -122,8 +124,8 @@ p:last-child{margin-bottom:0}
 .hero-portrait figcaption{
   position:absolute;left:0;right:0;bottom:0;z-index:2;
   padding:34px 20px 16px;
-  background:linear-gradient(to top,rgba(0,26,54,.92),rgba(0,26,54,0));
-  font-family:var(--display);font-weight:600;font-size:14px;color:var(--on-navy);
+  background:linear-gradient(to top,rgba(0,0,0,.92),rgba(0,0,0,0));
+  font-family:var(--display);font-weight:600;font-size:14px;color:var(--on-ink);
 }
 .hero-portrait figcaption span{
   display:block;font-weight:500;font-size:12px;color:var(--gold-lt);margin-top:3px;
@@ -135,14 +137,14 @@ p:last-child{margin-bottom:0}
 }
 
 /* ---------- figures strip ---------- */
-.figs{background:var(--navy-dk);color:var(--on-navy)}
+.figs{background:var(--ink-dk);color:var(--on-ink)}
 .figs-in{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line-lt)}
 .fig{padding:26px 22px;border-right:1px solid var(--line-lt)}
 .fig b{
   display:block;font-family:var(--display);font-weight:600;color:var(--gold-lt);
   font-size:clamp(25px,3vw,36px);letter-spacing:-.02em;line-height:1;
 }
-.fig small{display:block;margin-top:8px;font-size:13.5px;color:var(--on-navy-dim);line-height:1.4}
+.fig small{display:block;margin-top:8px;font-size:13.5px;color:var(--on-ink-dim);line-height:1.4}
 .figs-note{padding:13px 0 22px;font-size:13px;color:var(--grey-lt);max-width:70ch}
 @media(max-width:720px){.figs-in{grid-template-columns:1fr 1fr}}
 
@@ -152,7 +154,7 @@ p:last-child{margin-bottom:0}
 .sec-head p{margin-top:16px;color:var(--grey);font-size:17.5px}
 
 /* ---------- ledger (the bold element) ---------- */
-.ledger{border-top:2px solid var(--navy)}
+.ledger{border-top:2px solid var(--ink)}
 .row{
   display:grid;grid-template-columns:1fr auto;gap:6px 28px;
   align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line);
@@ -172,7 +174,7 @@ p:last-child{margin-bottom:0}
 }
 .ledger-more{
   display:inline-block;margin-top:26px;font-family:var(--display);font-weight:600;
-  font-size:15px;color:var(--navy);border-bottom:1px solid var(--gold);
+  font-size:15px;color:var(--ink);border-bottom:1px solid var(--gold);
   text-decoration:none;padding-bottom:2px;
 }
 .ledger-more:hover{color:var(--gold)}
@@ -191,14 +193,14 @@ p:last-child{margin-bottom:0}
   border:1px solid var(--line);transition:border-color .18s ease,transform .18s ease;
 }
 .card:hover{border-color:var(--gold);transform:translateY(-3px)}
-.card-ph{position:relative;aspect-ratio:4/3;background:var(--navy-lt);overflow:hidden}
+.card-ph{position:relative;aspect-ratio:4/3;background:var(--ink-lt);overflow:hidden}
 .card-ph img{width:100%;height:100%;object-fit:cover}
 .tag{
   position:absolute;top:0;left:0;z-index:2;font-family:var(--display);font-weight:600;
   font-size:11px;letter-spacing:.09em;text-transform:uppercase;
-  background:var(--gold);color:var(--navy-dk);padding:6px 11px;
+  background:var(--gold);color:var(--ink-dk);padding:6px 11px;
 }
-.tag.sold{background:var(--navy);color:var(--on-navy)}
+.tag.sold{background:var(--ink);color:var(--on-ink)}
 .card-b{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
 .card-price{
   font-family:var(--display);font-weight:700;font-size:clamp(22px,2.4vw,28px);
@@ -214,7 +216,7 @@ p:last-child{margin-bottom:0}
   border-top:1px solid var(--line);font-family:var(--display);font-size:13px;
   font-weight:500;color:var(--grey);
 }
-.card-specs b{font-weight:700;color:var(--navy)}
+.card-specs b{font-weight:700;color:var(--ink)}
 .card-note{margin:11px 0 0;font-family:var(--display);font-weight:600;font-size:12.5px;color:var(--gold)}
 .card-note.muted{color:var(--grey);font-weight:500}
 .card-cta{
@@ -228,10 +230,10 @@ p:last-child{margin-bottom:0}
   font-size:16px;color:var(--grey);
 }
 .skel{border:1px solid var(--line);background:var(--white)}
-.skel-ph{aspect-ratio:4/3;background:linear-gradient(100deg,#E8E9E6 30%,#F2F3F0 50%,#E8E9E6 70%);
+.skel-ph{aspect-ratio:4/3;background:linear-gradient(100deg,#E7E5E2 30%,#F1EFEC 50%,#E7E5E2 70%);
   background-size:220% 100%;animation:sh 1.3s linear infinite}
 .skel-b{padding:20px}
-.skel-l{height:12px;background:#E8E9E6;margin-bottom:11px}
+.skel-l{height:12px;background:#E7E5E2;margin-bottom:11px}
 .skel-l.w1{width:45%;height:20px}
 .skel-l.w2{width:75%}
 .skel-l.w3{width:55%}
@@ -247,11 +249,11 @@ p:last-child{margin-bottom:0}
   align-items:start;
 }
 .about-photo{
-  background:#E4E6E2;border:1px solid var(--line);min-height:clamp(300px,40vw,440px);
+  background:#E6E4E1;border:1px solid var(--line);min-height:clamp(300px,40vw,440px);
   display:flex;align-items:flex-end;padding:18px;position:sticky;top:86px;
 }
 .ph{font-family:var(--display);font-size:12px;font-weight:500;line-height:1.5;color:var(--grey)}
-.ph code{font-family:var(--display);background:rgba(0,35,73,.07);padding:1px 5px;color:var(--navy)}
+.ph code{font-family:var(--display);background:rgba(0,0,0,.07);padding:1px 5px;color:var(--ink)}
 .about-body h2{margin-bottom:22px}
 .spec{
   list-style:none;padding:0;margin:30px 0 0;
@@ -266,7 +268,7 @@ p:last-child{margin-bottom:0}
   margin-top:32px;padding:20px 22px;background:var(--ivory);
   border-left:3px solid var(--gold);font-size:15px;color:var(--grey);
 }
-.creds b{font-family:var(--display);font-size:14px;display:block;margin-bottom:6px;color:var(--navy)}
+.creds b{font-family:var(--display);font-size:14px;display:block;margin-bottom:6px;color:var(--ink)}
 @media(max-width:820px){
   .about-grid{grid-template-columns:1fr}
   .about-photo{position:static;min-height:240px}
@@ -282,9 +284,9 @@ p:last-child{margin-bottom:0}
 .area{background:var(--ivory);padding:26px 24px}
 .area h3{margin-bottom:10px}
 .area p{font-size:15.5px;color:var(--grey)}
-.lofts{margin-top:34px;padding:28px clamp(22px,3vw,34px);background:var(--navy);color:var(--on-navy)}
+.lofts{margin-top:34px;padding:28px clamp(22px,3vw,34px);background:var(--ink);color:var(--on-ink)}
 .lofts h3{margin-bottom:12px;color:var(--gold-lt)}
-.lofts p{color:var(--on-navy-dim);max-width:60ch;font-size:16.5px}
+.lofts p{color:var(--on-ink-dim);max-width:60ch;font-size:16.5px}
 .lofts ul{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-wrap:wrap;gap:8px}
 .lofts li{
   font-family:var(--display);font-weight:600;font-size:14px;
@@ -295,7 +297,7 @@ p:last-child{margin-bottom:0}
 
 /* ---------- video ---------- */
 .vid{background:var(--white)}
-.vid-frame{position:relative;aspect-ratio:16/9;background:var(--navy);border:1px solid var(--line)}
+.vid-frame{position:relative;aspect-ratio:16/9;background:var(--ink);border:1px solid var(--line)}
 .vid-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .vid-note{margin-top:16px;font-size:14.5px;color:var(--grey)}
 .vid-note a{border-bottom:1px solid var(--gold);text-decoration:none}
@@ -309,16 +311,16 @@ p:last-child{margin-bottom:0}
   font-size:13.5px;font-style:normal;color:var(--grey);line-height:1.5;
 }
 .words-link{margin-top:30px;font-size:15px}
-.words-link a{color:var(--navy);border-bottom:1px solid var(--gold);text-decoration:none}
+.words-link a{color:var(--ink);border-bottom:1px solid var(--gold);text-decoration:none}
 @media(max-width:860px){.words-grid{grid-template-columns:1fr}}
 
 /* ---------- contact ---------- */
-.contact{background:var(--navy);color:var(--on-navy)}
+.contact{background:var(--ink);color:var(--on-ink)}
 .contact h2{color:var(--white)}
 .contact-grid{
   display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,5vw,72px);align-items:start;
 }
-.contact-sub{color:var(--on-navy-dim);margin-top:18px;max-width:40ch}
+.contact-sub{color:var(--on-ink-dim);margin-top:18px;max-width:40ch}
 .dl{margin:34px 0 0;font-size:16px}
 .dl div{padding:14px 0;border-top:1px solid var(--line-lt)}
 .dl dt{font-family:var(--display);font-weight:600;font-size:12.5px;color:var(--gold-lt);margin-bottom:3px}
@@ -334,17 +336,17 @@ label{
 }
 input,select,textarea{
   width:100%;font-family:var(--body);font-size:16px;color:var(--white);
-  background:rgba(233,237,242,.07);border:1px solid var(--line-lt);
+  background:rgba(237,237,237,.07);border:1px solid var(--line-lt);
   padding:12px 13px;
 }
 textarea{resize:vertical;min-height:104px}
-select option{color:#002349}
+select option{color:#0C0C0C}
 input:hover,select:hover,textarea:hover{border-color:var(--gold)}
-.consent{display:flex;gap:11px;align-items:flex-start;font-size:13.5px;color:var(--on-navy-dim);line-height:1.5}
+.consent{display:flex;gap:11px;align-items:flex-start;font-size:13.5px;color:var(--on-ink-dim);line-height:1.5}
 .consent input{width:17px;height:17px;flex:0 0 auto;margin-top:3px}
 form button{
   font-family:var(--display);font-weight:600;font-size:16px;
-  background:var(--gold);color:var(--navy-dk);border:0;
+  background:var(--gold);color:var(--ink-dk);border:0;
   padding:15px 24px;cursor:pointer;justify-self:start;
 }
 form button:hover{background:var(--gold-lt)}
@@ -355,7 +357,7 @@ form button:hover{background:var(--gold-lt)}
 }
 
 /* ---------- footer ---------- */
-.foot{background:var(--navy-dk);color:var(--on-navy-dim);font-size:13.5px;padding:44px 0 52px}
+.foot{background:var(--ink-dk);color:var(--on-ink-dim);font-size:13.5px;padding:44px 0 52px}
 .foot-top{
   display:flex;flex-wrap:wrap;gap:26px 44px;justify-content:space-between;
   padding-bottom:26px;border-bottom:1px solid var(--line-lt);
@@ -364,11 +366,11 @@ form button:hover{background:var(--gold-lt)}
 .foot a{text-decoration:none;border-bottom:1px solid transparent}
 .foot a:hover{border-bottom-color:var(--gold)}
 .foot-links{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--display);font-weight:500}
-.foot-legal{padding-top:24px;line-height:1.62;max-width:96ch;font-size:12.5px;color:#7C8A99}
+.foot-legal{padding-top:24px;line-height:1.62;max-width:96ch;font-size:12.5px;color:#8A8A8A}
 .foot-legal p{margin-bottom:.85em}
 .eho{
   display:inline-flex;gap:9px;align-items:center;margin-top:6px;
-  font-family:var(--display);font-weight:600;font-size:11.5px;color:var(--on-navy-dim);
+  font-family:var(--display);font-weight:600;font-size:11.5px;color:var(--on-ink-dim);
 }
 .eho svg{flex:0 0 auto}
 
@@ -378,6 +380,42 @@ form button:hover{background:var(--gold-lt)}
   .rv:nth-child(2){animation-delay:.09s}
   .rv:nth-child(3){animation-delay:.18s}
   @keyframes rise{to{opacity:1;transform:none}}
+}
+
+/* ---------- section navigation ----------
+   Jumping to a section should feel like travelling to it, not being teleported.
+   The sticky masthead is ~62px tall, so anything we scroll to needs headroom
+   or its heading lands underneath the bar. */
+main [id],#top{scroll-margin-top:86px}
+
+@media(prefers-reduced-motion:no-preference){
+  html{scroll-behavior:smooth}
+}
+
+/* Which section you are currently in, marked in the masthead. */
+.bar nav a{transition:color .2s ease,border-color .2s ease}
+.bar nav a.is-current{border-bottom-color:var(--gold);color:var(--white)}
+
+/* The section you jumped to gets a brief, quiet acknowledgement. */
+@media(prefers-reduced-motion:no-preference){
+  .sec-head.landed h2{animation:landed .9s cubic-bezier(.2,.7,.3,1)}
+  @keyframes landed{
+    0%{transform:translateY(9px);opacity:.55}
+    100%{transform:none;opacity:1}
+  }
+}
+
+/* ---------- reveal on scroll ----------
+   Same motion vocabulary as the page-load reveal above, driven by an
+   IntersectionObserver. Elements start hidden ONLY when we can animate them
+   and JS is running (html.js), so the page degrades to fully visible. */
+@media(prefers-reduced-motion:no-preference){
+  .js .sr{
+    opacity:0;transform:translateY(20px);
+    transition:opacity .66s cubic-bezier(.2,.7,.3,1),transform .66s cubic-bezier(.2,.7,.3,1);
+    transition-delay:var(--sr-delay,0ms);
+  }
+  .js .sr.in{opacity:1;transform:none}
 }
 </style>
 </head>
@@ -679,7 +717,7 @@ form button:hover{background:var(--gold-lt)}
       <p>Jeffrey Bowen, Real Estate Broker Associate, Massachusetts License #9068834. ERealty Advisors Inc., Massachusetts Broker License #1000215-RE-RB. Office 617-729-2618 &middot; Fax 866-885-9139.</p>
       <p>Sales figures and reviews shown on this page reflect The Bowen Realty Group and are drawn from Jeffrey&rsquo;s public Zillow profile. Past results do not guarantee future outcomes. All information is deemed reliable but not guaranteed and should be independently verified. Listings are subject to prior sale, change or withdrawal.</p>
       <p class="eho">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A8B7C6" stroke-width="2" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A9A9A9" stroke-width="2" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
         Equal Housing Opportunity
       </p>
       <p style="margin-top:14px">&copy; 2026 The Bowen Realty Group. All rights reserved.</p>
@@ -707,6 +745,198 @@ document.getElementById('lead').addEventListener('submit', function (e) {
     + '&body=' + encodeURIComponent(body);
   msg.textContent = 'Opening your email app. Or call Jeffrey directly at 781-201-9488.';
 });
+</script>
+
+<script>
+/* --------------------------------------------------------------------------
+   Section navigation + reveal-on-scroll.
+
+   Three jobs:
+     1. Clicking a section link scrolls there smoothly, with the sticky
+        masthead accounted for, and moves keyboard focus so the section is
+        genuinely "arrived at" rather than only visually.
+     2. The masthead marks which section you are currently reading.
+     3. Sections and cards fade up as they come into view, once each.
+
+   Everything here is gated on prefers-reduced-motion. If a visitor has asked
+   their system for less movement, scrolling is instant and nothing fades --
+   they still get the sticky-header offset and the current-section marker.
+   -------------------------------------------------------------------------- */
+(function () {
+  var root = document.documentElement;
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var still = function () { return calm.matches; };
+  var HEADER = 86;                       // keep in step with scroll-margin-top
+
+  // We drive section navigation ourselves, so take scroll restoration off the
+  // browser -- otherwise it re-applies its own remembered position a frame
+  // after our popstate handler has scrolled, and Back lands in the wrong place.
+  if (window.history && 'scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  /* ---------- 1. smooth travel to a section ---------- */
+
+  function go(hash, push) {
+    var target = hash === '#top'
+      ? document.body
+      : document.querySelector(hash);
+    if (!target) return false;
+
+    var y = hash === '#top'
+      ? 0
+      : window.pageYOffset + target.getBoundingClientRect().top - HEADER;
+
+    window.scrollTo({ top: Math.max(0, y), behavior: still() ? 'auto' : 'smooth' });
+
+    // Keyboard and screen-reader users should land inside the section, not be
+    // left at the top of the document with the page merely scrolled.
+    if (target !== document.body) {
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+
+      var head = target.querySelector('.sec-head');
+      if (head && !still()) {
+        head.classList.remove('landed');
+        void head.offsetWidth;                  // restart the animation
+        head.classList.add('landed');
+        setTimeout(function () { head.classList.remove('landed'); }, 1000);
+      }
+    }
+
+    if (push && window.history && history.pushState) {
+      history.pushState(null, '', hash === '#top' ? location.pathname : hash);
+    }
+    return true;
+  }
+
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey ||
+        e.shiftKey || e.altKey) return;
+
+    var link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    var hash = link.getAttribute('href');
+    if (!hash || hash === '#') return;
+
+    if (go(hash, true)) e.preventDefault();
+  });
+
+  // Back/forward through the section history behaves the same way.
+  window.addEventListener('popstate', function () {
+    if (location.hash) go(location.hash, false);
+    else window.scrollTo({ top: 0, behavior: still() ? 'auto' : 'smooth' });
+  });
+
+  /* ---------- 2. mark the section you are in ---------- */
+
+  var links = [].slice.call(document.querySelectorAll('.bar nav a[href^="#"]'));
+  var sections = links
+    .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
+
+  if (sections.length) {
+    var current = null;
+
+    var mark = function (id) {
+      if (id === current) return;
+      current = id;
+      links.forEach(function (a) {
+        var on = a.getAttribute('href') === '#' + id;
+        a.classList.toggle('is-current', on);
+        if (on) a.setAttribute('aria-current', 'true');
+        else a.removeAttribute('aria-current');
+      });
+    };
+
+    // Whichever section fills most of the readable area -- the viewport minus
+    // the sticky masthead. Deliberately NOT intersectionRatio: that ratio is
+    // relative to each section's own height, so a short section scores higher
+    // than a tall one you are barely into and the marker sits a section behind.
+    // Measuring visible pixels also gets the last section right, where the page
+    // cannot scroll far enough to bring it under the masthead at all.
+    var pick = function () {
+      var top = HEADER;
+      var bottom = window.innerHeight;
+      var best = null, bestArea = 0;
+
+      for (var i = 0; i < sections.length; i++) {
+        var r = sections[i].getBoundingClientRect();
+        var area = Math.min(r.bottom, bottom) - Math.max(r.top, top);
+        if (area > bestArea) { bestArea = area; best = sections[i]; }
+      }
+
+      if (best && bestArea > 0) mark(best.id);
+      else {
+        current = null;
+        links.forEach(function (a) {
+          a.classList.remove('is-current');
+          a.removeAttribute('aria-current');
+        });
+      }
+    };
+
+    var queued = false;
+    var onScroll = function () {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () { queued = false; pick(); });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    window.addEventListener('load', pick);
+    pick();
+  }
+
+  /* ---------- 3. reveal on scroll ---------- */
+
+  var revealer = null;
+  if ('IntersectionObserver' in window) {
+    revealer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('in');
+        obs.unobserve(en.target);            // once each, never on the way back up
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+  }
+
+  /**
+   * Register an element to fade up when it scrolls into view.
+   * Exposed so the listings renderer can register the cards it creates.
+   * @param {Element} el
+   * @param {number} [delay] stagger, in ms
+   */
+  function reveal(el, delay) {
+    if (!el) return;
+    if (!revealer || still()) { el.classList.add('in'); return; }
+    if (delay) el.style.setProperty('--sr-delay', delay + 'ms');
+    el.classList.add('sr');
+    revealer.observe(el);
+  }
+  window.__reveal = reveal;
+
+  // Everything already in the document. The hero is left alone -- it has its
+  // own page-load reveal (.rv) and is above the fold anyway.
+  document.querySelectorAll('.sec .sec-head, .about-grid > *, .contact-grid > *')
+    .forEach(function (el) { reveal(el); });
+
+  // Grids stagger: each item follows the one before it by a beat.
+  ['.areas-grid > .area', '.words-grid > .quote', '.vid-frame', '.vid-note']
+    .forEach(function (sel) {
+      document.querySelectorAll(sel).forEach(function (el, i) { reveal(el, i * 70); });
+    });
+
+  /* A visitor who arrives on a deep link (…/#sold) should land in the right
+     place once the fonts and images have settled the layout. */
+  if (location.hash && location.hash.length > 1) {
+    window.addEventListener('load', function () {
+      setTimeout(function () { go(location.hash, false); }, 60);
+    });
+  }
+})();
 </script>
 
 <script>
@@ -806,7 +1036,14 @@ document.getElementById('lead').addEventListener('submit', function (e) {
     if (!items || !items.length) return fallback(grid, emptyMsg);
     grid.replaceChildren();
     grid.removeAttribute('aria-busy');
-    items.forEach(function (p) { if (p && p.url) grid.appendChild(card(p, kind)); });
+    items.forEach(function (p, i) {
+      if (!p || !p.url) return;
+      var c = card(p, kind);
+      grid.appendChild(c);
+      // Cards are built after the reveal observer exists, so register them
+      // here; they fade up in sequence as the section scrolls into view.
+      if (window.__reveal) window.__reveal(c, (i % 3) * 80);
+    });
   }
 
   fetch('listings.json', { cache: 'no-cache' })
