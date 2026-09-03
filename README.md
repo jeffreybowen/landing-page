@@ -147,9 +147,27 @@ market. If you want it automated again, the options are:
 The Contact section leads with a **Book a time** block offering two choices —
 *Phone call* and *In person* — backed by Calendly.
 
-It is **hidden until configured.** Set `BOOKING_URL` in the booking script near
-the foot of `index.html`; while it is still the placeholder the block never
-renders, so a half-set-up site shows no dead buttons.
+Booking is reachable from three places, all driven by one script and one URL:
+
+- the **masthead** (`Book`), so it is available at the top of the page and stays
+  there as you scroll — on phones this moves into the mobile menu as the first
+  row, since the bar has no room for it;
+- the **hero** (`Book a meeting`), the page's primary call to action;
+- the **contact block**, where the two buttons pre-select phone or in person.
+
+The masthead and hero buttons do not pre-select — the visitor picks on the
+booking form. All three report where they came from, to Calendly as
+`utm_content` and to GA4 as `booking_source`, so you can see which placement
+actually produces meetings.
+
+Everything is **hidden until configured.** Set `BOOKING_URL` in the booking
+script near the foot of `index.html`; while it is the placeholder none of the
+controls render, so a half-set-up site shows no dead buttons.
+
+**Currently pointed at `https://calendly.com/thienduc666/30min`.** Rename that
+event and its URL to something clearer (`talk-with-jeffrey`) and it needs
+updating here too — and it should live on Jeffrey's own Calendly account before
+launch, not a personal one.
 
 ### Setting it up (free plan)
 

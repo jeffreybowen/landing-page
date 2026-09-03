@@ -253,6 +253,18 @@ p:last-child{margin-bottom:0}
 }
 .bar-call:hover{background:var(--gold-lt)}
 
+/* Booking, always reachable from the masthead. Outlined rather than gold so it
+   sits beside the phone number without two CTAs shouting at each other. */
+.bar-book{
+  font-family:var(--display);font-weight:600;font-size:14px;cursor:pointer;
+  background:transparent;color:var(--on-ink);
+  border:1px solid var(--line-lt);padding:9px 15px;
+  transition:border-color .18s ease,color .18s ease;
+}
+.bar-book:hover{border-color:var(--gold);color:var(--gold-lt)}
+/* In the mobile panel the same action is a full-width row instead. */
+.nav-book{display:none}
+
 /* mobile menu toggle -- hidden on desktop, where the inline nav is used */
 .bar-toggle{
   display:none;flex:0 0 auto;width:38px;height:38px;margin-left:2px;
@@ -291,6 +303,16 @@ p:last-child{margin-bottom:0}
     padding:15px var(--gut);border-bottom:1px solid var(--line-lt);
     font-size:15px;
   }
+  /* The masthead has no room for both at this width, so booking moves into
+     the menu and leads it. */
+  .bar-book{display:none}
+  .nav-book{
+    display:block;width:100%;text-align:left;cursor:pointer;
+    font-family:var(--display);font-weight:600;font-size:15px;
+    padding:15px var(--gut);border:0;border-bottom:1px solid var(--line-lt);
+    background:var(--gold);color:var(--ink-dk);
+  }
+  .nav-book:hover{background:var(--gold-lt)}
 }
 @media(prefers-reduced-motion:reduce){.bar-toggle-box span{transition:none}.bar nav{transition:none}}
 
@@ -308,10 +330,17 @@ p:last-child{margin-bottom:0}
 }
 .hero-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
 .btn{
-  font-family:var(--display);font-weight:600;font-size:15px;text-decoration:none;
+  display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;
+  line-height:1.2;text-decoration:none;cursor:pointer;
   padding:14px 22px;border:1px solid var(--gold);
   background:var(--gold);color:var(--ink-dk);
 }
+.hero-alt{margin:14px 0 0;font-size:15px}
+.hero-alt a{
+  color:var(--on-ink-dim);text-decoration:none;border-bottom:1px solid var(--line-lt);
+  padding-bottom:2px;
+}
+.hero-alt a:hover{color:var(--gold-lt);border-bottom-color:var(--gold)}
 .btn:hover{background:var(--gold-lt);border-color:var(--gold-lt)}
 .btn.ghost{background:transparent;color:var(--on-ink);border-color:var(--line-lt)}
 .btn.ghost:hover{background:transparent;border-color:var(--gold);color:var(--gold-lt)}
@@ -741,6 +770,7 @@ main [id],#top{scroll-margin-top:86px}
   <div class="bar-in">
     <a class="brand" href="#top">The Bowen Realty Group<span>Jeffrey Bowen &middot; ERealty Advisors Inc.</span></a>
     <nav id="site-nav">
+      <button class="nav-book" type="button" data-book="">Book a meeting</button>
       <a href="#listings">Listings</a>
       <a href="#sold">Recently sold</a>
       <a href="#about">About Jeffrey</a>
@@ -748,6 +778,7 @@ main [id],#top{scroll-margin-top:86px}
       <a href="#tours">Video tours</a>
       <a href="#contact">Contact</a>
     </nav>
+    <button class="bar-book" type="button" data-book="">Book</button>
     <a class="bar-call" href="tel:+17812019488">781&#8209;201&#8209;9488</a>
     <button class="bar-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
       <span class="bar-toggle-box"><span></span><span></span><span></span></span>
@@ -766,9 +797,10 @@ main [id],#top{scroll-margin-top:86px}
           <h1 class="rv">Chelsea, East&nbsp;Boston,<br>Everett, Malden.<br><em>Twenty-four years in the same few miles.</em></h1>
           <p class="hero-sub rv">Jeffrey Bowen sells the condos, lofts, triple&#8209;deckers and small multifamilies that make up this corner of Greater Boston &mdash; and has done since 2001.</p>
           <div class="hero-acts rv">
-            <a class="btn" href="#contact">Ask what your home is worth</a>
+            <button type="button" class="btn" data-book="">Book a meeting</button>
             <a class="btn ghost" href="tel:+17812019488">Call 781-201-9488</a>
           </div>
+          <p class="hero-alt rv"><a href="#contact">Or ask what your home is worth &rarr;</a></p>
           <p class="hero-lang">Se habla espa&ntilde;ol. Jeffrey works with buyers and sellers in English and Spanish, including first&#8209;time buyers who have never been through a closing before.</p>
         </div>
         <figure class="hero-portrait" style="margin:0">
@@ -1134,7 +1166,8 @@ document.getElementById('lead').addEventListener('submit', function (e) {
     });
 
     siteNav.addEventListener('click', function (e) {
-      if (e.target.closest('a')) closeMenu();
+      // buttons too: the mobile menu now leads with the booking action
+      if (e.target.closest('a, button')) closeMenu();
     });
 
     document.addEventListener('click', function (e) {
@@ -1622,6 +1655,10 @@ document.getElementById('lead').addEventListener('submit', function (e) {
         through Calendly's a1 parameter, which is positional.
      4. Copy the event link and replace BOOKING_URL on the next line.
 
+   CURRENT STATE: pointed at the live "30min" event. If the radio question is
+   not set up yet the a1 parameter is simply ignored by Calendly, so the
+   buttons still work -- the visitor just picks how to meet themselves.
+
    Why one event type and not two: Calendly's free plan allows exactly one.
    Two proper types (a short call and a longer showing, each with its own
    duration and location) needs the $10/month Standard plan. Pre-answering the
@@ -1633,21 +1670,33 @@ document.getElementById('lead').addEventListener('submit', function (e) {
    block than a button that opens a 404.
    -------------------------------------------------------------------------- */
 (function () {
-  var BOOKING_URL = 'https://calendly.com/REPLACE-ME/talk-with-jeffrey';
+  var BOOKING_URL = 'https://calendly.com/thienduc666/30min';
 
+  // Every booking control on the page, wherever it sits: the hero button and
+  // the two in the contact block. data-book carries the answer to pre-select
+  // ("" on the hero, where the visitor has not said which they want yet).
+  var triggers = [].slice.call(document.querySelectorAll('[data-book]'));
   var block = document.getElementById('book');
-  if (!block) return;
+  if (!triggers.length) return;
 
   if (BOOKING_URL.indexOf('REPLACE-ME') !== -1) {
-    console.info('[booking] BOOKING_URL is still a placeholder — booking block hidden.');
-    return;                                    // stays hidden
+    console.info('[booking] BOOKING_URL is still a placeholder — booking controls hidden.');
+    triggers.forEach(function (t) { t.hidden = true; });
+    return;
   }
-  block.hidden = false;
+  if (block) block.hidden = false;
 
   var CSS = 'https://assets.calendly.com/assets/external/widget.css';
   var JS  = 'https://assets.calendly.com/assets/external/widget.js';
   var msg = document.getElementById('book-msg');
   var loading = null;
+
+  // The hero button has no status line of its own; say nothing rather than
+  // throwing when there is nowhere to say it.
+  function say(text, html) {
+    if (!msg) return;
+    if (html) msg.innerHTML = text; else msg.textContent = text;
+  }
 
   /* Calendly's widget is well over 100KB and sets third-party cookies the
      moment it loads. Nobody who never books should pay for it, so it is
@@ -1672,7 +1721,15 @@ document.getElementById('lead').addEventListener('submit', function (e) {
 
   /* Carry over anything already typed into the contact form, and record which
      button was used, so the booking arrives with context instead of blank. */
-  function bookingUrl(kind) {
+  // Where on the page the click came from. Reported to Calendly as utm_content
+  // and to GA4 as booking_source, so both agree.
+  function sourceOf(btn) {
+    if (btn.closest('.bar')) return 'header';
+    if (btn.closest('.hero')) return 'hero';
+    return 'contact';
+  }
+
+  function bookingUrl(kind, source) {
     var form = document.getElementById('lead');
     var q = [];
     var name = form && form.name ? form.name.value.trim() : '';
@@ -1680,39 +1737,53 @@ document.getElementById('lead').addEventListener('submit', function (e) {
 
     if (name) q.push('name=' + encodeURIComponent(name));
     if (email) q.push('email=' + encodeURIComponent(email));
-    // a1 answers the FIRST custom question on the event type.
-    q.push('a1=' + encodeURIComponent(kind));
+    // a1 answers the FIRST custom question on the event type. Positional, and
+    // the text must match a radio option exactly. Empty from the hero, where
+    // the visitor picks on the booking form instead.
+    if (kind) q.push('a1=' + encodeURIComponent(kind));
     q.push('utm_source=website');
-    q.push('utm_content=' + encodeURIComponent(kind));
+    q.push('utm_content=' + encodeURIComponent(source + (kind ? ' · ' + kind : '')));
     q.push('hide_gdpr_banner=1');
 
     return BOOKING_URL + (BOOKING_URL.indexOf('?') === -1 ? '?' : '&') + q.join('&');
   }
 
   function open_(kind, btn) {
-    msg.textContent = 'Opening the calendar…';
+    var label = btn.textContent;
+    var source = sourceOf(btn);
+    say('Opening the calendar…');
     btn.disabled = true;
 
     loadWidget().then(function () {
       btn.disabled = false;
       if (!window.Calendly) throw new Error('Calendly global missing');
-      msg.textContent = '';
-      window.Calendly.initPopupWidget({ url: bookingUrl(kind) });
+      say('');
+      window.Calendly.initPopupWidget({ url: bookingUrl(kind, source) });
       if (typeof window.gtag === 'function') {
-        window.gtag('event', 'booking_open', { booking_type: kind });
+        window.gtag('event', 'booking_open', {
+          booking_type: kind || 'unspecified',
+          booking_source: source
+        });
       }
     }).catch(function (err) {
       btn.disabled = false;
       loading = null;                          // let a later click retry
       console.warn('[booking]', err.message);
-      // Never leave someone stuck at a dead button.
-      msg.innerHTML = 'The calendar would not load. Call ' +
-        '<a href="tel:+17812019488">781-201-9488</a> or email ' +
-        '<a href="mailto:Info@chelseaRealestate.com">Info@chelseaRealestate.com</a>.';
+      // Never leave someone stuck at a dead button. The hero has no status
+      // line, so send them to the phone number that is already beside it.
+      if (msg) {
+        say('The calendar would not load. Call ' +
+            '<a href="tel:+17812019488">781-201-9488</a> or email ' +
+            '<a href="mailto:Info@chelseaRealestate.com">Info@chelseaRealestate.com</a>.',
+            true);
+      } else {
+        window.location.href = 'tel:+17812019488';
+      }
+      btn.textContent = label;
     });
   }
 
-  [].forEach.call(block.querySelectorAll('.book-btn'), function (btn) {
+  triggers.forEach(function (btn) {
     btn.addEventListener('click', function () { open_(btn.dataset.book, btn); });
   });
 
@@ -1841,9 +1912,11 @@ document.getElementById('lead').addEventListener('submit', function (e) {
 
      `npm run refresh` runs the listings and the video fetch together.
 
-  7. BOOKING. The Contact section has a "Book a time" block wired to Calendly,
-     hidden until you set BOOKING_URL in the booking script near the foot of
-     this file. Full setup steps are in the comment above that line; the short
+  7. BOOKING. Wired to Calendly from three places: the masthead, the hero, and
+     the "Book a time" block in Contact. All hidden until BOOKING_URL is set in
+     the booking script near the foot of this file. It currently points at
+     calendly.com/thienduc666/30min -- move this to Jeffrey's own Calendly
+     account before launch. Full setup steps are in the comment above that line; the short
      version is: create the free Calendly account, connect Jeffrey's Google
      Calendar, make one event type with a required first question
      "How would you like to meet?" offering Phone call / In person, then paste
