@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  One page, so one entry. Swap REPLACE-ME.com for the real domain, then submit
+  https://yourdomain.com/sitemap.xml in Google Search Console.
+  Update <lastmod> when the page content changes meaningfully.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://REPLACE-ME.com/</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

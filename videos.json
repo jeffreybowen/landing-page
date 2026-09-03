@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-09-03T16:25:08.120Z",
+  "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCrh1Ih1lL0Xc4fAUfbR3KaA",
+  "channelUrl": "https://www.youtube.com/@JeffreyBowen",
+  "channelTitle": "Jeffrey Bowen",
+  "counts": {
+    "shown": 6,
+    "availableInFeed": 15
+  },
+  "videos": [
+    {
+      "id": "W5SVf5dJqm4",
+      "title": "2 large renovated, 3 bed, apartments for rent near Cary Square in Chelsea. Available now!",
+      "published": "2026-08-13T04:56:04+00:00",
+      "publishedText": "August 2026",
+      "isShort": false,
+      "url": "https://www.youtube.com/watch?v=W5SVf5dJqm4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/W5SVf5dJqm4",
+      "thumb": "https://i.ytimg.com/vi/W5SVf5dJqm4/hqdefault.jpg",
+      "thumbLarge": "https://i.ytimg.com/vi/W5SVf5dJqm4/maxresdefault.jpg"
+    },
+    {
+      "id": "enm2p5hCV6I",
+      "title": "1 Boatswains Way Chelsea, MA 02150. Corner Admiral's Hill Townhouse for sale by Jeffrey Bowen.",
+      "published": "2026-06-10T16:21:45+00:00",
+      "publishedText": "June 2026",
+      "isShort": true,
+      "url": "https://www.youtube.com/shorts/enm2p5hCV6I",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/enm2p5hCV6I",
+      "thumb": "https://i.ytimg.com/vi/enm2p5hCV6I/hqdefault.jpg",
+      "thumbLarge": "https://i.ytimg.com/vi/enm2p5hCV6I/maxresdefault.jpg"
+    },
+    {
+      "id": "tu668oTedds",
+      "title": "May 30, 2026",
+      "published": "2026-05-31T01:58:39+00:00",
+      "publishedText": "May 2026",
+      "isShort": false,
+      "url": "https://www.youtube.com/watch?v=tu668oTedds",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/tu668oTedds",
+      "thumb": "https://i.ytimg.com/vi/tu668oTedds/hqdefault.jpg",
+      "thumbLarge": "https://i.ytimg.com/vi/tu668oTedds/maxresdefault.jpg"
+    },
+    {
+      "id": "8CJcztpH_zc",
+      "title": "Single Family Home in Everett coming soon to the market!",
+      "published": "2026-05-29T04:09:42+00:00",
+      "publishedText": "May 2026",
+      "isShort": true,
+      "url": "https://www.youtube.com/shorts/8CJcztpH_zc",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/8CJcztpH_zc",
+      "thumb": "https://i.ytimg.com/vi/8CJcztpH_zc/hqdefault.jpg",
+      "thumbLarge": "https://i.ytimg.com/vi/8CJcztpH_zc/maxresdefault.jpg"
+    },
+    {
+      "id": "nduKIXd-a8E",
+      "title": "20 Harnden St. Wilmington MA 01887. General Harnden's Home restored. For sale by Jeffrey Bowen",
+      "published": "2026-05-22T03:10:35+00:00",
+      "publishedText": "May 2026",
+      "isShort": false,
+      "url": "https://www.youtube.com/watch?v=nduKIXd-a8E",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/nduKIXd-a8E",
+      "thumb": "https://i.ytimg.com/vi/nduKIXd-a8E/hqdefault.jpg",
+      "thumbLarge": "https://i.ytimg.com/vi/nduKIXd-a8E/maxresdefault.jpg"
+    },
+    {
+      "id": "eGl6xnxzvQg",
+      "title": "804-806 Saratoga Street Unit 1 East Boston. Selling as a multi family or 3 condos. Completed June!",
+      "published": "2026-05-20T19:10:50+00:00",
+      "publishedText": "May 2026",
+      "isShort": false,
+      "url": "https://www.youtube.com/watch?v=eGl6xnxzvQg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/eGl6xnxzvQg",
+      "thumb": "https://i.ytimg.com/vi/eGl6xnxzvQg/hqdefault.jpg",
+      "thumbLarge": "https://i.ytimg.com/vi/eGl6xnxzvQg/maxresdefault.jpg"
+    }
+  ]
+}

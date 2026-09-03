@@ -11,6 +11,8 @@
   "scripts": {
     "listings": "node scripts/fetch-listings.mjs",
     "listings:browser": "node scripts/fetch-listings.mjs --browser",
+    "videos": "node scripts/fetch-videos.mjs",
+    "refresh": "npm run listings && npm run videos",
     "serve": "npx --yes serve ."
   },
   "devDependencies": {

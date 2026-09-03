@@ -1,15 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<script>document.documentElement.className+=" js"</script>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Sets a flag the reveal-on-scroll CSS keys off, so the page stays fully
+     visible if scripts never run. Inline and first, to beat the first paint. -->
+<script>document.documentElement.className+=" js"</script>
+
+<!-- ============================ SEO ============================
+     SITE URL: every absolute URL below uses https://REPLACE-ME.com.
+     Once the domain is settled, swap them all in one go:
+
+         cd /path/to/site
+         grep -rl 'REPLACE-ME.com' . --exclude-dir=.git --exclude-dir=node_modules \
+           | xargs sed -i '' 's|https://REPLACE-ME.com|https://yourdomain.com|g'
+
+     (drop the '' after -i on Linux). Then resubmit the sitemap in Search
+     Console. Until that swap, canonical/og:url/sitemap point nowhere -- which
+     is safe, but the page will not rank properly.
+     ============================================================== -->
+
 <title>Jeffrey Bowen | Chelsea &amp; East Boston Real Estate Broker</title>
-<meta name="description" content="Jeffrey Bowen, broker associate with ERealty Advisors and lead of The Bowen Realty Group. 24 years selling condos, lofts, triple-deckers and multifamily in Chelsea, East Boston, Everett and Malden, MA. Se habla espanol.">
-<meta property="og:title" content="Jeffrey Bowen | Chelsea &amp; East Boston Real Estate Broker">
-<meta property="og:description" content="24 years in Chelsea, East Boston, Everett and Malden. 716 closings. Se habla espanol.">
+<meta name="description" content="Chelsea, East Boston, Everett and Malden real estate. Jeffrey Bowen has sold condos, triple-deckers and multifamily here since 2001. Se habla espanol.">
+<link rel="canonical" href="https://REPLACE-ME.com/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Jeffrey Bowen">
+<meta name="theme-color" content="#0C0C0C">
+
+<!-- Local signals. Not ranking factors on their own, but they help the
+     "near me" and map-pack surfaces read the page correctly. -->
+<meta name="geo.region" content="US-MA">
+<meta name="geo.placename" content="Chelsea, Massachusetts">
+<meta name="geo.position" content="42.3918;-71.0328">
+<meta name="ICBM" content="42.3918, -71.0328">
+
+<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:image" content="	https://media.licdn.com/dms/image/v2/C4E03AQFCosIm…eta&t=_KMkpYsSZ1jcSFZWq5O57DaZKcDpZf_Ks3RiZbjDiGk">
+<meta property="og:site_name" content="The Bowen Realty Group">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://REPLACE-ME.com/">
+<meta property="og:title" content="Jeffrey Bowen | Chelsea &amp; East Boston Real Estate Broker">
+<meta property="og:description" content="24 years selling condos, lofts, triple-deckers and multifamily in Chelsea, East Boston, Everett and Malden. 716 closings. Se habla espanol.">
+<meta property="og:image" content="https://REPLACE-ME.com/heatshot.jpeg">
+<meta property="og:image:alt" content="Jeffrey Bowen, real estate broker associate in Chelsea, Massachusetts">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jeffrey Bowen | Chelsea &amp; East Boston Real Estate Broker">
+<meta name="twitter:description" content="24 years selling condos, lofts, triple-deckers and multifamily in Chelsea, East Boston, Everett and Malden. 716 closings. Se habla espanol.">
+<meta name="twitter:image" content="https://REPLACE-ME.com/heatshot.jpeg">
+
+<!-- Structured data. This is the part that actually moves the needle for a
+     local agent: it tells Google this page IS a real-estate business, where it
+     operates, how to contact it, and which reviews belong to it. Validate any
+     change at https://search.google.com/test/rich-results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://REPLACE-ME.com/#agency",
+      "name": "The Bowen Realty Group",
+      "alternateName": "Jeffrey Bowen, eRealty Advisors",
+      "url": "https://REPLACE-ME.com/",
+      "image": "https://REPLACE-ME.com/heatshot.jpeg",
+      "logo": "https://REPLACE-ME.com/heatshot.jpeg",
+      "telephone": "+1-781-201-9488",
+      "faxNumber": "+1-866-885-9139",
+      "email": "Info@chelseaRealestate.com",
+      "priceRange": "$$",
+      "currenciesAccepted": "USD",
+      "knowsLanguage": ["en-US", "es"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "9 Canal Street",
+        "addressLocality": "Boston",
+        "addressRegion": "MA",
+        "postalCode": "02114",
+        "addressCountry": "US"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 42.3918, "longitude": -71.0328 },
+      "areaServed": [
+        { "@type": "City", "name": "Chelsea", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "Place", "name": "East Boston, Boston, MA" },
+        { "@type": "City", "name": "Everett", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Malden", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Revere", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Medford", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Somerville", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Winthrop", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Cambridge", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "Place", "name": "Charlestown, Boston, MA" },
+        { "@type": "Place", "name": "South Boston, Boston, MA" },
+        { "@type": "AdministrativeArea", "name": "Suffolk County, MA" },
+        { "@type": "AdministrativeArea", "name": "Middlesex County, MA" }
+      ],
+      "founder": { "@id": "https://REPLACE-ME.com/#jeffrey" },
+      "employee": { "@id": "https://REPLACE-ME.com/#jeffrey" },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "eRealty Advisors, Inc.",
+        "identifier": "MA Broker License #1000215-RE-RB"
+      },
+      "sameAs": [
+        "https://www.zillow.com/profile/JeffreyBowen",
+        "https://www.youtube.com/@JeffreyBowen"
+      ]
+    },
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://REPLACE-ME.com/#jeffrey",
+      "name": "Jeffrey Bowen",
+      "jobTitle": "Broker Associate",
+      "url": "https://REPLACE-ME.com/",
+      "image": "https://REPLACE-ME.com/heatshot.jpeg",
+      "telephone": "+1-781-201-9488",
+      "email": "Info@chelseaRealestate.com",
+      "knowsLanguage": ["en-US", "es"],
+      "identifier": "MA Real Estate Broker License #9068834",
+      "worksFor": { "@id": "https://REPLACE-ME.com/#agency" },
+      "sameAs": [
+        "https://www.zillow.com/profile/JeffreyBowen",
+        "https://www.youtube.com/@JeffreyBowen"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://REPLACE-ME.com/#website",
+      "url": "https://REPLACE-ME.com/",
+      "name": "The Bowen Realty Group",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://REPLACE-ME.com/#agency" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://REPLACE-ME.com/#webpage",
+      "url": "https://REPLACE-ME.com/",
+      "name": "Jeffrey Bowen | Chelsea & East Boston Real Estate Broker",
+      "isPartOf": { "@id": "https://REPLACE-ME.com/#website" },
+      "about": { "@id": "https://REPLACE-ME.com/#agency" },
+      "primaryImageOfPage": "https://REPLACE-ME.com/heatshot.jpeg",
+      "inLanguage": "en-US"
+    }
+  ]
+}
+</script>
+
+<!-- ===================== Google Analytics 4 =====================
+     TO TURN THIS ON:
+       1. analytics.google.com -> Admin -> Create -> Property
+          ("The Bowen Realty Group", United States, US Dollar)
+       2. Business objectives -> Generate leads
+       3. Data streams -> Web -> enter the site URL -> Create stream
+       4. Copy the Measurement ID at the top right. It looks like G-ABC1234XYZ.
+       5. Replace G-XXXXXXXXXX on the next line with it. That is the only edit.
+
+     Until then the ID is still a placeholder and the guard below skips loading
+     gtag entirely -- no requests, no console errors, nothing to clean up.
+     =============================================================== -->
+<script>
+  window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+</script>
+<script>
+(function () {
+  var id = window.GA_MEASUREMENT_ID;
+  if (!id || id.indexOf('XXXX') !== -1) return;   // not configured yet
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', id);
+
+  var tag = document.createElement('script');
+  tag.async = true;
+  tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+  document.head.appendChild(tag);
+})();
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -295,12 +464,89 @@ p:last-child{margin-bottom:0}
 @media(max-width:860px){.areas-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.areas-grid{grid-template-columns:1fr}}
 
-/* ---------- video ---------- */
+/* ---------- video ----------
+   Newest upload runs large; the five behind it sit in a grid. Nothing embeds
+   an iframe until it is clicked -- six YouTube players on load would cost
+   megabytes and tank the page. Until then each tile is just a thumbnail with
+   a play control, and the click swaps in the real player. */
 .vid{background:var(--white)}
-.vid-frame{position:relative;aspect-ratio:16/9;background:var(--ink);border:1px solid var(--line)}
+.vid-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(14px,1.6vw,22px);align-items:start}
+.vid-rest{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.6vw,22px)}
+@media(max-width:900px){
+  .vid-grid{grid-template-columns:1fr}
+  .vid-rest{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){.vid-rest{grid-template-columns:1fr}}
+
+.vid-frame{position:relative;aspect-ratio:16/9;background:var(--ink);border:1px solid var(--line);overflow:hidden}
 .vid-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.vid-note{margin-top:16px;font-size:14.5px;color:var(--grey)}
-.vid-note a{border-bottom:1px solid var(--gold);text-decoration:none}
+
+.tile{
+  position:relative;display:block;width:100%;padding:0;border:1px solid var(--line);
+  background:var(--ink);aspect-ratio:16/9;overflow:hidden;cursor:pointer;
+  text-align:left;font:inherit;color:var(--on-ink);
+  transition:border-color .18s ease,transform .18s ease;
+}
+.tile:hover{border-color:var(--gold);transform:translateY(-2px)}
+.tile img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:opacity .25s ease,transform .4s ease;
+}
+.tile:hover img{transform:scale(1.03)}
+/* Shorts are vertical: their 16:9 thumbnail is a letterboxed frame, so zoom
+   past the bars rather than showing them. */
+.tile.is-short img{transform:scale(1.42)}
+.tile.is-short:hover img{transform:scale(1.48)}
+
+.tile-scrim{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to top,rgba(0,0,0,.86) 0%,rgba(0,0,0,.35) 42%,rgba(0,0,0,.05) 70%);
+}
+.tile-play{
+  position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:58px;height:58px;border-radius:50%;
+  background:rgba(0,0,0,.55);border:1.5px solid rgba(255,255,255,.85);
+  display:grid;place-items:center;transition:background .18s ease,border-color .18s ease;
+}
+.tile-play svg{margin-left:3px}
+.tile:hover .tile-play{background:var(--gold);border-color:var(--gold)}
+.tile:hover .tile-play svg{fill:var(--ink-dk)}
+.tile-txt{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:16px 18px}
+.tile-title{
+  font-family:var(--display);font-weight:600;line-height:1.28;letter-spacing:-.012em;
+  color:#fff;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.tile-date{
+  margin-top:5px;font-family:var(--display);font-weight:500;font-size:12px;
+  color:var(--gold-lt);
+}
+.tile-badge{
+  position:absolute;z-index:3;top:0;left:0;font-family:var(--display);font-weight:600;
+  font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  background:var(--gold);color:var(--ink-dk);padding:5px 9px;
+}
+/* the lead video */
+.tile.lead{aspect-ratio:16/9}
+.tile.lead .tile-title{font-size:clamp(17px,1.9vw,23px);-webkit-line-clamp:3}
+.tile.lead .tile-play{width:74px;height:74px}
+.tile.lead .tile-txt{padding:22px 24px}
+/* The five behind it. At this size a centred play button lands on top of the
+   title, so it moves to the corner and the text keeps the bottom edge. */
+.vid-rest .tile-title{font-size:13px;-webkit-line-clamp:2}
+.vid-rest .tile-date{font-size:11px;margin-top:3px}
+.vid-rest .tile-txt{padding:11px 12px}
+.vid-rest .tile-play{
+  left:auto;right:9px;top:9px;transform:none;width:34px;height:34px;
+}
+.vid-rest .tile-play svg{width:14px;height:14px;margin-left:2px}
+.vid-rest .tile-scrim{
+  background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.12) 100%);
+}
+
+.vid-note{margin-top:20px;font-size:14.5px;color:var(--grey)}
+.vid-note a{border-bottom:1px solid var(--gold);text-decoration:none;font-weight:600}
+.vid-note a:hover{color:var(--gold)}
+@media(prefers-reduced-motion:reduce){.tile,.tile img{transition:none}.tile:hover img{transform:none}}
 
 /* ---------- words ---------- */
 .words-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3vw,40px)}
@@ -517,7 +763,8 @@ main [id],#top{scroll-margin-top:86px}
     <div class="wrap">
       <div class="about-grid">
         <div class="about-photo">
-          <img src="./jeffrey-about.jpg" alt="" srcset="">
+          <img src="./jeffrey-about.jpg" width="1200" height="1500" loading="lazy" decoding="async"
+               alt="Jeffrey Bowen, broker associate with eRealty Advisors, who has sold real estate in Chelsea and East Boston since 2001">
         </div>
         <div class="about-body">
           <h2>Meet Jeffrey Bowen</h2>
@@ -602,16 +849,17 @@ main [id],#top{scroll-margin-top:86px}
         <h2>Video tours</h2>
         <p>Jeffrey walks his listings on camera. Newest uploads appear here automatically.</p>
       </div>
-      <div class="vid-frame">
-        <iframe
-          src="https://www.youtube.com/embed/videoseries?list=UUrh1Ih1lL0Xc4fAUfbR3KaA"
-          title="Jeffrey Bowen listing tours on YouTube"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen></iframe>
+      <div class="vid-grid" id="vid-grid" aria-busy="true" aria-live="polite">
+        <div class="vid-frame" aria-hidden="true"></div>
+        <div class="vid-rest">
+          <div class="vid-frame" aria-hidden="true"></div>
+          <div class="vid-frame" aria-hidden="true"></div>
+          <div class="vid-frame" aria-hidden="true"></div>
+          <div class="vid-frame" aria-hidden="true"></div>
+        </div>
       </div>
-      <p class="vid-note">Pulling from <a href="https://www.youtube.com/@JeffreyBowen/videos" target="_blank" rel="noopener">youtube.com/@JeffreyBowen</a>. The playlist updates itself when Jeffrey posts a new tour &mdash; nothing to maintain here.</p>
+
+      <p class="vid-note">For more, please visit <a href="https://www.youtube.com/@JeffreyBowen/videos" target="_blank" rel="noopener">youtube.com/@JeffreyBowen</a>.</p>
     </div>
   </section>
 
@@ -924,7 +1172,7 @@ document.getElementById('lead').addEventListener('submit', function (e) {
     .forEach(function (el) { reveal(el); });
 
   // Grids stagger: each item follows the one before it by a beat.
-  ['.areas-grid > .area', '.words-grid > .quote', '.vid-frame', '.vid-note']
+  ['.areas-grid > .area', '.words-grid > .quote', '.vid-note']
     .forEach(function (sel) {
       document.querySelectorAll(sel).forEach(function (el, i) { reveal(el, i * 70); });
     });
@@ -1085,11 +1333,208 @@ document.getElementById('lead').addEventListener('submit', function (e) {
 })();
 </script>
 
+<script>
+/* --------------------------------------------------------------------------
+   Video tours.
+
+   Reads ./videos.json and lays out the newest upload large with the next five
+   beside it. Refresh with:  node scripts/fetch-videos.mjs
+
+   Each tile is a thumbnail and a play button, not an embed. The YouTube player
+   is only injected when someone actually clicks -- six iframes on load would
+   pull megabytes of player JS and set cookies for a visitor who never watched
+   anything. The embeds use youtube-nocookie for the same reason.
+   -------------------------------------------------------------------------- */
+(function () {
+  var grid = document.getElementById('vid-grid');
+  if (!grid) return;
+
+  var CHANNEL = 'https://www.youtube.com/@JeffreyBowen/videos';
+
+  var PLAY_SVG =
+    '<svg viewBox="0 0 24 24" width="22" height="22" fill="#fff" aria-hidden="true">' +
+    '<path d="M8 5v14l11-7z"/></svg>';
+
+  function tile(v, lead) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tile' + (lead ? ' lead' : '') + (v.isShort ? ' is-short' : '');
+    b.setAttribute('aria-label', 'Play: ' + v.title);
+    b.dataset.id = v.id;
+    b.dataset.embed = v.embedUrl;
+    b.dataset.title = v.title;
+
+    var img = new Image();
+    img.alt = '';                       // the title below is the accessible name
+    img.loading = lead ? 'eager' : 'lazy';
+    img.decoding = 'async';
+    img.width = 640; img.height = 360;
+    // maxres does not exist for every upload (and never for Shorts).
+    img.src = lead && !v.isShort ? v.thumbLarge : v.thumb;
+    img.onerror = function () {
+      if (img.src !== v.thumb) img.src = v.thumb; else img.remove();
+    };
+    b.appendChild(img);
+
+    if (lead) {
+      var badge = document.createElement('span');
+      badge.className = 'tile-badge';
+      badge.textContent = 'Latest tour';
+      b.appendChild(badge);
+    }
+
+    var scrim = document.createElement('span');
+    scrim.className = 'tile-scrim';
+    b.appendChild(scrim);
+
+    var play = document.createElement('span');
+    play.className = 'tile-play';
+    play.innerHTML = PLAY_SVG;
+    b.appendChild(play);
+
+    var txt = document.createElement('span');
+    txt.className = 'tile-txt';
+    var t = document.createElement('span');
+    t.className = 'tile-title';
+    t.textContent = v.title;
+    txt.appendChild(t);
+    if (v.publishedText) {
+      var d = document.createElement('span');
+      d.className = 'tile-date';
+      d.textContent = v.publishedText + (v.isShort ? ' · Short' : '');
+      txt.appendChild(d);
+    }
+    b.appendChild(txt);
+
+    b.addEventListener('click', function () { play_(b); });
+    return b;
+  }
+
+  function play_(b) {
+    var frame = document.createElement('div');
+    frame.className = 'vid-frame';
+    var f = document.createElement('iframe');
+    f.src = b.dataset.embed + '?autoplay=1&rel=0&modestbranding=1';
+    f.title = b.dataset.title;
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    f.allowFullscreen = true;
+    frame.appendChild(f);
+    b.replaceWith(frame);
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'video_play', {
+        video_id: b.dataset.id,
+        video_title: b.dataset.title
+      });
+    }
+  }
+
+  function fallback() {
+    grid.replaceChildren();
+    grid.removeAttribute('aria-busy');
+    grid.style.gridTemplateColumns = '1fr';
+    var box = document.createElement('div');
+    box.className = 'cards-fallback';
+    box.appendChild(document.createTextNode('Jeffrey’s tours are on YouTube. '));
+    var a = document.createElement('a');
+    a.href = CHANNEL; a.target = '_blank'; a.rel = 'noopener';
+    a.textContent = 'Watch the channel →';
+    box.appendChild(a);
+    grid.appendChild(box);
+  }
+
+  fetch('videos.json', { cache: 'no-cache' })
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (data) {
+      var vids = (data.videos || []).filter(function (v) { return v && v.id; });
+      if (!vids.length) return fallback();
+
+      grid.replaceChildren();
+      grid.removeAttribute('aria-busy');
+
+      grid.appendChild(tile(vids[0], true));
+
+      var rest = document.createElement('div');
+      rest.className = 'vid-rest';
+      vids.slice(1, 6).forEach(function (v) { rest.appendChild(tile(v, false)); });
+      grid.appendChild(rest);
+
+      if (window.__reveal) {
+        window.__reveal(grid.firstChild);
+        [].forEach.call(rest.children, function (el, i) { window.__reveal(el, i * 70); });
+      }
+    })
+    .catch(function (err) {
+      console.warn('videos.json could not be loaded:', err.message);
+      fallback();
+    });
+})();
+</script>
+
+<script>
+/* --------------------------------------------------------------------------
+   Analytics events.
+
+   Page views are automatic once a Measurement ID is set. These are the four
+   things worth counting on an agent's site beyond that -- the moments someone
+   goes from reading to acting:
+
+     call_click        tapped the phone number
+     email_click       tapped the email address
+     listing_click     opened a listing on Zillow (which property, and whether
+                       it was an active listing or a past sale)
+     lead_form_submit  completed the contact form
+
+   In GA4, mark lead_form_submit and call_click as key events
+   (Admin -> Events -> toggle "Mark as key event") so they show up as
+   conversions rather than plain events.
+
+   Everything here no-ops until GA_MEASUREMENT_ID is set: gtag is only defined
+   once the guard in the head passes.
+   -------------------------------------------------------------------------- */
+(function () {
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href]');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+
+    if (href.indexOf('tel:') === 0) {
+      return track('call_click', { phone_number: href.replace('tel:', '') });
+    }
+    if (href.indexOf('mailto:') === 0) {
+      return track('email_click', {});
+    }
+    if (href.indexOf('zillow.com') !== -1) {
+      var card = link.classList.contains('card') ? link : null;
+      return track('listing_click', {
+        listing_address: card ? (card.querySelector('.card-addr') || {}).textContent : null,
+        listing_price:   card ? (card.querySelector('.card-price') || {}).textContent : null,
+        listing_status:  card ? (card.closest('#sold') ? 'sold' : 'for_sale') : 'profile',
+        link_url: link.href
+      });
+    }
+  });
+
+  var form = document.getElementById('lead');
+  if (form) {
+    form.addEventListener('submit', function () {
+      // Fires alongside the existing handler; it does not gate submission.
+      var interest = form.interest ? form.interest.value : null;
+      track('lead_form_submit', { interest: interest });
+    });
+  }
+})();
+</script>
+
 <!--
   BEFORE LAUNCH
-  1. Portrait is hotlinked from Zillow's CDN (photos.zillowstatic.com). Zillow can
-     change or remove that path at any time and the hero will break. Save the file
-     locally as /img/jeffrey-bowen.jpg and update the <img src> in the hero.
+  1. Portrait is already local (./heatshot.jpeg). Only the listing-card photos
+     are hotlinked from Zillow's CDN; see note 5.
   2. Replace the About placeholder with a second, non-headshot photo.
   3. Point the contact form at a real endpoint and remove the JS fallback above.
   4. Swap the three testimonial summaries for verbatim client text you have
@@ -1121,6 +1566,66 @@ document.getElementById('lead').addEventListener('submit', function (e) {
      Preview through a web server (`npm run serve`), not by opening index.html
      off the filesystem -- file:// blocks the fetch and you will see the "view on
      Zillow" fallback instead of the cards.
+  6. VIDEO TOURS. The section renders from videos.json, generated by
+     scripts/fetch-videos.mjs off the channel's public Atom feed
+     (youtube.com/feeds/videos.xml) -- no API key, no bot check. Refresh with:
+
+         npm run videos
+
+     The newest upload runs large, the next five sit beside it. Change how
+     many with --limit. Nothing embeds a YouTube player until a visitor
+     clicks: six iframes on load would pull megabytes of player JS and set
+     cookies for someone who never watched anything, so each tile is a
+     thumbnail until clicked, and the embeds use youtube-nocookie.
+
+     `npm run refresh` runs the listings and the video fetch together.
+
+  7. SEO. Everything is wired but pointed at a placeholder domain. Do these,
+     in order, and the page is ready to be found:
+
+     a. Swap the domain. Seven absolute URLs in this file plus robots.txt and
+        sitemap.xml all say https://REPLACE-ME.com:
+
+            grep -rl 'REPLACE-ME.com' . --exclude-dir=.git --exclude-dir=node_modules \
+              | xargs sed -i '' 's|https://REPLACE-ME.com|https://yourdomain.com|g'
+
+        (drop the '' after -i on Linux). Confirm none are left:
+            grep -r REPLACE-ME . --exclude-dir=.git
+
+     b. Google Search Console (search.google.com/search-console): add the
+        domain, verify by DNS, submit /sitemap.xml, then "Request indexing"
+        on the homepage. This is what gets the page into Google at all.
+
+     c. Google Business Profile. For a local agent this outranks almost
+        anything on-page -- it is what puts you in the map pack for
+        "realtor in Chelsea MA". Claim it, use the SAME name, address and
+        phone as the structured data in the head, and link it to this site.
+
+     d. Check the structured data at search.google.com/test/rich-results
+        after the domain swap. It should find RealEstateAgent, WebSite and
+        WebPage with no errors.
+
+     e. Replace the og:image. Social previews want a 1200x630 landscape image;
+        heatshot.jpeg is a 900x1200 portrait, so it will be cropped oddly when
+        the page is shared. Save a landscape version as /og-image.jpg and point
+        og:image and twitter:image at it.
+
+     Not done, and worth knowing: reviews are NOT marked up as schema. Google
+     forbids self-serving AggregateRating markup for a business on its own
+     site, and the testimonials here are summaries rather than verbatim quotes.
+     Real review stars come from the Google Business Profile in (c).
+
+  8. GOOGLE ANALYTICS. The snippet is in the head with a placeholder ID and a
+     guard, so nothing loads until you set it. Follow the numbered steps in the
+     GA4 comment block up there -- the only edit is one line:
+
+         window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+
+     Then, in GA4 Admin -> Events, mark `lead_form_submit` and `call_click` as
+     key events so they count as conversions. The four custom events are
+     documented in the analytics script near the foot of this file.
+     To verify: publish, open the site, then GA4 -> Reports -> Realtime.
+
 -->
 </body>
 </html>

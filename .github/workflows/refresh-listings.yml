@@ -1,7 +1,11 @@
-# Refreshes the Current listings / Recently sold sections once a day.
+# Refreshes the listings and the video tours once a day.
 #
-# Pulls Jeffrey's Zillow profile, regenerates listings.json, and commits the
-# result. If nothing on the profile changed, nothing is committed and the run
+# Two independent sources: Zillow (listings.json) and the YouTube channel's
+# public Atom feed (videos.json). YouTube is not bot-protected and works fine
+# from a runner; Zillow is the problem child, so its step is allowed to fail
+# without taking the videos down with it -- see below.
+#
+# Pulls both, regenerates the JSON, and commits the result. If nothing on the profile changed, nothing is committed and the run
 # is a no-op. Photos stay hotlinked to Zillow's CDN -- only the listing data is
 # stored in this repo.
 #
@@ -15,10 +19,10 @@
 #
 # If failures become routine rather than occasional, the fix is to run the
 # refresh from a residential connection instead: on Jeffrey's own machine,
-#     0 6 * * *  cd /path/to/site && npm run listings && git commit -am listings && git push
+#     0 6 * * *  cd /path/to/site && npm run refresh && git commit -am refresh && git push
 # or on a self-hosted runner.
 
-name: Refresh Zillow listings
+name: Refresh listings and videos
 
 on:
   schedule:
@@ -68,11 +72,26 @@ jobs:
         if: steps.pw-cache.outputs.cache-hit == 'true'
         run: npx playwright install-deps chromium
 
+      # Allowed to fail: Zillow blocks GitHub's IP ranges (PerimeterX shows the
+      # runner a "Press & Hold" wall even through headless Chromium). When it
+      # fails the script leaves the committed listings.json untouched, and the
+      # video refresh below still runs. Check this step's log if listings look
+      # stale. If it fails every day, move the listings refresh to a machine on
+      # a residential connection and drop this step.
       - name: Fetch listings from Zillow
+        id: listings
+        continue-on-error: true
         run: node scripts/fetch-listings.mjs
 
+      - name: Fetch videos from YouTube
+        run: node scripts/fetch-videos.mjs
+
+      - name: Note if the listings step was blocked
+        if: steps.listings.outcome == 'failure'
+        run: echo "::warning::Zillow blocked this runner; listings.json kept its previous contents. Videos still refreshed."
+
       - name: Show what changed
-        run: git --no-pager diff --stat -- listings.json
+        run: git --no-pager diff --stat -- listings.json videos.json
 
       - name: Commit and push if anything changed
         run: |
@@ -80,18 +99,18 @@ jobs:
 
           # generatedAt and fetchedVia change on every run, so a diff limited to
           # those is not a real change. Ignore them when deciding whether to commit.
-          if git diff --quiet -- listings.json \
-             || [ -z "$(git diff -U0 -- listings.json \
+          if git diff --quiet -- listings.json videos.json \
+             || [ -z "$(git diff -U0 -- listings.json videos.json \
                         | grep -E '^[+-]' \
                         | grep -vE '^(\+\+\+|---)' \
                         | grep -vE '"(generatedAt|fetchedVia)"')" ]; then
-            echo "No listing changes today — leaving the repo alone."
-            git checkout -- listings.json 2>/dev/null || true
+            echo "Nothing new today — leaving the repo alone."
+            git checkout -- listings.json videos.json 2>/dev/null || true
             exit 0
           fi
 
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add listings.json
-          git commit -m "Refresh Zillow listings ($(date -u +%Y-%m-%d))"
+          git add listings.json videos.json
+          git commit -m "Refresh listings and videos ($(date -u +%Y-%m-%d))"
           git push
