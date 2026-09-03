@@ -1098,22 +1098,28 @@ document.getElementById('lead').addEventListener('submit', function (e) {
      listings.json. Nothing about a property is written into this HTML file.
      Refresh the data with:
 
-         node scripts/fetch-listings.mjs
+         npm run listings          # = node scripts/fetch-listings.mjs
 
-     Node 18+, no dependencies. It reads the Zillow profile page's own
-     __NEXT_DATA__ JSON (Zillow has no public agent API) and rewrites
-     listings.json. Card photos are hotlinked to photos.zillowstatic.com, the
-     same as the hero portrait -- if Zillow ever moves those paths a card will
-     lose its image but keep its price, address and link.
+     It reads the Zillow profile page's own __NEXT_DATA__ JSON; Zillow has no
+     public agent API. Because Zillow fingerprints the request rather than just
+     the IP, the script tries hardened HTTP first and falls back to a headless
+     Chromium when it is handed a bot wall. That fallback needs a one-off:
 
-     .github/workflows/refresh-listings.yml runs the script daily at 10:00 UTC
-     (6am Eastern) and commits any change. Run it by hand from the Actions tab
-     any time. If a run fails -- Zillow bot check, schema change -- the script
-     exits non-zero and leaves the committed listings.json untouched, so the
-     live site keeps showing the last good data.
+         npm install && npx playwright install chromium
 
-     Preview through a web server (`npx serve .`), not by opening index.html off
-     the filesystem -- file:// blocks the fetch and you will see the "view on
+     Without Playwright the HTTP path still runs; it just cannot recover from a
+     block. Card photos are hotlinked to photos.zillowstatic.com, the same as
+     the hero portrait -- if Zillow moves those paths a card loses its image but
+     keeps its price, address and link.
+
+     .github/workflows/refresh-listings.yml runs the refresh daily at 10:00 UTC
+     (6am Eastern) and commits any change; run it by hand from the Actions tab
+     any time. Every failure mode -- bot wall, schema change, network -- exits
+     non-zero and leaves the committed listings.json untouched, so a bad day is
+     a skipped refresh, never a broken page.
+
+     Preview through a web server (`npm run serve`), not by opening index.html
+     off the filesystem -- file:// blocks the fetch and you will see the "view on
      Zillow" fallback instead of the cards.
 -->
 </body>

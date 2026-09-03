@@ -1,0 +1,19 @@
+{
+  "name": "bowen-realty-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page for The Bowen Realty Group, with listings pulled from Zillow.",
+  "type": "module",
+  "engines": {
+    "node": ">=18",
+    "//": "the site scripts run on Node 18+; the Playwright browser fallback needs Node 20+"
+  },
+  "scripts": {
+    "listings": "node scripts/fetch-listings.mjs",
+    "listings:browser": "node scripts/fetch-listings.mjs --browser",
+    "serve": "npx --yes serve ."
+  },
+  "devDependencies": {
+    "playwright": "^1.47.0"
+  }
+}
