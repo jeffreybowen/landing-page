@@ -701,6 +701,76 @@ form button:hover{background:var(--gold-lt)}
   .f2{grid-template-columns:1fr}
 }
 
+/* ---------- featured property ----------
+   One listing given the whole width, above the grid of everything else.
+   It links out to a dedicated page rather than expanding in place. */
+.feat{background:var(--ink-lt);color:var(--on-ink);border-top:1px solid var(--line-lt)}
+.feat-grid{
+  display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(26px,4vw,62px);
+  align-items:center;padding:clamp(48px,6.5vw,92px) 0;
+}
+.feat-tag{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--display);font-weight:600;font-size:11.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--gold-lt);
+  border:1px solid var(--line-lt);padding:7px 13px;margin-bottom:20px;
+}
+.feat-tag i{width:6px;height:6px;background:var(--gold);border-radius:50%;flex:0 0 auto}
+.feat h2{font-size:clamp(30px,4.4vw,52px);line-height:1}
+.feat h2 em{
+  font-style:normal;color:var(--gold-lt);font-weight:500;display:block;
+  font-size:.5em;letter-spacing:-.015em;margin-top:.44em;line-height:1.15;
+}
+.feat-sub{margin-top:20px;color:var(--on-ink-dim);font-size:17.5px;max-width:46ch;line-height:1.56}
+.feat-facts{
+  display:flex;flex-wrap:wrap;gap:0;margin-top:26px;
+  border-top:1px solid var(--line-lt);border-bottom:1px solid var(--line-lt);
+}
+.feat-facts div{padding:15px 22px 15px 0;margin-right:22px;border-right:1px solid var(--line-lt)}
+.feat-facts div:last-child{border-right:0;margin-right:0;padding-right:0}
+.feat-facts b{
+  display:block;font-family:var(--display);font-weight:700;font-size:21px;
+  letter-spacing:-.018em;line-height:1;color:var(--white);
+}
+.feat-facts small{
+  display:block;margin-top:6px;font-family:var(--display);font-weight:500;
+  font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--on-ink-dim);
+}
+.feat-price{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin:22px 0 0;
+  font-family:var(--display);font-weight:700;font-size:clamp(24px,2.8vw,32px);
+  letter-spacing:-.02em;line-height:1;color:var(--white);
+}
+.feat-price span{font-size:12.5px;font-weight:500;color:var(--on-ink-dim);letter-spacing:0}
+.feat-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.feat-shot{
+  position:relative;background:var(--ink);border:1px solid var(--line-lt);
+  display:flex;align-items:center;justify-content:center;
+  aspect-ratio:4/3;overflow:hidden;
+}
+.feat-shot img{width:100%;height:100%;object-fit:cover}
+.feat-shot-ph{
+  padding:22px;text-align:center;font-family:var(--display);
+  font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--grey-lt);line-height:1.6;
+}
+.feat-shot-ph b{display:block;font-size:13px;color:var(--on-ink-dim);letter-spacing:.09em;margin-bottom:5px}
+.feat-note{padding:0 0 clamp(30px,4vw,54px);font-size:13px;color:var(--grey-lt);max-width:80ch;margin:0}
+@media(max-width:900px){
+  .feat-grid{grid-template-columns:1fr;padding-bottom:clamp(34px,5vw,60px)}
+  .feat-shot{order:-1;aspect-ratio:16/10}
+}
+@media(max-width:560px){
+  /* Wrapping the flex row leaves a divider hanging beside the gap, so at
+     phone width the facts become an even two-by-two instead. */
+  .feat-facts{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .feat-facts div{padding:14px 0;margin:0;border-right:0}
+  .feat-facts div:nth-child(odd){padding-right:18px;border-right:1px solid var(--line-lt)}
+  .feat-facts div:nth-child(even){padding-left:18px}
+  .feat-facts div:nth-child(-n+2){border-bottom:1px solid var(--line-lt)}
+  .feat-acts .btn{width:100%;text-align:center}
+}
+
 /* ---------- footer ---------- */
 .foot{background:var(--ink-dk);color:var(--on-ink-dim);font-size:13.5px;padding:44px 0 52px}
 .foot-top{
@@ -771,6 +841,7 @@ main [id],#top{scroll-margin-top:86px}
     <a class="brand" href="#top">The Bowen Realty Group<span>Jeffrey Bowen &middot; ERealty Advisors Inc.</span></a>
     <nav id="site-nav">
       <button class="nav-book" type="button" data-book="">Book a meeting</button>
+      <a href="#featured">Featured</a>
       <a href="#listings">Listings</a>
       <a href="#sold">Recently sold</a>
       <a href="#about">About Jeffrey</a>
@@ -823,6 +894,44 @@ main [id],#top{scroll-margin-top:86px}
         <div class="fig"><b>$260K&ndash;$1.7M</b><small>Range Jeffrey works in</small></div>
       </div>
       <p class="figs-note">Figures cover The Bowen Realty Group, as published on Jeffrey&rsquo;s Zillow profile. Most of these homes sold within a few miles of Chelsea Square.</p>
+    </div>
+  </section>
+
+  <!-- FEATURED PROPERTY
+       Hand-maintained, unlike the listings grid below it, which comes from
+       listings.json. Point it at a different property by editing this block
+       and its page link. -->
+  <section class="feat" id="featured">
+    <div class="wrap">
+      <div class="feat-grid">
+        <div>
+          <span class="feat-tag"><i></i> Featured &middot; Coming Soon</span>
+          <h2>20 Harnden Street<em>The Elms &mdash; Wilmington, Massachusetts</em></h2>
+          <p class="feat-sub">A Colonial of 1795 beside Silver Lake, known for most of the last century as The Elms, brought back over a multi-year rehabilitation.</p>
+
+          <div class="feat-facts">
+            <div><b>7</b><small>Bedrooms</small></div>
+            <div><b>6</b><small>Full baths</small></div>
+            <div><b>4,220</b><small>Sq ft</small></div>
+            <div><b>10</b><small>Fireplaces</small></div>
+          </div>
+
+          <p class="feat-price">$1,395,000<span>MLS #73579413</span></p>
+
+          <div class="feat-acts">
+            <a class="btn" href="./20-harnden-street-wilmington-ma.html">Explore the property</a>
+            <a class="btn ghost" href="./20-harnden-street-wilmington-ma.html#history">The history of The Elms</a>
+          </div>
+        </div>
+
+        <figure class="feat-shot" style="margin:0">
+          <!-- <img src="./media/05-completed-exterior/front-elevation.jpg"
+                  alt="The Elms at 20 Harnden Street, Wilmington, Massachusetts, after rehabilitation"
+                  width="1600" height="1200" loading="lazy" decoding="async"> -->
+          <div class="feat-shot-ph"><b>Featured image</b>The Elms &middot; front elevation</div>
+        </figure>
+      </div>
+      <p class="feat-note">Listed by eRealty Advisors, Inc. MLS #73579413. Active September 28, 2026; open houses October 3 and 4, 1&ndash;3 p.m. Details are deemed reliable but not guaranteed and should be independently verified.</p>
     </div>
   </section>
 
@@ -1073,6 +1182,7 @@ main [id],#top{scroll-margin-top:86px}
       <div>
         <b>Pages</b>
         <div class="foot-links">
+          <a href="#featured">Featured property</a>
           <a href="#listings">Listings</a>
           <a href="#sold">Recently sold</a>
           <a href="#about">About</a>
@@ -1334,7 +1444,7 @@ document.getElementById('lead').addEventListener('submit', function (e) {
 
   // Everything already in the document. The hero is left alone -- it has its
   // own page-load reveal (.rv) and is above the fold anyway.
-  document.querySelectorAll('.sec .sec-head, .about-grid > *, .contact-grid > *')
+  document.querySelectorAll('.sec .sec-head, .about-grid > *, .contact-grid > *, .feat-grid > *')
     .forEach(function (el) { reveal(el); });
 
   // Grids stagger: each item follows the one before it by a beat.
