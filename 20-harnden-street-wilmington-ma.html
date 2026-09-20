@@ -99,6 +99,16 @@
       "seller": { "@id": "https://REPLACE-ME.com/#jeffrey" }
     },
     {
+      "@type": "VideoObject",
+      "name": "20 Harnden St. Wilmington MA 01887. General Harnden's Home restored. For sale by Jeffrey Bowen",
+      "description": "A walkthrough of The Elms, the Henry Harnden House at 20 Harnden Street, Wilmington, Massachusetts, after its rehabilitation.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/nduKIXd-a8E/maxresdefault.jpg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/nduKIXd-a8E",
+      "contentUrl": "https://www.youtube.com/watch?v=nduKIXd-a8E",
+      "COMMENT": "Add uploadDate (YYYY-MM-DD) from the YouTube video page; Google needs it for video rich results.",
+      "publisher": { "@type": "Person", "name": "Jeffrey Bowen", "url": "https://www.youtube.com/@JeffreyBowen" }
+    },
+    {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://REPLACE-ME.com/" },
@@ -110,6 +120,7 @@
 </script>
 
 <link rel="preconnect" href="https://i0.wp.com">
+<link rel="preconnect" href="https://i.ytimg.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
@@ -406,6 +417,50 @@ button.shot img{transition:transform .5s cubic-bezier(.2,.7,.3,1)}
   .lb-btn{width:44px;height:44px;top:auto;bottom:14px;transform:none}
   .lb-close{top:14px;bottom:auto}
   .lb img{max-height:68vh}
+}
+
+/* ---------- video ----------
+   The poster and play control are the whole embed until pressed; the iframe
+   replaces them in place, so the layout does not move. */
+.vid{position:relative;aspect-ratio:16/9;background:var(--ink);overflow:hidden;border:1px solid var(--line)}
+.vid-poster{width:100%;height:100%;object-fit:cover;display:block}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid-play{
+  position:absolute;inset:0;width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(12,12,12,.3);border:0;cursor:pointer;padding:0;
+  transition:background .25s ease;
+}
+.vid-play:hover{background:rgba(12,12,12,.14)}
+.vid-play-ico{
+  width:82px;height:82px;border-radius:50%;
+  background:var(--gold);border:1px solid var(--gold-lt);
+  display:block;position:relative;
+  transition:transform .25s ease;
+}
+.vid-play:hover .vid-play-ico{transform:scale(1.07)}
+.vid-play-ico::after{
+  content:"";position:absolute;top:50%;left:54%;transform:translate(-50%,-50%);
+  border-style:solid;border-width:15px 0 15px 25px;
+  border-color:transparent transparent transparent var(--ink-dk);
+}
+.vid-meta{
+  position:absolute;left:0;right:0;bottom:0;margin:0;
+  padding:26px 22px 16px;font-size:13.5px;color:var(--on-ink-dim);
+  background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,0));
+  pointer-events:none;
+}
+.vid-meta b{display:block;font-family:var(--display);font-size:15px;color:var(--white);margin-bottom:3px}
+.vid-meta a{color:var(--gold-lt);pointer-events:auto}
+.vid.is-live .vid-play,.vid.is-live .vid-poster,.vid.is-live .vid-meta{display:none}
+@media(max-width:620px){
+  .vid-play-ico{width:62px;height:62px}
+  .vid-play-ico::after{border-width:12px 0 12px 20px}
+  .vid-meta{padding:22px 16px 13px;font-size:12.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  .vid-play,.vid-play-ico{transition:none}
+  .vid-play:hover .vid-play-ico{transform:none}
 }
 
 /* ---------- transformation ---------- */
@@ -822,20 +877,28 @@ main [id],#top{scroll-margin-top:86px}
       <div class="sec-head">
         <span class="kicker">Film</span>
         <h2>Property tour</h2>
-        <p>A walkthrough of the house and grounds. A longer historical film is planned separately.</p>
+        <p>Jeffrey walks the house and grounds. A longer historical film is planned separately.</p>
       </div>
 
       <!-- VIDEO
-           Swap the placeholder for a privacy-friendly embed once the tour is
-           cut. Use youtube-nocookie.com and load on click rather than on page
-           load, so a visitor who never plays it is never tracked:
-
-           <div class="shot"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
-                title="Property tour of The Elms, 20 Harnden Street, Wilmington MA"
-                loading="lazy" allowfullscreen
-                style="width:100%;height:100%;border:0"></iframe></div> -->
-      <div class="shot" style="background:#E8E4DC;border-color:var(--line);aspect-ratio:16/9">
-        <div class="shot-ph" style="color:var(--grey)"><b style="color:var(--ink)">Video tour</b>Embed &middot; 16:9 &middot; coming shortly</div>
+           A facade, not an iframe: YouTube is only contacted once the
+           visitor presses play. Nothing third-party loads before that, which
+           matters on a page that runs without a consent banner. The embed
+           uses youtube-nocookie.com and starts at 4s, where the tour begins. -->
+      <div class="vid" id="vid" data-video="nduKIXd-a8E" data-start="4">
+        <img class="vid-poster"
+             src="https://i.ytimg.com/vi/nduKIXd-a8E/maxresdefault.jpg"
+             onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/nduKIXd-a8E/hqdefault.jpg'"
+             alt="Still from the property tour of The Elms, 20 Harnden Street, Wilmington"
+             width="1280" height="720" loading="lazy" decoding="async">
+        <button class="vid-play" type="button" aria-label="Play the property tour">
+          <span class="vid-play-ico" aria-hidden="true"></span>
+        </button>
+        <p class="vid-meta">
+          <b>20 Harnden St. Wilmington MA 01887</b>
+          Filmed and narrated by Jeffrey Bowen &middot;
+          <a href="https://www.youtube.com/watch?v=nduKIXd-a8E&amp;t=4s" target="_blank" rel="noopener">Watch on YouTube</a>
+        </p>
       </div>
     </div>
   </section>
@@ -1388,6 +1451,26 @@ main [id],#top{scroll-margin-top:86px}
     .forEach(function (sel) {
       document.querySelectorAll(sel).forEach(function (el, i) { reveal(el, i * 70); });
     });
+
+  /* ---------- video ----------
+     One listener; the iframe is built on demand so nothing is requested from
+     YouTube until the visitor asks for it. */
+  var vid = document.getElementById('vid');
+  if (vid) {
+    var playBtn = vid.querySelector('.vid-play');
+    playBtn.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + vid.dataset.video +
+              '?start=' + (vid.dataset.start || 0) + '&autoplay=1&rel=0&modestbranding=1';
+      f.title = 'Property tour of The Elms, 20 Harnden Street, Wilmington MA';
+      f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+      f.allowFullscreen = true;
+      f.referrerPolicy = 'strict-origin-when-cross-origin';
+      vid.appendChild(f);
+      vid.classList.add('is-live');
+      if (window.gtag) window.gtag('event', 'video_play', { video_id: vid.dataset.video });
+    });
+  }
 
   /* ---------- lightbox ----------
      Groups are per-section, so Next inside the gallery does not wander off
