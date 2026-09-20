@@ -39,7 +39,9 @@
 <meta property="og:url" content="https://REPLACE-ME.com/20-harnden-street-wilmington-ma.html">
 <meta property="og:title" content="The Elms | 20 Harnden Street, Wilmington, Massachusetts">
 <meta property="og:description" content="A 1795 Colonial known as The Elms, rehabilitated top to bottom. Seven bedrooms, six baths, ten fireplaces, 4,220 square feet. Coming soon at $1,395,000.">
-<meta property="og:image" content="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1200&#38;h=630&#38;crop=1&#38;quality=82&#38;ssl=1">
+<!-- Cropped to the top 72% before resizing: a straight 1200x630 centre crop
+     cuts the roofline and fills the card with patchy lawn. -->
+<meta property="og:image" content="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?crop=0px,0px,100pct,72pct&#38;resize=1200,630&#38;quality=82&#38;ssl=1">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The front elevation of The Elms, 20 Harnden Street, Wilmington, Massachusetts">
@@ -47,7 +49,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Elms | 20 Harnden Street, Wilmington, Massachusetts">
 <meta name="twitter:description" content="A 1795 Colonial known as The Elms, rehabilitated top to bottom. Coming soon at $1,395,000.">
-<meta name="twitter:image" content="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1200&#38;h=630&#38;crop=1&#38;quality=82&#38;ssl=1">
+<meta name="twitter:image" content="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?crop=0px,0px,100pct,72pct&#38;resize=1200,630&#38;quality=82&#38;ssl=1">
 
 <!-- Structured data. Three things are being said here: this page is about a
      specific house, that house is offered for sale by a named agent, and the
@@ -293,6 +295,11 @@ p:last-child{margin-bottom:0}
 .shot-ph b{display:block;font-size:13px;color:var(--on-ink-dim);letter-spacing:.09em;margin-bottom:5px}
 .ph-shot{margin-top:clamp(30px,4vw,48px)}
 .ph-shot .shot{aspect-ratio:16/7}
+/* The hero sits high on the facade: at 16:7 the frame has to lose a third of
+   the picture, and the front lawn is patchy, so it comes off the bottom
+   rather than the roofline. On phones the frame is 4:3, wider than the
+   photograph is tall, so it crops at the sides instead and this does nothing. */
+.ph-shot .shot img{object-position:center 10%}
 .ph-cap{
   margin-top:11px;font-size:12.5px;color:var(--on-ink-dim);
   display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:space-between;
