@@ -1,3 +1,6 @@
 node_modules/
 *.tmp
 .DS_Store
+
+# screenshots the Claude desktop app drops here; not site assets
+Claude outputs/
