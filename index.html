@@ -8,41 +8,769 @@
      visible if scripts never run. Inline and first, to beat the first paint. -->
 <script>document.documentElement.className+=" js"</script>
 
-<!-- SEO:START -->
+<!-- ============================ SEO ============================
+     SITE URL: every absolute URL below uses https://REPLACE-ME.com.
+     Once the domain is settled, swap them all in one go:
+
+         cd /path/to/site
+         grep -rl 'REPLACE-ME.com' . --exclude-dir=.git --exclude-dir=node_modules \
+           | xargs sed -i '' 's|https://REPLACE-ME.com|https://yourdomain.com|g'
+
+     (drop the '' after -i on Linux). Then resubmit the sitemap in Search
+     Console. Until that swap, canonical/og:url/sitemap point nowhere -- which
+     is safe, but the page will not rank properly.
+     ============================================================== -->
+
 <title>Jeffrey Bowen | Chelsea &amp; East Boston Real Estate Broker</title>
-<meta name="description" content="Buy or sell a condo, house or multifamily with Jeffrey Bowen at eRealty Advisors. Explore Chelsea and East Boston real estate and request a consultation.">
-<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="description" content="Chelsea, East Boston, Everett and Malden real estate. Jeffrey Bowen has sold condos, triple-deckers and multifamily here since 2001. Se habla espanol.">
+<link rel="canonical" href="https://REPLACE-ME.com/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Jeffrey Bowen">
 <meta name="theme-color" content="#0C0C0C">
+
+<!-- Local signals. Not ranking factors on their own, but they help the
+     "near me" and map-pack surfaces read the page correctly. -->
+<meta name="geo.region" content="US-MA">
+<meta name="geo.placename" content="Chelsea, Massachusetts">
+<meta name="geo.position" content="42.3918;-71.0328">
+<meta name="ICBM" content="42.3918, -71.0328">
+
+<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Bowen Realty Group">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://REPLACE-ME.com/">
 <meta property="og:title" content="Jeffrey Bowen | Chelsea &amp; East Boston Real Estate Broker">
-<meta property="og:description" content="Buy or sell a condo, house or multifamily with Jeffrey Bowen at eRealty Advisors. Explore Chelsea and East Boston real estate and request a consultation.">
-<meta name="twitter:card" content="summary">
+<meta property="og:description" content="24 years selling condos, lofts, triple-deckers and multifamily in Chelsea, East Boston, Everett and Malden. 716 closings. Se habla espanol.">
+<meta property="og:image" content="https://REPLACE-ME.com/heatshot.jpeg">
+<meta property="og:image:alt" content="Jeffrey Bowen, real estate broker associate in Chelsea, Massachusetts">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Jeffrey Bowen | Chelsea &amp; East Boston Real Estate Broker">
-<meta name="twitter:description" content="Buy or sell a condo, house or multifamily with Jeffrey Bowen at eRealty Advisors. Explore Chelsea and East Boston real estate and request a consultation.">
-<link rel="canonical" href="https://jeffreybowen.com/">
-<meta property="og:url" content="https://jeffreybowen.com/">
-<meta property="og:image" content="https://jeffreybowen.com/heatshot.jpeg">
-<meta name="twitter:image" content="https://jeffreybowen.com/heatshot.jpeg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"RealEstateAgent","@id":"https://jeffreybowen.com/#business","name":"The Bowen Realty Group","telephone":"+1-781-201-9488","email":"Info@chelseaRealestate.com","areaServed":["Chelsea, MA","East Boston, Boston, MA","Everett, MA","Malden, MA","Revere, MA"],"parentOrganization":{"@type":"Organization","name":"eRealty Advisors, Inc."},"sameAs":["https://www.zillow.com/profile/JeffreyBowen"],"url":"https://jeffreybowen.com/","image":"https://jeffreybowen.com/heatshot.jpeg"},{"@type":"Person","@id":"https://jeffreybowen.com/#jeffrey","name":"Jeffrey Bowen","jobTitle":"Real Estate Broker Associate","worksFor":{"@id":"https://jeffreybowen.com/#business"}},{"@type":"WebSite","@id":"https://jeffreybowen.com/#website","url":"https://jeffreybowen.com/","name":"The Bowen Realty Group","publisher":{"@id":"https://jeffreybowen.com/#business"}},{"@type":"WebPage","@id":"https://jeffreybowen.com/#webpage","url":"https://jeffreybowen.com/","name":"Jeffrey Bowen | Chelsea & East Boston Real Estate Broker","description":"Buy or sell a condo, house or multifamily with Jeffrey Bowen at eRealty Advisors. Explore Chelsea and East Boston real estate and request a consultation.","isPartOf":{"@id":"https://jeffreybowen.com/#website"},"about":{"@id":"https://jeffreybowen.com/#jeffrey"},"inLanguage":"en-US"}]}</script>
-<!-- SEO:END -->
-<script src="site-config.js"></script>
-<script src="analytics.js" defer></script>
+<meta name="twitter:description" content="24 years selling condos, lofts, triple-deckers and multifamily in Chelsea, East Boston, Everett and Malden. 716 closings. Se habla espanol.">
+<meta name="twitter:image" content="https://REPLACE-ME.com/heatshot.jpeg">
+
+<!-- Structured data. This is the part that actually moves the needle for a
+     local agent: it tells Google this page IS a real-estate business, where it
+     operates, how to contact it, and which reviews belong to it. Validate any
+     change at https://search.google.com/test/rich-results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://REPLACE-ME.com/#agency",
+      "name": "The Bowen Realty Group",
+      "alternateName": "Jeffrey Bowen, eRealty Advisors",
+      "url": "https://REPLACE-ME.com/",
+      "image": "https://REPLACE-ME.com/heatshot.jpeg",
+      "logo": "https://REPLACE-ME.com/heatshot.jpeg",
+      "telephone": "+1-781-201-9488",
+      "faxNumber": "+1-866-885-9139",
+      "email": "Info@chelseaRealestate.com",
+      "priceRange": "$$",
+      "currenciesAccepted": "USD",
+      "knowsLanguage": ["en-US", "es"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "9 Canal Street",
+        "addressLocality": "Boston",
+        "addressRegion": "MA",
+        "postalCode": "02114",
+        "addressCountry": "US"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 42.3918, "longitude": -71.0328 },
+      "areaServed": [
+        { "@type": "City", "name": "Chelsea", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "Place", "name": "East Boston, Boston, MA" },
+        { "@type": "City", "name": "Everett", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Malden", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Revere", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Medford", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Somerville", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Winthrop", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Cambridge", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "Place", "name": "Charlestown, Boston, MA" },
+        { "@type": "Place", "name": "South Boston, Boston, MA" },
+        { "@type": "AdministrativeArea", "name": "Suffolk County, MA" },
+        { "@type": "AdministrativeArea", "name": "Middlesex County, MA" }
+      ],
+      "founder": { "@id": "https://REPLACE-ME.com/#jeffrey" },
+      "employee": { "@id": "https://REPLACE-ME.com/#jeffrey" },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "eRealty Advisors, Inc.",
+        "identifier": "MA Broker License #1000215-RE-RB"
+      },
+      "sameAs": [
+        "https://www.zillow.com/profile/JeffreyBowen",
+        "https://www.youtube.com/@JeffreyBowen"
+      ]
+    },
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://REPLACE-ME.com/#jeffrey",
+      "name": "Jeffrey Bowen",
+      "jobTitle": "Broker Associate",
+      "url": "https://REPLACE-ME.com/",
+      "image": "https://REPLACE-ME.com/heatshot.jpeg",
+      "telephone": "+1-781-201-9488",
+      "email": "Info@chelseaRealestate.com",
+      "knowsLanguage": ["en-US", "es"],
+      "identifier": "MA Real Estate Broker License #9068834",
+      "worksFor": { "@id": "https://REPLACE-ME.com/#agency" },
+      "sameAs": [
+        "https://www.zillow.com/profile/JeffreyBowen",
+        "https://www.youtube.com/@JeffreyBowen"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://REPLACE-ME.com/#website",
+      "url": "https://REPLACE-ME.com/",
+      "name": "The Bowen Realty Group",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://REPLACE-ME.com/#agency" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://REPLACE-ME.com/#webpage",
+      "url": "https://REPLACE-ME.com/",
+      "name": "Jeffrey Bowen | Chelsea & East Boston Real Estate Broker",
+      "isPartOf": { "@id": "https://REPLACE-ME.com/#website" },
+      "about": { "@id": "https://REPLACE-ME.com/#agency" },
+      "primaryImageOfPage": "https://REPLACE-ME.com/heatshot.jpeg",
+      "inLanguage": "en-US"
+    }
+  ]
+}
+</script>
+
+<!-- ===================== Google Analytics 4 =====================
+     TO TURN THIS ON:
+       1. analytics.google.com -> Admin -> Create -> Property
+          ("The Bowen Realty Group", United States, US Dollar)
+       2. Business objectives -> Generate leads
+       3. Data streams -> Web -> enter the site URL -> Create stream
+       4. Copy the Measurement ID at the top right. It looks like G-ABC1234XYZ.
+       5. Replace G-XXXXXXXXXX on the next line with it. That is the only edit.
+
+     Until then the ID is still a placeholder and the guard below skips loading
+     gtag entirely -- no requests, no console errors, nothing to clean up.
+     =============================================================== -->
+<script>
+  window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+</script>
+<script>
+(function () {
+  var id = window.GA_MEASUREMENT_ID;
+  if (!id || id.indexOf('XXXX') !== -1) return;   // not configured yet
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', id);
+
+  var tag = document.createElement('script');
+  tag.async = true;
+  tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+  document.head.appendChild(tag);
+})();
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css">
+<style>
+:root{
+  /* Black, gold and ivory. The ink scale is deliberately not pure #000 at the
+     text weight -- a hair off black reads softer on an ivory ground -- while
+     the darkest step stays true black for the full-bleed bands. */
+  --ink:#0C0C0C;
+  --ink-dk:#000000;
+  --ink-lt:#1E1E1E;
+  --gold:#C29B40;
+  --gold-lt:#DCC188;
+  --ivory:#F7F5F1;
+  --white:#FFFFFF;
+  --grey:#6A6A6A;
+  --grey-lt:#9B9B9B;
+  --on-ink:#EDEDED;
+  --on-ink-dim:#A9A9A9;
+  --line:rgba(0,0,0,.16);
+  --line-lt:rgba(237,237,237,.22);
+  --display:"Archivo",system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,serif;
+  --gut:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ivory);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.62;
+  font-optical-sizing:auto;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--gut)}
+.prose{max-width:64ch}
+
+h1,h2,h3{
+  font-family:var(--display);font-weight:700;
+  letter-spacing:-.022em;line-height:1.02;margin:0;
+  text-wrap:balance;
+}
+h2{font-size:clamp(29px,4.2vw,50px)}
+h3{font-size:clamp(20px,2vw,24px);letter-spacing:-.015em;line-height:1.14}
+p{margin:0 0 1.05em}
+p:last-child{margin-bottom:0}
+
+/* ---------- masthead ---------- */
+.bar{
+  position:sticky;top:0;z-index:60;background:var(--ink);color:var(--on-ink);
+  border-bottom:1px solid var(--line-lt);
+}
+.bar-in{
+  display:flex;align-items:center;gap:18px;
+  min-height:62px;padding:8px var(--gut);max-width:1240px;margin:0 auto;
+}
+.brand{
+  font-family:var(--display);font-weight:600;font-size:15px;
+  letter-spacing:.005em;line-height:1.15;text-decoration:none;margin-right:auto;
+}
+.brand span{display:block;font-weight:500;font-size:11.5px;color:var(--on-ink-dim)}
+.bar nav{display:flex;gap:22px;font-family:var(--display);font-size:13.5px;font-weight:500}
+.bar nav a{text-decoration:none;padding:4px 0;border-bottom:1px solid transparent}
+.bar nav a:hover{border-bottom-color:var(--gold)}
+.bar-call{
+  font-family:var(--display);font-weight:600;font-size:14px;text-decoration:none;
+  background:var(--gold);color:var(--ink-dk);padding:9px 15px;
+}
+.bar-call:hover{background:var(--gold-lt)}
+
+/* Booking, always reachable from the masthead. Outlined rather than gold so it
+   sits beside the phone number without two CTAs shouting at each other. */
+.bar-book{
+  font-family:var(--display);font-weight:600;font-size:14px;cursor:pointer;
+  background:transparent;color:var(--on-ink);
+  border:1px solid var(--line-lt);padding:9px 15px;
+  transition:border-color .18s ease,color .18s ease;
+}
+.bar-book:hover{border-color:var(--gold);color:var(--gold-lt)}
+/* In the mobile panel the same action is a full-width row instead. */
+.nav-book{display:none}
+
+/* mobile menu toggle -- hidden on desktop, where the inline nav is used */
+.bar-toggle{
+  display:none;flex:0 0 auto;width:38px;height:38px;margin-left:2px;
+  align-items:center;justify-content:center;background:transparent;
+  border:1px solid var(--line-lt);color:var(--on-ink);padding:0;cursor:pointer;
+}
+.bar-toggle:hover{border-color:var(--gold)}
+.bar-toggle-box{position:relative;width:18px;height:12px}
+.bar-toggle-box span{
+  position:absolute;left:0;right:0;height:2px;background:currentColor;
+  transition:transform .5s ease,opacity .5s ease;
+}
+.bar-toggle-box span:nth-child(1){top:0}
+.bar-toggle-box span:nth-child(2){top:5px}
+.bar-toggle-box span:nth-child(3){top:10px}
+.bar-toggle[aria-expanded="true"] .bar-toggle-box span:nth-child(1){top:5px;transform:rotate(45deg)}
+.bar-toggle[aria-expanded="true"] .bar-toggle-box span:nth-child(2){opacity:0}
+.bar-toggle[aria-expanded="true"] .bar-toggle-box span:nth-child(3){top:5px;transform:rotate(-45deg)}
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+@media(max-width:860px){
+  .bar-in{position:relative}
+  .bar-toggle{display:inline-flex}
+  .bar nav{
+    display:flex;flex-direction:column;gap:0;
+    position:absolute;top:100%;left:0;right:0;z-index:1;
+    background:var(--ink);border-bottom:1px solid var(--line-lt);
+    max-height:0;overflow:hidden;visibility:hidden;
+    transition:max-height .8s ease;
+  }
+  .bar nav.is-open{max-height:70vh;overflow-y:auto;visibility:visible}
+  .bar nav a{
+    padding:15px var(--gut);border-bottom:1px solid var(--line-lt);
+    font-size:15px;
+  }
+  /* The masthead has no room for both at this width, so booking moves into
+     the menu and leads it. */
+  .bar-book{display:none}
+  .nav-book{
+    display:block;width:100%;text-align:left;cursor:pointer;
+    font-family:var(--display);font-weight:600;font-size:15px;
+    padding:15px var(--gut);border:0;border-bottom:1px solid var(--line-lt);
+    background:var(--gold);color:var(--ink-dk);
+  }
+  .nav-book:hover{background:var(--gold-lt)}
+}
+@media(prefers-reduced-motion:reduce){.bar-toggle-box span{transition:none}.bar nav{transition:none}}
+
+/* ---------- hero ---------- */
+.hero{background:var(--ink);color:var(--on-ink);overflow:hidden}
+.hero-grid{
+  display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,4vw,60px);
+  align-items:end;padding:clamp(48px,7vw,96px) 0 0;
+}
+.hero h1{font-size:clamp(38px,6.9vw,80px);line-height:.99;letter-spacing:-.028em}
+.hero h1 em{font-style:normal;color:var(--gold-lt);font-weight:500}
+.hero-sub{
+  font-size:clamp(17px,1.5vw,20.5px);color:var(--on-ink-dim);max-width:44ch;
+  margin-top:26px;line-height:1.55;
+}
+.hero-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.btn{
+  display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;
+  line-height:1.2;text-decoration:none;cursor:pointer;
+  padding:14px 22px;border:1px solid var(--gold);
+  background:var(--gold);color:var(--ink-dk);
+}
+.hero-alt{margin:14px 0 0;font-size:15px}
+.hero-alt a{
+  color:var(--on-ink-dim);text-decoration:none;border-bottom:1px solid var(--line-lt);
+  padding-bottom:2px;
+}
+.hero-alt a:hover{color:var(--gold-lt);border-bottom-color:var(--gold)}
+.btn:hover{background:var(--gold-lt);border-color:var(--gold-lt)}
+.btn.ghost{background:transparent;color:var(--on-ink);border-color:var(--line-lt)}
+.btn.ghost:hover{background:transparent;border-color:var(--gold);color:var(--gold-lt)}
+.hero-lang{
+  margin-top:22px;padding-top:16px;border-top:1px solid var(--line-lt);
+  font-size:15px;color:var(--on-ink-dim);max-width:42ch;
+}
+/* Portrait. Self-host this image before launch — see note in the README comment
+   at the foot of this file. Currently served from Zillow's CDN. */
+.hero-portrait{
+  position:relative;align-self:end;min-height:clamp(300px,42vw,480px);
+  background:var(--ink-lt);border:1px solid var(--line-lt);border-bottom:0;
+  overflow:hidden;
+}
+.hero-portrait img{
+  width:100%;height:100%;position:absolute;inset:0;
+  object-fit:cover;object-position:50% 22%;
+}
+.hero-portrait figcaption{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:34px 20px 16px;
+  background:linear-gradient(to top,rgba(0,0,0,.92),rgba(0,0,0,0));
+  font-family:var(--display);font-weight:600;font-size:14px;color:var(--on-ink);
+}
+.hero-portrait figcaption span{
+  display:block;font-weight:500;font-size:12px;color:var(--gold-lt);margin-top:3px;
+}
+@media(max-width:820px){
+  .hero-grid{grid-template-columns:1fr;padding-bottom:0}
+  .hero-portrait{min-height:330px;order:-1;margin-bottom:10px}
+  .hero-portrait img{object-position:50% 18%}
+}
+
+/* ---------- figures strip ---------- */
+.figs{background:var(--ink-dk);color:var(--on-ink)}
+.figs-in{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line-lt)}
+.fig{padding:26px 22px;border-right:1px solid var(--line-lt)}
+.fig b{
+  display:block;font-family:var(--display);font-weight:600;color:var(--gold-lt);
+  font-size:clamp(25px,3vw,36px);letter-spacing:-.02em;line-height:1;
+}
+.fig small{display:block;margin-top:8px;font-size:13.5px;color:var(--on-ink-dim);line-height:1.4}
+.figs-note{padding:13px 0 22px;font-size:13px;color:var(--grey-lt);max-width:70ch}
+@media(max-width:720px){.figs-in{grid-template-columns:1fr 1fr}}
+
+/* ---------- generic section ---------- */
+.sec{padding:clamp(58px,7.5vw,104px) 0}
+.sec-head{margin-bottom:clamp(28px,3.5vw,46px);max-width:62ch}
+.sec-head p{margin-top:16px;color:var(--grey);font-size:17.5px}
+
+/* ---------- ledger (the bold element) ---------- */
+.ledger{border-top:2px solid var(--ink)}
+.row{
+  display:grid;grid-template-columns:1fr auto;gap:6px 28px;
+  align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line);
+}
+.row-addr{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(21px,2.8vw,33px);letter-spacing:-.025em;line-height:1.04;
+}
+.row-meta{grid-column:1;font-size:14.5px;color:var(--grey)}
+.row-price{
+  grid-row:1;grid-column:2;font-family:var(--display);font-weight:600;
+  font-size:clamp(19px,2.2vw,26px);letter-spacing:-.015em;white-space:nowrap;
+}
+.row-side{
+  grid-row:2;grid-column:2;font-family:var(--display);font-weight:600;
+  font-size:12px;color:var(--gold);text-align:right;
+}
+.ledger-more{
+  display:inline-block;margin-top:26px;font-family:var(--display);font-weight:600;
+  font-size:15px;color:var(--ink);border-bottom:1px solid var(--gold);
+  text-decoration:none;padding-bottom:2px;
+}
+.ledger-more:hover{color:var(--gold)}
+@media(max-width:600px){
+  .row{grid-template-columns:1fr}
+  .row-price{grid-row:auto;grid-column:1}
+  .row-side{grid-row:auto;grid-column:1;text-align:left}
+}
+
+/* ---------- listing cards (rendered from listings.json) ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px)}
+@media(max-width:980px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.cards{grid-template-columns:1fr}}
+.card{
+  display:flex;flex-direction:column;text-decoration:none;background:var(--white);
+  border:1px solid var(--line);transition:border-color .18s ease,transform .18s ease;
+}
+.card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.card-ph{position:relative;aspect-ratio:4/3;background:var(--ink-lt);overflow:hidden}
+.card-ph img{width:100%;height:100%;object-fit:cover}
+.tag{
+  position:absolute;top:0;left:0;z-index:2;font-family:var(--display);font-weight:600;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  background:var(--gold);color:var(--ink-dk);padding:6px 11px;
+}
+.tag.sold{background:var(--ink);color:var(--on-ink)}
+.card-b{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.card-price{
+  font-family:var(--display);font-weight:700;font-size:clamp(22px,2.4vw,28px);
+  letter-spacing:-.024em;line-height:1;
+}
+.card-addr{
+  font-family:var(--display);font-weight:600;font-size:16px;line-height:1.28;
+  margin-top:10px;letter-spacing:-.012em;
+}
+.card-city{font-size:14px;color:var(--grey);margin-top:3px}
+.card-specs{
+  display:flex;flex-wrap:wrap;gap:0 15px;margin-top:14px;padding-top:13px;
+  border-top:1px solid var(--line);font-family:var(--display);font-size:13px;
+  font-weight:500;color:var(--grey);
+}
+.card-specs b{font-weight:700;color:var(--ink)}
+.card-note{margin:11px 0 0;font-family:var(--display);font-weight:600;font-size:12.5px;color:var(--gold)}
+.card-note.muted{color:var(--grey);font-weight:500}
+.card-cta{
+  margin-top:auto;padding-top:16px;font-family:var(--display);font-weight:600;font-size:13.5px;
+}
+.card-cta i{font-style:normal;border-bottom:1px solid var(--gold);padding-bottom:2px}
+.card:hover .card-cta i{color:var(--gold)}
+.cards-note{margin-top:24px;font-size:13px;color:var(--grey);max-width:76ch}
+.cards-fallback{
+  border:1px solid var(--line);background:var(--white);padding:26px;
+  font-size:16px;color:var(--grey);
+}
+.skel{border:1px solid var(--line);background:var(--white)}
+.skel-ph{aspect-ratio:4/3;background:linear-gradient(100deg,#E7E5E2 30%,#F1EFEC 50%,#E7E5E2 70%);
+  background-size:220% 100%;animation:sh 1.3s linear infinite}
+.skel-b{padding:20px}
+.skel-l{height:12px;background:#E7E5E2;margin-bottom:11px}
+.skel-l.w1{width:45%;height:20px}
+.skel-l.w2{width:75%}
+.skel-l.w3{width:55%}
+@keyframes sh{to{background-position:-220% 0}}
+@media(prefers-reduced-motion:reduce){.skel-ph{animation:none}.card{transition:none}}
+.sold-wrap{background:var(--white)}
+.sold-wrap .card,.sold-wrap .cards-fallback,.sold-wrap .skel{background:var(--ivory)}
+
+/* ---------- about ---------- */
+.about{background:var(--white)}
+.about-grid{
+  display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4.5vw,66px);
+  align-items:start;
+}
+.about-photo{
+  position:sticky;top:86px;
+  background:#E6E4E1;border:1px solid var(--line);
+  aspect-ratio:1080/1350;          /* the file's real proportions */
+  overflow:hidden;
+}
+.about-photo img{
+  width:100%;height:100%;object-fit:cover;object-position:50% 28%;
+}
+.about-body h2{margin-bottom:22px}
+.spec{
+  list-style:none;padding:0;margin:30px 0 0;
+  display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);
+}
+.spec li{
+  padding:12px 0;border-bottom:1px solid var(--line);
+  font-family:var(--display);font-weight:600;font-size:15px;
+}
+.spec li:nth-child(odd){padding-right:16px}
+.creds{
+  margin-top:32px;padding:20px 22px;background:var(--ivory);
+  border-left:3px solid var(--gold);font-size:15px;color:var(--grey);
+}
+.creds b{font-family:var(--display);font-size:14px;display:block;margin-bottom:6px;color:var(--ink)}
+@media(max-width:820px){
+  .about-grid{grid-template-columns:1fr}
+  .about-photo{position:static;aspect-ratio:3/2}
+  .spec{grid-template-columns:1fr}
+  .spec li:nth-child(odd){padding-right:0}
+}
+
+/* ---------- areas ---------- */
+.areas-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);
+}
+.area{background:var(--ivory);padding:26px 24px}
+.area h3{margin-bottom:10px}
+.area p{font-size:15.5px;color:var(--grey)}
+.lofts{margin-top:34px;padding:28px clamp(22px,3vw,34px);background:var(--ink);color:var(--on-ink)}
+.lofts h3{margin-bottom:12px;color:var(--gold-lt)}
+.lofts p{color:var(--on-ink-dim);max-width:60ch;font-size:16.5px}
+.lofts ul{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.lofts li{
+  font-family:var(--display);font-weight:600;font-size:14px;
+  border:1px solid var(--line-lt);padding:7px 13px;
+}
+@media(max-width:860px){.areas-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.areas-grid{grid-template-columns:1fr}}
+
+/* ---------- video ----------
+   Newest upload runs large; the five behind it sit in a grid. Nothing embeds
+   an iframe until it is clicked -- six YouTube players on load would cost
+   megabytes and tank the page. Until then each tile is just a thumbnail with
+   a play control, and the click swaps in the real player. */
+.vid{background:var(--white)}
+.vid-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(14px,1.6vw,22px);align-items:start}
+.vid-rest{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.6vw,22px)}
+@media(max-width:900px){
+  .vid-grid{grid-template-columns:1fr}
+  .vid-rest{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){.vid-rest{grid-template-columns:1fr}}
+
+.vid-frame{position:relative;aspect-ratio:16/9;background:var(--ink);border:1px solid var(--line);overflow:hidden}
+.vid-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+.tile{
+  position:relative;display:block;width:100%;padding:0;border:1px solid var(--line);
+  background:var(--ink);aspect-ratio:16/9;overflow:hidden;cursor:pointer;
+  text-align:left;font:inherit;color:var(--on-ink);
+  transition:border-color .18s ease,transform .18s ease;
+}
+.tile:hover{border-color:var(--gold);transform:translateY(-2px)}
+.tile img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:opacity .25s ease,transform .4s ease;
+}
+.tile:hover img{transform:scale(1.03)}
+/* Shorts are vertical: their 16:9 thumbnail is a letterboxed frame, so zoom
+   past the bars rather than showing them. */
+.tile.is-short img{transform:scale(1.42)}
+.tile.is-short:hover img{transform:scale(1.48)}
+
+.tile-scrim{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to top,rgba(0,0,0,.86) 0%,rgba(0,0,0,.35) 42%,rgba(0,0,0,.05) 70%);
+}
+.tile-play{
+  position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:58px;height:58px;border-radius:50%;
+  background:rgba(0,0,0,.55);border:1.5px solid rgba(255,255,255,.85);
+  display:grid;place-items:center;transition:background .18s ease,border-color .18s ease;
+}
+.tile-play svg{margin-left:3px}
+.tile:hover .tile-play{background:var(--gold);border-color:var(--gold)}
+.tile:hover .tile-play svg{fill:var(--ink-dk)}
+.tile-txt{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:16px 18px}
+.tile-title{
+  font-family:var(--display);font-weight:600;line-height:1.28;letter-spacing:-.012em;
+  color:#fff;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.tile-date{
+  margin-top:5px;font-family:var(--display);font-weight:500;font-size:12px;
+  color:var(--gold-lt);
+}
+.tile-badge{
+  position:absolute;z-index:3;top:0;left:0;font-family:var(--display);font-weight:600;
+  font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  background:var(--gold);color:var(--ink-dk);padding:5px 9px;
+}
+/* the lead video */
+.tile.lead{aspect-ratio:16/9}
+.tile.lead .tile-title{font-size:clamp(17px,1.9vw,23px);-webkit-line-clamp:3}
+.tile.lead .tile-play{width:74px;height:74px}
+.tile.lead .tile-txt{padding:22px 24px}
+/* The five behind it. At this size a centred play button lands on top of the
+   title, so it moves to the corner and the text keeps the bottom edge. */
+.vid-rest .tile-title{font-size:13px;-webkit-line-clamp:2}
+.vid-rest .tile-date{font-size:11px;margin-top:3px}
+.vid-rest .tile-txt{padding:11px 12px}
+.vid-rest .tile-play{
+  left:auto;right:9px;top:9px;transform:none;width:34px;height:34px;
+}
+.vid-rest .tile-play svg{width:14px;height:14px;margin-left:2px}
+.vid-rest .tile-scrim{
+  background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.12) 100%);
+}
+
+.vid-note{margin-top:20px;font-size:14.5px;color:var(--grey)}
+.vid-note a{border-bottom:1px solid var(--gold);text-decoration:none;font-weight:600}
+.vid-note a:hover{color:var(--gold)}
+@media(prefers-reduced-motion:reduce){.tile,.tile img{transition:none}.tile:hover img{transform:none}}
+
+/* ---------- words ---------- */
+.words-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3vw,40px)}
+.quote{border-top:2px solid var(--gold);padding-top:20px}
+.quote p{font-size:18px;line-height:1.5}
+.quote cite{
+  display:block;margin-top:16px;font-family:var(--display);font-weight:600;
+  font-size:13.5px;font-style:normal;color:var(--grey);line-height:1.5;
+}
+.words-link{margin-top:30px;font-size:15px}
+.words-link a{color:var(--ink);border-bottom:1px solid var(--gold);text-decoration:none}
+@media(max-width:860px){.words-grid{grid-template-columns:1fr}}
+
+/* ---------- contact ---------- */
+.contact{background:var(--ink);color:var(--on-ink)}
+.contact h2{color:var(--white)}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,5vw,72px);align-items:start;
+}
+.contact-sub{color:var(--on-ink-dim);margin-top:18px;max-width:40ch}
+.dl{margin:30px 0 0;font-size:16px}
+.dl div{padding:14px 0;border-top:1px solid var(--line-lt)}
+.dl dt{font-family:var(--display);font-weight:600;font-size:12.5px;color:var(--gold-lt);margin-bottom:3px}
+.dl dd{margin:0}
+.dl a{text-decoration:none;border-bottom:1px solid var(--line-lt)}
+.dl a:hover{border-bottom-color:var(--gold)}
+
+/* ---------- booking ----------
+   Two buttons, one Calendly event type. The free plan allows a single event
+   type, so both buttons open the same booking page and pre-answer its
+   required "phone or in person" question -- the visitor still gets a real
+   choice without the $10/month tier. */
+.book{margin-top:28px;padding:22px 24px;background:rgba(237,237,237,.05);border:1px solid var(--line-lt);border-left:3px solid var(--gold)}
+.book-h{font-family:var(--display);font-weight:700;font-size:19px;color:var(--white);letter-spacing:-.015em}
+.book-p{margin:8px 0 0;font-size:14.5px;color:var(--on-ink-dim)}
+.book-acts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+@media(max-width:560px){.book-acts{grid-template-columns:1fr}}
+.book-btn{
+  display:block;text-align:left;cursor:pointer;font:inherit;
+  background:transparent;color:var(--on-ink);
+  border:1px solid var(--line-lt);padding:13px 15px;
+  transition:border-color .18s ease,background .18s ease;
+}
+.book-btn:hover{border-color:var(--gold);background:rgba(194,155,64,.09)}
+.book-btn-t{
+  display:block;font-family:var(--display);font-weight:600;font-size:15.5px;color:var(--white);
+}
+.book-btn:hover .book-btn-t{color:var(--gold-lt)}
+.book-btn-s{display:block;margin-top:3px;font-size:12.5px;color:var(--on-ink-dim)}
+.book-msg{
+  margin:14px 0 0;font-family:var(--display);font-weight:600;font-size:13.5px;
+  color:var(--gold-lt);min-height:1.2em;
+}
+
+form{display:grid;gap:14px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{
+  font-family:var(--display);font-weight:600;font-size:12.5px;
+  color:var(--gold-lt);display:block;margin-bottom:6px;
+}
+input,select,textarea{
+  width:100%;font-family:var(--body);font-size:16px;color:var(--white);
+  background:rgba(237,237,237,.07);border:1px solid var(--line-lt);
+  padding:12px 13px;
+}
+textarea{resize:vertical;min-height:104px}
+select option{color:#0C0C0C}
+input:hover,select:hover,textarea:hover{border-color:var(--gold)}
+.consent{display:flex;gap:11px;align-items:flex-start;font-size:13.5px;color:var(--on-ink-dim);line-height:1.5}
+.consent input{width:17px;height:17px;flex:0 0 auto;margin-top:3px}
+form button{
+  font-family:var(--display);font-weight:600;font-size:16px;
+  background:var(--gold);color:var(--ink-dk);border:0;
+  padding:15px 24px;cursor:pointer;justify-self:start;
+}
+form button:hover{background:var(--gold-lt)}
+.form-msg{font-size:14.5px;color:var(--gold-lt);min-height:1.2em}
+@media(max-width:820px){
+  .contact-grid{grid-template-columns:1fr}
+  .f2{grid-template-columns:1fr}
+}
+
+/* ---------- footer ---------- */
+.foot{background:var(--ink-dk);color:var(--on-ink-dim);font-size:13.5px;padding:44px 0 52px}
+.foot-top{
+  display:flex;flex-wrap:wrap;gap:26px 44px;justify-content:space-between;
+  padding-bottom:26px;border-bottom:1px solid var(--line-lt);
+}
+.foot b{font-family:var(--display);font-size:15px;color:var(--white);display:block;margin-bottom:8px}
+.foot a{text-decoration:none;border-bottom:1px solid transparent}
+.foot a:hover{border-bottom-color:var(--gold)}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--display);font-weight:500}
+.foot-legal{padding-top:24px;line-height:1.62;max-width:96ch;font-size:12.5px;color:#8A8A8A}
+.foot-legal p{margin-bottom:.85em}
+.eho{
+  display:inline-flex;gap:9px;align-items:center;margin-top:6px;
+  font-family:var(--display);font-weight:600;font-size:11.5px;color:var(--on-ink-dim);
+}
+.eho svg{flex:0 0 auto}
+
+/* ---------- one page-load reveal ---------- */
+@media(prefers-reduced-motion:no-preference){
+  .rv{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.3,1) forwards}
+  .rv:nth-child(2){animation-delay:.09s}
+  .rv:nth-child(3){animation-delay:.18s}
+  @keyframes rise{to{opacity:1;transform:none}}
+}
+
+/* ---------- section navigation ----------
+   Jumping to a section should feel like travelling to it, not being teleported.
+   The sticky masthead is ~62px tall, so anything we scroll to needs headroom
+   or its heading lands underneath the bar. */
+main [id],#top{scroll-margin-top:86px}
+
+@media(prefers-reduced-motion:no-preference){
+  html{scroll-behavior:smooth}
+}
+
+/* Which section you are currently in, marked in the masthead. */
+.bar nav a{transition:color .2s ease,border-color .2s ease}
+.bar nav a.is-current{border-bottom-color:var(--gold);color:var(--white)}
+
+/* The section you jumped to gets a brief, quiet acknowledgement. */
+@media(prefers-reduced-motion:no-preference){
+  .sec-head.landed h2{animation:landed .9s cubic-bezier(.2,.7,.3,1)}
+  @keyframes landed{
+    0%{transform:translateY(9px);opacity:.55}
+    100%{transform:none;opacity:1}
+  }
+}
+
+/* ---------- reveal on scroll ----------
+   Same motion vocabulary as the page-load reveal above, driven by an
+   IntersectionObserver. Elements start hidden ONLY when we can animate them
+   and JS is running (html.js), so the page degrades to fully visible. */
+@media(prefers-reduced-motion:no-preference){
+  .js .sr{
+    opacity:0;transform:translateY(20px);
+    transition:opacity .66s cubic-bezier(.2,.7,.3,1),transform .66s cubic-bezier(.2,.7,.3,1);
+    transition-delay:var(--sr-delay,0ms);
+  }
+  .js .sr.in{opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
-<a class="skip-link" href="#top">Skip to content</a>
 
 <header class="bar">
   <div class="bar-in">
     <a class="brand" href="#top">The Bowen Realty Group<span>Jeffrey Bowen &middot; ERealty Advisors Inc.</span></a>
     <nav id="site-nav">
-      <button class="nav-book" type="button" data-book="" hidden>Book a meeting</button>
-      <a href="sell-chelsea.html">Sell in Chelsea</a>
+      <button class="nav-book" type="button" data-book="">Book a meeting</button>
       <a href="#listings">Listings</a>
       <a href="#sold">Recently sold</a>
       <a href="#about">About Jeffrey</a>
@@ -50,7 +778,7 @@
       <a href="#tours">Video tours</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="bar-book" type="button" data-book="" hidden>Book</button>
+    <button class="bar-book" type="button" data-book="">Book</button>
     <a class="bar-call" href="tel:+17812019488">781&#8209;201&#8209;9488</a>
     <button class="bar-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
       <span class="bar-toggle-box"><span></span><span></span><span></span></span>
@@ -66,11 +794,10 @@
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <h1 class="rv">Chelsea &amp; East Boston<br>real estate.<br><em>A local guide to your next move.</em></h1>
+          <h1 class="rv">Chelsea, East&nbsp;Boston,<br>Everett, Malden.<br><em>Twenty-four years in the same few miles.</em></h1>
           <p class="hero-sub rv">Jeffrey Bowen sells the condos, lofts, triple&#8209;deckers and small multifamilies that make up this corner of Greater Boston &mdash; and has done since 2001.</p>
           <div class="hero-acts rv">
-            <a class="btn" href="sell-chelsea.html">Plan your home sale</a>
-            <button type="button" class="btn" data-book="" hidden>Book a meeting</button>
+            <button type="button" class="btn" data-book="">Book a meeting</button>
             <a class="btn ghost" href="tel:+17812019488">Call 781-201-9488</a>
           </div>
           <p class="hero-alt rv"><a href="#contact">Or ask what your home is worth &rarr;</a></p>
@@ -79,21 +806,23 @@
         <figure class="hero-portrait" style="margin:0">
           <img src="./heatshot.jpeg"
                alt="Jeffrey Bowen, real estate broker associate in Chelsea, Massachusetts"
-               width="535" height="535" fetchpriority="high" decoding="async">
+               width="535" height="535">
           <figcaption>Jeffrey Bowen<span>Broker Associate, ERealty Advisors Inc.</span></figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="services">
+  <!-- FIGURES -->
+  <section class="figs">
     <div class="wrap">
-      <div class="sec-head"><h2>Start with your next move</h2><p>Work with Jeffrey Bowen, Broker Associate at eRealty Advisors, on buying, selling or planning a property project.</p></div>
-      <div class="service-grid">
-        <article class="service-card"><h3>Selling in Chelsea</h3><p>Discuss your timing, property preparation and a marketing plan for your condo, house or multifamily.</p><a href="sell-chelsea.html">Explore the seller guide &rarr;</a></article>
-        <article class="service-card"><h3>Buying a home</h3><p>Talk through your needs and the questions to ask before choosing a property in Chelsea or the surrounding area.</p><a href="#contact" data-interest="Buying a home">Discuss your search &rarr;</a></article>
-        <article class="service-card"><h3>Investment &amp; development</h3><p>Discuss representation and marketing for a multifamily property, condominium project or commercial property.</p><a href="#contact" data-interest="Multifamily or investment">Discuss your project &rarr;</a></article>
+      <div class="figs-in">
+        <div class="fig"><b>716</b><small>Closings to date</small></div>
+        <div class="fig"><b>24</b><small>Years licensed in Massachusetts</small></div>
+        <div class="fig"><b>$609K</b><small>Average sale price</small></div>
+        <div class="fig"><b>$260K&ndash;$1.7M</b><small>Range Jeffrey works in</small></div>
       </div>
+      <p class="figs-note">Figures cover The Bowen Realty Group, as published on Jeffrey&rsquo;s Zillow profile. Most of these homes sold within a few miles of Chelsea Square.</p>
     </div>
   </section>
 
@@ -102,10 +831,9 @@
     <div class="wrap">
       <div class="sec-head">
         <h2>Current listings</h2>
-        <p>A snapshot of properties from Jeffrey&rsquo;s Zillow profile. Check the source listing and contact Jeffrey to confirm current price and availability.</p>
+        <p>Everything Jeffrey has on the market right now, pulled from his Zillow profile. Tap any home to open the full listing &mdash; photos, floor plans, tax history and all.</p>
       </div>
 
-      <noscript><p><a href="https://www.zillow.com/profile/JeffreyBowen">View property listings on Zillow</a>. Contact Jeffrey for current availability.</p></noscript>
       <div class="cards" id="listings-grid" data-role="forSale" aria-busy="true" aria-live="polite">
         <div class="skel" aria-hidden="true"><div class="skel-ph"></div><div class="skel-b"><div class="skel-l w1"></div><div class="skel-l w2"></div><div class="skel-l w3"></div></div></div>
         <div class="skel" aria-hidden="true"><div class="skel-ph"></div><div class="skel-b"><div class="skel-l w1"></div><div class="skel-l w2"></div><div class="skel-l w3"></div></div></div>
@@ -113,7 +841,7 @@
       </div>
 
       <a class="ledger-more" href="https://www.zillow.com/profile/JeffreyBowen" target="_blank" rel="noopener">See every active listing on Zillow</a>
-      <p class="cards-note">Listed by eRealty Advisors, Inc. Prices and availability change. Confirm details with Jeffrey before making plans. Call 781&#8209;201&#8209;9488 to walk through any of these in person. <span data-role="stamp"></span></p>
+      <p class="cards-note">Listed by eRealty Advisors, Inc. Prices and availability change &mdash; Zillow is the live source. Call 781&#8209;201&#8209;9488 to walk through any of these in person. <span data-role="stamp"></span></p>
     </div>
   </section>
 
@@ -122,7 +850,7 @@
     <div class="wrap">
       <div class="sec-head">
         <h2>Recently sold</h2>
-        <p id="sold-lede">Transactions in the saved Zillow data, including the reported representation. See the listing refresh date above; this is not a live sales feed.</p>
+        <p id="sold-lede">Closings from the last six months &mdash; not a highlight reel, just what came off the market, with the side of the table Jeffrey sat on.</p>
       </div>
 
       <div class="cards" id="sold-grid" data-role="sold" aria-busy="true" aria-live="polite">
@@ -132,7 +860,7 @@
       </div>
 
       <a class="ledger-more" id="sold-more" href="https://www.zillow.com/profile/JeffreyBowen" target="_blank" rel="noopener">See every sale on Zillow</a>
-      <p class="cards-note">Sold data as published on Jeffrey&rsquo;s Zillow profile. Team and individual transaction attribution should be confirmed with Jeffrey.</p>
+      <p class="cards-note">Sold data as published on Jeffrey&rsquo;s Zillow profile. Most of these homes closed within a few miles of Chelsea Square.</p>
     </div>
   </section>
 
@@ -147,9 +875,9 @@
         <div class="about-body">
           <h2>Meet Jeffrey Bowen</h2>
           <div class="prose">
-            <p>Jeffrey Bowen is a Massachusetts real estate broker associate with eRealty Advisors and leads The Bowen Realty Group. His work includes residential sales, buyer representation, rentals and investment properties.</p>
-            <p>His public portfolio includes properties in Chelsea, East Boston and surrounding communities, with experience marketing condominiums, lofts, multifamily properties and development projects.</p>
-            <p>Whether you are preparing to sell or beginning a search, start with a conversation about your property, priorities and timing. Services are available in English and Spanish.</p>
+            <p>Jeffrey Bowen is a broker associate with ERealty Advisors and leads The Bowen Realty Group out of 9 Canal Street in Boston. He has been licensed in Massachusetts for 24 years, and in that time the group has closed 716 sales &mdash; the large majority of them in Chelsea, East Boston, Everett, Malden and Revere.</p>
+            <p>That concentration is the point. Jeffrey is not covering the whole metro. He knows which Chelsea loft buildings have healthy reserves, what a triple-decker on the wrong side of a street actually trades for, and which buyers are already looking on a given block. It is the kind of knowledge that only comes from selling the same neighborhoods for two decades.</p>
+            <p>His work splits fairly evenly between listing homes, representing buyers, and rentals and small commercial deals. He handles a steady share of first-time buyers, and works in English and Spanish &mdash; which matters in a city where most households speak Spanish at home.</p>
           </div>
 
           <ul class="spec">
@@ -165,7 +893,7 @@
 
           <div class="creds">
             <b>Licensing</b>
-            Jeffrey Bowen, Real Estate Broker Associate, Massachusetts License&nbsp;#9068834. ERealty Advisors Inc., Massachusetts Broker License&nbsp;#1000215-RE-RB. <!-- OFFICE:START -->Appointments by arrangement; confirm the meeting location with Jeffrey.<!-- OFFICE:END -->
+            Jeffrey Bowen, Real Estate Broker Associate, Massachusetts License&nbsp;#9068834. ERealty Advisors Inc., Massachusetts Broker License&nbsp;#1000215-RE-RB. 9 Canal Street, Boston, MA 02114.
           </div>
         </div>
       </div>
@@ -177,7 +905,7 @@
     <div class="wrap">
       <div class="sec-head">
         <h2>Where Jeffrey works</h2>
-        <p>Chelsea and surrounding Greater Boston communities. Ask Jeffrey about representation for your particular property and location.</p>
+        <p>Five cities, all within about four miles of each other, each with its own pricing logic.</p>
       </div>
 
       <div class="areas-grid">
@@ -208,12 +936,12 @@
       </div>
 
       <div class="lofts">
-        <h3>Lofts and condominium communities</h3>
-        <p>Discuss building-specific questions with Jeffrey, including condominium documents, parking, fees and available property information.</p>
+        <h3>The Chelsea loft buildings</h3>
+        <p>Chelsea&rsquo;s converted industrial buildings trade differently from its condos and need an agent who knows each one&rsquo;s history, layouts and finances. Jeffrey has sold in them for years.</p>
         <ul>
           <li>Spencer Lofts</li>
           <li>Thomas Martin Lofts</li>
-          <li>Porter 156 &mdash; East Boston</li>
+          <li>Porter 156</li>
           <li>Parker Place</li>
         </ul>
       </div>
@@ -241,11 +969,30 @@
     </div>
   </section>
 
-  <section class="sec" id="reviews"><div class="wrap">
-    <div class="sec-head"><h2>Read about clients&rsquo; experiences</h2><p>Explore reviews on Jeffrey&rsquo;s public profiles and discuss what working together would involve.</p></div>
-    <p><a href="https://www.zillow.com/profile/JeffreyBowen" target="_blank" rel="noopener">Read reviews on Zillow &rarr;</a></p>
-    <div class="google-links"><a data-google="profile" hidden target="_blank" rel="noopener">Find Jeffrey on Google</a><a data-google="review" hidden target="_blank" rel="noopener">Share your experience on Google</a></div>
-  </div></section>
+  <!-- WORDS -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>What clients say</h2>
+        <p>Summarized from reviews on Jeffrey&rsquo;s Zillow profile, where the group has 47 of them.</p>
+      </div>
+      <div class="words-grid">
+        <div class="quote">
+          <p>Sold a Chelsea condo after the market slowed sharply, crediting Jeffrey&rsquo;s local connections and willingness to keep working the listing.</p>
+          <cite>Cody Jung &middot; Sold a condo in Chelsea, 2022</cite>
+        </div>
+        <div class="quote">
+          <p>Sold at asking price during the pandemic, describing Jeffrey as experienced, responsive, and hard-working beyond what was expected.</p>
+          <cite>Eric Asquith &middot; Sold in Chelsea, 2020</cite>
+        </div>
+        <div class="quote">
+          <p>First-time buyers in East Boston who felt Jeffrey and Sandra weighed their finances and preferences carefully before recommending any condo.</p>
+          <cite>Verified buyer &middot; Bought in East Boston, 2018</cite>
+        </div>
+      </div>
+      <p class="words-link"><a href="https://www.zillow.com/profile/JeffreyBowen" target="_blank" rel="noopener">Read the full reviews on Zillow</a></p>
+    </div>
+  </section>
 
   <!-- CONTACT -->
   <section class="contact sec" id="contact">
@@ -257,15 +1004,15 @@
 
           <div class="book" id="book" hidden>
             <h3 class="book-h">Book a time</h3>
-            <p class="book-p">Pick a slot that suits you. Use Jeffrey&rsquo;s booking page to choose an available appointment.</p>
+            <p class="book-p">Pick a slot that suits you. Jeffrey confirms by text beforehand.</p>
             <div class="book-acts">
-              <button type="button" class="book-btn" data-book="Phone call" hidden>
+              <button type="button" class="book-btn" data-book="Phone call">
                 <span class="book-btn-t">Phone call</span>
                 <span class="book-btn-s">A quick conversation, wherever you are</span>
               </button>
-              <button type="button" class="book-btn" data-book="In person" hidden>
+              <button type="button" class="book-btn" data-book="In person">
                 <span class="book-btn-t">In person</span>
-                <span class="book-btn-s">Confirm the meeting location with Jeffrey</span>
+                <span class="book-btn-s">At the property, or the Canal Street office</span>
               </button>
             </div>
             <p class="book-msg" id="book-msg" role="status" aria-live="polite"></p>
@@ -274,13 +1021,14 @@
             <div><dt>Cell</dt><dd><a href="tel:+17812019488">781-201-9488</a></dd></div>
             <div><dt>Office</dt><dd><a href="tel:+16177292618">617-729-2618</a></dd></div>
             <div><dt>Email</dt><dd><a href="mailto:Info@chelseaRealestate.com">Info@chelseaRealestate.com</a></dd></div>
-            <div><dt>Meeting location</dt><dd>ERealty Advisors Inc.<br><!-- OFFICE:START -->Appointments by arrangement; confirm the meeting location with Jeffrey.<!-- OFFICE:END --></dd></div>
+            <div><dt>Office address</dt><dd>ERealty Advisors Inc.<br>9 Canal Street, Boston, MA 02114</dd></div>
             <div><dt>Elsewhere</dt><dd><a href="https://www.zillow.com/profile/JeffreyBowen" target="_blank" rel="noopener">Zillow</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@JeffreyBowen" target="_blank" rel="noopener">YouTube</a></dd></div>
           </dl>
         </div>
 
-        <!-- Form behavior and optional Formspree endpoint: site-config.json. -->
-        <form id="lead">
+        <!-- Wire this to a real endpoint before launch: set action to your
+             Formspree / Netlify / brokerage CRM URL and delete the JS handler. -->
+        <form id="lead" novalidate>
           <div class="f2">
             <div><label for="nm">Name</label><input id="nm" name="name" type="text" autocomplete="name" required></div>
             <div><label for="ph">Phone</label><input id="ph" name="phone" type="tel" autocomplete="tel"></div>
@@ -303,11 +1051,9 @@
           </div>
           <label class="consent" for="ok">
             <input id="ok" name="consent" type="checkbox" required>
-            <span>I ask Jeffrey Bowen to reply to this inquiry using the contact details I provide. This does not subscribe me to ongoing marketing. <a href="privacy.html">Privacy information</a>.</span>
+            <span>I agree that Jeffrey Bowen may contact me by call, text and email about real estate services. Reply STOP at any time to opt out. Message and data rates may apply.</span>
           </label>
-          <button type="submit" id="lead-submit">Prepare email to Jeffrey</button>
-          <p id="delivery-note">This opens a draft in your email app. Review and send it there, or call Jeffrey directly.</p>
-          <noscript><p>The form needs JavaScript. Please use the email or telephone links beside it.</p></noscript>
+          <button type="submit">Send to Jeffrey</button>
           <p class="form-msg" id="fm" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -321,14 +1067,13 @@
       <div>
         <b>Jeffrey Bowen</b>
         The Bowen Realty Group &middot; ERealty Advisors Inc.<br>
-        <!-- OFFICE:START -->Appointments by arrangement; confirm the meeting location with Jeffrey.<!-- OFFICE:END --><br>
+        9 Canal Street, Boston, MA 02114<br>
         <a href="tel:+17812019488">781-201-9488</a> &middot; <a href="mailto:Info@chelseaRealestate.com">Info@chelseaRealestate.com</a>
       </div>
       <div>
         <b>Pages</b>
         <div class="foot-links">
-          <a href="sell-chelsea.html">Sell in Chelsea</a>
-      <a href="#listings">Listings</a>
+          <a href="#listings">Listings</a>
           <a href="#sold">Recently sold</a>
           <a href="#about">About</a>
           <a href="#areas">Areas</a>
@@ -340,8 +1085,7 @@
 
     <div class="foot-legal">
       <p>Jeffrey Bowen, Real Estate Broker Associate, Massachusetts License #9068834. ERealty Advisors Inc., Massachusetts Broker License #1000215-RE-RB. Office 617-729-2618 &middot; Fax 866-885-9139.</p>
-      <p>Property data links to Jeffrey&rsquo;s public Zillow profile. Past results do not guarantee future outcomes. All information is deemed reliable but not guaranteed and should be independently verified. Listings are subject to prior sale, change or withdrawal.</p>
-      <p><a href="privacy.html">Privacy information</a></p>
+      <p>Sales figures and reviews shown on this page reflect The Bowen Realty Group and are drawn from Jeffrey&rsquo;s public Zillow profile. Past results do not guarantee future outcomes. All information is deemed reliable but not guaranteed and should be independently verified. Listings are subject to prior sale, change or withdrawal.</p>
       <p class="eho">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A9A9A9" stroke-width="2" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
         Equal Housing Opportunity
@@ -351,7 +1095,27 @@
   </div>
 </footer>
 
-<script src="site.js" defer></script>
+<script>
+// Placeholder submit handler. Replace with a real form endpoint before launch.
+document.getElementById('lead').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.target, msg = document.getElementById('fm');
+  if (!f.name.value.trim() || !f.email.value.trim() || !f.consent.checked) {
+    msg.textContent = 'Add your name and email, and check the consent box.';
+    return;
+  }
+  var body =
+    'Name: ' + f.name.value + '\n' +
+    'Phone: ' + f.phone.value + '\n' +
+    'Email: ' + f.email.value + '\n' +
+    'Interested in: ' + f.interest.value + '\n\n' +
+    f.message.value;
+  window.location.href = 'mailto:Info@chelseaRealestate.com'
+    + '?subject=' + encodeURIComponent('Website enquiry from ' + f.name.value)
+    + '&body=' + encodeURIComponent(body);
+  msg.textContent = 'Opening your email app. Or call Jeffrey directly at 781-201-9488.';
+});
+</script>
 
 <script>
 /* --------------------------------------------------------------------------
@@ -632,7 +1396,7 @@
 
     var ph = el('div', 'card-ph');
     ph.appendChild(el('span', kind === 'sold' ? 'tag sold' : 'tag',
-                      kind === 'sold' ? 'Sold' : 'Listing snapshot'));
+                      kind === 'sold' ? 'Sold' : 'For sale'));
     if (p.photo) {
       var img = new Image();
       img.src = p.photo;
@@ -702,15 +1466,10 @@
       return r.json();
     })
     .then(function (data) {
-      var ageDays = (Date.now() - Date.parse(data.generatedAt)) / 86400000;
-      if (!Number.isFinite(ageDays) || ageDays > 7) {
-        document.querySelector('#listings h2').textContent = 'Property listing snapshot';
-        document.querySelector('#listings .sec-head p').textContent = 'This saved snapshot may no longer reflect availability. Contact Jeffrey or check the source listing before making plans.';
-      }
       paint(GRIDS.forSale, data.forSale, 'forSale',
-            'No properties are shown in this saved snapshot. Contact Jeffrey for current availability.');
+            'Jeffrey has nothing on the market this minute.');
       paint(GRIDS.sold, data.sold, 'sold',
-            'No sales are shown in this saved snapshot. View the source profile for updates.');
+            'No closings recorded in the last six months.');
 
       var months = data.soldWindowMonths || 6;
       var lede = document.getElementById('sold-lede');
@@ -911,7 +1670,7 @@
    block than a button that opens a 404.
    -------------------------------------------------------------------------- */
 (function () {
-  var BOOKING_URL = window.SITE_CONFIG.bookingUrl;
+  var BOOKING_URL = 'https://calendly.com/thienduc666/30min';
 
   // Every booking control on the page, wherever it sits: the hero button and
   // the two in the contact block. data-book carries the answer to pre-select
@@ -920,12 +1679,11 @@
   var block = document.getElementById('book');
   if (!triggers.length) return;
 
-  if (!BOOKING_URL) {
+  if (BOOKING_URL.indexOf('REPLACE-ME') !== -1) {
     console.info('[booking] BOOKING_URL is still a placeholder — booking controls hidden.');
     triggers.forEach(function (t) { t.hidden = true; });
     return;
   }
-  triggers.forEach(function(t){t.hidden=false;});
   if (block) block.hidden = false;
 
   var CSS = 'https://assets.calendly.com/assets/external/widget.css';
@@ -1037,7 +1795,7 @@
     if (!d || typeof d.event !== 'string' || d.event.indexOf('calendly.') !== 0) return;
 
     if (d.event === 'calendly.event_scheduled') {
-      msg.textContent = 'Your appointment is booked. Check your booking confirmation for details.';
+      msg.textContent = 'Booked. Jeffrey will confirm by text.';
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'booking_complete', {});
       }
@@ -1047,7 +1805,26 @@
 </script>
 
 <script>
-/* Property links are interest events, not completed leads. */
+/* --------------------------------------------------------------------------
+   Analytics events.
+
+   Page views are automatic once a Measurement ID is set. These are the four
+   things worth counting on an agent's site beyond that -- the moments someone
+   goes from reading to acting:
+
+     call_click        tapped the phone number
+     email_click       tapped the email address
+     listing_click     opened a listing on Zillow (which property, and whether
+                       it was an active listing or a past sale)
+     lead_form_submit  completed the contact form
+
+   In GA4, mark lead_form_submit and call_click as key events
+   (Admin -> Events -> toggle "Mark as key event") so they show up as
+   conversions rather than plain events.
+
+   Everything here no-ops until GA_MEASUREMENT_ID is set: gtag is only defined
+   once the guard in the head passes.
+   -------------------------------------------------------------------------- */
 (function () {
   function track(name, params) {
     if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
@@ -1058,6 +1835,12 @@
     if (!link) return;
     var href = link.getAttribute('href') || '';
 
+    if (href.indexOf('tel:') === 0) {
+      return track('call_click', { phone_number: href.replace('tel:', '') });
+    }
+    if (href.indexOf('mailto:') === 0) {
+      return track('email_click', {});
+    }
     if (href.indexOf('zillow.com') !== -1) {
       var card = link.classList.contains('card') ? link : null;
       return track('listing_click', {
@@ -1069,9 +1852,130 @@
     }
   });
 
+  var form = document.getElementById('lead');
+  if (form) {
+    form.addEventListener('submit', function () {
+      // Fires alongside the existing handler; it does not gate submission.
+      var interest = form.interest ? form.interest.value : null;
+      track('lead_form_submit', { interest: interest });
+    });
+  }
 })();
 </script>
 
+<!--
+  BEFORE LAUNCH
+  1. Portrait is already local (./heatshot.jpeg). Only the listing-card photos
+     are hotlinked from Zillow's CDN; see note 5.
+  2. Replace the About placeholder with a second, non-headshot photo.
+  3. Point the contact form at a real endpoint and remove the JS fallback above.
+  4. Swap the three testimonial summaries for verbatim client text you have
+     permission to publish.
+  5. LISTINGS DATA. The Current listings / Recently sold sections render from
+     listings.json. Nothing about a property is written into this HTML file.
+     Refresh the data with:
 
+         npm run listings          # = node scripts/fetch-listings.mjs
+
+     It reads the Zillow profile page's own __NEXT_DATA__ JSON; Zillow has no
+     public agent API. Because Zillow fingerprints the request rather than just
+     the IP, the script tries hardened HTTP first and falls back to a headless
+     Chromium when it is handed a bot wall. That fallback needs a one-off:
+
+         npm install && npx playwright install chromium
+
+     Without Playwright the HTTP path still runs; it just cannot recover from a
+     block. Card photos are hotlinked to photos.zillowstatic.com, the same as
+     the hero portrait -- if Zillow moves those paths a card loses its image but
+     keeps its price, address and link.
+
+     .github/workflows/refresh-listings.yml runs the refresh daily at 10:00 UTC
+     (6am Eastern) and commits any change; run it by hand from the Actions tab
+     any time. Every failure mode -- bot wall, schema change, network -- exits
+     non-zero and leaves the committed listings.json untouched, so a bad day is
+     a skipped refresh, never a broken page.
+
+     Preview through a web server (`npm run serve`), not by opening index.html
+     off the filesystem -- file:// blocks the fetch and you will see the "view on
+     Zillow" fallback instead of the cards.
+  6. VIDEO TOURS. The section renders from videos.json, generated by
+     scripts/fetch-videos.mjs off the channel's public Atom feed
+     (youtube.com/feeds/videos.xml) -- no API key, no bot check. Refresh with:
+
+         npm run videos
+
+     The newest upload runs large, the next five sit beside it. Change how
+     many with --limit. Nothing embeds a YouTube player until a visitor
+     clicks: six iframes on load would pull megabytes of player JS and set
+     cookies for someone who never watched anything, so each tile is a
+     thumbnail until clicked, and the embeds use youtube-nocookie.
+
+     `npm run refresh` runs the listings and the video fetch together.
+
+  7. BOOKING. Wired to Calendly from three places: the masthead, the hero, and
+     the "Book a time" block in Contact. All hidden until BOOKING_URL is set in
+     the booking script near the foot of this file. It currently points at
+     calendly.com/thienduc666/30min -- move this to Jeffrey's own Calendly
+     account before launch. Full setup steps are in the comment above that line; the short
+     version is: create the free Calendly account, connect Jeffrey's Google
+     Calendar, make one event type with a required first question
+     "How would you like to meet?" offering Phone call / In person, then paste
+     the event link.
+
+     The two buttons pre-answer that question, so a visitor still picks phone
+     or in person even though the free plan allows only one event type. If
+     Jeffrey ever upgrades to Standard ($10/mo) for two real event types with
+     their own durations, give each button its own URL and drop the a1
+     parameter.
+
+     Mark booking_complete as a key event in GA4 alongside lead_form_submit.
+
+  8. SEO. Everything is wired but pointed at a placeholder domain. Do these,
+     in order, and the page is ready to be found:
+
+     a. Swap the domain. Seven absolute URLs in this file plus robots.txt and
+        sitemap.xml all say https://REPLACE-ME.com:
+
+            grep -rl 'REPLACE-ME.com' . --exclude-dir=.git --exclude-dir=node_modules \
+              | xargs sed -i '' 's|https://REPLACE-ME.com|https://yourdomain.com|g'
+
+        (drop the '' after -i on Linux). Confirm none are left:
+            grep -r REPLACE-ME . --exclude-dir=.git
+
+     b. Google Search Console (search.google.com/search-console): add the
+        domain, verify by DNS, submit /sitemap.xml, then "Request indexing"
+        on the homepage. This is what gets the page into Google at all.
+
+     c. Google Business Profile. For a local agent this outranks almost
+        anything on-page -- it is what puts you in the map pack for
+        "realtor in Chelsea MA". Claim it, use the SAME name, address and
+        phone as the structured data in the head, and link it to this site.
+
+     d. Check the structured data at search.google.com/test/rich-results
+        after the domain swap. It should find RealEstateAgent, WebSite and
+        WebPage with no errors.
+
+     e. Replace the og:image. Social previews want a 1200x630 landscape image;
+        heatshot.jpeg is a 900x1200 portrait, so it will be cropped oddly when
+        the page is shared. Save a landscape version as /og-image.jpg and point
+        og:image and twitter:image at it.
+
+     Not done, and worth knowing: reviews are NOT marked up as schema. Google
+     forbids self-serving AggregateRating markup for a business on its own
+     site, and the testimonials here are summaries rather than verbatim quotes.
+     Real review stars come from the Google Business Profile in (c).
+
+  9. GOOGLE ANALYTICS. The snippet is in the head with a placeholder ID and a
+     guard, so nothing loads until you set it. Follow the numbered steps in the
+     GA4 comment block up there -- the only edit is one line:
+
+         window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+
+     Then, in GA4 Admin -> Events, mark `lead_form_submit` and `call_click` as
+     key events so they count as conversions. The four custom events are
+     documented in the analytics script near the foot of this file.
+     To verify: publish, open the site, then GA4 -> Reports -> Realtime.
+
+-->
 </body>
 </html>

@@ -13,9 +13,7 @@
     "listings:browser": "node scripts/fetch-listings.mjs --browser",
     "videos": "node scripts/fetch-videos.mjs",
     "refresh": "npm run listings && npm run videos",
-    "serve": "npx --yes serve .",
-    "build": "node scripts/build-site.mjs",
-    "check": "node scripts/check-site.mjs && node scripts/check-form.mjs"
+    "serve": "npx --yes serve ."
   },
   "devDependencies": {
     "playwright": "^1.47.0"
