@@ -39,14 +39,15 @@
 <meta property="og:url" content="https://REPLACE-ME.com/20-harnden-street-wilmington-ma.html">
 <meta property="og:title" content="The Elms | 20 Harnden Street, Wilmington, Massachusetts">
 <meta property="og:description" content="A 1795 Colonial known as The Elms, rehabilitated top to bottom. Seven bedrooms, six baths, ten fireplaces, 4,220 square feet. Coming soon at $1,395,000.">
-<!-- TODO: replace with a 1200x630 crop of the finished front elevation. -->
-<meta property="og:image" content="https://REPLACE-ME.com/media/og-20-harnden.jpg">
+<meta property="og:image" content="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1200&#38;h=630&#38;crop=1&#38;quality=82&#38;ssl=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The front elevation of The Elms, 20 Harnden Street, Wilmington, Massachusetts">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Elms | 20 Harnden Street, Wilmington, Massachusetts">
 <meta name="twitter:description" content="A 1795 Colonial known as The Elms, rehabilitated top to bottom. Coming soon at $1,395,000.">
-<meta name="twitter:image" content="https://REPLACE-ME.com/media/og-20-harnden.jpg">
+<meta name="twitter:image" content="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1200&#38;h=630&#38;crop=1&#38;quality=82&#38;ssl=1">
 
 <!-- Structured data. Three things are being said here: this page is about a
      specific house, that house is offered for sale by a named agent, and the
@@ -71,6 +72,7 @@
         "postalCode": "01887",
         "addressCountry": "US"
       },
+      "photo": "https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1600&#38;quality=82&#38;ssl=1",
       "numberOfRooms": 7,
       "numberOfBedrooms": 7,
       "numberOfFullBathrooms": 6,
@@ -107,6 +109,7 @@
 }
 </script>
 
+<link rel="preconnect" href="https://i0.wp.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
@@ -341,6 +344,70 @@ p:last-child{margin-bottom:0}
 .gal .banner{grid-column:1/-1}
 .gal .banner .shot{aspect-ratio:16/7}
 
+/* ---------- image buttons ----------
+   Every photograph is a button so the lightbox is reachable from the keyboard
+   as well as the mouse; the reset keeps it looking like a plain frame. */
+button.shot{
+  appearance:none;-webkit-appearance:none;margin:0;padding:0;
+  font:inherit;color:inherit;cursor:zoom-in;width:100%;
+}
+button.shot:hover img{transform:scale(1.03)}
+button.shot img{transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+@media(prefers-reduced-motion:reduce){button.shot img{transition:none}}
+
+/* ---------- the historic photographs ---------- */
+.hist-gal-head{
+  margin:clamp(40px,5vw,66px) 0 20px;font-size:17px;
+  padding-top:22px;border-top:1px solid var(--line-lt);
+}
+.hist-gal{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.4vw,18px)}
+.hist-gal figure{margin:0}
+.hist-gal .shot{aspect-ratio:4/3;background:var(--ink-lt);border-color:var(--line-lt)}
+.hist-gal figcaption{margin-top:9px;font-size:12.5px;color:var(--on-ink-dim);line-height:1.5}
+.hist-gal-note{margin-top:20px;font-size:13px;color:var(--grey-lt);max-width:80ch}
+
+/* ---------- floor plans ----------
+   Plans are line art in mixed portrait and landscape, so they are contained
+   rather than cropped, on a light ground. */
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,20px);margin-bottom:clamp(28px,3.5vw,44px)}
+.plans figure{margin:0}
+.plans .shot{aspect-ratio:4/3;background:var(--white);border-color:var(--line);cursor:zoom-in}
+.plans .shot img{width:100%;height:100%;object-fit:contain;padding:8px}
+.plans figcaption{margin-top:8px;font-size:12.5px;color:var(--grey)}
+
+/* ---------- lightbox ---------- */
+.lb{
+  position:fixed;inset:0;z-index:200;display:none;
+  background:rgba(8,8,8,.96);
+  align-items:center;justify-content:center;padding:clamp(12px,3vw,48px);
+}
+.lb[open],.lb.is-on{display:flex}
+.lb img{max-width:100%;max-height:82vh;object-fit:contain;margin:0 auto}
+.lb-fig{margin:0;max-width:100%;text-align:center}
+.lb-cap{
+  margin-top:14px;font-family:var(--display);font-size:13px;font-weight:500;
+  color:var(--on-ink-dim);letter-spacing:.02em;
+}
+.lb-cap b{color:var(--white);font-weight:600;margin-right:10px}
+.lb-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:52px;height:52px;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.07);border:1px solid var(--line-lt);color:var(--on-ink);
+  cursor:pointer;font-size:22px;line-height:1;padding:0;
+}
+.lb-btn:hover{background:rgba(255,255,255,.16);border-color:var(--gold)}
+.lb-prev{left:clamp(8px,2vw,28px)}
+.lb-next{right:clamp(8px,2vw,28px)}
+.lb-close{
+  position:absolute;top:clamp(10px,2vw,26px);right:clamp(10px,2vw,26px);
+  width:44px;height:44px;transform:none;font-size:20px;
+}
+@media(max-width:620px){
+  .lb-btn{width:44px;height:44px;top:auto;bottom:14px;transform:none}
+  .lb-close{top:14px;bottom:auto}
+  .lb img{max-height:68vh}
+}
+
 /* ---------- transformation ---------- */
 .tf{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,26px)}
 .tf-step .shot{aspect-ratio:4/3;background:#E8E4DC;border-color:var(--line)}
@@ -480,12 +547,15 @@ main [id],#top{scroll-margin-top:86px}
 }
 @media(max-width:900px){
   .ov,.hist,.show-grid,.bro{grid-template-columns:1fr}
+  .hist-gal{grid-template-columns:repeat(3,1fr)}
+  .plans{grid-template-columns:repeat(2,1fr)}
   .tf{grid-template-columns:repeat(2,1fr)}
   .loc,.docs{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:620px){
   .facts-in{grid-template-columns:repeat(2,1fr)}
+  .hist-gal{grid-template-columns:repeat(2,1fr)}
   .led{columns:1}
   .gal{grid-template-columns:1fr}
   .f2{grid-template-columns:1fr}
@@ -510,6 +580,7 @@ main [id],#top{scroll-margin-top:86px}
       <a href="#history">History</a>
       <a href="#improvements">Improvements</a>
       <a href="#location">Location</a>
+      <a href="#documents">Floor plans</a>
       <a href="#showing">Showings</a>
       <a href="./index.html">&larr; Main site</a>
     </nav>
@@ -553,10 +624,11 @@ main [id],#top{scroll-margin-top:86px}
            width/height attributes so the layout does not shift on load. -->
       <figure class="ph-shot" style="margin:0">
         <div class="shot">
-          <!-- <img src="./media/05-completed-exterior/front-elevation.jpg"
-                  alt="The red clapboard front elevation of The Elms at 20 Harnden Street, Wilmington, with its covered porch and black trim"
-                  width="2400" height="1050"> -->
-          <div class="shot-ph"><b>Hero image</b>Finished front elevation &middot; 2400&times;1050</div>
+          <img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1600&quality=82&ssl=1"
+               srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1000&quality=82&ssl=1 1000w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1600&quality=82&ssl=1 1600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=2400&quality=82&ssl=1 2400w"
+               sizes="(max-width:900px) 100vw, 1240px"
+               alt="The front elevation of The Elms at 20 Harnden Street, Wilmington, Massachusetts, in red clapboard with black trim and a centre entrance"
+               width="2000" height="1333" fetchpriority="high" decoding="async">
         </div>
         <figcaption class="ph-cap">
           <span>The Elms, 20 Harnden Street, Wilmington, Massachusetts.</span>
@@ -637,44 +709,108 @@ main [id],#top{scroll-margin-top:86px}
              05-completed-exterior/  06-completed-interior/  07-architectural-details/ -->
       <div class="gal">
         <figure class="banner">
-          <div class="shot"><div class="shot-ph"><b>01</b>Exterior &middot; front elevation, wide</div></div>
-          <figcaption>Front elevation from Harnden Street.</figcaption>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4631.jpg?w=1600&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4631.jpg?w=1000&quality=82&ssl=1 1000w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4631.jpg?w=1600&quality=82&ssl=1 1600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4631.jpg?w=2400&quality=82&ssl=1 2400w"
+                 sizes="(max-width:900px) 100vw, 1240px"
+                 alt="The rear elevation of The Elms, with the patio, the side ell and the long covered porch" width="2000" height="1333" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4631.jpg?w=2400&quality=85&ssl=1"></button>
+          <figcaption>The rear elevation, patio and covered porch.</figcaption>
         </figure>
         <figure>
-          <div class="shot"><div class="shot-ph"><b>02</b>Exterior &middot; rear and grounds</div></div>
-          <figcaption>The rear elevation and grounds.</figcaption>
-        </figure>
-        <figure>
-          <div class="shot"><div class="shot-ph"><b>03</b>Exterior &middot; covered porch</div></div>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4619.jpg?w=1400&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4619.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4619.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4619.jpg?w=2000&quality=82&ssl=1 2000w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
+                 alt="The covered porch along the side of the house, painted deck and turquoise ceiling" width="2000" height="1333" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4619.jpg?w=2400&quality=85&ssl=1"></button>
           <figcaption>The covered porch.</figcaption>
         </figure>
         <figure>
-          <div class="shot"><div class="shot-ph"><b>04</b>Kitchen &middot; range wall</div></div>
-          <figcaption>Kitchen, with the six-burner double-oven Bertazzoni range.</figcaption>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4643.jpg?w=1400&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4643.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4643.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4643.jpg?w=2000&quality=82&ssl=1 2000w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
+                 alt="The house seen across the lawn beneath mature trees, behind a low fence" width="2000" height="1333" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4643.jpg?w=2400&quality=85&ssl=1"></button>
+          <figcaption>The grounds beneath mature trees.</figcaption>
         </figure>
         <figure>
-          <div class="shot"><div class="shot-ph"><b>05</b>Living room &middot; fireplace</div></div>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4662.jpg?w=1400&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4662.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4662.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4662.jpg?w=2000&quality=82&ssl=1 2000w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
+                 alt="The drive approaching the house between mature trees" width="2000" height="1333" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4662.jpg?w=2400&quality=85&ssl=1"></button>
+          <figcaption>The drive.</figcaption>
+        </figure>
+        <figure>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4486.jpg?w=1400&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4486.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4486.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4486.jpg?w=2000&quality=82&ssl=1 2000w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
+                 alt="A room with a large brick fireplace and wide board floors" width="2000" height="1334" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4486.jpg?w=2400&quality=85&ssl=1"></button>
           <figcaption>One of ten fireplaces.</figcaption>
         </figure>
         <figure>
-          <div class="shot"><div class="shot-ph"><b>06</b>Dining room</div></div>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4444.jpg?w=1400&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4444.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4444.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4444.jpg?w=2000&quality=82&ssl=1 2000w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
+                 alt="Dining room with a fireplace, panelled wainscot and green walls" width="2000" height="1334" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4444.jpg?w=2400&quality=85&ssl=1"></button>
           <figcaption>Dining room.</figcaption>
         </figure>
         <figure>
-          <div class="shot"><div class="shot-ph"><b>07</b>Stair hall</div></div>
-          <figcaption>Stair hall.</figcaption>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4477.jpg?w=1400&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4477.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4477.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4477.jpg?w=2000&quality=82&ssl=1 2000w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
+                 alt="A long living room with fireplace and hardwood floors" width="2000" height="1333" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4477.jpg?w=2400&quality=85&ssl=1"></button>
+          <figcaption>Living room.</figcaption>
         </figure>
         <figure>
-          <div class="shot"><div class="shot-ph"><b>08</b>Primary bedroom</div></div>
-          <figcaption>Primary bedroom.</figcaption>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4410.jpg?w=1400&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4410.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4410.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4410.jpg?w=2000&quality=82&ssl=1 2000w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
+                 alt="Kitchen with a centre island, quartz counters and dark cabinetry" width="2000" height="1334" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4410.jpg?w=2400&quality=85&ssl=1"></button>
+          <figcaption>Kitchen.</figcaption>
         </figure>
         <figure>
-          <div class="shot"><div class="shot-ph"><b>09</b>Primary bath</div></div>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4527.jpg?w=1400&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4527.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4527.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4527.jpg?w=2000&quality=82&ssl=1 2000w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
+                 alt="A bright bedroom with windows on two walls" width="2000" height="1334" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4527.jpg?w=2400&quality=85&ssl=1"></button>
+          <figcaption>One of seven bedrooms.</figcaption>
+        </figure>
+        <figure>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4518.jpg?w=1400&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4518.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4518.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4518.jpg?w=2000&quality=82&ssl=1 2000w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
+                 alt="Upstairs hall looking through to the bedrooms" width="2000" height="1334" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4518.jpg?w=2400&quality=85&ssl=1"></button>
+          <figcaption>Upstairs hall.</figcaption>
+        </figure>
+        <figure>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4599.jpg?w=1400&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4599.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4599.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4599.jpg?w=2000&quality=82&ssl=1 2000w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
+                 alt="A full bathroom with a stone-topped vanity and glass shower" width="2000" height="1333" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4599.jpg?w=2400&quality=85&ssl=1"></button>
           <figcaption>One of six full baths.</figcaption>
         </figure>
         <figure>
-          <div class="shot"><div class="shot-ph"><b>10</b>Detail &middot; millwork</div></div>
-          <figcaption>Interior millwork.</figcaption>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4605.jpg?w=1400&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4605.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4605.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4605.jpg?w=2000&quality=82&ssl=1 2000w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
+                 alt="Stair hall with a painted staircase and panelled doors" width="2000" height="1333" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4605.jpg?w=2400&quality=85&ssl=1"></button>
+          <figcaption>Stair hall.</figcaption>
+        </figure>
+        <figure>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/DJI_0656.jpg?w=1400&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/DJI_0656.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/DJI_0656.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/DJI_0656.jpg?w=2000&quality=82&ssl=1 2000w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
+                 alt="Aerial view of 20 Harnden Street showing the house, grounds and surrounding trees" width="2000" height="1500" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/DJI_0656.jpg?w=2400&quality=85&ssl=1"></button>
+          <figcaption>The property from above.</figcaption>
         </figure>
       </div>
     </div>
@@ -715,25 +851,41 @@ main [id],#top{scroll-margin-top:86px}
 
       <div class="tf">
         <div class="tf-step">
-          <div class="shot"><div class="shot-ph"><b>01</b>Historic</div></div>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=1000&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=1000&quality=82&ssl=1 1000w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=1600&quality=82&ssl=1 1600w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
+                 alt="Historic photograph of The Elms with people gathered on the lawn beneath the elm trees" width="1500" height="1125" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=2400&quality=85&ssl=1"></button>
           <span class="n">Historic</span>
           <h3>The Elms</h3>
-          <p>Five surviving photographs show the house in its earlier life, when the grounds ran well beyond the present lot line.</p>
+          <p>One of five surviving photographs, showing the house when the elms it was named for still stood.</p>
         </div>
         <div class="tf-step">
-          <div class="shot"><div class="shot-ph"><b>02</b>Before</div></div>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1842.jpeg?w=1000&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1842.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1842.jpeg?w=1000&quality=82&ssl=1 1000w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1842.jpeg?w=1600&quality=82&ssl=1 1600w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
+                 alt="The house before rehabilitation, in peeling white clapboard with an overgrown front step" width="2000" height="1500" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1842.jpeg?w=2400&quality=85&ssl=1"></button>
           <span class="n">Before</span>
           <h3>A house in decline</h3>
           <p>Condition at acquisition, photographed before any work began.</p>
         </div>
         <div class="tf-step">
-          <div class="shot"><div class="shot-ph"><b>03</b>During</div></div>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1962.jpeg?w=1000&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1962.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1962.jpeg?w=1000&quality=82&ssl=1 1000w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1962.jpeg?w=1600&quality=82&ssl=1 1600w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
+                 alt="Workmen on ladders stripping paint from the clapboards during the rehabilitation" width="2000" height="1500" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1962.jpeg?w=2400&quality=85&ssl=1"></button>
           <span class="n">During</span>
           <h3>Rehabilitation</h3>
-          <p>Systems, structure, chimneys, windows and exterior, documented as the work went on.</p>
+          <p>Stripping the exterior back to bare clapboard.</p>
         </div>
         <div class="tf-step">
-          <div class="shot"><div class="shot-ph"><b>04</b>Today</div></div>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1000&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1000&quality=82&ssl=1 1000w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1600&quality=82&ssl=1 1600w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
+                 alt="The finished house in red clapboard with black trim" width="2000" height="1333" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=2400&quality=85&ssl=1"></button>
           <span class="n">Today</span>
           <h3>The Elms today</h3>
           <p>The finished house, in red clapboard with black trim.</p>
@@ -773,6 +925,51 @@ main [id],#top{scroll-margin-top:86px}
           <p class="src">Sources will be published with the feature and categorised: primary documents, government and institutional records, reliable secondary sources, owner statements, photographic evidence, local tradition, and claims that remain unverified. Research in progress with the Massachusetts Historical Commission record, the Wilmington Historical Commission and Town Museum, and the Wilmington Memorial Library.</p>
         </aside>
       </div>
+
+      <h3 class="hist-gal-head">The five surviving photographs</h3>
+      <div class="hist-gal">
+        <figure>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-3.jpeg?w=900&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-3.jpeg?w=500&quality=82&ssl=1 500w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-3.jpeg?w=900&quality=82&ssl=1 900w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-3.jpeg?w=1400&quality=82&ssl=1 1400w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"
+                 alt="Historic photograph captioned The Elms, Silver Lake, Wilmington, Mass., showing the house behind a row of elms" width="1714" height="1286" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-3.jpeg?w=1800&quality=85&ssl=1"></button>
+          <figcaption>&ldquo;The Elms, Silver Lake, Wilmington, Mass.&rdquo;</figcaption>
+        </figure>
+        <figure>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-8.jpeg?w=900&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-8.jpeg?w=500&quality=82&ssl=1 500w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-8.jpeg?w=900&quality=82&ssl=1 900w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-8.jpeg?w=1400&quality=82&ssl=1 1400w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"
+                 alt="Sepia photograph of The Elms seen along the road beneath the elm trees" width="2000" height="1500" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-8.jpeg?w=1800&quality=85&ssl=1"></button>
+          <figcaption>The house from the road.</figcaption>
+        </figure>
+        <figure>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-6.jpeg?w=900&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-6.jpeg?w=500&quality=82&ssl=1 500w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-6.jpeg?w=900&quality=82&ssl=1 900w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-6.jpeg?w=1400&quality=82&ssl=1 1400w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"
+                 alt="Photograph inscribed The Elms, Silver Lake, Wilmington, Mass., showing the house and its drive" width="2000" height="1500" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-6.jpeg?w=1800&quality=85&ssl=1"></button>
+          <figcaption>Inscribed to The Elms, Silver Lake.</figcaption>
+        </figure>
+        <figure>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=900&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=500&quality=82&ssl=1 500w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=900&quality=82&ssl=1 900w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=1400&quality=82&ssl=1 1400w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"
+                 alt="Historic photograph with a group of people on the lawn in front of the house" width="1500" height="1125" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=1800&quality=85&ssl=1"></button>
+          <figcaption>A gathering on the lawn.</figcaption>
+        </figure>
+        <figure>
+          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0.jpeg?w=900&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0.jpeg?w=500&quality=82&ssl=1 500w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0.jpeg?w=900&quality=82&ssl=1 900w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0.jpeg?w=1400&quality=82&ssl=1 1400w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"
+                 alt="Photograph of the house with a flag flying and a carriage drive in front" width="1500" height="1125" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0.jpeg?w=1800&quality=85&ssl=1"></button>
+          <figcaption>With the flag flying.</figcaption>
+        </figure>
+      </div>
+      <p class="hist-gal-note">Reproduced as found. Provenance and dating are being established; the originals are archived unaltered.</p>
     </div>
   </section>
 
@@ -851,14 +1048,97 @@ main [id],#top{scroll-margin-top:86px}
     <div class="wrap">
       <div class="sec-head">
         <span class="kicker">For buyers</span>
-        <h2>Property documents</h2>
-        <p>Floor plans and buyer-facing material. Further documentation is available on request.</p>
+        <h2>Floor plans</h2>
+        <p>Every level as measured. Tap any sheet to enlarge it. A combined PDF and the improvements ledger follow.</p>
+      </div>
+
+      <div class="plans">
+        <figure>
+          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-01.jpeg?w=1100&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-01.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-01.jpeg?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-01.jpeg?w=1800&quality=82&ssl=1 1800w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
+                 alt="Floor plan, sheet 1 for 20 Harnden Street, Wilmington, Massachusetts" width="2048" height="1536" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-01.jpeg?w=2200&quality=85&ssl=1"></button>
+          <figcaption>Floor plan, sheet 1</figcaption>
+        </figure>
+        <figure>
+          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-02.jpeg?w=1100&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-02.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-02.jpeg?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-02.jpeg?w=1800&quality=82&ssl=1 1800w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
+                 alt="Floor plan, sheet 2 for 20 Harnden Street, Wilmington, Massachusetts" width="2048" height="1536" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-02.jpeg?w=2200&quality=85&ssl=1"></button>
+          <figcaption>Floor plan, sheet 2</figcaption>
+        </figure>
+        <figure>
+          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-03.jpeg?w=1100&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-03.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-03.jpeg?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-03.jpeg?w=1800&quality=82&ssl=1 1800w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
+                 alt="Floor plan, sheet 3 for 20 Harnden Street, Wilmington, Massachusetts" width="2048" height="1536" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-03.jpeg?w=2200&quality=85&ssl=1"></button>
+          <figcaption>Floor plan, sheet 3</figcaption>
+        </figure>
+        <figure>
+          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-04.jpeg?w=1100&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-04.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-04.jpeg?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-04.jpeg?w=1800&quality=82&ssl=1 1800w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
+                 alt="Floor plan, sheet 4 for 20 Harnden Street, Wilmington, Massachusetts" width="2048" height="1536" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-04.jpeg?w=2200&quality=85&ssl=1"></button>
+          <figcaption>Floor plan, sheet 4</figcaption>
+        </figure>
+        <figure>
+          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-05.jpeg?w=1100&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-05.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-05.jpeg?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-05.jpeg?w=1800&quality=82&ssl=1 1800w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
+                 alt="Floor plan, sheet 5 for 20 Harnden Street, Wilmington, Massachusetts" width="2048" height="1536" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-05.jpeg?w=2200&quality=85&ssl=1"></button>
+          <figcaption>Floor plan, sheet 5</figcaption>
+        </figure>
+        <figure>
+          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-06.jpeg?w=1100&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-06.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-06.jpeg?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-06.jpeg?w=1800&quality=82&ssl=1 1800w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
+                 alt="Floor plan, sheet 6 for 20 Harnden Street, Wilmington, Massachusetts" width="2048" height="1536" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-06.jpeg?w=2200&quality=85&ssl=1"></button>
+          <figcaption>Floor plan, sheet 6</figcaption>
+        </figure>
+        <figure>
+          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-07.png?w=1100&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-07.png?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-07.png?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-07.png?w=1800&quality=82&ssl=1 1800w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
+                 alt="Floor plan, sheet 7 for 20 Harnden Street, Wilmington, Massachusetts" width="1611" height="2048" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-07.png?w=2200&quality=85&ssl=1"></button>
+          <figcaption>Floor plan, sheet 7</figcaption>
+        </figure>
+        <figure>
+          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-08.png?w=1100&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-08.png?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-08.png?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-08.png?w=1800&quality=82&ssl=1 1800w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
+                 alt="Floor plan, sheet 8 for 20 Harnden Street, Wilmington, Massachusetts" width="877" height="2048" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-08.png?w=2200&quality=85&ssl=1"></button>
+          <figcaption>Floor plan, sheet 8</figcaption>
+        </figure>
+        <figure>
+          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-09.png?w=1100&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-09.png?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-09.png?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-09.png?w=1800&quality=82&ssl=1 1800w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
+                 alt="Floor plan, sheet 9 for 20 Harnden Street, Wilmington, Massachusetts" width="1727" height="2048" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-09.png?w=2200&quality=85&ssl=1"></button>
+          <figcaption>Floor plan, sheet 9</figcaption>
+        </figure>
+        <figure>
+          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-10.png?w=1100&quality=82&ssl=1"
+                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-10.png?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-10.png?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-10.png?w=1800&quality=82&ssl=1 1800w"
+                 sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
+                 alt="Floor plan, sheet 10 for 20 Harnden Street, Wilmington, Massachusetts" width="1264" height="2048" loading="lazy" decoding="async"
+                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-10.png?w=2200&quality=85&ssl=1"></button>
+          <figcaption>Floor plan, sheet 10</figcaption>
+        </figure>
       </div>
 
       <div class="docs">
         <!-- Set href to the PDF and remove aria-disabled once each file is in place. -->
         <a class="doc" href="#" aria-disabled="true">
-          <b>Floor plans &mdash; all levels</b>
+          <b>Floor plans &mdash; combined PDF</b>
           <span>PDF &middot; coming shortly</span>
         </a>
         <a class="doc" href="#" aria-disabled="true">
@@ -965,6 +1245,18 @@ main [id],#top{scroll-margin-top:86px}
 
 </main>
 
+<!-- Lightbox. Built from the page's own images, so there is nothing to
+     configure when photographs change. -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photograph">
+  <button class="lb-btn lb-close" type="button" id="lb-close" aria-label="Close">&times;</button>
+  <button class="lb-btn lb-prev" type="button" id="lb-prev" aria-label="Previous">&lsaquo;</button>
+  <figure class="lb-fig">
+    <img id="lb-img" src="" alt="">
+    <figcaption class="lb-cap" id="lb-cap"></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" type="button" id="lb-next" aria-label="Next">&rsaquo;</button>
+</div>
+
 <footer class="foot">
   <div class="wrap">
     <div class="foot-top">
@@ -983,6 +1275,7 @@ main [id],#top{scroll-margin-top:86px}
           <a href="#history">History</a>
           <a href="#improvements">Improvements</a>
           <a href="#location">Location</a>
+          <a href="#documents">Floor plans</a>
           <a href="#showing">Showings</a>
         </div>
       </div>
@@ -1090,10 +1383,65 @@ main [id],#top{scroll-margin-top:86px}
   document.querySelectorAll('.sec-head, .ov > *, .hist > *, .show-grid > *, .bro > *, .ph-shot')
     .forEach(function (el) { reveal(el); });
 
-  ['.gal > figure', '.tf > .tf-step', '.loc > .loc-card', '.docs > .doc']
+  ['.gal > figure', '.tf > .tf-step', '.loc > .loc-card', '.docs > .doc',
+   '.hist-gal > figure', '.plans > figure']
     .forEach(function (sel) {
       document.querySelectorAll(sel).forEach(function (el, i) { reveal(el, i * 70); });
     });
+
+  /* ---------- lightbox ----------
+     Groups are per-section, so Next inside the gallery does not wander off
+     into the floor plans. */
+  var lb = document.getElementById('lb');
+  var lbImg = document.getElementById('lb-img');
+  var lbCap = document.getElementById('lb-cap');
+  var group = [], at = 0, lastFocus = null;
+
+  function show(i) {
+    if (!group.length) return;
+    at = (i + group.length) % group.length;
+    var btn = group[at];
+    var im = btn.querySelector('img');
+    var fc = btn.parentElement.querySelector('figcaption');
+    lbImg.src = im.getAttribute('data-full') || im.currentSrc || im.src;
+    lbImg.alt = im.alt || '';
+    lbCap.innerHTML = '<b>' + (at + 1) + ' / ' + group.length + '</b>' +
+                      (fc ? fc.textContent : '');
+  }
+
+  function openLb(btn) {
+    var scope = btn.closest('.gal, .plans, .hist-gal, .tf') || document;
+    group = Array.prototype.slice.call(scope.querySelectorAll('button.shot[data-lb]'));
+    lastFocus = btn;
+    show(group.indexOf(btn));
+    lb.classList.add('is-on');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('lb-close').focus();
+  }
+
+  function closeLb() {
+    lb.classList.remove('is-on');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest && e.target.closest('button.shot[data-lb]');
+    if (btn) { e.preventDefault(); openLb(btn); }
+  });
+
+  document.getElementById('lb-close').addEventListener('click', closeLb);
+  document.getElementById('lb-prev').addEventListener('click', function () { show(at - 1); });
+  document.getElementById('lb-next').addEventListener('click', function () { show(at + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('is-on')) return;
+    if (e.key === 'Escape') closeLb();
+    else if (e.key === 'ArrowLeft') show(at - 1);
+    else if (e.key === 'ArrowRight') show(at + 1);
+  });
 
   /* ---------- inquiry form ----------
      Same behaviour as the main site: the form composes an email rather than
