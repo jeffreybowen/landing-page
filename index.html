@@ -22,7 +22,7 @@
      ============================================================== -->
 
 <title>Jeffrey Bowen | Greater Boston Real Estate Broker</title>
-<meta name="description" content="Greater Boston real estate. Jeffrey Bowen has sold condos, lofts, triple-deckers, multifamily and single-family homes across Boston and the surrounding towns since 2001. 716 closings. Se habla espanol.">
+<meta name="description" content="Greater Boston real estate, proven since 2001. Jeffrey Bowen has sold 750+ condos, lofts, multifamily, investment and single-family properties across Boston and the towns around it. One broker, first conversation to closing. Se habla espanol.">
 <link rel="canonical" href="https://REPLACE-ME.com/">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="author" content="Jeffrey Bowen">
@@ -41,14 +41,14 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://REPLACE-ME.com/">
 <meta property="og:title" content="Jeffrey Bowen | Greater Boston Real Estate Broker">
-<meta property="og:description" content="24 years selling condos, lofts, triple-deckers, multifamily and single-family homes across Greater Boston. 716 closings. Se habla espanol.">
+<meta property="og:description" content="750+ properties sold. 25+ years in Greater Boston. One broker from first conversation to closing. Se habla espanol.">
 <meta property="og:image" content="https://REPLACE-ME.com/heatshot.jpeg">
 <meta property="og:image:alt" content="Jeffrey Bowen, real estate broker associate serving Greater Boston">
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Jeffrey Bowen | Greater Boston Real Estate Broker">
-<meta name="twitter:description" content="24 years selling condos, lofts, triple-deckers, multifamily and single-family homes across Greater Boston. 716 closings. Se habla espanol.">
+<meta name="twitter:description" content="750+ properties sold. 25+ years in Greater Boston. One broker from first conversation to closing. Se habla espanol.">
 <meta name="twitter:image" content="https://REPLACE-ME.com/heatshot.jpeg">
 
 <!-- Structured data. This is the part that actually moves the needle for a
@@ -426,7 +426,10 @@ p:last-child{margin-bottom:0}
 
 /* ---------- figures strip ---------- */
 .figs{background:var(--ink-dk);color:var(--on-ink)}
-.figs-in{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line-lt)}
+/* Two figures and a phrase. The phrase needs more room than a number and a
+   slightly smaller size, or it wraps and the row sits unevenly. */
+.figs-in{display:grid;grid-template-columns:1fr 1fr 1.4fr;border-left:1px solid var(--line-lt)}
+.fig:last-child b{font-size:clamp(20px,2.2vw,28px);white-space:nowrap}
 .fig{padding:26px 22px;border-right:1px solid var(--line-lt)}
 .fig b{
   display:block;font-family:var(--display);font-weight:600;color:var(--gold-lt);
@@ -434,7 +437,13 @@ p:last-child{margin-bottom:0}
 }
 .fig small{display:block;margin-top:8px;font-size:13.5px;color:var(--on-ink-dim);line-height:1.4}
 .figs-note{padding:13px 0 22px;font-size:13px;color:var(--grey-lt);max-width:70ch}
-@media(max-width:720px){.figs-in{grid-template-columns:1fr 1fr}}
+/* "Boston & Beyond" is a phrase, not a figure, so it wraps where the
+   numbers do not -- give it the full width once the row breaks. */
+@media(max-width:820px){.figs-in{grid-template-columns:1fr 1fr}
+  .fig:last-child{grid-column:1/-1;border-right:0}}
+@media(max-width:480px){.figs-in{grid-template-columns:1fr}
+  .fig{border-right:0;border-bottom:1px solid var(--line-lt)}
+  .fig:last-child{border-bottom:0}}
 
 /* ---------- generic section ---------- */
 .sec{padding:clamp(58px,7.5vw,104px) 0}
@@ -928,8 +937,8 @@ main [id],#top{scroll-margin-top:86px}
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <h1 class="rv">Boston, and every<br>town around it.<br><em>Twenty-four years. 716&nbsp;closings.</em></h1>
-          <p class="hero-sub rv">Jeffrey Bowen sells condos, lofts, triple&#8209;deckers, multifamily and single-family homes right across Greater Boston &mdash; the city neighborhoods and the towns around them &mdash; and has done since 2001.</p>
+          <h1 class="rv">Greater Boston<br>real estate.<br><em>Proven since 2001.</em></h1>
+          <p class="hero-sub rv">750+ properties sold. 25+ years of local experience. One broker from first conversation to closing.</p>
           <div class="hero-acts rv">
             <button type="button" class="btn" data-book="">Book a meeting</button>
             <a class="btn ghost" href="tel:+17812019488">Call 781-201-9488</a>
@@ -951,12 +960,11 @@ main [id],#top{scroll-margin-top:86px}
   <section class="figs">
     <div class="wrap">
       <div class="figs-in">
-        <div class="fig"><b>716</b><small>Closings to date</small></div>
-        <div class="fig"><b>24</b><small>Years licensed in Massachusetts</small></div>
-        <div class="fig"><b>$609K</b><small>Average sale price</small></div>
-        <div class="fig"><b>$260K&ndash;$1.7M</b><small>Range Jeffrey works in</small></div>
+        <div class="fig"><b>750+</b><small>Properties sold</small></div>
+        <div class="fig"><b>25+</b><small>Years in Greater Boston</small></div>
+        <div class="fig"><b>Boston &amp; Beyond</b><small>The city and the towns around it</small></div>
       </div>
-      <p class="figs-note">Figures cover The Bowen Realty Group, as published on Jeffrey&rsquo;s Zillow profile. The bulk of those closings are in Chelsea, East Boston, Everett, Malden and Revere &mdash; which is where the depth comes from.</p>
+      <p class="figs-note">Condos and lofts, two- and three-family homes, multifamily and investment property, new development, and single-family houses &mdash; for buyers, sellers and investors. Jeffrey takes the listing, the pricing, the marketing, the showings and the negotiation himself, from the first conversation through to the closing table. The depth is in Chelsea, East Boston, Everett, Malden and Revere, where the bulk of the work has been; the reach is the whole metro.</p>
     </div>
   </section>
 
@@ -1048,7 +1056,7 @@ main [id],#top{scroll-margin-top:86px}
         <div class="about-body">
           <h2>Meet Jeffrey Bowen</h2>
           <div class="prose">
-            <p>Jeffrey Bowen is a broker associate with ERealty Advisors and leads The Bowen Realty Group out of 9 Canal Street in Boston. He has been licensed in Massachusetts for 24 years, and in that time the group has closed 716 sales &mdash; the large majority of them in Chelsea, East Boston, Everett, Malden and Revere.</p>
+            <p>Jeffrey Bowen is a broker associate with ERealty Advisors and leads The Bowen Realty Group out of 9 Canal Street in Boston. He has been licensed in Massachusetts since 2001 and has sold more than 750 properties in that time &mdash; the large majority of them in Chelsea, East Boston, Everett, Malden and Revere.</p>
             <p>That density is where the judgment comes from. He knows which loft buildings have healthy reserves, what a triple-decker on the wrong side of a street actually trades for, and which buyers are already looking on a given block. Two decades of working that closely travels well &mdash; the questions a seller in Quincy or a buyer in Somerville needs answered are the same ones, and Jeffrey takes listings and represents buyers right across Greater Boston.</p>
             <p>His work splits fairly evenly between listing homes, representing buyers, and rentals and small commercial deals. He handles a steady share of first-time buyers, and works in English and Spanish &mdash; which matters in a city where most households speak Spanish at home.</p>
           </div>
