@@ -6,12 +6,8 @@
 <script>document.documentElement.className+=" js"</script>
 
 <!-- ============================ SEO ============================
-     SITE URL: absolute URLs below use https://REPLACE-ME.com, matching the
-     convention in index.html. Swap them all in one pass when the domain is
-     settled:
-
-         grep -rl 'REPLACE-ME.com' . --exclude-dir=.git --exclude-dir=node_modules \
-           | xargs sed -i '' 's|https://REPLACE-ME.com|https://jeffreybowen.com|g'
+     SITE URL: absolute URLs below use https://jeffreybowen.com, the live
+     domain, matching the convention in index.html.
 
      TARGET QUERIES for this page, in rough priority order:
        20 Harnden Street Wilmington MA / 20 Harnden St Wilmington
@@ -25,7 +21,7 @@
 
 <title>20 Harnden Street, Wilmington MA | The Elms &mdash; Henry Harnden House</title>
 <meta name="description" content="The Elms, the historic Henry Harnden House at 20 Harnden Street in Wilmington, Massachusetts. Seven bedrooms, six baths, ten fireplaces and 4,220 square feet on eight-tenths of an acre, after a full rehabilitation. Coming soon at $1,395,000.">
-<link rel="canonical" href="https://REPLACE-ME.com/20-harnden-street-wilmington-ma.html">
+<link rel="canonical" href="https://jeffreybowen.com/20-harnden-street-wilmington-ma.html">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="author" content="Jeffrey Bowen">
 <meta name="theme-color" content="#0C0C0C">
@@ -36,7 +32,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="The Bowen Realty Group">
 <meta property="og:locale" content="en_US">
-<meta property="og:url" content="https://REPLACE-ME.com/20-harnden-street-wilmington-ma.html">
+<meta property="og:url" content="https://jeffreybowen.com/20-harnden-street-wilmington-ma.html">
 <meta property="og:title" content="The Elms | 20 Harnden Street, Wilmington, Massachusetts">
 <meta property="og:description" content="A 1795 Colonial known as The Elms, rehabilitated top to bottom. Seven bedrooms, six baths, ten fireplaces, 4,220 square feet. Coming soon at $1,395,000.">
 <!-- Cropped to the top 72% before resizing: a straight 1200x630 centre crop
@@ -62,10 +58,10 @@
   "@graph": [
     {
       "@type": "SingleFamilyResidence",
-      "@id": "https://REPLACE-ME.com/20-harnden-street-wilmington-ma.html#residence",
+      "@id": "https://jeffreybowen.com/20-harnden-street-wilmington-ma.html#residence",
       "name": "The Elms (Henry Harnden House)",
       "alternateName": "20 Harnden Street",
-      "url": "https://REPLACE-ME.com/20-harnden-street-wilmington-ma.html",
+      "url": "https://jeffreybowen.com/20-harnden-street-wilmington-ma.html",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "20 Harnden Street",
@@ -92,13 +88,13 @@
     },
     {
       "@type": "Offer",
-      "@id": "https://REPLACE-ME.com/20-harnden-street-wilmington-ma.html#offer",
-      "itemOffered": { "@id": "https://REPLACE-ME.com/20-harnden-street-wilmington-ma.html#residence" },
+      "@id": "https://jeffreybowen.com/20-harnden-street-wilmington-ma.html#offer",
+      "itemOffered": { "@id": "https://jeffreybowen.com/20-harnden-street-wilmington-ma.html#residence" },
       "price": "1395000",
       "priceCurrency": "USD",
       "availability": "https://schema.org/PreOrder",
       "availabilityStarts": "2026-09-28",
-      "seller": { "@id": "https://REPLACE-ME.com/#jeffrey" }
+      "seller": { "@id": "https://jeffreybowen.com/#jeffrey" }
     },
     {
       "@type": "VideoObject",
@@ -113,7 +109,7 @@
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://REPLACE-ME.com/" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jeffreybowen.com/" },
         { "@type": "ListItem", "position": 2, "name": "20 Harnden Street, Wilmington, MA" }
       ]
     }
@@ -660,7 +656,7 @@ main [id],#top{scroll-margin-top:86px}
 
 <header class="bar">
   <div class="bar-in">
-    <a class="brand" href="./index.html">The Bowen Realty Group<span>Jeffrey Bowen &middot; ERealty Advisors Inc.</span></a>
+    <a class="brand" href="/">The Bowen Realty Group<span>Jeffrey Bowen &middot; ERealty Advisors Inc.</span></a>
     <nav id="site-nav">
       <a href="#overview">Overview</a>
       <a href="#gallery">Gallery</a>
@@ -670,7 +666,7 @@ main [id],#top{scroll-margin-top:86px}
       <a href="#location">Location</a>
       <a href="#documents">Floor plans</a>
       <a href="#showing">Showings</a>
-      <a href="./index.html">&larr; Main site</a>
+      <a href="/">&larr; Main site</a>
     </nav>
     <div class="callbox">
       <a class="bar-call" id="callbtn" href="tel:+17812019488"
@@ -699,7 +695,7 @@ main [id],#top{scroll-margin-top:86px}
   <section class="ph">
     <div class="wrap">
       <nav class="ph-crumb" aria-label="Breadcrumb">
-        <a href="./index.html">Home</a> &nbsp;&rsaquo;&nbsp; Wilmington, MA 01887 &nbsp;&rsaquo;&nbsp; 20 Harnden Street
+        <a href="/">Home</a> &nbsp;&rsaquo;&nbsp; Wilmington, MA 01887 &nbsp;&rsaquo;&nbsp; 20 Harnden Street
       </nav>
 
       <div class="ph-in">
@@ -1342,7 +1338,7 @@ main [id],#top{scroll-margin-top:86px}
             <a href="mailto:jeff@jeffreybowen.com">Email Jeffrey</a>
             <a href="https://www.zillow.com/profile/JeffreyBowen" target="_blank" rel="noopener">Zillow profile</a>
             <a href="https://www.youtube.com/@JeffreyBowen" target="_blank" rel="noopener">YouTube</a>
-            <a href="./index.html">Main site</a>
+            <a href="/">Main site</a>
           </div>
 
           <div class="creds">
@@ -1393,10 +1389,10 @@ main [id],#top{scroll-margin-top:86px}
       <div>
         <b>Elsewhere</b>
         <div class="foot-links">
-          <a href="./index.html">Main site</a>
-          <a href="./index.html#listings">Listings</a>
-          <a href="./index.html#about">About Jeffrey</a>
-          <a href="./index.html#contact">Contact</a>
+          <a href="/">Main site</a>
+          <a href="/#listings">Listings</a>
+          <a href="/#about">About Jeffrey</a>
+          <a href="/#contact">Contact</a>
         </div>
       </div>
     </div>

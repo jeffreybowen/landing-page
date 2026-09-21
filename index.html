@@ -9,21 +9,13 @@
 <script>document.documentElement.className+=" js"</script>
 
 <!-- ============================ SEO ============================
-     SITE URL: every absolute URL below uses https://REPLACE-ME.com.
-     Once the domain is settled, swap them all in one go:
-
-         cd /path/to/site
-         grep -rl 'REPLACE-ME.com' . --exclude-dir=.git --exclude-dir=node_modules \
-           | xargs sed -i '' 's|https://REPLACE-ME.com|https://yourdomain.com|g'
-
-     (drop the '' after -i on Linux). Then resubmit the sitemap in Search
-     Console. Until that swap, canonical/og:url/sitemap point nowhere -- which
-     is safe, but the page will not rank properly.
+     SITE URL: every absolute URL below uses https://jeffreybowen.com, the
+     live domain. canonical/og:url/sitemap all resolve there.
      ============================================================== -->
 
 <title>Jeffrey Bowen | Greater Boston Real Estate Broker</title>
 <meta name="description" content="Greater Boston real estate, proven since 2001. Jeffrey Bowen has sold 750+ condos, lofts, multifamily, investment and single-family properties across Boston and the towns around it. One broker, first conversation to closing. Se habla espanol.">
-<link rel="canonical" href="https://REPLACE-ME.com/">
+<link rel="canonical" href="https://jeffreybowen.com/">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="author" content="Jeffrey Bowen">
 <meta name="theme-color" content="#0C0C0C">
@@ -39,17 +31,17 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Bowen Realty Group">
 <meta property="og:locale" content="en_US">
-<meta property="og:url" content="https://REPLACE-ME.com/">
+<meta property="og:url" content="https://jeffreybowen.com/">
 <meta property="og:title" content="Jeffrey Bowen | Greater Boston Real Estate Broker">
 <meta property="og:description" content="750+ properties sold. 25+ years in Greater Boston. One broker from first conversation to closing. Se habla espanol.">
-<meta property="og:image" content="https://REPLACE-ME.com/heatshot.jpeg">
+<meta property="og:image" content="https://jeffreybowen.com/heatshot.jpeg">
 <meta property="og:image:alt" content="Jeffrey Bowen, real estate broker associate serving Greater Boston">
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Jeffrey Bowen | Greater Boston Real Estate Broker">
 <meta name="twitter:description" content="750+ properties sold. 25+ years in Greater Boston. One broker from first conversation to closing. Se habla espanol.">
-<meta name="twitter:image" content="https://REPLACE-ME.com/heatshot.jpeg">
+<meta name="twitter:image" content="https://jeffreybowen.com/heatshot.jpeg">
 
 <!-- Structured data. This is the part that actually moves the needle for a
      local agent: it tells Google this page IS a real-estate business, where it
@@ -61,12 +53,12 @@
   "@graph": [
     {
       "@type": "RealEstateAgent",
-      "@id": "https://REPLACE-ME.com/#agency",
+      "@id": "https://jeffreybowen.com/#agency",
       "name": "The Bowen Realty Group",
       "alternateName": "Jeffrey Bowen, eRealty Advisors",
-      "url": "https://REPLACE-ME.com/",
-      "image": "https://REPLACE-ME.com/heatshot.jpeg",
-      "logo": "https://REPLACE-ME.com/heatshot.jpeg",
+      "url": "https://jeffreybowen.com/",
+      "image": "https://jeffreybowen.com/heatshot.jpeg",
+      "logo": "https://jeffreybowen.com/heatshot.jpeg",
       "telephone": "+1-781-201-9488",
       "faxNumber": "+1-866-885-9139",
       "email": "jeff@jeffreybowen.com",
@@ -120,8 +112,8 @@
         { "@type": "AdministrativeArea", "name": "Norfolk County, MA" },
         { "@type": "AdministrativeArea", "name": "Essex County, MA" }
       ],
-      "founder": { "@id": "https://REPLACE-ME.com/#jeffrey" },
-      "employee": { "@id": "https://REPLACE-ME.com/#jeffrey" },
+      "founder": { "@id": "https://jeffreybowen.com/#jeffrey" },
+      "employee": { "@id": "https://jeffreybowen.com/#jeffrey" },
       "parentOrganization": {
         "@type": "Organization",
         "name": "eRealty Advisors, Inc.",
@@ -134,16 +126,16 @@
     },
     {
       "@type": "RealEstateAgent",
-      "@id": "https://REPLACE-ME.com/#jeffrey",
+      "@id": "https://jeffreybowen.com/#jeffrey",
       "name": "Jeffrey Bowen",
       "jobTitle": "Broker Associate",
-      "url": "https://REPLACE-ME.com/",
-      "image": "https://REPLACE-ME.com/heatshot.jpeg",
+      "url": "https://jeffreybowen.com/",
+      "image": "https://jeffreybowen.com/heatshot.jpeg",
       "telephone": "+1-781-201-9488",
       "email": "jeff@jeffreybowen.com",
       "knowsLanguage": ["en-US", "es"],
       "identifier": "MA Real Estate Broker License #9068834",
-      "worksFor": { "@id": "https://REPLACE-ME.com/#agency" },
+      "worksFor": { "@id": "https://jeffreybowen.com/#agency" },
       "sameAs": [
         "https://www.zillow.com/profile/JeffreyBowen",
         "https://www.youtube.com/@JeffreyBowen"
@@ -151,20 +143,20 @@
     },
     {
       "@type": "WebSite",
-      "@id": "https://REPLACE-ME.com/#website",
-      "url": "https://REPLACE-ME.com/",
+      "@id": "https://jeffreybowen.com/#website",
+      "url": "https://jeffreybowen.com/",
       "name": "The Bowen Realty Group",
       "inLanguage": "en-US",
-      "publisher": { "@id": "https://REPLACE-ME.com/#agency" }
+      "publisher": { "@id": "https://jeffreybowen.com/#agency" }
     },
     {
       "@type": "WebPage",
-      "@id": "https://REPLACE-ME.com/#webpage",
-      "url": "https://REPLACE-ME.com/",
+      "@id": "https://jeffreybowen.com/#webpage",
+      "url": "https://jeffreybowen.com/",
       "name": "Jeffrey Bowen | Greater Boston Real Estate Broker",
-      "isPartOf": { "@id": "https://REPLACE-ME.com/#website" },
-      "about": { "@id": "https://REPLACE-ME.com/#agency" },
-      "primaryImageOfPage": "https://REPLACE-ME.com/heatshot.jpeg",
+      "isPartOf": { "@id": "https://jeffreybowen.com/#website" },
+      "about": { "@id": "https://jeffreybowen.com/#agency" },
+      "primaryImageOfPage": "https://jeffreybowen.com/heatshot.jpeg",
       "inLanguage": "en-US"
     }
   ]
@@ -2144,16 +2136,12 @@ document.getElementById('lead').addEventListener('submit', function (e) {
 
      Mark booking_complete as a key event in GA4 alongside lead_form_submit.
 
-  8. SEO. Everything is wired but pointed at a placeholder domain. Do these,
-     in order, and the page is ready to be found:
+  8. SEO. Domain is live. Do these, in order, and the page is ready to be
+     found:
 
-     a. Swap the domain. Seven absolute URLs in this file plus robots.txt and
-        sitemap.xml all say https://REPLACE-ME.com:
-
-            grep -rl 'REPLACE-ME.com' . --exclude-dir=.git --exclude-dir=node_modules \
-              | xargs sed -i '' 's|https://REPLACE-ME.com|https://yourdomain.com|g'
-
-        (drop the '' after -i on Linux). Confirm none are left:
+     a. Domain swap is done -- this file, robots.txt and sitemap.xml all
+        point at https://jeffreybowen.com. Confirm none of the old
+        placeholder remains:
             grep -r REPLACE-ME . --exclude-dir=.git
 
      b. Google Search Console (search.google.com/search-console): add the
