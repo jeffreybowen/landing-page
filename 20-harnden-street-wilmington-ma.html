@@ -235,6 +235,32 @@ p:last-child{margin-bottom:0}
 }
 @media(prefers-reduced-motion:reduce){.bar-toggle-box span{transition:none}.bar nav{transition:none}}
 
+/* ---------- call or text ----------
+   The number is a plain tel: link in the markup, so it still dials if scripts
+   never run; JS upgrades it in place to a two-choice menu. */
+.callbox{position:relative;display:inline-flex}
+.callmenu{
+  position:absolute;top:calc(100% + 9px);right:0;z-index:70;
+  min-width:208px;background:var(--ink);border:1px solid var(--line-lt);
+  flex-direction:column;box-shadow:0 14px 34px rgba(0,0,0,.45);
+}
+.callmenu[hidden]{display:none}
+.callmenu:not([hidden]){display:flex}
+.callmenu a{
+  display:flex;align-items:center;gap:12px;text-decoration:none;
+  color:var(--on-ink);padding:13px 15px;border-bottom:1px solid var(--line-lt);
+}
+.callmenu a:last-child{border-bottom:0}
+.callmenu a:hover{background:var(--ink-lt)}
+.callmenu a:hover b{color:var(--gold-lt)}
+.callmenu b{
+  display:block;font-family:var(--display);font-weight:600;font-size:14.5px;
+  line-height:1.2;
+}
+.callmenu small{display:block;font-size:12.5px;color:var(--on-ink-dim);margin-top:2px}
+.callmenu svg{flex:0 0 auto}
+@media(max-width:420px){.callmenu{min-width:180px}}
+
 /* ---------- buttons ---------- */
 .btn{
   display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;
@@ -646,7 +672,20 @@ main [id],#top{scroll-margin-top:86px}
       <a href="#showing">Showings</a>
       <a href="./index.html">&larr; Main site</a>
     </nav>
-    <a class="bar-call" href="tel:+17812019488">781&#8209;201&#8209;9488</a>
+    <div class="callbox">
+      <a class="bar-call" id="callbtn" href="tel:+17812019488"
+         aria-haspopup="menu" aria-expanded="false">781&#8209;201&#8209;9488</a>
+      <div class="callmenu" id="callmenu" role="menu" hidden>
+        <a role="menuitem" href="tel:+17812019488">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C29B40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+          <span><b>Call</b><small>781-201-9488</small></span>
+        </a>
+        <a role="menuitem" href="sms:+17812019488">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C29B40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span><b>Text</b><small>781-201-9488</small></span>
+        </a>
+      </div>
+    </div>
     <button class="bar-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
       <span class="bar-toggle-box"><span></span><span></span><span></span></span>
       <span class="sr-only">Menu</span>
@@ -1243,7 +1282,8 @@ main [id],#top{scroll-margin-top:86px}
           </dl>
 
           <p style="margin-top:26px;font-size:15px;color:var(--on-ink-dim)">
-            Or call Jeffrey directly on <a href="tel:+17812019488" style="color:var(--gold-lt)">781-201-9488</a>,
+            Or reach Jeffrey directly &mdash; <a href="tel:+17812019488" style="color:var(--gold-lt)">call 781-201-9488</a>,
+            <a href="sms:+17812019488" style="color:var(--gold-lt)">send a text</a>,
             or email <a href="mailto:jeff@jeffreybowen.com" style="color:var(--gold-lt)">jeff@jeffreybowen.com</a>.
           </p>
         </div>
@@ -1298,6 +1338,7 @@ main [id],#top{scroll-margin-top:86px}
 
           <div class="bro-links">
             <a href="tel:+17812019488">Call 781-201-9488</a>
+            <a href="sms:+17812019488">Text 781-201-9488</a>
             <a href="mailto:jeff@jeffreybowen.com">Email Jeffrey</a>
             <a href="https://www.zillow.com/profile/JeffreyBowen" target="_blank" rel="noopener">Zillow profile</a>
             <a href="https://www.youtube.com/@JeffreyBowen" target="_blank" rel="noopener">YouTube</a>
@@ -1334,7 +1375,7 @@ main [id],#top{scroll-margin-top:86px}
         <b>Jeffrey Bowen</b>
         The Bowen Realty Group &middot; ERealty Advisors Inc.<br>
         9 Canal Street, Boston, MA 02114<br>
-        <a href="tel:+17812019488">781-201-9488</a> &middot; <a href="mailto:jeff@jeffreybowen.com">jeff@jeffreybowen.com</a>
+        <a href="tel:+17812019488">781-201-9488</a> &middot; <a href="sms:+17812019488">text</a> &middot; <a href="mailto:jeff@jeffreybowen.com">jeff@jeffreybowen.com</a>
       </div>
       <div>
         <b>This property</b>
@@ -1375,6 +1416,36 @@ main [id],#top{scroll-margin-top:86px}
 <script>
 (function () {
   'use strict';
+
+  /* ---------- call or text ----------
+     The number dials on its own without this; here it becomes a menu so a
+     visitor on a phone can text instead, which many prefer to calling. */
+  var callBtn = document.getElementById('callbtn');
+  var callMenu = document.getElementById('callmenu');
+
+  if (callBtn && callMenu) {
+    var setCall = function (open) {
+      callMenu.hidden = !open;
+      callBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+
+    callBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      setCall(callMenu.hidden);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!callMenu.hidden && !callMenu.contains(e.target) && !callBtn.contains(e.target)) {
+        setCall(false);
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !callMenu.hidden) { setCall(false); callBtn.focus(); }
+    });
+
+    callMenu.addEventListener('click', function () { setCall(false); });
+  }
 
   /* ---------- mobile menu ---------- */
   var navToggle = document.getElementById('nav-toggle');
