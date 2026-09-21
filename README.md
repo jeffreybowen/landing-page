@@ -218,16 +218,8 @@ types; its embed API is close enough that the swap is small.
 `index.html` ends with a numbered checklist covering the domain swap, Search
 Console, Google Business Profile and the analytics ID. The short version:
 
-1. **Swap the placeholder domain.** Absolute URLs across `index.html`,
-   `robots.txt` and `sitemap.xml` all say `https://REPLACE-ME.com`:
-
-   ```bash
-   grep -rl 'REPLACE-ME.com' . --exclude-dir=.git --exclude-dir=node_modules \
-     | xargs sed -i '' 's|https://REPLACE-ME.com|https://yourdomain.com|g'
-   ```
-
-   Drop the `''` after `-i` on Linux. Confirm with
-   `grep -r REPLACE-ME . --exclude-dir=.git`.
+1. **Confirm the live domain.** Canonical URLs across the pages,
+   `robots.txt` and `sitemap.xml` use `https://jeffreybowen.com`.
 
 2. **Turn on Google Analytics.** One line near the top of `index.html`:
 

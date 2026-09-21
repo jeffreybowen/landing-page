@@ -7,7 +7,7 @@
 
 <!-- ============================ SEO ============================
      SITE URL: absolute URLs below use https://jeffreybowen.com, the live
-     domain, matching the convention in index.html.
+     domain, matching the convention on the home page.
 
      TARGET QUERIES for this page, in rough priority order:
        20 Harnden Street Wilmington MA / 20 Harnden St Wilmington
@@ -28,6 +28,8 @@
 
 <meta name="geo.region" content="US-MA">
 <meta name="geo.placename" content="Wilmington, Massachusetts">
+<meta name="geo.position" content="42.5650031;-71.1826448">
+<meta name="ICBM" content="42.5650031, -71.1826448">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="The Bowen Realty Group">
@@ -37,7 +39,7 @@
 <meta property="og:description" content="A 1795 Colonial known as The Elms, rehabilitated top to bottom. Seven bedrooms, six baths, ten fireplaces, 4,220 square feet. Coming soon at $1,395,000.">
 <!-- Cropped to the top 72% before resizing: a straight 1200x630 centre crop
      cuts the roofline and fills the card with patchy lawn. -->
-<meta property="og:image" content="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?crop=0px,0px,100pct,72pct&#38;resize=1200,630&#38;quality=82&#38;ssl=1">
+<meta property="og:image" content="https://jeffreybowen.com/images/harnden/FB6A4612-og-1200x630.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The front elevation of The Elms, 20 Harnden Street, Wilmington, Massachusetts">
@@ -45,12 +47,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Elms | 20 Harnden Street, Wilmington, Massachusetts">
 <meta name="twitter:description" content="A 1795 Colonial known as The Elms, rehabilitated top to bottom. Coming soon at $1,395,000.">
-<meta name="twitter:image" content="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?crop=0px,0px,100pct,72pct&#38;resize=1200,630&#38;quality=82&#38;ssl=1">
+<meta name="twitter:image" content="https://jeffreybowen.com/images/harnden/FB6A4612-og-1200x630.jpg">
 
-<!-- Structured data. Three things are being said here: this page is about a
-     specific house, that house is offered for sale by a named agent, and the
-     page sits below the home page in a crumb trail. Figures match the MLS
-     record; nothing is asserted that is not on the listing.
+<!-- Structured data for the residence and offer, visible breadcrumb, and
+     property-tour video. Figures match visible page content.
      Validate changes at https://search.google.com/test/rich-results -->
 <script type="application/ld+json">
 {
@@ -59,8 +59,8 @@
     {
       "@type": "SingleFamilyResidence",
       "@id": "https://jeffreybowen.com/20-harnden-street-wilmington-ma.html#residence",
-      "name": "The Elms (Henry Harnden House)",
-      "alternateName": "20 Harnden Street",
+      "name": "The Elms — 20 Harnden Street",
+      "alternateName": "Henry Harnden House",
       "url": "https://jeffreybowen.com/20-harnden-street-wilmington-ma.html",
       "address": {
         "@type": "PostalAddress",
@@ -70,13 +70,18 @@
         "postalCode": "01887",
         "addressCountry": "US"
       },
-      "photo": "https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1600&#38;quality=82&#38;ssl=1",
+      "photo": "https://jeffreybowen.com/images/harnden/FB6A4612-1600.jpg",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.5650031,
+        "longitude": -71.1826448
+      },
       "numberOfRooms": 7,
       "numberOfBedrooms": 7,
-      "numberOfFullBathrooms": 6,
-      "yearBuilt": "1795",
+      "numberOfBathroomsTotal": 6,
+      "yearBuilt": 1795,
       "floorSize": { "@type": "QuantitativeValue", "value": 4220, "unitCode": "FTK" },
-      "lotSize": { "@type": "QuantitativeValue", "value": 0.8, "unitText": "acres" },
+      "lotSize": { "@type": "QuantitativeValue", "value": 0.8, "unitText": "acre" },
       "numberOfAvailableAccommodationUnits": 1,
       "amenityFeature": [
         { "@type": "LocationFeatureSpecification", "name": "Fireplaces", "value": "10" },
@@ -84,47 +89,51 @@
         { "@type": "LocationFeatureSpecification", "name": "Water", "value": "Public" },
         { "@type": "LocationFeatureSpecification", "name": "Sewer", "value": "Public" },
         { "@type": "LocationFeatureSpecification", "name": "Walk-up attic", "value": true }
-      ]
-    },
-    {
-      "@type": "Offer",
-      "@id": "https://jeffreybowen.com/20-harnden-street-wilmington-ma.html#offer",
-      "itemOffered": { "@id": "https://jeffreybowen.com/20-harnden-street-wilmington-ma.html#residence" },
-      "price": "1395000",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/PreOrder",
-      "availabilityStarts": "2026-09-28",
-      "seller": { "@id": "https://jeffreybowen.com/#jeffrey" }
-    },
-    {
-      "@type": "VideoObject",
-      "name": "20 Harnden St. Wilmington MA 01887. General Harnden's Home restored. For sale by Jeffrey Bowen",
-      "description": "A walkthrough of The Elms, the Henry Harnden House at 20 Harnden Street, Wilmington, Massachusetts, after its rehabilitation.",
-      "thumbnailUrl": "https://i.ytimg.com/vi/nduKIXd-a8E/maxresdefault.jpg",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/nduKIXd-a8E",
-      "contentUrl": "https://www.youtube.com/watch?v=nduKIXd-a8E",
-      "COMMENT": "Add uploadDate (YYYY-MM-DD) from the YouTube video page; Google needs it for video rich results.",
-      "publisher": { "@type": "Person", "name": "Jeffrey Bowen", "url": "https://www.youtube.com/@JeffreyBowen" }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "@id": "https://jeffreybowen.com/20-harnden-street-wilmington-ma.html#offer",
+        "price": 1395000,
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/PreOrder",
+        "validFrom": "2026-09-28",
+        "seller": {
+          "@type": "RealEstateAgent",
+          "name": "Jeffrey Bowen",
+          "telephone": "+1-781-201-9488",
+          "worksFor": { "@type": "Organization", "name": "ERealty Advisors Inc." }
+        }
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jeffreybowen.com/" },
-        { "@type": "ListItem", "position": 2, "name": "20 Harnden Street, Wilmington, MA" }
+        { "@type": "ListItem", "position": 2, "name": "Wilmington, MA 01887", "item": "https://jeffreybowen.com/20-harnden-street-wilmington-ma.html#location" },
+        { "@type": "ListItem", "position": 3, "name": "20 Harnden Street" }
       ]
+    },
+    {
+      "@type": "VideoObject",
+      "name": "20 Harnden St. Wilmington MA 01887. General Harnden's Home restored. For sale by Jeffrey Bowen",
+      "description": "A walkthrough of The Elms, the Henry Harnden House at 20 Harnden Street, Wilmington, Massachusetts, after its rehabilitation.",
+      "thumbnailUrl": "https://jeffreybowen.com/images/harnden/property-tour-thumbnail.jpg",
+      "uploadDate": "2026-05-21T20:10:35-07:00",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/nduKIXd-a8E",
+      "contentUrl": "https://www.youtube.com/watch?v=nduKIXd-a8E",
+      "publisher": { "@type": "Person", "name": "Jeffrey Bowen", "url": "https://www.youtube.com/@JeffreyBowen" }
     }
   ]
 }
 </script>
 
-<link rel="preconnect" href="https://i0.wp.com">
-<link rel="preconnect" href="https://i.ytimg.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet"></noscript>
 
 <style>
-/* Tokens, base type, masthead and footer are kept in step with index.html.
+/* Tokens, base type, masthead and footer are kept in step with the home page.
    The site is deliberately build-step-free, so they are repeated here rather
    than extracted; if one moves, move the other. Everything below the
    "property page" rule is unique to this page. */
@@ -153,7 +162,8 @@ body{
   font-family:var(--body);font-size:17px;line-height:1.62;
   font-optical-sizing:auto;
 }
-img{max-width:100%;height:auto;display:block}
+img,picture{max-width:100%;display:block}
+img{height:auto}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .wrap{max-width:1240px;margin:0 auto;padding:0 var(--gut)}
@@ -309,6 +319,7 @@ p:last-child{margin-bottom:0}
   aspect-ratio:3/2;overflow:hidden;
 }
 .shot img{width:100%;height:100%;object-fit:cover}
+.shot picture{width:100%;height:100%}
 .shot-ph{
   padding:22px;text-align:center;font-family:var(--display);
   font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
@@ -721,11 +732,11 @@ main [id],#top{scroll-margin-top:86px}
            width/height attributes so the layout does not shift on load. -->
       <figure class="ph-shot" style="margin:0">
         <div class="shot">
-          <img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1600&quality=82&ssl=1"
-               srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1000&quality=82&ssl=1 1000w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1600&quality=82&ssl=1 1600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=2400&quality=82&ssl=1 2400w"
+          <picture><source type="image/webp" srcset="/images/harnden/FB6A4612-1000.webp 1000w, /images/harnden/FB6A4612-1600.webp 1600w, /images/harnden/FB6A4612-2400.webp 2400w" sizes="(max-width:900px) 100vw, 1240px"><img src="/images/harnden/FB6A4612-1600.jpg"
+               srcset="/images/harnden/FB6A4612-1000.jpg 1000w, /images/harnden/FB6A4612-1600.jpg 1600w, /images/harnden/FB6A4612-2400.jpg 2400w"
                sizes="(max-width:900px) 100vw, 1240px"
                alt="The front elevation of The Elms at 20 Harnden Street, Wilmington, Massachusetts, in red clapboard with black trim and a centre entrance"
-               width="2000" height="1333" fetchpriority="high" decoding="async">
+               width="2000" height="1333" fetchpriority="high" decoding="async"></picture>
         </div>
         <figcaption class="ph-cap">
           <span>The Elms, 20 Harnden Street, Wilmington, Massachusetts.</span>
@@ -806,107 +817,107 @@ main [id],#top{scroll-margin-top:86px}
              05-completed-exterior/  06-completed-interior/  07-architectural-details/ -->
       <div class="gal">
         <figure class="banner">
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4631.jpg?w=1600&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4631.jpg?w=1000&quality=82&ssl=1 1000w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4631.jpg?w=1600&quality=82&ssl=1 1600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4631.jpg?w=2400&quality=82&ssl=1 2400w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/FB6A4631-1000.webp 1000w, /images/harnden/FB6A4631-1600.webp 1600w, /images/harnden/FB6A4631-2400.webp 2400w" sizes="(max-width:900px) 100vw, 1240px"><img src="/images/harnden/FB6A4631-1600.jpg"
+                 srcset="/images/harnden/FB6A4631-1000.jpg 1000w, /images/harnden/FB6A4631-1600.jpg 1600w, /images/harnden/FB6A4631-2400.jpg 2400w"
                  sizes="(max-width:900px) 100vw, 1240px"
                  alt="The rear elevation of The Elms, with the patio, the side ell and the long covered porch" width="2000" height="1333" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4631.jpg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/FB6A4631-2400.jpg" loading="lazy"></picture></button>
           <figcaption>The rear elevation, patio and covered porch.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4619.jpg?w=1400&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4619.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4619.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4619.jpg?w=2000&quality=82&ssl=1 2000w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/FB6A4619-800.webp 800w, /images/harnden/FB6A4619-1400.webp 1400w, /images/harnden/FB6A4619-2000.webp 2000w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"><img src="/images/harnden/FB6A4619-1400.jpg"
+                 srcset="/images/harnden/FB6A4619-800.jpg 800w, /images/harnden/FB6A4619-1400.jpg 1400w, /images/harnden/FB6A4619-2000.jpg 2000w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
                  alt="The covered porch along the side of the house, painted deck and turquoise ceiling" width="2000" height="1333" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4619.jpg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/FB6A4619-2400.jpg"></picture></button>
           <figcaption>The covered porch.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4643.jpg?w=1400&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4643.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4643.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4643.jpg?w=2000&quality=82&ssl=1 2000w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/FB6A4643-800.webp 800w, /images/harnden/FB6A4643-1400.webp 1400w, /images/harnden/FB6A4643-2000.webp 2000w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"><img src="/images/harnden/FB6A4643-1400.jpg"
+                 srcset="/images/harnden/FB6A4643-800.jpg 800w, /images/harnden/FB6A4643-1400.jpg 1400w, /images/harnden/FB6A4643-2000.jpg 2000w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
                  alt="The house seen across the lawn beneath mature trees, behind a low fence" width="2000" height="1333" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4643.jpg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/FB6A4643-2400.jpg"></picture></button>
           <figcaption>The grounds beneath mature trees.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4662.jpg?w=1400&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4662.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4662.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4662.jpg?w=2000&quality=82&ssl=1 2000w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/FB6A4662-800.webp 800w, /images/harnden/FB6A4662-1400.webp 1400w, /images/harnden/FB6A4662-2000.webp 2000w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"><img src="/images/harnden/FB6A4662-1400.jpg"
+                 srcset="/images/harnden/FB6A4662-800.jpg 800w, /images/harnden/FB6A4662-1400.jpg 1400w, /images/harnden/FB6A4662-2000.jpg 2000w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
                  alt="The drive approaching the house between mature trees" width="2000" height="1333" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4662.jpg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/FB6A4662-2400.jpg"></picture></button>
           <figcaption>The drive.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4486.jpg?w=1400&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4486.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4486.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4486.jpg?w=2000&quality=82&ssl=1 2000w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/FB6A4486-800.webp 800w, /images/harnden/FB6A4486-1400.webp 1400w, /images/harnden/FB6A4486-2000.webp 2000w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"><img src="/images/harnden/FB6A4486-1400.jpg"
+                 srcset="/images/harnden/FB6A4486-800.jpg 800w, /images/harnden/FB6A4486-1400.jpg 1400w, /images/harnden/FB6A4486-2000.jpg 2000w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
                  alt="A room with a large brick fireplace and wide board floors" width="2000" height="1334" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4486.jpg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/FB6A4486-2400.jpg"></picture></button>
           <figcaption>One of ten fireplaces.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4444.jpg?w=1400&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4444.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4444.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4444.jpg?w=2000&quality=82&ssl=1 2000w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/FB6A4444-800.webp 800w, /images/harnden/FB6A4444-1400.webp 1400w, /images/harnden/FB6A4444-2000.webp 2000w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"><img src="/images/harnden/FB6A4444-1400.jpg"
+                 srcset="/images/harnden/FB6A4444-800.jpg 800w, /images/harnden/FB6A4444-1400.jpg 1400w, /images/harnden/FB6A4444-2000.jpg 2000w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
                  alt="Dining room with a fireplace, panelled wainscot and green walls" width="2000" height="1334" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4444.jpg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/FB6A4444-2400.jpg"></picture></button>
           <figcaption>Dining room.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4477.jpg?w=1400&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4477.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4477.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4477.jpg?w=2000&quality=82&ssl=1 2000w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/FB6A4477-800.webp 800w, /images/harnden/FB6A4477-1400.webp 1400w, /images/harnden/FB6A4477-2000.webp 2000w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"><img src="/images/harnden/FB6A4477-1400.jpg"
+                 srcset="/images/harnden/FB6A4477-800.jpg 800w, /images/harnden/FB6A4477-1400.jpg 1400w, /images/harnden/FB6A4477-2000.jpg 2000w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
                  alt="A long living room with fireplace and hardwood floors" width="2000" height="1333" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4477.jpg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/FB6A4477-2400.jpg"></picture></button>
           <figcaption>Living room.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4410.jpg?w=1400&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4410.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4410.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4410.jpg?w=2000&quality=82&ssl=1 2000w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/FB6A4410-800.webp 800w, /images/harnden/FB6A4410-1400.webp 1400w, /images/harnden/FB6A4410-2000.webp 2000w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"><img src="/images/harnden/FB6A4410-1400.jpg"
+                 srcset="/images/harnden/FB6A4410-800.jpg 800w, /images/harnden/FB6A4410-1400.jpg 1400w, /images/harnden/FB6A4410-2000.jpg 2000w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
                  alt="Kitchen with a centre island, quartz counters and dark cabinetry" width="2000" height="1334" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4410.jpg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/FB6A4410-2400.jpg"></picture></button>
           <figcaption>Kitchen.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4527.jpg?w=1400&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4527.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4527.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4527.jpg?w=2000&quality=82&ssl=1 2000w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/FB6A4527-800.webp 800w, /images/harnden/FB6A4527-1400.webp 1400w, /images/harnden/FB6A4527-2000.webp 2000w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"><img src="/images/harnden/FB6A4527-1400.jpg"
+                 srcset="/images/harnden/FB6A4527-800.jpg 800w, /images/harnden/FB6A4527-1400.jpg 1400w, /images/harnden/FB6A4527-2000.jpg 2000w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
                  alt="A bright bedroom with windows on two walls" width="2000" height="1334" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4527.jpg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/FB6A4527-2400.jpg"></picture></button>
           <figcaption>One of seven bedrooms.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4518.jpg?w=1400&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4518.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4518.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4518.jpg?w=2000&quality=82&ssl=1 2000w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/FB6A4518-800.webp 800w, /images/harnden/FB6A4518-1400.webp 1400w, /images/harnden/FB6A4518-2000.webp 2000w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"><img src="/images/harnden/FB6A4518-1400.jpg"
+                 srcset="/images/harnden/FB6A4518-800.jpg 800w, /images/harnden/FB6A4518-1400.jpg 1400w, /images/harnden/FB6A4518-2000.jpg 2000w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
                  alt="Upstairs hall looking through to the bedrooms" width="2000" height="1334" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4518.jpg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/FB6A4518-2400.jpg"></picture></button>
           <figcaption>Upstairs hall.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4599.jpg?w=1400&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4599.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4599.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4599.jpg?w=2000&quality=82&ssl=1 2000w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/FB6A4599-800.webp 800w, /images/harnden/FB6A4599-1400.webp 1400w, /images/harnden/FB6A4599-2000.webp 2000w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"><img src="/images/harnden/FB6A4599-1400.jpg"
+                 srcset="/images/harnden/FB6A4599-800.jpg 800w, /images/harnden/FB6A4599-1400.jpg 1400w, /images/harnden/FB6A4599-2000.jpg 2000w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
                  alt="A full bathroom with a stone-topped vanity and glass shower" width="2000" height="1333" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4599.jpg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/FB6A4599-2400.jpg"></picture></button>
           <figcaption>One of six full baths.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4605.jpg?w=1400&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4605.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4605.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4605.jpg?w=2000&quality=82&ssl=1 2000w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/FB6A4605-800.webp 800w, /images/harnden/FB6A4605-1400.webp 1400w, /images/harnden/FB6A4605-2000.webp 2000w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"><img src="/images/harnden/FB6A4605-1400.jpg"
+                 srcset="/images/harnden/FB6A4605-800.jpg 800w, /images/harnden/FB6A4605-1400.jpg 1400w, /images/harnden/FB6A4605-2000.jpg 2000w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
                  alt="Stair hall with a painted staircase and panelled doors" width="2000" height="1333" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4605.jpg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/FB6A4605-2400.jpg"></picture></button>
           <figcaption>Stair hall.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/DJI_0656.jpg?w=1400&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/DJI_0656.jpg?w=800&quality=82&ssl=1 800w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/DJI_0656.jpg?w=1400&quality=82&ssl=1 1400w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/DJI_0656.jpg?w=2000&quality=82&ssl=1 2000w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/DJI_0656-800.webp 800w, /images/harnden/DJI_0656-1400.webp 1400w, /images/harnden/DJI_0656-2000.webp 2000w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"><img src="/images/harnden/DJI_0656-1400.jpg"
+                 srcset="/images/harnden/DJI_0656-800.jpg 800w, /images/harnden/DJI_0656-1400.jpg 1400w, /images/harnden/DJI_0656-2000.jpg 2000w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 33vw"
                  alt="Aerial view of 20 Harnden Street showing the house, grounds and surrounding trees" width="2000" height="1500" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/DJI_0656.jpg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/DJI_0656-2400.jpg"></picture></button>
           <figcaption>The property from above.</figcaption>
         </figure>
       </div>
@@ -928,11 +939,13 @@ main [id],#top{scroll-margin-top:86px}
            matters on a page that runs without a consent banner. The embed
            uses youtube-nocookie.com and starts at 4s, where the tour begins. -->
       <div class="vid" id="vid" data-video="nduKIXd-a8E" data-start="4">
-        <img class="vid-poster"
-             src="https://i.ytimg.com/vi/nduKIXd-a8E/maxresdefault.jpg"
-             onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/nduKIXd-a8E/hqdefault.jpg'"
-             alt="Still from the property tour of The Elms, 20 Harnden Street, Wilmington"
-             width="1280" height="720" loading="lazy" decoding="async">
+        <picture>
+          <source type="image/webp" srcset="/images/harnden/property-tour-thumbnail.webp">
+          <img class="vid-poster"
+               src="/images/harnden/property-tour-thumbnail.jpg"
+               alt="Still from the property tour of The Elms, 20 Harnden Street, Wilmington"
+               width="1280" height="720" loading="lazy" decoding="async">
+        </picture>
         <button class="vid-play" type="button" aria-label="Play the property tour">
           <span class="vid-play-ico" aria-hidden="true"></span>
         </button>
@@ -956,41 +969,41 @@ main [id],#top{scroll-margin-top:86px}
 
       <div class="tf">
         <div class="tf-step">
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=1000&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=1000&quality=82&ssl=1 1000w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=1600&quality=82&ssl=1 1600w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/Attach0-11-600.webp 600w, /images/harnden/Attach0-11-1000.webp 1000w, /images/harnden/Attach0-11-1600.webp 1600w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"><img src="/images/harnden/Attach0-11-1000.jpeg"
+                 srcset="/images/harnden/Attach0-11-600.jpeg 600w, /images/harnden/Attach0-11-1000.jpeg 1000w, /images/harnden/Attach0-11-1600.jpeg 1600w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
                  alt="Historic photograph of The Elms with people gathered on the lawn beneath the elm trees" width="1500" height="1125" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/Attach0-11-2400.jpeg"></picture></button>
           <span class="n">Historic</span>
           <h3>The Elms</h3>
           <p>One of five surviving photographs, showing the house when the elms it was named for still stood.</p>
         </div>
         <div class="tf-step">
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1842.jpeg?w=1000&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1842.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1842.jpeg?w=1000&quality=82&ssl=1 1000w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1842.jpeg?w=1600&quality=82&ssl=1 1600w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/IMG_1842-600.webp 600w, /images/harnden/IMG_1842-1000.webp 1000w, /images/harnden/IMG_1842-1600.webp 1600w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"><img src="/images/harnden/IMG_1842-1000.jpeg"
+                 srcset="/images/harnden/IMG_1842-600.jpeg 600w, /images/harnden/IMG_1842-1000.jpeg 1000w, /images/harnden/IMG_1842-1600.jpeg 1600w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
                  alt="The house before rehabilitation, in peeling white clapboard with an overgrown front step" width="2000" height="1500" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1842.jpeg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/IMG_1842-2400.jpeg"></picture></button>
           <span class="n">Before</span>
           <h3>A house in decline</h3>
           <p>Condition at acquisition, photographed before any work began.</p>
         </div>
         <div class="tf-step">
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1962.jpeg?w=1000&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1962.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1962.jpeg?w=1000&quality=82&ssl=1 1000w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1962.jpeg?w=1600&quality=82&ssl=1 1600w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/IMG_1962-600.webp 600w, /images/harnden/IMG_1962-1000.webp 1000w, /images/harnden/IMG_1962-1600.webp 1600w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"><img src="/images/harnden/IMG_1962-1000.jpeg"
+                 srcset="/images/harnden/IMG_1962-600.jpeg 600w, /images/harnden/IMG_1962-1000.jpeg 1000w, /images/harnden/IMG_1962-1600.jpeg 1600w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
                  alt="Workmen on ladders stripping paint from the clapboards during the rehabilitation" width="2000" height="1500" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/IMG_1962.jpeg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/IMG_1962-2400.jpeg"></picture></button>
           <span class="n">During</span>
           <h3>Rehabilitation</h3>
           <p>Stripping the exterior back to bare clapboard.</p>
         </div>
         <div class="tf-step">
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1000&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1000&quality=82&ssl=1 1000w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1600&quality=82&ssl=1 1600w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/FB6A4612-600.webp 600w, /images/harnden/FB6A4612-1000.webp 1000w, /images/harnden/FB6A4612-1600.webp 1600w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"><img src="/images/harnden/FB6A4612-1000.jpg"
+                 srcset="/images/harnden/FB6A4612-600.jpg 600w, /images/harnden/FB6A4612-1000.jpg 1000w, /images/harnden/FB6A4612-1600.jpg 1600w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
                  alt="The finished house in red clapboard with black trim" width="2000" height="1333" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=2400&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/FB6A4612-2400.jpg"></picture></button>
           <span class="n">Today</span>
           <h3>The Elms today</h3>
           <p>The finished house, in red clapboard with black trim.</p>
@@ -1034,43 +1047,43 @@ main [id],#top{scroll-margin-top:86px}
       <h3 class="hist-gal-head">The five surviving photographs</h3>
       <div class="hist-gal">
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-3.jpeg?w=900&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-3.jpeg?w=500&quality=82&ssl=1 500w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-3.jpeg?w=900&quality=82&ssl=1 900w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-3.jpeg?w=1400&quality=82&ssl=1 1400w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/Attach0-3-500.webp 500w, /images/harnden/Attach0-3-900.webp 900w, /images/harnden/Attach0-3-1400.webp 1400w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"><img src="/images/harnden/Attach0-3-900.jpeg"
+                 srcset="/images/harnden/Attach0-3-500.jpeg 500w, /images/harnden/Attach0-3-900.jpeg 900w, /images/harnden/Attach0-3-1400.jpeg 1400w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"
                  alt="Historic photograph captioned The Elms, Silver Lake, Wilmington, Mass., showing the house behind a row of elms" width="1714" height="1286" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-3.jpeg?w=1800&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/Attach0-3-1800.jpeg"></picture></button>
           <figcaption>&ldquo;The Elms, Silver Lake, Wilmington, Mass.&rdquo;</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-8.jpeg?w=900&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-8.jpeg?w=500&quality=82&ssl=1 500w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-8.jpeg?w=900&quality=82&ssl=1 900w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-8.jpeg?w=1400&quality=82&ssl=1 1400w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/Attach0-8-500.webp 500w, /images/harnden/Attach0-8-900.webp 900w, /images/harnden/Attach0-8-1400.webp 1400w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"><img src="/images/harnden/Attach0-8-900.jpeg"
+                 srcset="/images/harnden/Attach0-8-500.jpeg 500w, /images/harnden/Attach0-8-900.jpeg 900w, /images/harnden/Attach0-8-1400.jpeg 1400w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"
                  alt="Sepia photograph of The Elms seen along the road beneath the elm trees" width="2000" height="1500" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-8.jpeg?w=1800&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/Attach0-8-1800.jpeg"></picture></button>
           <figcaption>The house from the road.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-6.jpeg?w=900&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-6.jpeg?w=500&quality=82&ssl=1 500w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-6.jpeg?w=900&quality=82&ssl=1 900w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-6.jpeg?w=1400&quality=82&ssl=1 1400w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/Attach0-6-500.webp 500w, /images/harnden/Attach0-6-900.webp 900w, /images/harnden/Attach0-6-1400.webp 1400w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"><img src="/images/harnden/Attach0-6-900.jpeg"
+                 srcset="/images/harnden/Attach0-6-500.jpeg 500w, /images/harnden/Attach0-6-900.jpeg 900w, /images/harnden/Attach0-6-1400.jpeg 1400w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"
                  alt="Photograph inscribed The Elms, Silver Lake, Wilmington, Mass., showing the house and its drive" width="2000" height="1500" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-6.jpeg?w=1800&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/Attach0-6-1800.jpeg"></picture></button>
           <figcaption>Inscribed to The Elms, Silver Lake.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=900&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=500&quality=82&ssl=1 500w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=900&quality=82&ssl=1 900w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=1400&quality=82&ssl=1 1400w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/Attach0-11-500.webp 500w, /images/harnden/Attach0-11-900.webp 900w, /images/harnden/Attach0-11-1400.webp 1400w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"><img src="/images/harnden/Attach0-11-900.jpeg"
+                 srcset="/images/harnden/Attach0-11-500.jpeg 500w, /images/harnden/Attach0-11-900.jpeg 900w, /images/harnden/Attach0-11-1400.jpeg 1400w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"
                  alt="Historic photograph with a group of people on the lawn in front of the house" width="1500" height="1125" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0-11.jpeg?w=1800&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/Attach0-11-1800.jpeg"></picture></button>
           <figcaption>A gathering on the lawn.</figcaption>
         </figure>
         <figure>
-          <button class="shot" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0.jpeg?w=900&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0.jpeg?w=500&quality=82&ssl=1 500w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0.jpeg?w=900&quality=82&ssl=1 900w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0.jpeg?w=1400&quality=82&ssl=1 1400w"
+          <button class="shot" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/Attach0-500.webp 500w, /images/harnden/Attach0-900.webp 900w, /images/harnden/Attach0-1400.webp 1400w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"><img src="/images/harnden/Attach0-900.jpeg"
+                 srcset="/images/harnden/Attach0-500.jpeg 500w, /images/harnden/Attach0-900.jpeg 900w, /images/harnden/Attach0-1400.jpeg 1400w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 20vw"
                  alt="Photograph of the house with a flag flying and a carriage drive in front" width="1500" height="1125" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/Attach0.jpeg?w=1800&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/Attach0-1800.jpeg"></picture></button>
           <figcaption>With the flag flying.</figcaption>
         </figure>
       </div>
@@ -1159,101 +1172,101 @@ main [id],#top{scroll-margin-top:86px}
 
       <div class="plans">
         <figure>
-          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-01.jpeg?w=1100&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-01.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-01.jpeg?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-01.jpeg?w=1800&quality=82&ssl=1 1800w"
+          <button class="shot plan" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/20-harnden-road-floor-plan-01-600.webp 600w, /images/harnden/20-harnden-road-floor-plan-01-1100.webp 1100w, /images/harnden/20-harnden-road-floor-plan-01-1800.webp 1800w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"><img src="/images/harnden/20-harnden-road-floor-plan-01-1100.jpeg"
+                 srcset="/images/harnden/20-harnden-road-floor-plan-01-600.jpeg 600w, /images/harnden/20-harnden-road-floor-plan-01-1100.jpeg 1100w, /images/harnden/20-harnden-road-floor-plan-01-1800.jpeg 1800w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
                  alt="Floor plan, sheet 1 for 20 Harnden Street, Wilmington, Massachusetts" width="2048" height="1536" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-01.jpeg?w=2200&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/20-harnden-road-floor-plan-01-2200.jpeg"></picture></button>
           <figcaption>Floor plan, sheet 1</figcaption>
         </figure>
         <figure>
-          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-02.jpeg?w=1100&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-02.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-02.jpeg?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-02.jpeg?w=1800&quality=82&ssl=1 1800w"
+          <button class="shot plan" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/20-harnden-road-floor-plan-02-600.webp 600w, /images/harnden/20-harnden-road-floor-plan-02-1100.webp 1100w, /images/harnden/20-harnden-road-floor-plan-02-1800.webp 1800w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"><img src="/images/harnden/20-harnden-road-floor-plan-02-1100.jpeg"
+                 srcset="/images/harnden/20-harnden-road-floor-plan-02-600.jpeg 600w, /images/harnden/20-harnden-road-floor-plan-02-1100.jpeg 1100w, /images/harnden/20-harnden-road-floor-plan-02-1800.jpeg 1800w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
                  alt="Floor plan, sheet 2 for 20 Harnden Street, Wilmington, Massachusetts" width="2048" height="1536" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-02.jpeg?w=2200&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/20-harnden-road-floor-plan-02-2200.jpeg"></picture></button>
           <figcaption>Floor plan, sheet 2</figcaption>
         </figure>
         <figure>
-          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-03.jpeg?w=1100&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-03.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-03.jpeg?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-03.jpeg?w=1800&quality=82&ssl=1 1800w"
+          <button class="shot plan" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/20-harnden-road-floor-plan-03-600.webp 600w, /images/harnden/20-harnden-road-floor-plan-03-1100.webp 1100w, /images/harnden/20-harnden-road-floor-plan-03-1800.webp 1800w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"><img src="/images/harnden/20-harnden-road-floor-plan-03-1100.jpeg"
+                 srcset="/images/harnden/20-harnden-road-floor-plan-03-600.jpeg 600w, /images/harnden/20-harnden-road-floor-plan-03-1100.jpeg 1100w, /images/harnden/20-harnden-road-floor-plan-03-1800.jpeg 1800w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
                  alt="Floor plan, sheet 3 for 20 Harnden Street, Wilmington, Massachusetts" width="2048" height="1536" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-03.jpeg?w=2200&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/20-harnden-road-floor-plan-03-2200.jpeg"></picture></button>
           <figcaption>Floor plan, sheet 3</figcaption>
         </figure>
         <figure>
-          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-04.jpeg?w=1100&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-04.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-04.jpeg?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-04.jpeg?w=1800&quality=82&ssl=1 1800w"
+          <button class="shot plan" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/20-harnden-road-floor-plan-04-600.webp 600w, /images/harnden/20-harnden-road-floor-plan-04-1100.webp 1100w, /images/harnden/20-harnden-road-floor-plan-04-1800.webp 1800w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"><img src="/images/harnden/20-harnden-road-floor-plan-04-1100.jpeg"
+                 srcset="/images/harnden/20-harnden-road-floor-plan-04-600.jpeg 600w, /images/harnden/20-harnden-road-floor-plan-04-1100.jpeg 1100w, /images/harnden/20-harnden-road-floor-plan-04-1800.jpeg 1800w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
                  alt="Floor plan, sheet 4 for 20 Harnden Street, Wilmington, Massachusetts" width="2048" height="1536" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-04.jpeg?w=2200&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/20-harnden-road-floor-plan-04-2200.jpeg"></picture></button>
           <figcaption>Floor plan, sheet 4</figcaption>
         </figure>
         <figure>
-          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-05.jpeg?w=1100&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-05.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-05.jpeg?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-05.jpeg?w=1800&quality=82&ssl=1 1800w"
+          <button class="shot plan" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/20-harnden-road-floor-plan-05-600.webp 600w, /images/harnden/20-harnden-road-floor-plan-05-1100.webp 1100w, /images/harnden/20-harnden-road-floor-plan-05-1800.webp 1800w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"><img src="/images/harnden/20-harnden-road-floor-plan-05-1100.jpeg"
+                 srcset="/images/harnden/20-harnden-road-floor-plan-05-600.jpeg 600w, /images/harnden/20-harnden-road-floor-plan-05-1100.jpeg 1100w, /images/harnden/20-harnden-road-floor-plan-05-1800.jpeg 1800w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
                  alt="Floor plan, sheet 5 for 20 Harnden Street, Wilmington, Massachusetts" width="2048" height="1536" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-05.jpeg?w=2200&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/20-harnden-road-floor-plan-05-2200.jpeg"></picture></button>
           <figcaption>Floor plan, sheet 5</figcaption>
         </figure>
         <figure>
-          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-06.jpeg?w=1100&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-06.jpeg?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-06.jpeg?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-06.jpeg?w=1800&quality=82&ssl=1 1800w"
+          <button class="shot plan" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/20-harnden-road-floor-plan-06-600.webp 600w, /images/harnden/20-harnden-road-floor-plan-06-1100.webp 1100w, /images/harnden/20-harnden-road-floor-plan-06-1800.webp 1800w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"><img src="/images/harnden/20-harnden-road-floor-plan-06-1100.jpeg"
+                 srcset="/images/harnden/20-harnden-road-floor-plan-06-600.jpeg 600w, /images/harnden/20-harnden-road-floor-plan-06-1100.jpeg 1100w, /images/harnden/20-harnden-road-floor-plan-06-1800.jpeg 1800w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
                  alt="Floor plan, sheet 6 for 20 Harnden Street, Wilmington, Massachusetts" width="2048" height="1536" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-06.jpeg?w=2200&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/20-harnden-road-floor-plan-06-2200.jpeg"></picture></button>
           <figcaption>Floor plan, sheet 6</figcaption>
         </figure>
         <figure>
-          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-07.png?w=1100&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-07.png?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-07.png?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-07.png?w=1800&quality=82&ssl=1 1800w"
+          <button class="shot plan" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/20-harnden-road-floor-plan-07-600.webp 600w, /images/harnden/20-harnden-road-floor-plan-07-1100.webp 1100w, /images/harnden/20-harnden-road-floor-plan-07-1800.webp 1800w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"><img src="/images/harnden/20-harnden-road-floor-plan-07-1100.jpg"
+                 srcset="/images/harnden/20-harnden-road-floor-plan-07-600.jpg 600w, /images/harnden/20-harnden-road-floor-plan-07-1100.jpg 1100w, /images/harnden/20-harnden-road-floor-plan-07-1800.jpg 1800w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
                  alt="Floor plan, sheet 7 for 20 Harnden Street, Wilmington, Massachusetts" width="1611" height="2048" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-07.png?w=2200&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/20-harnden-road-floor-plan-07-2200.jpg"></picture></button>
           <figcaption>Floor plan, sheet 7</figcaption>
         </figure>
         <figure>
-          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-08.png?w=1100&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-08.png?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-08.png?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-08.png?w=1800&quality=82&ssl=1 1800w"
+          <button class="shot plan" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/20-harnden-road-floor-plan-08-600.webp 600w, /images/harnden/20-harnden-road-floor-plan-08-1100.webp 1100w, /images/harnden/20-harnden-road-floor-plan-08-1800.webp 1800w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"><img src="/images/harnden/20-harnden-road-floor-plan-08-1100.jpg"
+                 srcset="/images/harnden/20-harnden-road-floor-plan-08-600.jpg 600w, /images/harnden/20-harnden-road-floor-plan-08-1100.jpg 1100w, /images/harnden/20-harnden-road-floor-plan-08-1800.jpg 1800w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
                  alt="Floor plan, sheet 8 for 20 Harnden Street, Wilmington, Massachusetts" width="877" height="2048" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-08.png?w=2200&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/20-harnden-road-floor-plan-08-2200.jpg"></picture></button>
           <figcaption>Floor plan, sheet 8</figcaption>
         </figure>
         <figure>
-          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-09.png?w=1100&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-09.png?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-09.png?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-09.png?w=1800&quality=82&ssl=1 1800w"
+          <button class="shot plan" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/20-harnden-road-floor-plan-09-600.webp 600w, /images/harnden/20-harnden-road-floor-plan-09-1100.webp 1100w, /images/harnden/20-harnden-road-floor-plan-09-1800.webp 1800w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"><img src="/images/harnden/20-harnden-road-floor-plan-09-1100.jpg"
+                 srcset="/images/harnden/20-harnden-road-floor-plan-09-600.jpg 600w, /images/harnden/20-harnden-road-floor-plan-09-1100.jpg 1100w, /images/harnden/20-harnden-road-floor-plan-09-1800.jpg 1800w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
                  alt="Floor plan, sheet 9 for 20 Harnden Street, Wilmington, Massachusetts" width="1727" height="2048" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-09.png?w=2200&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/20-harnden-road-floor-plan-09-2200.jpg"></picture></button>
           <figcaption>Floor plan, sheet 9</figcaption>
         </figure>
         <figure>
-          <button class="shot plan" type="button" data-lb><img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-10.png?w=1100&quality=82&ssl=1"
-                 srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-10.png?w=600&quality=82&ssl=1 600w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-10.png?w=1100&quality=82&ssl=1 1100w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-10.png?w=1800&quality=82&ssl=1 1800w"
+          <button class="shot plan" type="button" data-lb><picture><source type="image/webp" srcset="/images/harnden/20-harnden-road-floor-plan-10-600.webp 600w, /images/harnden/20-harnden-road-floor-plan-10-1100.webp 1100w, /images/harnden/20-harnden-road-floor-plan-10-1800.webp 1800w" sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"><img src="/images/harnden/20-harnden-road-floor-plan-10-1100.jpg"
+                 srcset="/images/harnden/20-harnden-road-floor-plan-10-600.jpg 600w, /images/harnden/20-harnden-road-floor-plan-10-1100.jpg 1100w, /images/harnden/20-harnden-road-floor-plan-10-1800.jpg 1800w"
                  sizes="(max-width:620px) 100vw, (max-width:900px) 50vw, 25vw"
                  alt="Floor plan, sheet 10 for 20 Harnden Street, Wilmington, Massachusetts" width="1264" height="2048" loading="lazy" decoding="async"
-                 data-full="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/20-harnden-road-floor-plan-10.png?w=2200&quality=85&ssl=1"></button>
+                 data-full="/images/harnden/20-harnden-road-floor-plan-10-2200.jpg"></picture></button>
           <figcaption>Floor plan, sheet 10</figcaption>
         </figure>
       </div>
 
       <div class="docs">
-        <!-- Set href to the PDF and remove aria-disabled once each file is in place. -->
-        <a class="doc" href="#" aria-disabled="true">
+        <!-- Replace each disabled panel with a link when its PDF is available. -->
+        <div class="doc" aria-disabled="true">
           <b>Floor plans &mdash; combined PDF</b>
           <span>PDF &middot; coming shortly</span>
-        </a>
-        <a class="doc" href="#" aria-disabled="true">
+        </div>
+        <div class="doc" aria-disabled="true">
           <b>Property brochure</b>
           <span>PDF &middot; coming shortly</span>
-        </a>
-        <a class="doc" href="#" aria-disabled="true">
+        </div>
+        <div class="doc" aria-disabled="true">
           <b>Improvements ledger</b>
           <span>PDF &middot; in preparation</span>
-        </a>
+        </div>
       </div>
     </div>
   </section>
@@ -1358,7 +1371,7 @@ main [id],#top{scroll-margin-top:86px}
   <button class="lb-btn lb-close" type="button" id="lb-close" aria-label="Close">&times;</button>
   <button class="lb-btn lb-prev" type="button" id="lb-prev" aria-label="Previous">&lsaquo;</button>
   <figure class="lb-fig">
-    <img id="lb-img" src="" alt="">
+    <img id="lb-img" alt="">
     <figcaption class="lb-cap" id="lb-cap"></figcaption>
   </figure>
   <button class="lb-btn lb-next" type="button" id="lb-next" aria-label="Next">&rsaquo;</button>
