@@ -1,0 +1,2195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Sets a flag the reveal-on-scroll CSS keys off, so the page stays fully
+     visible if scripts never run. Inline and first, to beat the first paint. -->
+<script>document.documentElement.className+=" js"</script>
+
+<!-- ============================ SEO ============================
+     SITE URL: every absolute URL below uses https://REPLACE-ME.com.
+     Once the domain is settled, swap them all in one go:
+
+         cd /path/to/site
+         grep -rl 'REPLACE-ME.com' . --exclude-dir=.git --exclude-dir=node_modules \
+           | xargs sed -i '' 's|https://REPLACE-ME.com|https://yourdomain.com|g'
+
+     (drop the '' after -i on Linux). Then resubmit the sitemap in Search
+     Console. Until that swap, canonical/og:url/sitemap point nowhere -- which
+     is safe, but the page will not rank properly.
+     ============================================================== -->
+
+<title>Jeffrey Bowen | Greater Boston Real Estate Broker</title>
+<meta name="description" content="Greater Boston real estate, proven since 2001. Jeffrey Bowen has sold 750+ condos, lofts, multifamily, investment and single-family properties across Boston and the towns around it. One broker, first conversation to closing. Se habla espanol.">
+<link rel="canonical" href="https://REPLACE-ME.com/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Jeffrey Bowen">
+<meta name="theme-color" content="#0C0C0C">
+
+<!-- Local signals. Not ranking factors on their own, but they help the
+     "near me" and map-pack surfaces read the page correctly. -->
+<meta name="geo.region" content="US-MA">
+<meta name="geo.placename" content="Boston, Massachusetts">
+<meta name="geo.position" content="42.3918;-71.0328">
+<meta name="ICBM" content="42.3918, -71.0328">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Bowen Realty Group">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://REPLACE-ME.com/">
+<meta property="og:title" content="Jeffrey Bowen | Greater Boston Real Estate Broker">
+<meta property="og:description" content="750+ properties sold. 25+ years in Greater Boston. One broker from first conversation to closing. Se habla espanol.">
+<meta property="og:image" content="https://REPLACE-ME.com/heatshot.jpeg">
+<meta property="og:image:alt" content="Jeffrey Bowen, real estate broker associate serving Greater Boston">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jeffrey Bowen | Greater Boston Real Estate Broker">
+<meta name="twitter:description" content="750+ properties sold. 25+ years in Greater Boston. One broker from first conversation to closing. Se habla espanol.">
+<meta name="twitter:image" content="https://REPLACE-ME.com/heatshot.jpeg">
+
+<!-- Structured data. This is the part that actually moves the needle for a
+     local agent: it tells Google this page IS a real-estate business, where it
+     operates, how to contact it, and which reviews belong to it. Validate any
+     change at https://search.google.com/test/rich-results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://REPLACE-ME.com/#agency",
+      "name": "The Bowen Realty Group",
+      "alternateName": "Jeffrey Bowen, eRealty Advisors",
+      "url": "https://REPLACE-ME.com/",
+      "image": "https://REPLACE-ME.com/heatshot.jpeg",
+      "logo": "https://REPLACE-ME.com/heatshot.jpeg",
+      "telephone": "+1-781-201-9488",
+      "faxNumber": "+1-866-885-9139",
+      "email": "jeff@jeffreybowen.com",
+      "priceRange": "$$",
+      "currenciesAccepted": "USD",
+      "knowsLanguage": ["en-US", "es"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "9 Canal Street",
+        "addressLocality": "Boston",
+        "addressRegion": "MA",
+        "postalCode": "02114",
+        "addressCountry": "US"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 42.3918, "longitude": -71.0328 },
+      "areaServed": [
+        { "@type": "City", "name": "Boston", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Chelsea", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Everett", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Malden", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Revere", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Medford", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Somerville", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Winthrop", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Cambridge", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Quincy", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Melrose", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Saugus", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Lynn", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Watertown", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Arlington", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Newton", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Brookline", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "City", "name": "Waltham", "address": { "@type": "PostalAddress", "addressRegion": "MA", "addressCountry": "US" } },
+        { "@type": "Place", "name": "East Boston, Boston, MA" },
+        { "@type": "Place", "name": "Charlestown, Boston, MA" },
+        { "@type": "Place", "name": "South Boston, Boston, MA" },
+        { "@type": "Place", "name": "Dorchester, Boston, MA" },
+        { "@type": "Place", "name": "Roslindale, Boston, MA" },
+        { "@type": "Place", "name": "West Roxbury, Boston, MA" },
+        { "@type": "Place", "name": "Jamaica Plain, Boston, MA" },
+        { "@type": "Place", "name": "Roxbury, Boston, MA" },
+        { "@type": "Place", "name": "Hyde Park, Boston, MA" },
+        { "@type": "Place", "name": "Mattapan, Boston, MA" },
+        { "@type": "Place", "name": "Brighton, Boston, MA" },
+        { "@type": "Place", "name": "Allston, Boston, MA" },
+        { "@type": "Place", "name": "Back Bay, Boston, MA" },
+        { "@type": "Place", "name": "South End, Boston, MA" },
+        { "@type": "AdministrativeArea", "name": "Suffolk County, MA" },
+        { "@type": "AdministrativeArea", "name": "Middlesex County, MA" },
+        { "@type": "AdministrativeArea", "name": "Norfolk County, MA" },
+        { "@type": "AdministrativeArea", "name": "Essex County, MA" }
+      ],
+      "founder": { "@id": "https://REPLACE-ME.com/#jeffrey" },
+      "employee": { "@id": "https://REPLACE-ME.com/#jeffrey" },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "eRealty Advisors, Inc.",
+        "identifier": "MA Broker License #1000215-RE-RB"
+      },
+      "sameAs": [
+        "https://www.zillow.com/profile/JeffreyBowen",
+        "https://www.youtube.com/@JeffreyBowen"
+      ]
+    },
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://REPLACE-ME.com/#jeffrey",
+      "name": "Jeffrey Bowen",
+      "jobTitle": "Broker Associate",
+      "url": "https://REPLACE-ME.com/",
+      "image": "https://REPLACE-ME.com/heatshot.jpeg",
+      "telephone": "+1-781-201-9488",
+      "email": "jeff@jeffreybowen.com",
+      "knowsLanguage": ["en-US", "es"],
+      "identifier": "MA Real Estate Broker License #9068834",
+      "worksFor": { "@id": "https://REPLACE-ME.com/#agency" },
+      "sameAs": [
+        "https://www.zillow.com/profile/JeffreyBowen",
+        "https://www.youtube.com/@JeffreyBowen"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://REPLACE-ME.com/#website",
+      "url": "https://REPLACE-ME.com/",
+      "name": "The Bowen Realty Group",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://REPLACE-ME.com/#agency" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://REPLACE-ME.com/#webpage",
+      "url": "https://REPLACE-ME.com/",
+      "name": "Jeffrey Bowen | Greater Boston Real Estate Broker",
+      "isPartOf": { "@id": "https://REPLACE-ME.com/#website" },
+      "about": { "@id": "https://REPLACE-ME.com/#agency" },
+      "primaryImageOfPage": "https://REPLACE-ME.com/heatshot.jpeg",
+      "inLanguage": "en-US"
+    }
+  ]
+}
+</script>
+
+<!-- ===================== Google Analytics 4 =====================
+     TO TURN THIS ON:
+       1. analytics.google.com -> Admin -> Create -> Property
+          ("The Bowen Realty Group", United States, US Dollar)
+       2. Business objectives -> Generate leads
+       3. Data streams -> Web -> enter the site URL -> Create stream
+       4. Copy the Measurement ID at the top right. It looks like G-ABC1234XYZ.
+       5. Replace G-XXXXXXXXXX on the next line with it. That is the only edit.
+
+     Until then the ID is still a placeholder and the guard below skips loading
+     gtag entirely -- no requests, no console errors, nothing to clean up.
+     =============================================================== -->
+<script>
+  window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+</script>
+<script>
+(function () {
+  var id = window.GA_MEASUREMENT_ID;
+  if (!id || id.indexOf('XXXX') !== -1) return;   // not configured yet
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', id);
+
+  var tag = document.createElement('script');
+  tag.async = true;
+  tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+  document.head.appendChild(tag);
+})();
+</script>
+
+<link rel="preconnect" href="https://i0.wp.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* Black, gold and ivory. The ink scale is deliberately not pure #000 at the
+     text weight -- a hair off black reads softer on an ivory ground -- while
+     the darkest step stays true black for the full-bleed bands. */
+  --ink:#0C0C0C;
+  --ink-dk:#000000;
+  --ink-lt:#1E1E1E;
+  --gold:#C29B40;
+  --gold-lt:#DCC188;
+  --ivory:#F7F5F1;
+  --white:#FFFFFF;
+  --grey:#6A6A6A;
+  --grey-lt:#9B9B9B;
+  --on-ink:#EDEDED;
+  --on-ink-dim:#A9A9A9;
+  --line:rgba(0,0,0,.16);
+  --line-lt:rgba(237,237,237,.22);
+  --display:"Archivo",system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,serif;
+  --gut:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ivory);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.62;
+  font-optical-sizing:auto;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--gut)}
+.prose{max-width:64ch}
+
+h1,h2,h3{
+  font-family:var(--display);font-weight:700;
+  letter-spacing:-.022em;line-height:1.02;margin:0;
+  text-wrap:balance;
+}
+h2{font-size:clamp(29px,4.2vw,50px)}
+h3{font-size:clamp(20px,2vw,24px);letter-spacing:-.015em;line-height:1.14}
+p{margin:0 0 1.05em}
+p:last-child{margin-bottom:0}
+
+/* ---------- masthead ---------- */
+.bar{
+  position:sticky;top:0;z-index:60;background:var(--ink);color:var(--on-ink);
+  border-bottom:1px solid var(--line-lt);
+}
+.bar-in{
+  display:flex;align-items:center;gap:18px;
+  min-height:62px;padding:8px var(--gut);max-width:1240px;margin:0 auto;
+}
+.brand{
+  font-family:var(--display);font-weight:600;font-size:15px;
+  letter-spacing:.005em;line-height:1.15;text-decoration:none;margin-right:auto;
+}
+.brand span{display:block;font-weight:500;font-size:11.5px;color:var(--on-ink-dim)}
+.bar nav{display:flex;gap:22px;font-family:var(--display);font-size:13.5px;font-weight:500}
+.bar nav a{text-decoration:none;padding:4px 0;border-bottom:1px solid transparent}
+.bar nav a:hover{border-bottom-color:var(--gold)}
+.bar-call{
+  font-family:var(--display);font-weight:600;font-size:14px;text-decoration:none;
+  background:var(--gold);color:var(--ink-dk);padding:9px 15px;
+}
+.bar-call:hover{background:var(--gold-lt)}
+
+/* Booking, always reachable from the masthead. Outlined rather than gold so it
+   sits beside the phone number without two CTAs shouting at each other. */
+.bar-book{
+  font-family:var(--display);font-weight:600;font-size:14px;cursor:pointer;
+  background:transparent;color:var(--on-ink);
+  border:1px solid var(--line-lt);padding:9px 15px;
+  transition:border-color .18s ease,color .18s ease;
+}
+.bar-book:hover{border-color:var(--gold);color:var(--gold-lt)}
+/* In the mobile panel the same action is a full-width row instead. */
+.nav-book{display:none}
+
+/* mobile menu toggle -- hidden on desktop, where the inline nav is used */
+.bar-toggle{
+  display:none;flex:0 0 auto;width:38px;height:38px;margin-left:2px;
+  align-items:center;justify-content:center;background:transparent;
+  border:1px solid var(--line-lt);color:var(--on-ink);padding:0;cursor:pointer;
+}
+.bar-toggle:hover{border-color:var(--gold)}
+.bar-toggle-box{position:relative;width:18px;height:12px}
+.bar-toggle-box span{
+  position:absolute;left:0;right:0;height:2px;background:currentColor;
+  transition:transform .5s ease,opacity .5s ease;
+}
+.bar-toggle-box span:nth-child(1){top:0}
+.bar-toggle-box span:nth-child(2){top:5px}
+.bar-toggle-box span:nth-child(3){top:10px}
+.bar-toggle[aria-expanded="true"] .bar-toggle-box span:nth-child(1){top:5px;transform:rotate(45deg)}
+.bar-toggle[aria-expanded="true"] .bar-toggle-box span:nth-child(2){opacity:0}
+.bar-toggle[aria-expanded="true"] .bar-toggle-box span:nth-child(3){top:5px;transform:rotate(-45deg)}
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+@media(max-width:860px){
+  .bar-in{position:relative}
+  .bar-toggle{display:inline-flex}
+  .bar nav{
+    display:flex;flex-direction:column;gap:0;
+    position:absolute;top:100%;left:0;right:0;z-index:1;
+    background:var(--ink);border-bottom:1px solid var(--line-lt);
+    max-height:0;overflow:hidden;visibility:hidden;
+    transition:max-height .8s ease;
+  }
+  .bar nav.is-open{max-height:70vh;overflow-y:auto;visibility:visible}
+  .bar nav a{
+    padding:15px var(--gut);border-bottom:1px solid var(--line-lt);
+    font-size:15px;
+  }
+  /* The masthead has no room for both at this width, so booking moves into
+     the menu and leads it. */
+  .bar-book{display:none}
+  .nav-book{
+    display:block;width:100%;text-align:left;cursor:pointer;
+    font-family:var(--display);font-weight:600;font-size:15px;
+    padding:15px var(--gut);border:0;border-bottom:1px solid var(--line-lt);
+    background:var(--gold);color:var(--ink-dk);
+  }
+  .nav-book:hover{background:var(--gold-lt)}
+}
+@media(prefers-reduced-motion:reduce){.bar-toggle-box span{transition:none}.bar nav{transition:none}}
+
+/* ---------- call or text ----------
+   The number is a plain tel: link in the markup, so it still dials if scripts
+   never run; JS upgrades it in place to a two-choice menu. */
+.callbox{position:relative;display:inline-flex}
+.callmenu{
+  position:absolute;top:calc(100% + 9px);right:0;z-index:70;
+  min-width:208px;background:var(--ink);border:1px solid var(--line-lt);
+  flex-direction:column;box-shadow:0 14px 34px rgba(0,0,0,.45);
+}
+.callmenu[hidden]{display:none}
+.callmenu:not([hidden]){display:flex}
+.callmenu a{
+  display:flex;align-items:center;gap:12px;text-decoration:none;
+  color:var(--on-ink);padding:13px 15px;border-bottom:1px solid var(--line-lt);
+}
+.callmenu a:last-child{border-bottom:0}
+.callmenu a:hover{background:var(--ink-lt)}
+.callmenu a:hover b{color:var(--gold-lt)}
+.callmenu b{
+  display:block;font-family:var(--display);font-weight:600;font-size:14.5px;
+  line-height:1.2;
+}
+.callmenu small{display:block;font-size:12.5px;color:var(--on-ink-dim);margin-top:2px}
+.callmenu svg{flex:0 0 auto}
+@media(max-width:420px){.callmenu{min-width:180px}}
+
+/* ---------- hero ---------- */
+.hero{background:var(--ink);color:var(--on-ink);overflow:hidden}
+.hero-grid{
+  display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,4vw,60px);
+  align-items:end;padding:clamp(48px,7vw,96px) 0 0;
+}
+.hero h1{font-size:clamp(38px,6.9vw,80px);line-height:.99;letter-spacing:-.028em}
+.hero h1 em{font-style:normal;color:var(--gold-lt);font-weight:500}
+.hero-sub{
+  font-size:clamp(17px,1.5vw,20.5px);color:var(--on-ink-dim);max-width:44ch;
+  margin-top:26px;line-height:1.55;
+}
+.hero-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.btn{
+  display:inline-block;font-family:var(--display);font-weight:600;font-size:15px;
+  line-height:1.2;text-decoration:none;cursor:pointer;
+  padding:14px 22px;border:1px solid var(--gold);
+  background:var(--gold);color:var(--ink-dk);
+}
+.hero-alt{margin:14px 0 0;font-size:15px}
+.hero-alt a{
+  color:var(--on-ink-dim);text-decoration:none;border-bottom:1px solid var(--line-lt);
+  padding-bottom:2px;
+}
+.hero-alt a:hover{color:var(--gold-lt);border-bottom-color:var(--gold)}
+.btn:hover{background:var(--gold-lt);border-color:var(--gold-lt)}
+.btn.ghost{background:transparent;color:var(--on-ink);border-color:var(--line-lt)}
+.btn.ghost:hover{background:transparent;border-color:var(--gold);color:var(--gold-lt)}
+.hero-lang{
+  margin-top:22px;padding-top:16px;border-top:1px solid var(--line-lt);
+  font-size:15px;color:var(--on-ink-dim);max-width:42ch;
+}
+/* Portrait. Self-host this image before launch — see note in the README comment
+   at the foot of this file. Currently served from Zillow's CDN. */
+.hero-portrait{
+  position:relative;align-self:end;min-height:clamp(300px,42vw,480px);
+  background:var(--ink-lt);border:1px solid var(--line-lt);border-bottom:0;
+  overflow:hidden;
+}
+.hero-portrait img{
+  width:100%;height:100%;position:absolute;inset:0;
+  object-fit:cover;object-position:50% 22%;
+}
+.hero-portrait figcaption{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;
+  padding:34px 20px 16px;
+  background:linear-gradient(to top,rgba(0,0,0,.92),rgba(0,0,0,0));
+  font-family:var(--display);font-weight:600;font-size:14px;color:var(--on-ink);
+}
+.hero-portrait figcaption span{
+  display:block;font-weight:500;font-size:12px;color:var(--gold-lt);margin-top:3px;
+}
+@media(max-width:820px){
+  .hero-grid{grid-template-columns:1fr;padding-bottom:0}
+  .hero-portrait{min-height:330px;order:-1;margin-bottom:10px}
+  .hero-portrait img{object-position:50% 18%}
+}
+
+/* ---------- figures strip ---------- */
+.figs{background:var(--ink-dk);color:var(--on-ink)}
+/* Two figures and a phrase. The phrase needs more room than a number and a
+   slightly smaller size, or it wraps and the row sits unevenly. */
+.figs-in{display:grid;grid-template-columns:1fr 1fr 1.4fr;border-left:1px solid var(--line-lt)}
+.fig:last-child b{font-size:clamp(20px,2.2vw,28px);white-space:nowrap}
+.fig{padding:26px 22px;border-right:1px solid var(--line-lt)}
+.fig b{
+  display:block;font-family:var(--display);font-weight:600;color:var(--gold-lt);
+  font-size:clamp(25px,3vw,36px);letter-spacing:-.02em;line-height:1;
+}
+.fig small{display:block;margin-top:8px;font-size:13.5px;color:var(--on-ink-dim);line-height:1.4}
+.figs-note{padding:13px 0 22px;font-size:13px;color:var(--grey-lt);max-width:70ch}
+/* "Boston & Beyond" is a phrase, not a figure, so it wraps where the
+   numbers do not -- give it the full width once the row breaks. */
+@media(max-width:820px){.figs-in{grid-template-columns:1fr 1fr}
+  .fig:last-child{grid-column:1/-1;border-right:0}}
+@media(max-width:480px){.figs-in{grid-template-columns:1fr}
+  .fig{border-right:0;border-bottom:1px solid var(--line-lt)}
+  .fig:last-child{border-bottom:0}}
+
+/* ---------- generic section ---------- */
+.sec{padding:clamp(58px,7.5vw,104px) 0}
+.sec-head{margin-bottom:clamp(28px,3.5vw,46px);max-width:62ch}
+.sec-head p{margin-top:16px;color:var(--grey);font-size:17.5px}
+
+/* ---------- ledger (the bold element) ---------- */
+.ledger{border-top:2px solid var(--ink)}
+.row{
+  display:grid;grid-template-columns:1fr auto;gap:6px 28px;
+  align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line);
+}
+.row-addr{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(21px,2.8vw,33px);letter-spacing:-.025em;line-height:1.04;
+}
+.row-meta{grid-column:1;font-size:14.5px;color:var(--grey)}
+.row-price{
+  grid-row:1;grid-column:2;font-family:var(--display);font-weight:600;
+  font-size:clamp(19px,2.2vw,26px);letter-spacing:-.015em;white-space:nowrap;
+}
+.row-side{
+  grid-row:2;grid-column:2;font-family:var(--display);font-weight:600;
+  font-size:12px;color:var(--gold);text-align:right;
+}
+.ledger-more{
+  display:inline-block;margin-top:26px;font-family:var(--display);font-weight:600;
+  font-size:15px;color:var(--ink);border-bottom:1px solid var(--gold);
+  text-decoration:none;padding-bottom:2px;
+}
+.ledger-more:hover{color:var(--gold)}
+@media(max-width:600px){
+  .row{grid-template-columns:1fr}
+  .row-price{grid-row:auto;grid-column:1}
+  .row-side{grid-row:auto;grid-column:1;text-align:left}
+}
+
+/* ---------- listing cards (rendered from listings.json) ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px)}
+@media(max-width:980px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.cards{grid-template-columns:1fr}}
+.card{
+  display:flex;flex-direction:column;text-decoration:none;background:var(--white);
+  border:1px solid var(--line);transition:border-color .18s ease,transform .18s ease;
+}
+.card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.card-ph{position:relative;aspect-ratio:4/3;background:var(--ink-lt);overflow:hidden}
+.card-ph img{width:100%;height:100%;object-fit:cover}
+.tag{
+  position:absolute;top:0;left:0;z-index:2;font-family:var(--display);font-weight:600;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  background:var(--gold);color:var(--ink-dk);padding:6px 11px;
+}
+.tag.sold{background:var(--ink);color:var(--on-ink)}
+.card-b{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.card-price{
+  font-family:var(--display);font-weight:700;font-size:clamp(22px,2.4vw,28px);
+  letter-spacing:-.024em;line-height:1;
+}
+.card-addr{
+  font-family:var(--display);font-weight:600;font-size:16px;line-height:1.28;
+  margin-top:10px;letter-spacing:-.012em;
+}
+.card-city{font-size:14px;color:var(--grey);margin-top:3px}
+.card-specs{
+  display:flex;flex-wrap:wrap;gap:0 15px;margin-top:14px;padding-top:13px;
+  border-top:1px solid var(--line);font-family:var(--display);font-size:13px;
+  font-weight:500;color:var(--grey);
+}
+.card-specs b{font-weight:700;color:var(--ink)}
+.card-note{margin:11px 0 0;font-family:var(--display);font-weight:600;font-size:12.5px;color:var(--gold)}
+.card-note.muted{color:var(--grey);font-weight:500}
+.card-cta{
+  margin-top:auto;padding-top:16px;font-family:var(--display);font-weight:600;font-size:13.5px;
+}
+.card-cta i{font-style:normal;border-bottom:1px solid var(--gold);padding-bottom:2px}
+.card:hover .card-cta i{color:var(--gold)}
+.cards-note{margin-top:24px;font-size:13px;color:var(--grey);max-width:76ch}
+.cards-fallback{
+  border:1px solid var(--line);background:var(--white);padding:26px;
+  font-size:16px;color:var(--grey);
+}
+.skel{border:1px solid var(--line);background:var(--white)}
+.skel-ph{aspect-ratio:4/3;background:linear-gradient(100deg,#E7E5E2 30%,#F1EFEC 50%,#E7E5E2 70%);
+  background-size:220% 100%;animation:sh 1.3s linear infinite}
+.skel-b{padding:20px}
+.skel-l{height:12px;background:#E7E5E2;margin-bottom:11px}
+.skel-l.w1{width:45%;height:20px}
+.skel-l.w2{width:75%}
+.skel-l.w3{width:55%}
+@keyframes sh{to{background-position:-220% 0}}
+@media(prefers-reduced-motion:reduce){.skel-ph{animation:none}.card{transition:none}}
+.sold-wrap{background:var(--white)}
+.sold-wrap .card,.sold-wrap .cards-fallback,.sold-wrap .skel{background:var(--ivory)}
+
+/* ---------- about ---------- */
+.about{background:var(--white)}
+.about-grid{
+  display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,4.5vw,66px);
+  align-items:start;
+}
+.about-photo{
+  position:sticky;top:86px;
+  background:#E6E4E1;border:1px solid var(--line);
+  aspect-ratio:1080/1350;          /* the file's real proportions */
+  overflow:hidden;
+}
+.about-photo img{
+  width:100%;height:100%;object-fit:cover;object-position:50% 28%;
+}
+.about-body h2{margin-bottom:22px}
+.spec{
+  list-style:none;padding:0;margin:30px 0 0;
+  display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);
+}
+.spec li{
+  padding:12px 0;border-bottom:1px solid var(--line);
+  font-family:var(--display);font-weight:600;font-size:15px;
+}
+.spec li:nth-child(odd){padding-right:16px}
+.creds{
+  margin-top:32px;padding:20px 22px;background:var(--ivory);
+  border-left:3px solid var(--gold);font-size:15px;color:var(--grey);
+}
+.creds b{font-family:var(--display);font-size:14px;display:block;margin-bottom:6px;color:var(--ink)}
+@media(max-width:820px){
+  .about-grid{grid-template-columns:1fr}
+  .about-photo{position:static;aspect-ratio:3/2}
+  .spec{grid-template-columns:1fr}
+  .spec li:nth-child(odd){padding-right:0}
+}
+
+/* ---------- areas ---------- */
+.areas-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);
+}
+.area{background:var(--ivory);padding:26px 24px}
+.area h3{margin-bottom:10px}
+.area p{font-size:15.5px;color:var(--grey)}
+.lofts{margin-top:34px;padding:28px clamp(22px,3vw,34px);background:var(--ink);color:var(--on-ink)}
+.lofts h3{margin-bottom:12px;color:var(--gold-lt)}
+.lofts p{color:var(--on-ink-dim);max-width:60ch;font-size:16.5px}
+.lofts ul{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.lofts li{
+  font-family:var(--display);font-weight:600;font-size:14px;
+  border:1px solid var(--line-lt);padding:7px 13px;
+}
+@media(max-width:860px){.areas-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.areas-grid{grid-template-columns:1fr}}
+
+/* ---------- video ----------
+   Newest upload runs large; the five behind it sit in a grid. Nothing embeds
+   an iframe until it is clicked -- six YouTube players on load would cost
+   megabytes and tank the page. Until then each tile is just a thumbnail with
+   a play control, and the click swaps in the real player. */
+.vid{background:var(--white)}
+.vid-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(14px,1.6vw,22px);align-items:start}
+.vid-rest{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.6vw,22px)}
+@media(max-width:900px){
+  .vid-grid{grid-template-columns:1fr}
+  .vid-rest{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){.vid-rest{grid-template-columns:1fr}}
+
+.vid-frame{position:relative;aspect-ratio:16/9;background:var(--ink);border:1px solid var(--line);overflow:hidden}
+.vid-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+.tile{
+  position:relative;display:block;width:100%;padding:0;border:1px solid var(--line);
+  background:var(--ink);aspect-ratio:16/9;overflow:hidden;cursor:pointer;
+  text-align:left;font:inherit;color:var(--on-ink);
+  transition:border-color .18s ease,transform .18s ease;
+}
+.tile:hover{border-color:var(--gold);transform:translateY(-2px)}
+.tile img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:opacity .25s ease,transform .4s ease;
+}
+.tile:hover img{transform:scale(1.03)}
+/* Shorts are vertical: their 16:9 thumbnail is a letterboxed frame, so zoom
+   past the bars rather than showing them. */
+.tile.is-short img{transform:scale(1.42)}
+.tile.is-short:hover img{transform:scale(1.48)}
+
+.tile-scrim{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to top,rgba(0,0,0,.86) 0%,rgba(0,0,0,.35) 42%,rgba(0,0,0,.05) 70%);
+}
+.tile-play{
+  position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:58px;height:58px;border-radius:50%;
+  background:rgba(0,0,0,.55);border:1.5px solid rgba(255,255,255,.85);
+  display:grid;place-items:center;transition:background .18s ease,border-color .18s ease;
+}
+.tile-play svg{margin-left:3px}
+.tile:hover .tile-play{background:var(--gold);border-color:var(--gold)}
+.tile:hover .tile-play svg{fill:var(--ink-dk)}
+.tile-txt{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:16px 18px}
+.tile-title{
+  font-family:var(--display);font-weight:600;line-height:1.28;letter-spacing:-.012em;
+  color:#fff;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.tile-date{
+  margin-top:5px;font-family:var(--display);font-weight:500;font-size:12px;
+  color:var(--gold-lt);
+}
+.tile-badge{
+  position:absolute;z-index:3;top:0;left:0;font-family:var(--display);font-weight:600;
+  font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  background:var(--gold);color:var(--ink-dk);padding:5px 9px;
+}
+/* the lead video */
+.tile.lead{aspect-ratio:16/9}
+.tile.lead .tile-title{font-size:clamp(17px,1.9vw,23px);-webkit-line-clamp:3}
+.tile.lead .tile-play{width:74px;height:74px}
+.tile.lead .tile-txt{padding:22px 24px}
+/* The five behind it. At this size a centred play button lands on top of the
+   title, so it moves to the corner and the text keeps the bottom edge. */
+.vid-rest .tile-title{font-size:13px;-webkit-line-clamp:2}
+.vid-rest .tile-date{font-size:11px;margin-top:3px}
+.vid-rest .tile-txt{padding:11px 12px}
+.vid-rest .tile-play{
+  left:auto;right:9px;top:9px;transform:none;width:34px;height:34px;
+}
+.vid-rest .tile-play svg{width:14px;height:14px;margin-left:2px}
+.vid-rest .tile-scrim{
+  background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.12) 100%);
+}
+
+.vid-note{margin-top:20px;font-size:14.5px;color:var(--grey)}
+.vid-note a{border-bottom:1px solid var(--gold);text-decoration:none;font-weight:600}
+.vid-note a:hover{color:var(--gold)}
+@media(prefers-reduced-motion:reduce){.tile,.tile img{transition:none}.tile:hover img{transform:none}}
+
+/* ---------- words ---------- */
+.words-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3vw,40px)}
+.quote{border-top:2px solid var(--gold);padding-top:20px}
+.quote p{font-size:18px;line-height:1.5}
+.quote cite{
+  display:block;margin-top:16px;font-family:var(--display);font-weight:600;
+  font-size:13.5px;font-style:normal;color:var(--grey);line-height:1.5;
+}
+.words-link{margin-top:30px;font-size:15px}
+.words-link a{color:var(--ink);border-bottom:1px solid var(--gold);text-decoration:none}
+@media(max-width:860px){.words-grid{grid-template-columns:1fr}}
+
+/* ---------- contact ---------- */
+.contact{background:var(--ink);color:var(--on-ink)}
+.contact h2{color:var(--white)}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,5vw,72px);align-items:start;
+}
+.contact-sub{color:var(--on-ink-dim);margin-top:18px;max-width:40ch}
+.dl{margin:30px 0 0;font-size:16px}
+.dl div{padding:14px 0;border-top:1px solid var(--line-lt)}
+.dl dt{font-family:var(--display);font-weight:600;font-size:12.5px;color:var(--gold-lt);margin-bottom:3px}
+.dl dd{margin:0}
+.dl a{text-decoration:none;border-bottom:1px solid var(--line-lt)}
+.dl a:hover{border-bottom-color:var(--gold)}
+
+/* ---------- booking ----------
+   Two buttons, one Calendly event type. The free plan allows a single event
+   type, so both buttons open the same booking page and pre-answer its
+   required "phone or in person" question -- the visitor still gets a real
+   choice without the $10/month tier. */
+.book{margin-top:28px;padding:22px 24px;background:rgba(237,237,237,.05);border:1px solid var(--line-lt);border-left:3px solid var(--gold)}
+.book-h{font-family:var(--display);font-weight:700;font-size:19px;color:var(--white);letter-spacing:-.015em}
+.book-p{margin:8px 0 0;font-size:14.5px;color:var(--on-ink-dim)}
+.book-acts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+@media(max-width:560px){.book-acts{grid-template-columns:1fr}}
+.book-btn{
+  display:block;text-align:left;cursor:pointer;font:inherit;
+  background:transparent;color:var(--on-ink);
+  border:1px solid var(--line-lt);padding:13px 15px;
+  transition:border-color .18s ease,background .18s ease;
+}
+.book-btn:hover{border-color:var(--gold);background:rgba(194,155,64,.09)}
+.book-btn-t{
+  display:block;font-family:var(--display);font-weight:600;font-size:15.5px;color:var(--white);
+}
+.book-btn:hover .book-btn-t{color:var(--gold-lt)}
+.book-btn-s{display:block;margin-top:3px;font-size:12.5px;color:var(--on-ink-dim)}
+.book-msg{
+  margin:14px 0 0;font-family:var(--display);font-weight:600;font-size:13.5px;
+  color:var(--gold-lt);min-height:1.2em;
+}
+
+form{display:grid;gap:14px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{
+  font-family:var(--display);font-weight:600;font-size:12.5px;
+  color:var(--gold-lt);display:block;margin-bottom:6px;
+}
+input,select,textarea{
+  width:100%;font-family:var(--body);font-size:16px;color:var(--white);
+  background:rgba(237,237,237,.07);border:1px solid var(--line-lt);
+  padding:12px 13px;
+}
+textarea{resize:vertical;min-height:104px}
+select option{color:#0C0C0C}
+input:hover,select:hover,textarea:hover{border-color:var(--gold)}
+.consent{display:flex;gap:11px;align-items:flex-start;font-size:13.5px;color:var(--on-ink-dim);line-height:1.5}
+.consent input{width:17px;height:17px;flex:0 0 auto;margin-top:3px}
+form button{
+  font-family:var(--display);font-weight:600;font-size:16px;
+  background:var(--gold);color:var(--ink-dk);border:0;
+  padding:15px 24px;cursor:pointer;justify-self:start;
+}
+form button:hover{background:var(--gold-lt)}
+.form-msg{font-size:14.5px;color:var(--gold-lt);min-height:1.2em}
+@media(max-width:820px){
+  .contact-grid{grid-template-columns:1fr}
+  .f2{grid-template-columns:1fr}
+}
+
+/* ---------- featured property ----------
+   One listing given the whole width, above the grid of everything else.
+   It links out to a dedicated page rather than expanding in place. */
+.feat{background:var(--ink-lt);color:var(--on-ink);border-top:1px solid var(--line-lt)}
+.feat-grid{
+  display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(26px,4vw,62px);
+  align-items:center;padding:clamp(48px,6.5vw,92px) 0;
+}
+.feat-tag{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--display);font-weight:600;font-size:11.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--gold-lt);
+  border:1px solid var(--line-lt);padding:7px 13px;margin-bottom:20px;
+}
+.feat-tag i{width:6px;height:6px;background:var(--gold);border-radius:50%;flex:0 0 auto}
+.feat h2{font-size:clamp(30px,4.4vw,52px);line-height:1}
+.feat h2 em{
+  font-style:normal;color:var(--gold-lt);font-weight:500;display:block;
+  font-size:.5em;letter-spacing:-.015em;margin-top:.44em;line-height:1.15;
+}
+.feat-sub{margin-top:20px;color:var(--on-ink-dim);font-size:17.5px;max-width:46ch;line-height:1.56}
+.feat-facts{
+  display:flex;flex-wrap:wrap;gap:0;margin-top:26px;
+  border-top:1px solid var(--line-lt);border-bottom:1px solid var(--line-lt);
+}
+.feat-facts div{padding:15px 22px 15px 0;margin-right:22px;border-right:1px solid var(--line-lt)}
+.feat-facts div:last-child{border-right:0;margin-right:0;padding-right:0}
+.feat-facts b{
+  display:block;font-family:var(--display);font-weight:700;font-size:21px;
+  letter-spacing:-.018em;line-height:1;color:var(--white);
+}
+.feat-facts small{
+  display:block;margin-top:6px;font-family:var(--display);font-weight:500;
+  font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--on-ink-dim);
+}
+.feat-price{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin:22px 0 0;
+  font-family:var(--display);font-weight:700;font-size:clamp(24px,2.8vw,32px);
+  letter-spacing:-.02em;line-height:1;color:var(--white);
+}
+.feat-price span{font-size:12.5px;font-weight:500;color:var(--on-ink-dim);letter-spacing:0}
+.feat-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.feat-shot{
+  position:relative;background:var(--ink);border:1px solid var(--line-lt);
+  display:flex;align-items:center;justify-content:center;
+  aspect-ratio:4/3;overflow:hidden;
+}
+.feat-shot img{width:100%;height:100%;object-fit:cover}
+.feat-shot-ph{
+  padding:22px;text-align:center;font-family:var(--display);
+  font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--grey-lt);line-height:1.6;
+}
+.feat-shot-ph b{display:block;font-size:13px;color:var(--on-ink-dim);letter-spacing:.09em;margin-bottom:5px}
+.feat-note{padding:0 0 clamp(30px,4vw,54px);font-size:13px;color:var(--grey-lt);max-width:80ch;margin:0}
+@media(max-width:900px){
+  .feat-grid{grid-template-columns:1fr;padding-bottom:clamp(34px,5vw,60px)}
+  .feat-shot{order:-1;aspect-ratio:16/10}
+}
+@media(max-width:560px){
+  /* Wrapping the flex row leaves a divider hanging beside the gap, so at
+     phone width the facts become an even two-by-two instead. */
+  .feat-facts{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .feat-facts div{padding:14px 0;margin:0;border-right:0}
+  .feat-facts div:nth-child(odd){padding-right:18px;border-right:1px solid var(--line-lt)}
+  .feat-facts div:nth-child(even){padding-left:18px}
+  .feat-facts div:nth-child(-n+2){border-bottom:1px solid var(--line-lt)}
+  .feat-acts .btn{width:100%;text-align:center}
+}
+
+/* ---------- footer ---------- */
+.foot{background:var(--ink-dk);color:var(--on-ink-dim);font-size:13.5px;padding:44px 0 52px}
+.foot-top{
+  display:flex;flex-wrap:wrap;gap:26px 44px;justify-content:space-between;
+  padding-bottom:26px;border-bottom:1px solid var(--line-lt);
+}
+.foot b{font-family:var(--display);font-size:15px;color:var(--white);display:block;margin-bottom:8px}
+.foot a{text-decoration:none;border-bottom:1px solid transparent}
+.foot a:hover{border-bottom-color:var(--gold)}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--display);font-weight:500}
+.foot-legal{padding-top:24px;line-height:1.62;max-width:96ch;font-size:12.5px;color:#8A8A8A}
+.foot-legal p{margin-bottom:.85em}
+.eho{
+  display:inline-flex;gap:9px;align-items:center;margin-top:6px;
+  font-family:var(--display);font-weight:600;font-size:11.5px;color:var(--on-ink-dim);
+}
+.eho svg{flex:0 0 auto}
+
+/* ---------- one page-load reveal ---------- */
+@media(prefers-reduced-motion:no-preference){
+  .rv{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.3,1) forwards}
+  .rv:nth-child(2){animation-delay:.09s}
+  .rv:nth-child(3){animation-delay:.18s}
+  @keyframes rise{to{opacity:1;transform:none}}
+}
+
+/* ---------- section navigation ----------
+   Jumping to a section should feel like travelling to it, not being teleported.
+   The sticky masthead is ~62px tall, so anything we scroll to needs headroom
+   or its heading lands underneath the bar. */
+main [id],#top{scroll-margin-top:86px}
+
+@media(prefers-reduced-motion:no-preference){
+  html{scroll-behavior:smooth}
+}
+
+/* Which section you are currently in, marked in the masthead. */
+.bar nav a{transition:color .2s ease,border-color .2s ease}
+.bar nav a.is-current{border-bottom-color:var(--gold);color:var(--white)}
+
+/* The section you jumped to gets a brief, quiet acknowledgement. */
+@media(prefers-reduced-motion:no-preference){
+  .sec-head.landed h2{animation:landed .9s cubic-bezier(.2,.7,.3,1)}
+  @keyframes landed{
+    0%{transform:translateY(9px);opacity:.55}
+    100%{transform:none;opacity:1}
+  }
+}
+
+/* ---------- reveal on scroll ----------
+   Same motion vocabulary as the page-load reveal above, driven by an
+   IntersectionObserver. Elements start hidden ONLY when we can animate them
+   and JS is running (html.js), so the page degrades to fully visible. */
+@media(prefers-reduced-motion:no-preference){
+  .js .sr{
+    opacity:0;transform:translateY(20px);
+    transition:opacity .66s cubic-bezier(.2,.7,.3,1),transform .66s cubic-bezier(.2,.7,.3,1);
+    transition-delay:var(--sr-delay,0ms);
+  }
+  .js .sr.in{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="#top">The Bowen Realty Group<span>Jeffrey Bowen &middot; ERealty Advisors Inc.</span></a>
+    <nav id="site-nav">
+      <button class="nav-book" type="button" data-book="">Book a meeting</button>
+      <a href="#featured">Featured</a>
+      <a href="#listings">Listings</a>
+      <a href="#sold">Recently sold</a>
+      <a href="#about">About Jeffrey</a>
+      <a href="#areas">Areas</a>
+      <a href="#tours">Video tours</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="bar-book" type="button" data-book="">Book</button>
+    <div class="callbox">
+      <a class="bar-call" id="callbtn" href="tel:+17812019488"
+         aria-haspopup="menu" aria-expanded="false">781&#8209;201&#8209;9488</a>
+      <div class="callmenu" id="callmenu" role="menu" hidden>
+        <a role="menuitem" href="tel:+17812019488">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C29B40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+          <span><b>Call</b><small>781-201-9488</small></span>
+        </a>
+        <a role="menuitem" href="sms:+17812019488">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#C29B40" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span><b>Text</b><small>781-201-9488</small></span>
+        </a>
+      </div>
+    </div>
+    <button class="bar-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="bar-toggle-box"><span></span><span></span><span></span></span>
+      <span class="sr-only">Menu</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1 class="rv">Greater Boston<br>real estate.<br><em>Proven since 2001.</em></h1>
+          <p class="hero-sub rv">750+ properties sold. 25+ years of local experience. One broker from first conversation to closing.</p>
+          <div class="hero-acts rv">
+            <button type="button" class="btn" data-book="">Book a meeting</button>
+            <a class="btn ghost" href="tel:+17812019488">Call 781-201-9488</a>
+          </div>
+          <p class="hero-alt rv"><a href="#contact">Or ask what your home is worth &rarr;</a></p>
+          <p class="hero-lang">Se habla espa&ntilde;ol. Jeffrey works with buyers and sellers in English and Spanish, including first&#8209;time buyers who have never been through a closing before.</p>
+        </div>
+        <figure class="hero-portrait" style="margin:0">
+          <img src="./heatshot.jpeg"
+               alt="Jeffrey Bowen, real estate broker associate serving Greater Boston"
+               width="535" height="535">
+          <figcaption>Jeffrey Bowen<span>Broker Associate, ERealty Advisors Inc.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIGURES -->
+  <section class="figs">
+    <div class="wrap">
+      <div class="figs-in">
+        <div class="fig"><b>750+</b><small>Properties sold</small></div>
+        <div class="fig"><b>25+</b><small>Years in Greater Boston</small></div>
+        <div class="fig"><b>Boston &amp; Beyond</b><small>The city and the towns around it</small></div>
+      </div>
+      <p class="figs-note">Condos and lofts, two- and three-family homes, multifamily and investment property, new development, and single-family houses &mdash; for buyers, sellers and investors. Jeffrey takes the listing, the pricing, the marketing, the showings and the negotiation himself, from the first conversation through to the closing table. The depth is in Chelsea, East Boston, Everett, Malden and Revere, where the bulk of the work has been; the reach is the whole metro.</p>
+    </div>
+  </section>
+
+  <!-- FEATURED PROPERTY
+       Hand-maintained, unlike the listings grid below it, which comes from
+       listings.json. Point it at a different property by editing this block
+       and its page link. -->
+  <section class="feat" id="featured">
+    <div class="wrap">
+      <div class="feat-grid">
+        <div>
+          <span class="feat-tag"><i></i> Featured &middot; Coming Soon</span>
+          <h2>20 Harnden Street<em>The Elms &mdash; Wilmington, Massachusetts</em></h2>
+          <p class="feat-sub">A Colonial of 1795 beside Silver Lake, known for most of the last century as The Elms, brought back over a multi-year rehabilitation.</p>
+
+          <div class="feat-facts">
+            <div><b>7</b><small>Bedrooms</small></div>
+            <div><b>6</b><small>Full baths</small></div>
+            <div><b>4,220</b><small>Sq ft</small></div>
+            <div><b>10</b><small>Fireplaces</small></div>
+          </div>
+
+          <p class="feat-price">$1,395,000<span>MLS #73579413</span></p>
+
+          <div class="feat-acts">
+            <a class="btn" href="./20-harnden-street-wilmington-ma.html">Explore the property</a>
+            <a class="btn ghost" href="./20-harnden-street-wilmington-ma.html#history">The history of The Elms</a>
+          </div>
+        </div>
+
+        <figure class="feat-shot" style="margin:0">
+          <img src="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1200&quality=82&ssl=1"
+               srcset="https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=700&quality=82&ssl=1 700w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1200&quality=82&ssl=1 1200w, https://i0.wp.com/chelsearealestate.com/wp-content/uploads/2026/09/FB6A4612.jpg?w=1800&quality=82&ssl=1 1800w"
+               sizes="(max-width:900px) 100vw, 50vw"
+               alt="The Elms at 20 Harnden Street, Wilmington, Massachusetts, a 1795 Colonial in red clapboard with black trim"
+               width="2000" height="1333" loading="lazy" decoding="async">
+        </figure>
+      </div>
+      <p class="feat-note">Listed by eRealty Advisors, Inc. MLS #73579413. Active September 28, 2026; open houses October 3 and 4, 1&ndash;3 p.m. Details are deemed reliable but not guaranteed and should be independently verified.</p>
+    </div>
+  </section>
+
+  <!-- CURRENT LISTINGS (rendered from listings.json by the script at the foot of this file) -->
+  <section class="sec" id="listings">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Current listings</h2>
+        <p>Everything Jeffrey has on the market right now, pulled from his Zillow profile. Tap any home to open the full listing &mdash; photos, floor plans, tax history and all.</p>
+      </div>
+
+      <div class="cards" id="listings-grid" data-role="forSale" aria-busy="true" aria-live="polite">
+        <div class="skel" aria-hidden="true"><div class="skel-ph"></div><div class="skel-b"><div class="skel-l w1"></div><div class="skel-l w2"></div><div class="skel-l w3"></div></div></div>
+        <div class="skel" aria-hidden="true"><div class="skel-ph"></div><div class="skel-b"><div class="skel-l w1"></div><div class="skel-l w2"></div><div class="skel-l w3"></div></div></div>
+        <div class="skel" aria-hidden="true"><div class="skel-ph"></div><div class="skel-b"><div class="skel-l w1"></div><div class="skel-l w2"></div><div class="skel-l w3"></div></div></div>
+      </div>
+
+      <a class="ledger-more" href="https://www.zillow.com/profile/JeffreyBowen" target="_blank" rel="noopener">See every active listing on Zillow</a>
+      <p class="cards-note">Listed by eRealty Advisors, Inc. Prices and availability change &mdash; Zillow is the live source. Call 781&#8209;201&#8209;9488 to walk through any of these in person. <span data-role="stamp"></span></p>
+    </div>
+  </section>
+
+  <!-- RECENTLY SOLD -->
+  <section class="sec sold-wrap" id="sold">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Recently sold</h2>
+        <p id="sold-lede">Closings from the last six months &mdash; not a highlight reel, just what came off the market, with the side of the table Jeffrey sat on.</p>
+      </div>
+
+      <div class="cards" id="sold-grid" data-role="sold" aria-busy="true" aria-live="polite">
+        <div class="skel" aria-hidden="true"><div class="skel-ph"></div><div class="skel-b"><div class="skel-l w1"></div><div class="skel-l w2"></div><div class="skel-l w3"></div></div></div>
+        <div class="skel" aria-hidden="true"><div class="skel-ph"></div><div class="skel-b"><div class="skel-l w1"></div><div class="skel-l w2"></div><div class="skel-l w3"></div></div></div>
+        <div class="skel" aria-hidden="true"><div class="skel-ph"></div><div class="skel-b"><div class="skel-l w1"></div><div class="skel-l w2"></div><div class="skel-l w3"></div></div></div>
+      </div>
+
+      <a class="ledger-more" id="sold-more" href="https://www.zillow.com/profile/JeffreyBowen" target="_blank" rel="noopener">See every sale on Zillow</a>
+      <p class="cards-note">Sold data as published on Jeffrey&rsquo;s Zillow profile, weighted towards Chelsea, East Boston, Everett, Malden and Revere.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about sec" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="./jeffrey-about.jpg" width="1080" height="1350" loading="lazy" decoding="async"
+               alt="Jeffrey Bowen, broker associate with eRealty Advisors, who has sold real estate across Greater Boston since 2001">
+        </div>
+        <div class="about-body">
+          <h2>Meet Jeffrey Bowen</h2>
+          <div class="prose">
+            <p>Jeffrey Bowen is a broker associate with ERealty Advisors and leads The Bowen Realty Group out of 9 Canal Street in Boston. He has been licensed in Massachusetts since 2001 and has sold more than 750 properties in that time &mdash; the large majority of them in Chelsea, East Boston, Everett, Malden and Revere.</p>
+            <p>That density is where the judgment comes from. He knows which loft buildings have healthy reserves, what a triple-decker on the wrong side of a street actually trades for, and which buyers are already looking on a given block. Two decades of working that closely travels well &mdash; the questions a seller in Quincy or a buyer in Somerville needs answered are the same ones, and Jeffrey takes listings and represents buyers right across Greater Boston.</p>
+            <p>His work splits fairly evenly between listing homes, representing buyers, and rentals and small commercial deals. He handles a steady share of first-time buyers, and works in English and Spanish &mdash; which matters in a city where most households speak Spanish at home.</p>
+          </div>
+
+          <ul class="spec">
+            <li>Listing agent</li>
+            <li>Buyer&rsquo;s agent</li>
+            <li>First-time homebuyers</li>
+            <li>Multifamily &amp; investment</li>
+            <li>Commercial property</li>
+            <li>Rentals</li>
+            <li>Relocation</li>
+            <li>English &amp; Spanish</li>
+          </ul>
+
+          <div class="creds">
+            <b>Licensing</b>
+            Jeffrey Bowen, Real Estate Broker Associate, Massachusetts License&nbsp;#9068834. ERealty Advisors Inc., Massachusetts Broker License&nbsp;#1000215-RE-RB. 9 Canal Street, Boston, MA 02114.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREAS -->
+  <section class="sec" id="areas">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Where Jeffrey works</h2>
+        <p>Jeffrey works throughout Greater Boston. These are the markets he has sold in most often, each with its own pricing logic.</p>
+      </div>
+
+      <div class="areas-grid">
+        <div class="area">
+          <h3>Chelsea</h3>
+          <p>Converted mill lofts, newer waterfront condos along Boatswains Way, and dense two- and three-family homes. Jeffrey&rsquo;s home market and the source of most of his listings.</p>
+        </div>
+        <div class="area">
+          <h3>East Boston</h3>
+          <p>Triple-deckers and condo conversions with harbor and skyline views, plus multifamily buildings held by long-time owner-occupants.</p>
+        </div>
+        <div class="area">
+          <h3>Everett</h3>
+          <p>Single-families and two-families that draw buyers priced out of Somerville and Charlestown, with steady demand near the Orange Line.</p>
+        </div>
+        <div class="area">
+          <h3>Malden</h3>
+          <p>Larger lots and more single-family stock than its neighbors, which is where much of the family-sized inventory in this price band sits.</p>
+        </div>
+        <div class="area">
+          <h3>Revere</h3>
+          <p>Beachfront condos alongside inland two-families, with a wider spread between the top and bottom of the market than buyers expect.</p>
+        </div>
+        <div class="area">
+          <h3>Boston</h3>
+          <p>Condos and rentals across the city through ERealty Advisors, for clients moving in or out of the neighborhoods above.</p>
+        </div>
+      </div>
+
+      <p class="cards-note">And beyond them: Somerville, Medford, Winthrop, Charlestown, South Boston, Dorchester, Cambridge, Quincy, Melrose, Saugus, Lynn, Watertown, Arlington, Newton, Brookline and the rest of the metro. If it is in Boston or a town around it, Jeffrey can list it or represent you on it &mdash; call or text to talk it through.</p>
+
+      <div class="lofts">
+        <h3>The Chelsea loft buildings</h3>
+        <p>Chelsea&rsquo;s converted industrial buildings trade differently from its condos and need an agent who knows each one&rsquo;s history, layouts and finances. Jeffrey has sold in them for years.</p>
+        <ul>
+          <li>Spencer Lofts</li>
+          <li>Thomas Martin Lofts</li>
+          <li>Porter 156</li>
+          <li>Parker Place</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="vid sec" id="tours">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Video tours</h2>
+        <p>Jeffrey walks his listings on camera. Newest uploads appear here automatically.</p>
+      </div>
+      <div class="vid-grid" id="vid-grid" aria-busy="true" aria-live="polite">
+        <div class="vid-frame" aria-hidden="true"></div>
+        <div class="vid-rest">
+          <div class="vid-frame" aria-hidden="true"></div>
+          <div class="vid-frame" aria-hidden="true"></div>
+          <div class="vid-frame" aria-hidden="true"></div>
+          <div class="vid-frame" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <p class="vid-note">For more, please visit <a href="https://www.youtube.com/@JeffreyBowen/videos" target="_blank" rel="noopener">youtube.com/@JeffreyBowen</a>.</p>
+    </div>
+  </section>
+
+  <!-- WORDS -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>What clients say</h2>
+        <p>Summarized from reviews on Jeffrey&rsquo;s Zillow profile, where the group has 47 of them.</p>
+      </div>
+      <div class="words-grid">
+        <div class="quote">
+          <p>Sold a Chelsea condo after the market slowed sharply, crediting Jeffrey&rsquo;s local connections and willingness to keep working the listing.</p>
+          <cite>Cody Jung &middot; Sold a condo in Chelsea, 2022</cite>
+        </div>
+        <div class="quote">
+          <p>Sold at asking price during the pandemic, describing Jeffrey as experienced, responsive, and hard-working beyond what was expected.</p>
+          <cite>Eric Asquith &middot; Sold in Chelsea, 2020</cite>
+        </div>
+        <div class="quote">
+          <p>First-time buyers in East Boston who felt Jeffrey and Sandra weighed their finances and preferences carefully before recommending any condo.</p>
+          <cite>Verified buyer &middot; Bought in East Boston, 2018</cite>
+        </div>
+      </div>
+      <p class="words-link"><a href="https://www.zillow.com/profile/JeffreyBowen" target="_blank" rel="noopener">Read the full reviews on Zillow</a></p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact sec" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <h2>Let&rsquo;s talk</h2>
+          <p class="contact-sub">Whether you are ready to list next month or just want to know what your building is selling for, Jeffrey will tell you straight.</p>
+
+          <div class="book" id="book" hidden>
+            <h3 class="book-h">Book a time</h3>
+            <p class="book-p">Pick a slot that suits you. Jeffrey confirms by text beforehand.</p>
+            <div class="book-acts">
+              <button type="button" class="book-btn" data-book="Phone call">
+                <span class="book-btn-t">Phone call</span>
+                <span class="book-btn-s">A quick conversation, wherever you are</span>
+              </button>
+              <button type="button" class="book-btn" data-book="In person">
+                <span class="book-btn-t">In person</span>
+                <span class="book-btn-s">At the property, or the Canal Street office</span>
+              </button>
+            </div>
+            <p class="book-msg" id="book-msg" role="status" aria-live="polite"></p>
+          </div>
+          <dl class="dl">
+            <div><dt>Cell</dt><dd><a href="tel:+17812019488">781-201-9488</a> &middot; <a href="sms:+17812019488">text</a></dd></div>
+            <div><dt>Office</dt><dd><a href="tel:+16177292618">617-729-2618</a></dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:jeff@jeffreybowen.com">jeff@jeffreybowen.com</a></dd></div>
+            <div><dt>Office address</dt><dd>ERealty Advisors Inc.<br>9 Canal Street, Boston, MA 02114</dd></div>
+            <div><dt>Elsewhere</dt><dd><a href="https://www.zillow.com/profile/JeffreyBowen" target="_blank" rel="noopener">Zillow</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@JeffreyBowen" target="_blank" rel="noopener">YouTube</a></dd></div>
+          </dl>
+        </div>
+
+        <!-- Wire this to a real endpoint before launch: set action to your
+             Formspree / Netlify / brokerage CRM URL and delete the JS handler. -->
+        <form id="lead" novalidate>
+          <div class="f2">
+            <div><label for="nm">Name</label><input id="nm" name="name" type="text" autocomplete="name" required></div>
+            <div><label for="ph">Phone</label><input id="ph" name="phone" type="tel" autocomplete="tel"></div>
+          </div>
+          <div><label for="em">Email</label><input id="em" name="email" type="email" autocomplete="email" required></div>
+          <div>
+            <label for="in">What can Jeffrey help with?</label>
+            <select id="in" name="interest">
+              <option>Selling a home</option>
+              <option>Buying a home</option>
+              <option>Buying and selling</option>
+              <option>Renting</option>
+              <option>Multifamily or investment</option>
+              <option>Just want a valuation</option>
+            </select>
+          </div>
+          <div>
+            <label for="ms">Anything else &mdash; address, timing, questions</label>
+            <textarea id="ms" name="message"></textarea>
+          </div>
+          <label class="consent" for="ok">
+            <input id="ok" name="consent" type="checkbox" required>
+            <span>I agree that Jeffrey Bowen may contact me by call, text and email about real estate services. Reply STOP at any time to opt out. Message and data rates may apply.</span>
+          </label>
+          <button type="submit">Send to Jeffrey</button>
+          <p class="form-msg" id="fm" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <b>Jeffrey Bowen</b>
+        The Bowen Realty Group &middot; ERealty Advisors Inc.<br>
+        9 Canal Street, Boston, MA 02114<br>
+        <a href="tel:+17812019488">781-201-9488</a> &middot; <a href="sms:+17812019488">text</a> &middot; <a href="mailto:jeff@jeffreybowen.com">jeff@jeffreybowen.com</a>
+      </div>
+      <div>
+        <b>Pages</b>
+        <div class="foot-links">
+          <a href="#featured">Featured property</a>
+          <a href="#listings">Listings</a>
+          <a href="#sold">Recently sold</a>
+          <a href="#about">About</a>
+          <a href="#areas">Areas</a>
+          <a href="#tours">Video tours</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-legal">
+      <p>Jeffrey Bowen, Real Estate Broker Associate, Massachusetts License #9068834. ERealty Advisors Inc., Massachusetts Broker License #1000215-RE-RB. Office 617-729-2618 &middot; Fax 866-885-9139.</p>
+      <p>Sales figures and reviews shown on this page reflect The Bowen Realty Group and are drawn from Jeffrey&rsquo;s public Zillow profile. Past results do not guarantee future outcomes. All information is deemed reliable but not guaranteed and should be independently verified. Listings are subject to prior sale, change or withdrawal.</p>
+      <p class="eho">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A9A9A9" stroke-width="2" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
+        Equal Housing Opportunity
+      </p>
+      <p style="margin-top:14px">&copy; 2026 The Bowen Realty Group. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Placeholder submit handler. Replace with a real form endpoint before launch.
+document.getElementById('lead').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.target, msg = document.getElementById('fm');
+  if (!f.name.value.trim() || !f.email.value.trim() || !f.consent.checked) {
+    msg.textContent = 'Add your name and email, and check the consent box.';
+    return;
+  }
+  var body =
+    'Name: ' + f.name.value + '\n' +
+    'Phone: ' + f.phone.value + '\n' +
+    'Email: ' + f.email.value + '\n' +
+    'Interested in: ' + f.interest.value + '\n\n' +
+    f.message.value;
+  window.location.href = 'mailto:jeff@jeffreybowen.com'
+    + '?subject=' + encodeURIComponent('Website enquiry from ' + f.name.value)
+    + '&body=' + encodeURIComponent(body);
+  msg.textContent = 'Opening your email app. Or call Jeffrey directly at 781-201-9488.';
+});
+</script>
+
+<script>
+/* --------------------------------------------------------------------------
+   Section navigation + reveal-on-scroll.
+
+   Three jobs:
+     1. Clicking a section link scrolls there smoothly, with the sticky
+        masthead accounted for, and moves keyboard focus so the section is
+        genuinely "arrived at" rather than only visually.
+     2. The masthead marks which section you are currently reading.
+     3. Sections and cards fade up as they come into view, once each.
+
+   Everything here is gated on prefers-reduced-motion. If a visitor has asked
+   their system for less movement, scrolling is instant and nothing fades --
+   they still get the sticky-header offset and the current-section marker.
+   -------------------------------------------------------------------------- */
+(function () {
+  var root = document.documentElement;
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var still = function () { return calm.matches; };
+  var HEADER = 86;                       // keep in step with scroll-margin-top
+
+  // We drive section navigation ourselves, so take scroll restoration off the
+  // browser -- otherwise it re-applies its own remembered position a frame
+  // after our popstate handler has scrolled, and Back lands in the wrong place.
+  if (window.history && 'scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  /* ---------- call or text ----------
+     The number dials on its own without this; here it becomes a menu so a
+     visitor on a phone can text instead, which many prefer to calling. */
+  var callBtn = document.getElementById('callbtn');
+  var callMenu = document.getElementById('callmenu');
+
+  if (callBtn && callMenu) {
+    var setCall = function (open) {
+      callMenu.hidden = !open;
+      callBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+
+    callBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      setCall(callMenu.hidden);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!callMenu.hidden && !callMenu.contains(e.target) && !callBtn.contains(e.target)) {
+        setCall(false);
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !callMenu.hidden) { setCall(false); callBtn.focus(); }
+    });
+
+    callMenu.addEventListener('click', function () { setCall(false); });
+  }
+
+  /* ---------- 0. mobile menu toggle ---------- */
+
+  var navToggle = document.getElementById('nav-toggle');
+  var siteNav = document.getElementById('site-nav');
+
+  if (navToggle && siteNav) {
+    var closeMenu = function () {
+      navToggle.setAttribute('aria-expanded', 'false');
+      siteNav.classList.remove('is-open');
+    };
+    var openMenu = function () {
+      navToggle.setAttribute('aria-expanded', 'true');
+      siteNav.classList.add('is-open');
+    };
+
+    navToggle.addEventListener('click', function () {
+      if (navToggle.getAttribute('aria-expanded') === 'true') closeMenu();
+      else openMenu();
+    });
+
+    siteNav.addEventListener('click', function (e) {
+      // buttons too: the mobile menu now leads with the booking action
+      if (e.target.closest('a, button')) closeMenu();
+    });
+
+    document.addEventListener('click', function (e) {
+      if (navToggle.getAttribute('aria-expanded') === 'true' &&
+          !siteNav.contains(e.target) && !navToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navToggle.getAttribute('aria-expanded') === 'true') {
+        closeMenu();
+        navToggle.focus();
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 860) closeMenu();
+    });
+  }
+
+  /* ---------- 1. smooth travel to a section ---------- */
+
+  function go(hash, push) {
+    var target = hash === '#top'
+      ? document.body
+      : document.querySelector(hash);
+    if (!target) return false;
+
+    var y = hash === '#top'
+      ? 0
+      : window.pageYOffset + target.getBoundingClientRect().top - HEADER;
+
+    window.scrollTo({ top: Math.max(0, y), behavior: still() ? 'auto' : 'smooth' });
+
+    // Keyboard and screen-reader users should land inside the section, not be
+    // left at the top of the document with the page merely scrolled.
+    if (target !== document.body) {
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+
+      var head = target.querySelector('.sec-head');
+      if (head && !still()) {
+        head.classList.remove('landed');
+        void head.offsetWidth;                  // restart the animation
+        head.classList.add('landed');
+        setTimeout(function () { head.classList.remove('landed'); }, 1000);
+      }
+    }
+
+    if (push && window.history && history.pushState) {
+      history.pushState(null, '', hash === '#top' ? location.pathname : hash);
+    }
+    return true;
+  }
+
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey ||
+        e.shiftKey || e.altKey) return;
+
+    var link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    var hash = link.getAttribute('href');
+    if (!hash || hash === '#') return;
+
+    if (go(hash, true)) e.preventDefault();
+  });
+
+  // Back/forward through the section history behaves the same way.
+  window.addEventListener('popstate', function () {
+    if (location.hash) go(location.hash, false);
+    else window.scrollTo({ top: 0, behavior: still() ? 'auto' : 'smooth' });
+  });
+
+  /* ---------- 2. mark the section you are in ---------- */
+
+  var links = [].slice.call(document.querySelectorAll('.bar nav a[href^="#"]'));
+  var sections = links
+    .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
+
+  if (sections.length) {
+    var current = null;
+
+    var mark = function (id) {
+      if (id === current) return;
+      current = id;
+      links.forEach(function (a) {
+        var on = a.getAttribute('href') === '#' + id;
+        a.classList.toggle('is-current', on);
+        if (on) a.setAttribute('aria-current', 'true');
+        else a.removeAttribute('aria-current');
+      });
+    };
+
+    // Whichever section fills most of the readable area -- the viewport minus
+    // the sticky masthead. Deliberately NOT intersectionRatio: that ratio is
+    // relative to each section's own height, so a short section scores higher
+    // than a tall one you are barely into and the marker sits a section behind.
+    // Measuring visible pixels also gets the last section right, where the page
+    // cannot scroll far enough to bring it under the masthead at all.
+    var pick = function () {
+      var top = HEADER;
+      var bottom = window.innerHeight;
+      var best = null, bestArea = 0;
+
+      for (var i = 0; i < sections.length; i++) {
+        var r = sections[i].getBoundingClientRect();
+        var area = Math.min(r.bottom, bottom) - Math.max(r.top, top);
+        if (area > bestArea) { bestArea = area; best = sections[i]; }
+      }
+
+      if (best && bestArea > 0) mark(best.id);
+      else {
+        current = null;
+        links.forEach(function (a) {
+          a.classList.remove('is-current');
+          a.removeAttribute('aria-current');
+        });
+      }
+    };
+
+    var queued = false;
+    var onScroll = function () {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () { queued = false; pick(); });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    window.addEventListener('load', pick);
+    pick();
+  }
+
+  /* ---------- 3. reveal on scroll ---------- */
+
+  var revealer = null;
+  if ('IntersectionObserver' in window) {
+    revealer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('in');
+        obs.unobserve(en.target);            // once each, never on the way back up
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+  }
+
+  /**
+   * Register an element to fade up when it scrolls into view.
+   * Exposed so the listings renderer can register the cards it creates.
+   * @param {Element} el
+   * @param {number} [delay] stagger, in ms
+   */
+  function reveal(el, delay) {
+    if (!el) return;
+    if (!revealer || still()) { el.classList.add('in'); return; }
+    if (delay) el.style.setProperty('--sr-delay', delay + 'ms');
+    el.classList.add('sr');
+    revealer.observe(el);
+  }
+  window.__reveal = reveal;
+
+  // Everything already in the document. The hero is left alone -- it has its
+  // own page-load reveal (.rv) and is above the fold anyway.
+  document.querySelectorAll('.sec .sec-head, .about-grid > *, .contact-grid > *, .feat-grid > *')
+    .forEach(function (el) { reveal(el); });
+
+  // Grids stagger: each item follows the one before it by a beat.
+  ['.areas-grid > .area', '.words-grid > .quote', '.vid-note']
+    .forEach(function (sel) {
+      document.querySelectorAll(sel).forEach(function (el, i) { reveal(el, i * 70); });
+    });
+
+  /* A visitor who arrives on a deep link (…/#sold) should land in the right
+     place once the fonts and images have settled the layout. */
+  if (location.hash && location.hash.length > 1) {
+    window.addEventListener('load', function () {
+      setTimeout(function () { go(location.hash, false); }, 60);
+    });
+  }
+})();
+</script>
+
+<script>
+/* --------------------------------------------------------------------------
+   Listings renderer.
+
+   Reads ./listings.json and paints the "Current listings" and "Recently sold"
+   grids. Nothing about a property lives in this HTML file -- refresh the data
+   with:  node scripts/fetch-listings.mjs
+   (see scripts/fetch-listings.mjs for the cron / CI notes)
+   -------------------------------------------------------------------------- */
+(function () {
+  var GRIDS = {
+    forSale: document.getElementById('listings-grid'),
+    sold: document.getElementById('sold-grid')
+  };
+  if (!GRIDS.forSale || !GRIDS.sold) return;
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;   // textContent, never innerHTML
+    return n;
+  }
+
+  function specs(p) {
+    var row = el('div', 'card-specs');
+    [[p.beds, 'bd'], [p.baths, 'ba'], [p.sqft, 'sq ft']].forEach(function (pair) {
+      if (pair[0] == null || pair[0] === '') return;
+      var s = el('span');
+      s.appendChild(el('b', null, pair[0]));
+      s.appendChild(document.createTextNode(' ' + pair[1]));
+      row.appendChild(s);
+    });
+    return row;
+  }
+
+  function card(p, kind) {
+    var a = el('a', 'card');
+    a.href = p.url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+
+    var ph = el('div', 'card-ph');
+    ph.appendChild(el('span', kind === 'sold' ? 'tag sold' : 'tag',
+                      kind === 'sold' ? 'Sold' : 'For sale'));
+    if (p.photo) {
+      var img = new Image();
+      img.src = p.photo;
+      img.alt = p.fullAddress || '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.width = 640; img.height = 480;
+      img.onerror = function () { img.remove(); };
+      ph.appendChild(img);
+    }
+    a.appendChild(ph);
+
+    var b = el('div', 'card-b');
+    b.appendChild(el('div', 'card-price', p.price || ''));
+    b.appendChild(el('div', 'card-addr', p.street || p.fullAddress || ''));
+    if (p.locality) b.appendChild(el('div', 'card-city', p.locality));
+    b.appendChild(specs(p));
+
+    if (kind === 'sold') {
+      if (p.soldDateText) b.appendChild(el('p', 'card-note muted', 'Closed ' + p.soldDateText));
+      if (p.represented) b.appendChild(el('p', 'card-note', p.represented));
+    } else {
+      (p.badges || []).slice(0, 2).forEach(function (t, i) {
+        b.appendChild(el('p', /price cut/i.test(t) ? 'card-note' : 'card-note muted',
+                         t.replace('Price cut:', 'Price cut —')));
+      });
+    }
+
+    var cta = el('div', 'card-cta');
+    cta.appendChild(el('i', null, kind === 'sold' ? 'View the sale on Zillow' : 'View on Zillow'));
+    b.appendChild(cta);
+
+    a.appendChild(b);
+    return a;
+  }
+
+  function fallback(grid, message) {
+    grid.replaceChildren();
+    grid.removeAttribute('aria-busy');
+    grid.style.gridTemplateColumns = '1fr';
+    var box = el('div', 'cards-fallback');
+    box.appendChild(document.createTextNode(message + ' '));
+    var link = el('a', null, 'View them on Zillow →');
+    link.href = 'https://www.zillow.com/profile/JeffreyBowen';
+    link.target = '_blank'; link.rel = 'noopener';
+    box.appendChild(link);
+    grid.appendChild(box);
+  }
+
+  function paint(grid, items, kind, emptyMsg) {
+    if (!items || !items.length) return fallback(grid, emptyMsg);
+    grid.replaceChildren();
+    grid.removeAttribute('aria-busy');
+    items.forEach(function (p, i) {
+      if (!p || !p.url) return;
+      var c = card(p, kind);
+      grid.appendChild(c);
+      // Cards are built after the reveal observer exists, so register them
+      // here; they fade up in sequence as the section scrolls into view.
+      if (window.__reveal) window.__reveal(c, (i % 3) * 80);
+    });
+  }
+
+  fetch('listings.json', { cache: 'no-cache' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      paint(GRIDS.forSale, data.forSale, 'forSale',
+            'Jeffrey has nothing on the market this minute.');
+      paint(GRIDS.sold, data.sold, 'sold',
+            'No closings recorded in the last six months.');
+
+      var months = data.soldWindowMonths || 6;
+      var lede = document.getElementById('sold-lede');
+      if (lede && months !== 6) {
+        lede.textContent = lede.textContent.replace('last six months',
+          'last ' + months + ' months');
+      }
+
+      var more = document.getElementById('sold-more');
+      if (more && data.counts && data.counts.totalSold) {
+        more.textContent = 'See all ' +
+          data.counts.totalSold.toLocaleString('en-US') + ' sales on Zillow';
+      }
+
+      var stamp = document.querySelector('[data-role="stamp"]');
+      if (stamp && data.generatedAt) {
+        stamp.textContent = 'Listing data last refreshed ' +
+          new Date(data.generatedAt).toLocaleDateString('en-US',
+            { month: 'long', day: 'numeric', year: 'numeric' }) + '.';
+      }
+    })
+    .catch(function (err) {
+      console.warn('listings.json could not be loaded:', err.message);
+      fallback(GRIDS.forSale, 'Jeffrey’s current listings are on Zillow.');
+      fallback(GRIDS.sold, 'Jeffrey’s recent sales are on Zillow.');
+    });
+})();
+</script>
+
+<script>
+/* --------------------------------------------------------------------------
+   Video tours.
+
+   Reads ./videos.json and lays out the newest upload large with the next five
+   beside it. Refresh with:  node scripts/fetch-videos.mjs
+
+   Each tile is a thumbnail and a play button, not an embed. The YouTube player
+   is only injected when someone actually clicks -- six iframes on load would
+   pull megabytes of player JS and set cookies for a visitor who never watched
+   anything. The embeds use youtube-nocookie for the same reason.
+   -------------------------------------------------------------------------- */
+(function () {
+  var grid = document.getElementById('vid-grid');
+  if (!grid) return;
+
+  var CHANNEL = 'https://www.youtube.com/@JeffreyBowen/videos';
+
+  var PLAY_SVG =
+    '<svg viewBox="0 0 24 24" width="22" height="22" fill="#fff" aria-hidden="true">' +
+    '<path d="M8 5v14l11-7z"/></svg>';
+
+  function tile(v, lead) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tile' + (lead ? ' lead' : '') + (v.isShort ? ' is-short' : '');
+    b.setAttribute('aria-label', 'Play: ' + v.title);
+    b.dataset.id = v.id;
+    b.dataset.embed = v.embedUrl;
+    b.dataset.title = v.title;
+
+    var img = new Image();
+    img.alt = '';                       // the title below is the accessible name
+    img.loading = lead ? 'eager' : 'lazy';
+    img.decoding = 'async';
+    img.width = 640; img.height = 360;
+    // maxres does not exist for every upload (and never for Shorts).
+    img.src = lead && !v.isShort ? v.thumbLarge : v.thumb;
+    img.onerror = function () {
+      if (img.src !== v.thumb) img.src = v.thumb; else img.remove();
+    };
+    b.appendChild(img);
+
+    if (lead) {
+      var badge = document.createElement('span');
+      badge.className = 'tile-badge';
+      badge.textContent = 'Latest tour';
+      b.appendChild(badge);
+    }
+
+    var scrim = document.createElement('span');
+    scrim.className = 'tile-scrim';
+    b.appendChild(scrim);
+
+    var play = document.createElement('span');
+    play.className = 'tile-play';
+    play.innerHTML = PLAY_SVG;
+    b.appendChild(play);
+
+    var txt = document.createElement('span');
+    txt.className = 'tile-txt';
+    var t = document.createElement('span');
+    t.className = 'tile-title';
+    t.textContent = v.title;
+    txt.appendChild(t);
+    if (v.publishedText) {
+      var d = document.createElement('span');
+      d.className = 'tile-date';
+      d.textContent = v.publishedText + (v.isShort ? ' · Short' : '');
+      txt.appendChild(d);
+    }
+    b.appendChild(txt);
+
+    b.addEventListener('click', function () { play_(b); });
+    return b;
+  }
+
+  function play_(b) {
+    var frame = document.createElement('div');
+    frame.className = 'vid-frame';
+    var f = document.createElement('iframe');
+    f.src = b.dataset.embed + '?autoplay=1&rel=0&modestbranding=1';
+    f.title = b.dataset.title;
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    f.allowFullscreen = true;
+    frame.appendChild(f);
+    b.replaceWith(frame);
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'video_play', {
+        video_id: b.dataset.id,
+        video_title: b.dataset.title
+      });
+    }
+  }
+
+  function fallback() {
+    grid.replaceChildren();
+    grid.removeAttribute('aria-busy');
+    grid.style.gridTemplateColumns = '1fr';
+    var box = document.createElement('div');
+    box.className = 'cards-fallback';
+    box.appendChild(document.createTextNode('Jeffrey’s tours are on YouTube. '));
+    var a = document.createElement('a');
+    a.href = CHANNEL; a.target = '_blank'; a.rel = 'noopener';
+    a.textContent = 'Watch the channel →';
+    box.appendChild(a);
+    grid.appendChild(box);
+  }
+
+  fetch('videos.json', { cache: 'no-cache' })
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (data) {
+      var vids = (data.videos || []).filter(function (v) { return v && v.id; });
+      if (!vids.length) return fallback();
+
+      grid.replaceChildren();
+      grid.removeAttribute('aria-busy');
+
+      grid.appendChild(tile(vids[0], true));
+
+      var rest = document.createElement('div');
+      rest.className = 'vid-rest';
+      vids.slice(1, 6).forEach(function (v) { rest.appendChild(tile(v, false)); });
+      grid.appendChild(rest);
+
+      if (window.__reveal) {
+        window.__reveal(grid.firstChild);
+        [].forEach.call(rest.children, function (el, i) { window.__reveal(el, i * 70); });
+      }
+    })
+    .catch(function (err) {
+      console.warn('videos.json could not be loaded:', err.message);
+      fallback();
+    });
+})();
+</script>
+
+<script>
+/* --------------------------------------------------------------------------
+   Appointment booking (Calendly).
+
+   TO TURN THIS ON:
+     1. calendly.com -> sign up (the free plan is enough) and connect
+        Jeffrey's Google Calendar so real availability is respected.
+     2. Edit the single event type. Suggested: "Talk with Jeffrey", 20 minutes,
+        with a few hours' minimum notice and a buffer after.
+     3. Add ONE required question, first in the list, of type "Radio buttons":
+              How would you like to meet?
+              · Phone call
+              · In person
+        It must be the first custom question -- the buttons below pre-answer it
+        through Calendly's a1 parameter, which is positional.
+     4. Copy the event link and replace BOOKING_URL on the next line.
+
+   CURRENT STATE: pointed at the live "30min" event. If the radio question is
+   not set up yet the a1 parameter is simply ignored by Calendly, so the
+   buttons still work -- the visitor just picks how to meet themselves.
+
+   Why one event type and not two: Calendly's free plan allows exactly one.
+   Two proper types (a short call and a longer showing, each with its own
+   duration and location) needs the $10/month Standard plan. Pre-answering the
+   question keeps the visitor's choice while staying free; the trade is that
+   both bookings share one duration. If Jeffrey upgrades later, give each
+   button its own event URL in BOOKING_URLS and drop the a1 parameter.
+
+   Until the URL is set, the whole booking block stays hidden -- better no
+   block than a button that opens a 404.
+   -------------------------------------------------------------------------- */
+(function () {
+  var BOOKING_URL = 'https://calendly.com/thienduc666/30min';
+
+  // Every booking control on the page, wherever it sits: the hero button and
+  // the two in the contact block. data-book carries the answer to pre-select
+  // ("" on the hero, where the visitor has not said which they want yet).
+  var triggers = [].slice.call(document.querySelectorAll('[data-book]'));
+  var block = document.getElementById('book');
+  if (!triggers.length) return;
+
+  if (BOOKING_URL.indexOf('REPLACE-ME') !== -1) {
+    console.info('[booking] BOOKING_URL is still a placeholder — booking controls hidden.');
+    triggers.forEach(function (t) { t.hidden = true; });
+    return;
+  }
+  if (block) block.hidden = false;
+
+  var CSS = 'https://assets.calendly.com/assets/external/widget.css';
+  var JS  = 'https://assets.calendly.com/assets/external/widget.js';
+  var msg = document.getElementById('book-msg');
+  var loading = null;
+
+  // The hero button has no status line of its own; say nothing rather than
+  // throwing when there is nowhere to say it.
+  function say(text, html) {
+    if (!msg) return;
+    if (html) msg.innerHTML = text; else msg.textContent = text;
+  }
+
+  /* Calendly's widget is well over 100KB and sets third-party cookies the
+     moment it loads. Nobody who never books should pay for it, so it is
+     fetched on the first click and reused after that. */
+  function loadWidget() {
+    if (loading) return loading;
+    loading = new Promise(function (resolve, reject) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = CSS;
+      document.head.appendChild(link);
+
+      var tag = document.createElement('script');
+      tag.src = JS;
+      tag.async = true;
+      tag.onload = resolve;
+      tag.onerror = function () { reject(new Error('widget failed to load')); };
+      document.head.appendChild(tag);
+    });
+    return loading;
+  }
+
+  /* Carry over anything already typed into the contact form, and record which
+     button was used, so the booking arrives with context instead of blank. */
+  // Where on the page the click came from. Reported to Calendly as utm_content
+  // and to GA4 as booking_source, so both agree.
+  function sourceOf(btn) {
+    if (btn.closest('.bar')) return 'header';
+    if (btn.closest('.hero')) return 'hero';
+    return 'contact';
+  }
+
+  function bookingUrl(kind, source) {
+    var form = document.getElementById('lead');
+    var q = [];
+    var name = form && form.name ? form.name.value.trim() : '';
+    var email = form && form.email ? form.email.value.trim() : '';
+
+    if (name) q.push('name=' + encodeURIComponent(name));
+    if (email) q.push('email=' + encodeURIComponent(email));
+    // a1 answers the FIRST custom question on the event type. Positional, and
+    // the text must match a radio option exactly. Empty from the hero, where
+    // the visitor picks on the booking form instead.
+    if (kind) q.push('a1=' + encodeURIComponent(kind));
+    q.push('utm_source=website');
+    q.push('utm_content=' + encodeURIComponent(source + (kind ? ' · ' + kind : '')));
+    q.push('hide_gdpr_banner=1');
+
+    return BOOKING_URL + (BOOKING_URL.indexOf('?') === -1 ? '?' : '&') + q.join('&');
+  }
+
+  function open_(kind, btn) {
+    var label = btn.textContent;
+    var source = sourceOf(btn);
+    say('Opening the calendar…');
+    btn.disabled = true;
+
+    loadWidget().then(function () {
+      btn.disabled = false;
+      if (!window.Calendly) throw new Error('Calendly global missing');
+      say('');
+      window.Calendly.initPopupWidget({ url: bookingUrl(kind, source) });
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'booking_open', {
+          booking_type: kind || 'unspecified',
+          booking_source: source
+        });
+      }
+    }).catch(function (err) {
+      btn.disabled = false;
+      loading = null;                          // let a later click retry
+      console.warn('[booking]', err.message);
+      // Never leave someone stuck at a dead button. The hero has no status
+      // line, so send them to the phone number that is already beside it.
+      if (msg) {
+        say('The calendar would not load. Call ' +
+            '<a href="tel:+17812019488">781-201-9488</a> or email ' +
+            '<a href="mailto:jeff@jeffreybowen.com">jeff@jeffreybowen.com</a>.',
+            true);
+      } else {
+        window.location.href = 'tel:+17812019488';
+      }
+      btn.textContent = label;
+    });
+  }
+
+  triggers.forEach(function (btn) {
+    btn.addEventListener('click', function () { open_(btn.dataset.book, btn); });
+  });
+
+  /* Calendly posts a message when a booking actually completes. This is the
+     event worth counting -- opening the popup is interest, this is a lead. */
+  window.addEventListener('message', function (e) {
+    if (e.origin !== 'https://calendly.com') return;
+    var d = e.data;
+    if (!d || typeof d.event !== 'string' || d.event.indexOf('calendly.') !== 0) return;
+
+    if (d.event === 'calendly.event_scheduled') {
+      msg.textContent = 'Booked. Jeffrey will confirm by text.';
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'booking_complete', {});
+      }
+    }
+  });
+})();
+</script>
+
+<script>
+/* --------------------------------------------------------------------------
+   Analytics events.
+
+   Page views are automatic once a Measurement ID is set. These are the four
+   things worth counting on an agent's site beyond that -- the moments someone
+   goes from reading to acting:
+
+     call_click        tapped the phone number
+     email_click       tapped the email address
+     listing_click     opened a listing on Zillow (which property, and whether
+                       it was an active listing or a past sale)
+     lead_form_submit  completed the contact form
+
+   In GA4, mark lead_form_submit and call_click as key events
+   (Admin -> Events -> toggle "Mark as key event") so they show up as
+   conversions rather than plain events.
+
+   Everything here no-ops until GA_MEASUREMENT_ID is set: gtag is only defined
+   once the guard in the head passes.
+   -------------------------------------------------------------------------- */
+(function () {
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href]');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+
+    if (href.indexOf('tel:') === 0) {
+      return track('call_click', { phone_number: href.replace('tel:', '') });
+    }
+    if (href.indexOf('mailto:') === 0) {
+      return track('email_click', {});
+    }
+    if (href.indexOf('zillow.com') !== -1) {
+      var card = link.classList.contains('card') ? link : null;
+      return track('listing_click', {
+        listing_address: card ? (card.querySelector('.card-addr') || {}).textContent : null,
+        listing_price:   card ? (card.querySelector('.card-price') || {}).textContent : null,
+        listing_status:  card ? (card.closest('#sold') ? 'sold' : 'for_sale') : 'profile',
+        link_url: link.href
+      });
+    }
+  });
+
+  var form = document.getElementById('lead');
+  if (form) {
+    form.addEventListener('submit', function () {
+      // Fires alongside the existing handler; it does not gate submission.
+      var interest = form.interest ? form.interest.value : null;
+      track('lead_form_submit', { interest: interest });
+    });
+  }
+})();
+</script>
+
+<!--
+  BEFORE LAUNCH
+  1. Portrait is already local (./heatshot.jpeg). Only the listing-card photos
+     are hotlinked from Zillow's CDN; see note 5.
+  2. Replace the About placeholder with a second, non-headshot photo.
+  3. Point the contact form at a real endpoint and remove the JS fallback above.
+  4. Swap the three testimonial summaries for verbatim client text you have
+     permission to publish.
+  5. LISTINGS DATA. The Current listings / Recently sold sections render from
+     listings.json. Nothing about a property is written into this HTML file.
+     Refresh the data with:
+
+         npm run listings          # = node scripts/fetch-listings.mjs
+
+     It reads the Zillow profile page's own __NEXT_DATA__ JSON; Zillow has no
+     public agent API. Because Zillow fingerprints the request rather than just
+     the IP, the script tries hardened HTTP first and falls back to a headless
+     Chromium when it is handed a bot wall. That fallback needs a one-off:
+
+         npm install && npx playwright install chromium
+
+     Without Playwright the HTTP path still runs; it just cannot recover from a
+     block. Card photos are hotlinked to photos.zillowstatic.com, the same as
+     the hero portrait -- if Zillow moves those paths a card loses its image but
+     keeps its price, address and link.
+
+     .github/workflows/refresh-listings.yml runs the refresh daily at 10:00 UTC
+     (6am Eastern) and commits any change; run it by hand from the Actions tab
+     any time. Every failure mode -- bot wall, schema change, network -- exits
+     non-zero and leaves the committed listings.json untouched, so a bad day is
+     a skipped refresh, never a broken page.
+
+     Preview through a web server (`npm run serve`), not by opening index.html
+     off the filesystem -- file:// blocks the fetch and you will see the "view on
+     Zillow" fallback instead of the cards.
+  6. VIDEO TOURS. The section renders from videos.json, generated by
+     scripts/fetch-videos.mjs off the channel's public Atom feed
+     (youtube.com/feeds/videos.xml) -- no API key, no bot check. Refresh with:
+
+         npm run videos
+
+     The newest upload runs large, the next five sit beside it. Change how
+     many with --limit. Nothing embeds a YouTube player until a visitor
+     clicks: six iframes on load would pull megabytes of player JS and set
+     cookies for someone who never watched anything, so each tile is a
+     thumbnail until clicked, and the embeds use youtube-nocookie.
+
+     `npm run refresh` runs the listings and the video fetch together.
+
+  7. BOOKING. Wired to Calendly from three places: the masthead, the hero, and
+     the "Book a time" block in Contact. All hidden until BOOKING_URL is set in
+     the booking script near the foot of this file. It currently points at
+     calendly.com/thienduc666/30min -- move this to Jeffrey's own Calendly
+     account before launch. Full setup steps are in the comment above that line; the short
+     version is: create the free Calendly account, connect Jeffrey's Google
+     Calendar, make one event type with a required first question
+     "How would you like to meet?" offering Phone call / In person, then paste
+     the event link.
+
+     The two buttons pre-answer that question, so a visitor still picks phone
+     or in person even though the free plan allows only one event type. If
+     Jeffrey ever upgrades to Standard ($10/mo) for two real event types with
+     their own durations, give each button its own URL and drop the a1
+     parameter.
+
+     Mark booking_complete as a key event in GA4 alongside lead_form_submit.
+
+  8. SEO. Everything is wired but pointed at a placeholder domain. Do these,
+     in order, and the page is ready to be found:
+
+     a. Swap the domain. Seven absolute URLs in this file plus robots.txt and
+        sitemap.xml all say https://REPLACE-ME.com:
+
+            grep -rl 'REPLACE-ME.com' . --exclude-dir=.git --exclude-dir=node_modules \
+              | xargs sed -i '' 's|https://REPLACE-ME.com|https://yourdomain.com|g'
+
+        (drop the '' after -i on Linux). Confirm none are left:
+            grep -r REPLACE-ME . --exclude-dir=.git
+
+     b. Google Search Console (search.google.com/search-console): add the
+        domain, verify by DNS, submit /sitemap.xml, then "Request indexing"
+        on the homepage. This is what gets the page into Google at all.
+
+     c. Google Business Profile. For a local agent this outranks almost
+        anything on-page -- it is what puts you in the map pack for
+        "realtor in Boston MA". Claim it, use the SAME name, address and
+        phone as the structured data in the head, and link it to this site.
+
+     d. Check the structured data at search.google.com/test/rich-results
+        after the domain swap. It should find RealEstateAgent, WebSite and
+        WebPage with no errors.
+
+     e. Replace the og:image. Social previews want a 1200x630 landscape image;
+        heatshot.jpeg is a 900x1200 portrait, so it will be cropped oddly when
+        the page is shared. Save a landscape version as /og-image.jpg and point
+        og:image and twitter:image at it.
+
+     Not done, and worth knowing: reviews are NOT marked up as schema. Google
+     forbids self-serving AggregateRating markup for a business on its own
+     site, and the testimonials here are summaries rather than verbatim quotes.
+     Real review stars come from the Google Business Profile in (c).
+
+  9. GOOGLE ANALYTICS. The snippet is in the head with a placeholder ID and a
+     guard, so nothing loads until you set it. Follow the numbered steps in the
+     GA4 comment block up there -- the only edit is one line:
+
+         window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+
+     Then, in GA4 Admin -> Events, mark `lead_form_submit` and `call_click` as
+     key events so they count as conversions. The four custom events are
+     documented in the analytics script near the foot of this file.
+     To verify: publish, open the site, then GA4 -> Reports -> Realtime.
+
+-->
+</body>
+</html>

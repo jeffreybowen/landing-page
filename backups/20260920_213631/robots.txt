@@ -1,0 +1,12 @@
+# The Bowen Realty Group
+# Swap REPLACE-ME.com for the real domain before launch (see index.html head).
+
+User-agent: *
+Allow: /
+
+# listings.json is the page's own data feed. Nothing secret, but it is not a
+# page and should not compete with index.html in search results.
+Disallow: /listings.json
+Disallow: /scripts/
+
+Sitemap: https://REPLACE-ME.com/sitemap.xml
