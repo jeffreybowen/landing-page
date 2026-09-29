@@ -3,8 +3,14 @@
 
    Loaded on every page with:
        <script src="/chat.js" defer></script>
-   A listing page adds data-listing="<address>" to that tag so "Ask about a
-   listing" is pre-filled with the property being viewed.
+   A listing page adds data-listing="<address>" to that tag so the property
+   being viewed is offered as a topic, and sent along with the lead.
+
+   The flow is short on purpose. It opens with Call / Text / Email buttons
+   that go straight to Jeffrey from the visitor's own phone or mail app. For
+   anyone who would rather talk later, it asks only: buying or selling, what
+   they want to talk about, and how to reach them. No qualifying questions.
+   A Schedule button in the header opens Jeffrey's Calendly at any point.
 
    Scripted on purpose, not an AI model. Nothing it says was not written here,
    so it can never answer "is this a good area for families like mine?" --
@@ -88,6 +94,11 @@
     '#jb-chat .jb-sub{font:500 12.5px/1.3 var(--jb-display);color:#A9A9A9;margin-top:3px}',
     '#jb-chat .jb-close{background:transparent;border:0;color:#A9A9A9;cursor:pointer;font-size:24px;line-height:1;padding:4px 8px;border-radius:6px}',
     '#jb-chat .jb-close:hover{color:var(--jb-ivory);background:rgba(255,255,255,.08)}',
+    '#jb-chat .jb-acts{display:flex;align-items:center;gap:4px;flex:none}',
+    '#jb-chat .jb-sched{display:flex;align-items:center;gap:6px;padding:6px 11px;border:1px solid rgba(220,193,136,.45);border-radius:999px;',
+    'background:transparent;color:var(--jb-gold-lt);cursor:pointer;font:600 12.5px/1.2 var(--jb-display)}',
+    '#jb-chat .jb-sched:hover{border-color:var(--jb-gold);color:var(--jb-ivory)}',
+    '#jb-chat .jb-sched[hidden]{display:none}',
     '#jb-chat .jb-rule{height:2px;background:rgba(255,255,255,.14);margin-top:14px}',
     '#jb-chat .jb-rule i{display:block;height:100%;width:0;background:var(--jb-gold);transition:width .45s cubic-bezier(.4,0,.2,1)}',
 
@@ -107,6 +118,9 @@
     '#jb-chat .jb-chip{padding:9px 15px;border-radius:999px;cursor:pointer;font:500 13.5px/1.3 var(--jb-display);',
     'background:var(--jb-white);color:var(--jb-ink);border:1px solid var(--jb-line)}',
     '#jb-chat .jb-chip:hover{border-color:var(--jb-gold);background:#FDFBF6}',
+    '#jb-chat a.jb-chip{display:inline-block;text-decoration:none}',
+    '#jb-chat .jb-chip.jb-primary{background:var(--jb-ink);color:var(--jb-ivory);border-color:var(--jb-ink)}',
+    '#jb-chat .jb-chip.jb-primary:hover{background:var(--jb-ink-lt)}',
     '#jb-chat .jb-form{display:flex;gap:8px}',
     '#jb-chat .jb-input{flex:1;padding:11px 13px;border:1px solid var(--jb-line);border-radius:10px;min-width:0;',
     'font:16px/1.4 var(--jb-body);background:var(--jb-white);color:var(--jb-ink);resize:none}',
@@ -131,8 +145,13 @@
     '#jb-chat .jb-consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--jb-muted);margin-bottom:10px;cursor:pointer}',
     '#jb-chat .jb-consent input{margin-top:3px;flex:none;accent-color:var(--jb-ink);width:16px;height:16px}',
     '#jb-chat .jb-fine{font-size:12px;color:var(--jb-muted);margin-top:10px}',
-    '#jb-chat .jb-cal{width:100%;height:420px;border:1px solid var(--jb-line);border-radius:var(--jb-r);overflow:hidden;background:var(--jb-white)}',
-    '#jb-chat .jb-cal-alt{display:block;margin-top:8px;font:600 13px/1.4 var(--jb-display)}',
+    '#jb-chat .jb-cal{display:none;flex:1;flex-direction:column;min-height:0;background:var(--jb-white)}',
+    '#jb-chat .jb-panel.jb-booking .jb-cal{display:flex}',
+    '#jb-chat .jb-panel.jb-booking .jb-log,#jb-chat .jb-panel.jb-booking .jb-zone{display:none}',
+    '#jb-chat .jb-cal-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 16px;',
+    'border-bottom:1px solid var(--jb-line);background:var(--jb-ivory);font:600 13px/1.4 var(--jb-display)}',
+    '#jb-chat .jb-back{background:transparent;border:0;padding:4px 0;cursor:pointer;font:inherit;color:var(--jb-ink)}',
+    '#jb-chat .jb-cal iframe{flex:1;width:100%;border:0;display:block}',
     '#jb-chat a{color:var(--jb-ink)}',
     '#jb-chat :focus-visible{outline:2px solid var(--jb-gold);outline-offset:2px}',
 
@@ -158,12 +177,22 @@
       '<div class="jb-head">' +
         '<div class="jb-head-row">' +
           '<div><div class="jb-who">The Bowen Realty Group</div><div class="jb-sub">Jeffrey Bowen &middot; ERealty Advisors</div></div>' +
-          '<button class="jb-close" type="button" aria-label="Close chat">&times;</button>' +
+          '<div class="jb-acts">' +
+            '<button class="jb-sched" type="button" aria-label="Schedule a meeting with Jeffrey">' +
+              '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>' +
+              'Schedule' +
+            '</button>' +
+            '<button class="jb-close" type="button" aria-label="Close chat">&times;</button>' +
+          '</div>' +
         '</div>' +
         '<div class="jb-rule"><i></i></div>' +
       '</div>' +
       '<div class="jb-log" role="log" aria-live="polite" aria-atomic="false"></div>' +
       '<div class="jb-zone"></div>' +
+      '<div class="jb-cal">' +
+        '<div class="jb-cal-bar"><button class="jb-back" type="button">&larr; Back to chat</button>' +
+        '<a class="jb-cal-new" target="_blank" rel="noopener">Open in new tab</a></div>' +
+      '</div>' +
     '</div>';
   document.body.appendChild(root);
 
@@ -172,150 +201,51 @@
   var zone   = root.querySelector('.jb-zone');
   var bar    = root.querySelector('.jb-rule i');
   var launch = root.querySelector('.jb-launch');
+  var sched  = root.querySelector('.jb-sched');
+  var cal    = root.querySelector('.jb-cal');
 
   var answers = {};    // step id -> { label, value }
   var order   = [];    // answer order, for the recap and the payload
-  var editing = null;  // set while re-answering a line from the recap
-  var reuse   = false; // while re-walking after an edit, skip steps already answered
+  var editing = false; // set while re-answering a line from the recap
   var opened  = 0;
-  var total   = 10;    // steps on the current path, for the progress rule
+  var total   = 5;     // questions on the talk-later path, for the progress rule
 
-  /* Addresses for "Ask about a listing": the page's own property on a listing
-     page, otherwise the active listings from listings.json. */
-  var listings = pageListing ? [pageListing] : [];
-  if (!pageListing) {
-    fetch('/listings.json').then(function (r) { return r.json(); }).then(function (d) {
-      listings = (d.forSale || []).map(function (l) { return l.street + ', ' + l.locality.split(',')[0]; }).slice(0, 6);
-    }).catch(function () {});
-  }
+  var TEL = '+1' + CONFIG.phone.replace(/\D/g, '');
 
   /* ---------------------------------------------------------------
      FLOW
      Step ids double as the Sheet's column names, so rename with care.
   ----------------------------------------------------------------*/
-  var AREAS = ['Chelsea', 'East Boston', 'Everett', 'Malden', 'Revere', 'Boston'];
-  var TIMES = ['As soon as possible', '1–3 months', '3–6 months', '6–12 months'];
-  var CONTACT = ['name', 'email', 'phone', 'contact_by'];
-  var PATHS = { 'Buy a home': 10, 'Sell a home': 10, 'Buy and sell': 15, 'Ask about a listing': 7 };
+  var TOPICS = {
+    'Buying':            ['Homes for sale', 'How buying works', 'Getting pre-approved'],
+    'Selling':           ['What my home is worth', 'Listing my home', 'Timing a sale'],
+    'Buying and selling': ['Selling and buying at once', 'What my home is worth'],
+    'Just a question':   []
+  };
 
   var STEPS = {
     intent: {
-      ask: ['Hi — I can pass your details straight to Jeffrey and find a time on his calendar. Takes about a minute.',
-            'What brings you here?'],
+      ask: ['Are you buying or selling?'],
       label: 'Looking to', type: 'choice',
-      options: ['Buy a home', 'Sell a home', 'Buy and sell', 'Ask about a listing'],
-      next: function (v) {
-        total = PATHS[v] || 10;
-        if (v === 'Sell a home' || v === 'Buy and sell') return 'sell_address';
-        if (v === 'Ask about a listing') return 'listing';
-        return 'buy_area';
-      }
+      options: Object.keys(TOPICS),
+      next: 'topic'
     },
-
-    /* --- buying --- */
-    buy_area: {
-      ask: ['Where are you looking? One town or a few is fine.'],
-      label: 'Searching in', type: 'text', placeholder: 'e.g. Chelsea, Everett', suggest: AREAS,
-      next: 'buy_type'
-    },
-    buy_type: {
-      ask: ['What kind of property?'],
-      label: 'Looking for', type: 'choice',
-      options: ['Single-family', 'Condo', 'Multi-family', 'Land', 'Still deciding'],
-      next: 'buy_price'
-    },
-    buy_price: {
-      ask: ['Roughly what price range?'],
-      label: 'Budget', type: 'choice',
-      options: ['Under $400k', '$400–600k', '$600–800k', '$800k–1M', 'Over $1M', 'Not sure yet'],
-      next: 'buy_timeline'
-    },
-    buy_timeline: {
-      ask: ['When would you like to move?'],
-      label: 'Move by', type: 'choice',
-      options: TIMES.concat('Just researching'),
-      next: 'buy_financing'
-    },
-    buy_financing: {
-      ask: ['Where are you on financing? No wrong answer — it tells Jeffrey what to prepare.'],
-      label: 'Financing', type: 'choice',
-      options: ['Pre-approved', 'Talking to a lender', 'Not started', 'Paying cash'],
-      next: 'name'
-    },
-
-    /* --- selling --- */
-    sell_address: {
-      ask: ['Which property are you thinking of selling?'],
-      label: 'Selling', type: 'text', placeholder: 'Street address, city',
-      next: 'sell_type'
-    },
-    sell_type: {
-      ask: ['What kind of property is it?'],
-      label: 'Home type', type: 'choice',
-      options: ['Single-family', 'Condo', 'Multi-family', 'Land', 'Commercial'],
-      next: 'sell_timeline'
-    },
-    sell_timeline: {
-      ask: ['When would you like it sold?'],
-      label: 'Sell by', type: 'choice',
-      options: TIMES.concat('Just want a value estimate'),
-      next: 'sell_listed'
-    },
-    sell_listed: {
-      ask: ['Is it listed with an agent right now?'],
-      label: 'Listed now', type: 'choice',
-      options: ['No', 'Yes, listed now', 'Listing expired', 'For sale by owner'],
-      next: function (v) {
-        if (v !== 'Yes, listed now') return 'sell_priority';
-        // Soliciting another broker's client is off-limits, so skip the
-        // selling questions and keep only what Jeffrey can properly act on.
-        say('Understood. While your home is under a listing agreement, Jeffrey can\'t talk about representing you on the sale — that relationship is with your current broker. He\'s glad to talk once it ends, or to answer general questions now.', 'note');
-        forget(function (k) { return k === 'sell_priority'; });
-        return isBoth() ? 'buy_area' : 'question';
-      }
-    },
-    sell_priority: {
-      ask: ['What matters most in the sale?'],
-      label: 'Priority', type: 'choice',
-      options: ['Highest price', 'Speed', 'A certain closing date', 'Privacy', 'Not sure'],
-      next: function () { return isBoth() ? 'buy_area' : 'name'; }
-    },
-
-    /* --- a listing, or a general question --- */
-    listing: {
-      ask: ['Which property are you asking about?'],
-      label: 'Listing', type: 'text', placeholder: 'Address or listing name',
-      suggest: function () { return listings; },
-      next: 'question'
-    },
-    question: {
-      ask: function () {
-        return [answers.listing ? 'What would you like to know? Showings, open houses, disclosures — anything.'
-                                : 'Anything you\'d like to ask Jeffrey? You can skip this.'];
+    topic: {
+      ask: ['What would you like to talk to Jeffrey about?'],
+      label: 'Topic', type: 'text', placeholder: 'A sentence or two is plenty', long: true,
+      suggest: function () {
+        var list = (TOPICS[answers.intent && answers.intent.value] || []).slice();
+        if (pageListing) list.unshift(pageListing);
+        return list;
       },
-      label: 'Question', type: 'text', placeholder: 'Type your question', long: true,
-      optional: function () { return !answers.listing; },
       next: 'name'
     },
-
-    /* --- contact --- */
-    name:  { ask: ['Almost done. What\'s your name?'], label: 'Name', type: 'text', placeholder: 'First and last', next: 'email' },
-    email: { ask: ['And your email?'], label: 'Email', type: 'text', placeholder: 'you@example.com', validate: 'email', next: 'phone' },
+    name:  { ask: ['Great. What\'s your name?'], label: 'Name', type: 'text', placeholder: 'First and last', next: 'email' },
+    email: { ask: ['And your email, so Jeffrey can get back to you?'], label: 'Email', type: 'text', placeholder: 'you@example.com', validate: 'email', next: 'phone' },
     phone: { ask: ['A phone number, if you\'d like a call or text. You can skip this.'], label: 'Phone', type: 'text',
-             placeholder: '(555) 555-5555', validate: 'phone', optional: true,
-             next: function (v) {
-               if (v !== '—') return 'contact_by';
-               record('contact_by', STEPS.contact_by, 'Email');   // no number, so no choice to make
-               return 'review';
-             } },
-    contact_by: {
-      ask: ['How should Jeffrey reach you?'], label: 'Reach me by', type: 'choice',
-      options: ['Call', 'Text', 'Email'],
-      next: 'review'
-    }
+             placeholder: '(555) 555-5555', validate: 'phone', optional: true, next: 'review' }
   };
 
-  function isBoth() { return answers.intent && answers.intent.value === 'Buy and sell'; }
   function val(f) { return typeof f === 'function' ? f() : f; }
 
   /* ---------------------------------------------------------------
@@ -352,13 +282,10 @@
   /* ---------------------------------------------------------------
      STEP RUNNER
   ----------------------------------------------------------------*/
-  function nextOf(id, step, value) { return typeof step.next === 'function' ? step.next(value) : step.next; }
-
   function go(id) {
     if (id === 'review') return review();
     var step = STEPS[id];
     if (!step) return;
-    if (reuse && answers[id]) return go(nextOf(id, step, answers[id].value));
     clearZone();
     var lines = val(step.ask).slice();
     (function emit() {
@@ -367,45 +294,62 @@
     })();
   }
 
-  function record(id, step, value) {
+  function answer(id, step, value, shown) {
+    say(shown || value, 'user');
+    clearZone();
     if (!answers[id]) order.push(id);
     answers[id] = { label: step.label, value: value };
     progress();
+    if (editing) { editing = false; return review(); }
+    go(step.next);
   }
 
-  function advance(id, step, value, before) {
-    if (editing) {
-      editing = null;
-      // A new intent means a different set of questions. Drop the old
-      // branch, keep the contact details, and walk the new branch.
-      if (id === 'intent' && value !== before) {
-        forget(function (k) { return k !== 'intent' && CONTACT.indexOf(k) === -1; });
-        reuse = true;
-      } else if (id === 'sell_listed' || id === 'phone') {
-        // These change which later steps apply; re-walk from here.
-        if (id === 'phone') forget(function (k) { return k === 'contact_by'; });
-        reuse = true;
-      } else {
-        return review();
-      }
-    }
-    go(nextOf(id, step, value));
-  }
-
-  function forget(test) {
-    order = order.filter(function (k) {
-      if (!test(k)) return true;
-      delete answers[k];
-      return false;
-    });
-  }
-
-  function answer(id, step, value, shown) {
-    var before = answers[id] && answers[id].value;
-    say(shown || value, 'user');
-    clearZone();
-    record(id, step, value);
-    advance(id, step, value, before);
+  /* ---------------------------------------------------------------
+     GREETING
+     Call / Text / Email are plain links, so they open the visitor's own
+     dialler, messages or mail app. They stay on screen after a tap in case
+     nothing happened (a desktop with no phone app, say).
+  ----------------------------------------------------------------*/
+  function greet() {
+    typing(function () {
+      say('Hi, I\'m Jeffrey\'s virtual assistant — happy to help!');
+      typing(function () {
+        say('You can reach Jeffrey right now, or leave a few details and he\'ll get back to you.');
+        var wrap = el('div', 'jb-chips');
+        [
+          ['Call him now', 'tel:' + TEL, 'call', true],
+          ['Text him', 'sms:' + TEL, 'text'],
+          ['Email him', 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent('Question from jeffreybowen.com'), 'email']
+        ].forEach(function (c) {
+          var a = el('a', 'jb-chip' + (c[3] ? ' jb-primary' : ''), c[0]);
+          a.href = c[1];
+          a.addEventListener('click', function () {
+            track('chat_contact', { method: c[2] });
+            if (!a.dataset.told) {
+              a.dataset.told = '1';
+              say(c[2] === 'email'
+                ? 'Opening your email app. If nothing opened, Jeffrey\'s email is ' + CONFIG.email + '.'
+                : 'Opening your phone. If nothing opened, Jeffrey\'s cell is ' + CONFIG.phone + '.');
+            }
+          });
+          wrap.appendChild(a);
+        });
+        var later = button('jb-chip', 'Talk later');
+        later.addEventListener('click', function () {
+          say('I\'d rather talk later', 'user');
+          clearZone();
+          go('intent');
+        });
+        wrap.appendChild(later);
+        if (CONFIG.calendly) {
+          var meet = button('jb-chip', 'Schedule a meeting');
+          meet.addEventListener('click', openCalendar);
+          wrap.insertBefore(meet, later);
+        }
+        zone.appendChild(wrap);
+        focusSoon(wrap.firstChild);
+      }, 420);
+    }, 380);
   }
 
   function render(id, step) {
@@ -487,10 +431,6 @@
      REVIEW + SEND
   ----------------------------------------------------------------*/
   function review() {
-    reuse = false;
-    // Keep the recap in question order however it was reached.
-    var ids = Object.keys(STEPS);
-    order.sort(function (a, b) { return ids.indexOf(a) - ids.indexOf(b); });
     clearZone();
     typing(function () {
       say('Here\'s what I\'ll send. Tap any line to change it.');
@@ -503,7 +443,7 @@
         row.appendChild(el('span', null, answers[k].value));
         row.appendChild(el('em', null, 'change'));
         row.addEventListener('click', function () {
-          editing = k;
+          editing = true;
           say('Change: ' + answers[k].label.toLowerCase(), 'user');
           go(k);
         });
@@ -538,7 +478,7 @@
         btn.disabled = true;
         btn.textContent = 'Sending…';
         send(payload()).then(function () {
-          track('chat_lead_submit', { intent: answers.intent.value });
+          track('chat_lead_submit', { intent: answers.intent ? answers.intent.value : '' });
           finish();
         }).catch(function () {
           btn.disabled = false;
@@ -555,6 +495,7 @@
 
   function payload() {
     var out = { source: 'chat', summary: '' };
+    if (pageListing) out.listing = pageListing;
     order.forEach(function (k) {
       out[k] = answers[k].value;
       out.summary += answers[k].label + ': ' + answers[k].value + '\n';
@@ -567,46 +508,71 @@
     try { localStorage.setItem('jb-chat-sent', '1'); } catch (e) {}
     typing(function () {
       say('Sent. Jeffrey will follow up — usually the same day.');
-      if (!CONFIG.calendly) return closeButton();
-      typing(function () {
-        say('Want to lock in a time to talk now?');
-        var first = answers.name ? answers.name.value : '';
-        var mail = answers.email ? answers.email.value : '';
-        var q = 'hide_gdpr_banner=1&utm_source=website&utm_content=chat' +
-          '&name=' + encodeURIComponent(first) + '&email=' + encodeURIComponent(mail);
-        var url = CONFIG.calendly + (CONFIG.calendly.indexOf('?') > -1 ? '&' : '?') + q;
-
-        var cal = el('div', 'jb-cal');
-        var frame = document.createElement('iframe');
-        // embed_domain lets Calendly post calendly.event_scheduled back to the page
-        frame.src = url + '&embed_type=Inline&embed_domain=' + encodeURIComponent(location.hostname);
-        frame.title = 'Book a time with Jeffrey Bowen';
-        frame.loading = 'lazy';
-        frame.style.cssText = 'width:100%;height:100%;border:0;display:block';
-        cal.appendChild(frame);
-        zone.appendChild(cal);
-
-        var alt = el('a', 'jb-cal-alt', 'Open the calendar in a new tab');
-        alt.href = url; alt.target = '_blank'; alt.rel = 'noopener';
-        zone.appendChild(alt);
-        scroll();
-      }, 500);
+      if (CONFIG.calendly) {
+        var book = button('jb-send jb-wide', 'Schedule a meeting now');
+        book.style.marginBottom = '8px';
+        book.addEventListener('click', openCalendar);
+        zone.appendChild(book);
+      }
+      closeButton(!CONFIG.calendly);
     }, 400);
   }
 
-  function closeButton() {
-    var done = button('jb-send jb-wide', 'Close');
+  function closeButton(primary) {
+    var done = button(primary ? 'jb-send jb-wide' : 'jb-chip jb-wide', 'Close');
     done.addEventListener('click', close);
     zone.appendChild(done);
-    focusSoon(done);
+    focusSoon(zone.firstChild);
   }
+
+  /* ---------------------------------------------------------------
+     CALENDAR
+     Calendly opens inside the panel, over the chat, and "Back to chat"
+     returns to exactly where the visitor was. The iframe is only created on
+     first use, so nobody who never books loads Calendly or its cookies.
+  ----------------------------------------------------------------*/
+  var frame = null;
+
+  function calendarUrl() {
+    var q = 'hide_gdpr_banner=1&utm_source=website&utm_content=chat';
+    if (answers.name) q += '&name=' + encodeURIComponent(answers.name.value);
+    if (answers.email) q += '&email=' + encodeURIComponent(answers.email.value);
+    return CONFIG.calendly + (CONFIG.calendly.indexOf('?') > -1 ? '&' : '?') + q;
+  }
+
+  function openCalendar() {
+    var url = calendarUrl();
+    // embed_domain lets Calendly post calendly.event_scheduled back to the page
+    var src = url + '&embed_type=Inline&embed_domain=' + encodeURIComponent(location.hostname);
+    if (!frame || frame.dataset.src !== src) {   // rebuild once name/email are known
+      if (frame) frame.remove();
+      frame = document.createElement('iframe');
+      frame.title = 'Book a time with Jeffrey Bowen';
+      frame.src = frame.dataset.src = src;
+      cal.appendChild(frame);
+    }
+    cal.querySelector('.jb-cal-new').href = url;
+    panel.classList.add('jb-booking');
+    track('booking_open', { booking_type: 'unspecified', booking_source: 'chat' });
+    focusSoon(cal.querySelector('.jb-back'));
+  }
+
+  function closeCalendar() {
+    panel.classList.remove('jb-booking');
+    scroll();
+  }
+
+  if (CONFIG.calendly) sched.addEventListener('click', openCalendar);
+  else sched.hidden = true;
+  cal.querySelector('.jb-back').addEventListener('click', closeCalendar);
 
   window.addEventListener('message', function (e) {
     if (e.origin !== 'https://calendly.com' || !e.data || e.data.event !== 'calendly.event_scheduled') return;
-    if (!panel.classList.contains('jb-open')) return;
+    if (!panel.classList.contains('jb-booking')) return;
+    closeCalendar();
     clearZone();
     say('Booked. Jeffrey will confirm by text beforehand.');
-    closeButton();
+    closeButton(true);
     // The home page's booking script already reports booking_complete for
     // every Calendly embed; only count it here where that script is absent.
     if (!document.getElementById('book')) track('booking_complete', { booking_source: 'chat' });
@@ -622,7 +588,7 @@
     if (!order.length && !log.children.length) {
       opened = Date.now();
       track('chat_open', {});
-      go('intent');
+      greet();
     }
   }
   function close() {
@@ -635,7 +601,8 @@
   launch.addEventListener('click', open);
   root.querySelector('.jb-close').addEventListener('click', close);
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && panel.classList.contains('jb-open')) close();
+    if (e.key !== 'Escape' || !panel.classList.contains('jb-open')) return;
+    if (panel.classList.contains('jb-booking')) closeCalendar(); else close();
   });
 
   // Any link to #chat on the page opens it instead of jumping.

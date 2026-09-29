@@ -215,11 +215,19 @@ types; its embed API is close enough that the swap is small.
 
 ## Lead chat
 
-`chat.js` adds a **scripted** chat launcher to the bottom-right of both pages. It
-asks buy / sell / both / a listing, then area, property type, budget or
-timeline, financing and contact details. It shows a summary the visitor can
-edit line by line, then sends and offers the Calendly calendar inline, with
-the name and email already filled in.
+`chat.js` adds a **scripted** chat launcher to the bottom-right of both pages.
+It opens with *"Hi, I'm Jeffrey's virtual assistant"* and four buttons:
+
+- **Call him now**, **Text him** and **Email him** open the visitor's own phone,
+  messages or mail app.
+- **Talk later** asks three things only: buying or selling, what they want to
+  talk about (with suggested topics, plus the property on a listing page), and
+  name, email and an optional phone number. There are no qualifying
+  questions. The visitor reviews their answers, ticks the consent box, and
+  sends.
+
+A small **Schedule** button in the chat header opens Jeffrey's Calendly
+inside the chat at any point, and it is offered again after sending.
 
 - **Scripted on purpose.** The bot only says what is written in `chat.js`, so it
   can't answer anything that could count as steering under Fair Housing. Add
@@ -231,11 +239,11 @@ the name and email already filled in.
 - **Hidden until configured.** While `CONFIG.endpoint` in `chat.js` is empty, the
   chat doesn't render and the forms keep opening a mail draft. Add
   `?chat=demo` to any URL to try the full flow without sending anything.
-- **Guardrails.** If the property is currently listed with another agent, the
-  bot skips the selling questions. It also includes a TCPA consent checkbox, a
-  honeypot field, a too-fast-to-be-human check, and a note that sending the
-  chat creates no agency relationship.
-- **Analytics.** `chat_open`, `chat_lead_submit` (mark as a key event), and
+- **Guardrails.** A TCPA consent checkbox, a honeypot field, a
+  too-fast-to-be-human check, and a note that sending creates no agency
+  relationship.
+- **Analytics.** `chat_open`, `chat_contact` (call, text or email tapped),
+  `chat_lead_submit` (mark as a key event), `booking_open` and
   `booking_complete`.
 
 ---
