@@ -213,6 +213,33 @@ types; its embed API is close enough that the swap is small.
 
 ---
 
+## Lead chat
+
+`chat.js` adds a **scripted** chat launcher to the bottom-right of both pages. It
+asks buy / sell / both / a listing, then area, property type, budget or
+timeline, financing and contact details. It shows a summary the visitor can
+edit line by line, then sends and offers the Calendly calendar inline, with
+the name and email already filled in.
+
+- **Scripted on purpose.** The bot only says what is written in `chat.js`, so it
+  can't answer anything that could count as steering under Fair Housing. Add
+  steps and options there; don't bolt a free-text AI onto it.
+- **One lead inbox.** The chat and both contact forms post to a Google Apps
+  Script web app (`apps-script/Code.gs`). It appends each lead to a Sheet and
+  emails Jeffrey with Reply-To set to the visitor. Setup steps are at the top
+  of that file.
+- **Hidden until configured.** While `CONFIG.endpoint` in `chat.js` is empty, the
+  chat doesn't render and the forms keep opening a mail draft. Add
+  `?chat=demo` to any URL to try the full flow without sending anything.
+- **Guardrails.** If the property is currently listed with another agent, the
+  bot skips the selling questions. It also includes a TCPA consent checkbox, a
+  honeypot field, a too-fast-to-be-human check, and a note that sending the
+  chat creates no agency relationship.
+- **Analytics.** `chat_open`, `chat_lead_submit` (mark as a key event), and
+  `booking_complete`.
+
+---
+
 ## Before launch
 
 `index.html` ends with a numbered checklist covering the domain swap, Search
@@ -238,8 +265,9 @@ Console, Google Business Profile and the analytics ID. The short version:
    anything on-page. Use the same name, address and phone as the structured
    data in the head.
 
-5. **Contact form** — currently opens the visitor's mail client. Point it at a
-   real endpoint.
+5. **Lead inbox** — deploy `apps-script/Code.gs` and paste its URL into
+   `CONFIG.endpoint` in `chat.js`. That turns on the chat and switches both
+   contact forms from mail drafts to real sends.
 
 6. **Booking** — set `BOOKING_URL`; see *Booking appointments* above. The block
    stays hidden until you do.

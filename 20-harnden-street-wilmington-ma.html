@@ -1613,11 +1613,19 @@ main [id],#top{scroll-margin-top:86px}
   });
 
   /* ---------- inquiry form ----------
-     Same behaviour as the main site: the form composes an email rather than
-     posting anywhere, so nothing is silently dropped and there is no endpoint
-     to secure. Point it at a real endpoint when one exists. */
+     Same behaviour as the main site: posts to the lead inbox chat.js exposes
+     as window.JBLead, and falls back to composing an email when that is not
+     configured or the send fails, so nothing is silently dropped. */
   var form = document.getElementById('lead');
   var msg = document.getElementById('fm');
+
+  // chat.js loads deferred, after this script; check once it has run.
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!form || !window.JBLead || !window.JBLead.ready) return;
+    document.getElementById('lead-submit').textContent = 'Send to Jeffrey';
+    var note = form.querySelector('.delivery');
+    if (note) note.hidden = true;
+  });
 
   if (form) {
     form.addEventListener('submit', function (e) {
@@ -1643,17 +1651,40 @@ main [id],#top{scroll-margin-top:86px}
         'Property: 20 Harnden Street, Wilmington, MA (MLS #73579413)\n\n' +
         (message || '');
 
-      window.location.href =
-        'mailto:jeff@jeffreybowen.com' +
-        '?subject=' + encodeURIComponent('20 Harnden Street — ' + interest) +
-        '&body=' + encodeURIComponent(body);
+      function draft() {
+        window.location.href =
+          'mailto:jeff@jeffreybowen.com' +
+          '?subject=' + encodeURIComponent('20 Harnden Street — ' + interest) +
+          '&body=' + encodeURIComponent(body);
+      }
 
-      msg.textContent = 'Opening a draft in your email app. Send it from there and Jeffrey will reply.';
       msg.style.color = '#DCC188';
+      if (!window.JBLead || !window.JBLead.ready) {
+        draft();
+        msg.textContent = 'Opening a draft in your email app. Send it from there and Jeffrey will reply.';
+        return;
+      }
+
+      var btn = document.getElementById('lead-submit');
+      btn.disabled = true;
+      msg.textContent = 'Sending…';
+      window.JBLead.send({
+        source: 'listing_form',
+        listing: '20 Harnden Street, Wilmington, MA (MLS #73579413)',
+        name: name, email: email, phone: phone,
+        interest: interest, message: message
+      }).then(function () {
+        form.reset();
+        msg.textContent = 'Sent. Jeffrey will reply, usually the same day.';
+      }).catch(function () {
+        draft();
+        msg.textContent = 'That didn\u2019t send, so we opened a draft in your email app instead. Or call 781-201-9488.';
+      }).then(function () { btn.disabled = false; });
     });
   }
 })();
 </script>
 
+<script src="/chat.js" defer data-listing="20 Harnden Street, Wilmington"></script>
 </body>
 </html>

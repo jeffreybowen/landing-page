@@ -1211,8 +1211,9 @@ main [id],#top{scroll-margin-top:86px}
           </dl>
         </div>
 
-        <!-- Wire this to a real endpoint before launch: set action to your
-             Formspree / Netlify / brokerage CRM URL and delete the JS handler. -->
+        <!-- Posts to the same Apps Script inbox as the chat (chat.js,
+             apps-script/Code.gs). Until that endpoint is set it composes an
+             email instead, so nothing is silently dropped. -->
         <form id="lead" novalidate>
           <div class="f2">
             <div><label for="nm">Name</label><input id="nm" name="name" type="text" autocomplete="name" required></div>
@@ -1282,24 +1283,48 @@ main [id],#top{scroll-margin-top:86px}
 </footer>
 
 <script>
-// Placeholder submit handler. Replace with a real form endpoint before launch.
+// Sends through the lead inbox chat.js exposes as window.JBLead. If that is
+// not configured, or the send fails, falls back to a draft in the visitor's
+// mail app so the enquiry is never lost.
 document.getElementById('lead').addEventListener('submit', function (e) {
   e.preventDefault();
-  var f = e.target, msg = document.getElementById('fm');
+  var f = e.target, msg = document.getElementById('fm'), btn = f.querySelector('button[type=submit]');
   if (!f.name.value.trim() || !f.email.value.trim() || !f.consent.checked) {
     msg.textContent = 'Add your name and email, and check the consent box.';
     return;
   }
-  var body =
-    'Name: ' + f.name.value + '\n' +
-    'Phone: ' + f.phone.value + '\n' +
-    'Email: ' + f.email.value + '\n' +
-    'Interested in: ' + f.interest.value + '\n\n' +
-    f.message.value;
-  window.location.href = 'mailto:jeff@jeffreybowen.com'
-    + '?subject=' + encodeURIComponent('Website enquiry from ' + f.name.value)
-    + '&body=' + encodeURIComponent(body);
-  msg.textContent = 'Opening your email app. Or call Jeffrey directly at 781-201-9488.';
+  function draft() {
+    var body =
+      'Name: ' + f.name.value + '\n' +
+      'Phone: ' + f.phone.value + '\n' +
+      'Email: ' + f.email.value + '\n' +
+      'Interested in: ' + f.interest.value + '\n\n' +
+      f.message.value;
+    window.location.href = 'mailto:jeff@jeffreybowen.com'
+      + '?subject=' + encodeURIComponent('Website enquiry from ' + f.name.value)
+      + '&body=' + encodeURIComponent(body);
+  }
+  if (!window.JBLead || !window.JBLead.ready) {
+    draft();
+    msg.textContent = 'Opening your email app. Or call Jeffrey directly at 781-201-9488.';
+    return;
+  }
+  btn.disabled = true;
+  msg.textContent = 'Sending…';
+  window.JBLead.send({
+    source: 'contact_form',
+    name: f.name.value.trim(),
+    email: f.email.value.trim(),
+    phone: f.phone.value.trim(),
+    interest: f.interest.value,
+    message: f.message.value.trim()
+  }).then(function () {
+    f.reset();
+    msg.textContent = 'Sent. Jeffrey will be in touch, usually the same day.';
+  }).catch(function () {
+    draft();
+    msg.textContent = 'That didn\u2019t send, so we opened a draft in your email app instead. Or call 781-201-9488.';
+  }).then(function () { btn.disabled = false; });
 });
 </script>
 
@@ -2187,5 +2212,6 @@ document.getElementById('lead').addEventListener('submit', function (e) {
      To verify: publish, open the site, then GA4 -> Reports -> Realtime.
 
 -->
+<script src="/chat.js" defer></script>
 </body>
 </html>
