@@ -172,7 +172,7 @@
   root.innerHTML =
     '<button class="jb-launch" type="button" aria-haspopup="dialog" aria-expanded="false">' +
       '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.9-.9L3 21l1.9-4.6A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg>' +
-      '<span class="jb-launch-label">Buying or selling? Ask Jeffrey</span>' +
+      '<span class="jb-launch-label">Ask Jeffrey</span>' +
     '</button>' +
     '<div class="jb-panel" role="dialog" aria-modal="false" aria-label="Chat with The Bowen Realty Group">' +
       '<div class="jb-head">' +
