@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-09-03T16:41:34.534Z",
+  "generatedAt": "2026-09-29T18:02:36.764Z",
   "source": "https://www.zillow.com/profile/JeffreyBowen",
-  "fetchedVia": "file",
+  "fetchedVia": "browser",
   "soldWindowMonths": 6,
   "counts": {
     "forSale": 5,
-    "soldInWindow": 3,
-    "totalForSale": 5,
-    "totalSold": 690
+    "soldInWindow": 5,
+    "totalForSale": 6,
+    "totalSold": 691
   },
   "forSale": [
     {
-      "zpid": "2073790320",
-      "price": "$1,790,000",
-      "priceValue": 1790000,
-      "street": "806 Saratoga St",
-      "locality": "Boston, MA 02128",
-      "fullAddress": "806 Saratoga St, Boston, MA 02128",
+      "zpid": "57141319",
+      "price": "$1,395,000",
+      "priceValue": 1395000,
+      "street": "20 Harnden St",
+      "locality": "Wilmington, MA 01887",
+      "fullAddress": "20 Harnden St, Wilmington, MA 01887",
       "beds": "7",
       "baths": "6",
-      "sqft": "3,517",
+      "sqft": "4,220",
       "status": "House for Sale",
       "badges": [
-        "Price cut: $10,000 (8/10)"
+        "Open: Sat 1-3pm (10/3)"
       ],
       "brokerage": "eRealty Advisors, Inc.",
-      "photo": "https://photos.zillowstatic.com/fp/6ec431ddeaca69c70240864fe561eb93-p_e.jpg",
-      "url": "https://www.zillow.com/homedetails/806-Saratoga-St-Boston-MA-02128/2073790320_zpid/"
+      "photo": "https://photos.zillowstatic.com/fp/5266f4f365c7d22d406a07f8e3836b49-p_e.jpg",
+      "url": "https://www.zillow.com/homedetails/20-Harnden-St-Wilmington-MA-01887/57141319_zpid/"
     },
     {
       "zpid": "463633325",
@@ -40,10 +40,10 @@
       "sqft": "1,422",
       "status": "House for Sale",
       "badges": [
-        "Price cut: $1,000 (8/10)"
+        "Private separate entrance"
       ],
-      "brokerage": "eRealty Advisors, Inc.",
-      "photo": "https://photos.zillowstatic.com/fp/5c0b057e07fbb63ffc029f468afc81d2-p_e.jpg",
+      "brokerage": null,
+      "photo": "https://photos.zillowstatic.com/fp/d71b74c4dfec1d0252ac2d888c85cccc-p_e.jpg",
       "url": "https://www.zillow.com/homedetails/804-Saratoga-St-1-Boston-MA-02128/463633325_zpid/"
     },
     {
@@ -58,10 +58,10 @@
       "sqft": "1,029",
       "status": "House for Sale",
       "badges": [
-        "30 days on Zillow"
+        "43 days on Zillow"
       ],
-      "brokerage": "eRealty Advisors, Inc.",
-      "photo": "https://photos.zillowstatic.com/fp/6ec431ddeaca69c70240864fe561eb93-p_e.jpg",
+      "brokerage": null,
+      "photo": "https://photos.zillowstatic.com/fp/78e5a00ea0363bac9a13c2397499faa9-p_e.jpg",
       "url": "https://www.zillow.com/homedetails/804-Saratoga-St-2-Boston-MA-02128/463633930_zpid/"
     },
     {
@@ -76,10 +76,10 @@
       "sqft": "1,066",
       "status": "House for Sale",
       "badges": [
-        "30 days on Zillow"
+        "43 days on Zillow"
       ],
-      "brokerage": "eRealty Advisors, Inc.",
-      "photo": "https://photos.zillowstatic.com/fp/6ec431ddeaca69c70240864fe561eb93-p_e.jpg",
+      "brokerage": null,
+      "photo": "https://photos.zillowstatic.com/fp/78e5a00ea0363bac9a13c2397499faa9-p_e.jpg",
       "url": "https://www.zillow.com/homedetails/804-Saratoga-St-3-Boston-MA-02128/463633819_zpid/"
     },
     {
@@ -96,12 +96,46 @@
       "badges": [
         "Frameless glass shower"
       ],
-      "brokerage": "eRealty Advisors, Inc.",
-      "photo": "https://photos.zillowstatic.com/fp/aba31a21bd54b150174b8df169a5a9cd-p_e.jpg",
+      "brokerage": null,
+      "photo": "https://photos.zillowstatic.com/fp/0b2d77c0c5856f1b9b3e0c6c6b98a47f-p_e.jpg",
       "url": "https://www.zillow.com/homedetails/87-Parker-St-UNIT-403-Chelsea-MA-02150/333286206_zpid/"
     }
   ],
   "sold": [
+    {
+      "zpid": "463714810",
+      "price": "$747,000",
+      "priceValue": 747000,
+      "street": "49 Breakwater Dr #T-10",
+      "locality": "Chelsea, MA 02150",
+      "fullAddress": "49 Breakwater Dr #T-10, Chelsea, MA 02150",
+      "beds": "3",
+      "baths": "3",
+      "sqft": "2,101",
+      "soldDate": "2026-09-28",
+      "soldDateText": "September 28, 2026",
+      "soldAgo": "Sold 2 days ago",
+      "represented": "Represented seller",
+      "photo": "https://photos.zillowstatic.com/fp/5cabb6f07efb1f5e67d49e1b395e9ef2-p_e.jpg",
+      "url": "https://www.zillow.com/homedetails/49-Breakwater-Dr-T-10-Chelsea-MA-02150/463714810_zpid/"
+    },
+    {
+      "zpid": "333286205",
+      "price": "$500,000",
+      "priceValue": 500000,
+      "street": "87 Parker St Unit 402",
+      "locality": "Chelsea, MA 02150",
+      "fullAddress": "87 Parker St Unit 402, Chelsea, MA 02150",
+      "beds": "2",
+      "baths": "2",
+      "sqft": "812",
+      "soldDate": "2026-09-03",
+      "soldDateText": "September 3, 2026",
+      "soldAgo": "Sold 27 days ago",
+      "represented": "Represented seller",
+      "photo": "https://photos.zillowstatic.com/fp/8ba0702ac84d194b6da919216636015e-p_e.jpg",
+      "url": "https://www.zillow.com/homedetails/87-Parker-St-UNIT-402-Chelsea-MA-02150/333286205_zpid/"
+    },
     {
       "zpid": "56463797",
       "price": "$810,000",
@@ -114,7 +148,7 @@
       "sqft": "2,388",
       "soldDate": "2026-07-15",
       "soldDateText": "July 15, 2026",
-      "soldAgo": "Sold 2 months ago",
+      "soldAgo": "Sold 3 months ago",
       "represented": "Represented seller",
       "photo": "https://photos.zillowstatic.com/fp/6df526afd22a6a8c95b9ca1f9b251e53-p_e.jpg",
       "url": "https://www.zillow.com/homedetails/20-Raymond-St-Everett-MA-02149/56463797_zpid/"
@@ -131,7 +165,7 @@
       "sqft": "1,386",
       "soldDate": "2026-06-30",
       "soldDateText": "June 30, 2026",
-      "soldAgo": "Sold 2 months ago",
+      "soldAgo": "Sold 3 months ago",
       "represented": "Represented seller",
       "photo": "https://photos.zillowstatic.com/fp/8b56584f95c9efbac1d0f2bba34ef3dd-p_e.jpg",
       "url": "https://www.zillow.com/homedetails/12-Jones-Ave-1-Chelsea-MA-02150/66819088_zpid/"
@@ -148,7 +182,7 @@
       "sqft": "1,686",
       "soldDate": "2026-05-22",
       "soldDateText": "May 22, 2026",
-      "soldAgo": "Sold 3 months ago",
+      "soldAgo": "Sold 4 months ago",
       "represented": "Represented seller",
       "photo": "https://photos.zillowstatic.com/fp/96cfbdf460b28ce605356f77a4ec2f1f-p_e.jpg",
       "url": "https://www.zillow.com/homedetails/81-Broadway-APT-1-Chelsea-MA-02150/125791492_zpid/"
