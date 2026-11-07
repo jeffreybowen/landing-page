@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T18:14:51.066Z",
+  "generatedAt": "2026-11-07T16:45:12.940Z",
   "source": "https://www.youtube.com/feeds/videos.xml?channel_id=UCrh1Ih1lL0Xc4fAUfbR3KaA",
   "channelUrl": "https://www.youtube.com/@JeffreyBowen",
   "channelTitle": "Jeffrey Bowen",
@@ -8,6 +8,39 @@
     "availableInFeed": 15
   },
   "videos": [
+    {
+      "id": "fFjmTCxm2XY",
+      "title": "Priced Below the 2-Bedroom Line — 100 Broadway, Unit 6, Chelsea, MA 02150 — MLS #73597924",
+      "published": "2026-11-07T14:19:57+00:00",
+      "publishedText": "November 2026",
+      "isShort": true,
+      "url": "https://www.youtube.com/shorts/fFjmTCxm2XY",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/fFjmTCxm2XY",
+      "thumb": "https://i.ytimg.com/vi/fFjmTCxm2XY/hqdefault.jpg",
+      "thumbLarge": "https://i.ytimg.com/vi/fFjmTCxm2XY/maxresdefault.jpg"
+    },
+    {
+      "id": "pppE6PxX2v4",
+      "title": "100 Broadway, Unit 6, Chelsea, MA 02150 — The Imperial — MLS #73597924",
+      "published": "2026-11-07T14:17:42+00:00",
+      "publishedText": "November 2026",
+      "isShort": true,
+      "url": "https://www.youtube.com/shorts/pppE6PxX2v4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/pppE6PxX2v4",
+      "thumb": "https://i.ytimg.com/vi/pppE6PxX2v4/hqdefault.jpg",
+      "thumbLarge": "https://i.ytimg.com/vi/pppE6PxX2v4/maxresdefault.jpg"
+    },
+    {
+      "id": "hAzY0FzMDxA",
+      "title": "3 Bedrooms in Chelsea for $399,000 — 100 Broadway, Unit 6, Chelsea, MA 02150 — The Imperial",
+      "published": "2026-11-07T14:15:45+00:00",
+      "publishedText": "November 2026",
+      "isShort": true,
+      "url": "https://www.youtube.com/shorts/hAzY0FzMDxA",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/hAzY0FzMDxA",
+      "thumb": "https://i.ytimg.com/vi/hAzY0FzMDxA/hqdefault.jpg",
+      "thumbLarge": "https://i.ytimg.com/vi/hAzY0FzMDxA/maxresdefault.jpg"
+    },
     {
       "id": "sgC-nMHhsBk",
       "title": "100 Broadway, Unit 6, Chelsea | Exterior Tour — Roof Deck Skyline Views & the 111 Bus at the Door",
@@ -40,39 +73,6 @@
       "embedUrl": "https://www.youtube-nocookie.com/embed/pGYCifeLCL8",
       "thumb": "https://i.ytimg.com/vi/pGYCifeLCL8/hqdefault.jpg",
       "thumbLarge": "https://i.ytimg.com/vi/pGYCifeLCL8/maxresdefault.jpg"
-    },
-    {
-      "id": "W5SVf5dJqm4",
-      "title": "66 Franklin Ave Apt 2, Chelsea MA 02150 — Renovated 3 Bed Apartment for Rent by Jeffrey Bowen",
-      "published": "2026-08-13T04:56:04+00:00",
-      "publishedText": "August 2026",
-      "isShort": false,
-      "url": "https://www.youtube.com/watch?v=W5SVf5dJqm4",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/W5SVf5dJqm4",
-      "thumb": "https://i.ytimg.com/vi/W5SVf5dJqm4/hqdefault.jpg",
-      "thumbLarge": "https://i.ytimg.com/vi/W5SVf5dJqm4/maxresdefault.jpg"
-    },
-    {
-      "id": "enm2p5hCV6I",
-      "title": "1 Boatswains Way Chelsea, MA 02150. Corner Admiral's Hill Townhouse for sale by Jeffrey Bowen.",
-      "published": "2026-06-10T16:21:45+00:00",
-      "publishedText": "June 2026",
-      "isShort": true,
-      "url": "https://www.youtube.com/shorts/enm2p5hCV6I",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/enm2p5hCV6I",
-      "thumb": "https://i.ytimg.com/vi/enm2p5hCV6I/hqdefault.jpg",
-      "thumbLarge": "https://i.ytimg.com/vi/enm2p5hCV6I/maxresdefault.jpg"
-    },
-    {
-      "id": "tu668oTedds",
-      "title": "May 30, 2026",
-      "published": "2026-05-31T01:58:39+00:00",
-      "publishedText": "May 2026",
-      "isShort": false,
-      "url": "https://www.youtube.com/watch?v=tu668oTedds",
-      "embedUrl": "https://www.youtube-nocookie.com/embed/tu668oTedds",
-      "thumb": "https://i.ytimg.com/vi/tu668oTedds/hqdefault.jpg",
-      "thumbLarge": "https://i.ytimg.com/vi/tu668oTedds/maxresdefault.jpg"
     }
   ]
 }
